@@ -1,9 +1,8 @@
 import Navbar from "./components/Navbar";
 
-//test
 function App() {
 	return (
-		<div className="container">
+		<div className="app">
 			<Navbar />
 		</div>
 	);
