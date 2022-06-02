@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import "bulma/css/bulma.min.css";
+import "./styles/overrides.scss";
 
 ReactDOM.render(
 	<React.StrictMode>

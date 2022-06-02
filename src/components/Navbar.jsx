@@ -1,11 +1,17 @@
 import { useState } from "react";
+import Logo from "../images/logo.png";
 
 const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);
 
 	return (
-		<nav className="navbar is-fixed-top" role="navigation">
+		<nav
+			className="navbar is-fixed-top"
+			role="navigation"
+			aria-label="main navigation"
+		>
 			<div className="navbar-brand">
+				<img src={Logo} alt="logo" className="image is-64x64 m-2" />
 				<button
 					onClick={() => {
 						setIsActive(!isActive);
@@ -19,11 +25,11 @@ const Navbar = () => {
 					<span aria-hidden="true"></span>
 				</button>
 			</div>
-			<div
-				id="navbar-menu"
-				className={`navbar-menu ${isActive ? "is-active" : ""}`}
-			>
-				<div className="navbar-start">
+			<div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+				<div
+					className="navbar-start"
+					style={{ "flex-grow": 1, "justify-content": "center" }}
+				>
 					<p className="navbar-item">Home</p>
 					<p className="navbar-item">About</p>
 					<p className="navbar-item">Projects</p>

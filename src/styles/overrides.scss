@@ -1,0 +1,37 @@
+@import "./variables";
+
+.navbar {
+	.navbar-brand,
+	.navbar-menu,
+	.navbar-item {
+		margin: 12px 8px;
+		background-color: var(--background-primary);
+		color: var(--foreground-primary);
+	}
+
+	.navbar-start,
+	.navbar-center,
+	.navbar-end {
+		.navbar-item {
+			background: none;
+			margin: 0px 12px;
+			border-bottom: 3px solid transparent;
+
+			transition: 0.3s ease-in-out;
+
+			&:hover,
+			&:focus {
+				color: var(--foreground-primary);
+				border-color: var(--accent);
+			}
+		}
+
+		.is-icon {
+			margin: 0px 4px !important;
+
+			.is-hidden-desktop {
+				margin: 0px 8px !important;
+			}
+		}
+	}
+}
