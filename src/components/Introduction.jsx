@@ -1,21 +1,15 @@
 const Introduction = () => {
 	return (
-		<section id="introduction" className="introduction section is-medium">
-			<div className="introduction-container container">
-				<div
-					className="content"
-					style={{
-						textAlign: "center",
-						margin: "3rem auto 2rem auto",
-					}}
-				>
-					<h1>Hello, I'm Alex.</h1>
-					<p className="description">
-						Second-year Software Engineering student at RIT.
+		<div id="introduction" className="hero is-fullheight-with-navbar">
+			<div className="hero-body has-text-centered">
+				<div class="container">
+					<p className="title is-1 is-spaced">Hi, I'm Alex.</p>
+					<p className="subtitle is-3">
+						Software Engineer, Game Developer, and 3D Artist{" "}
 					</p>
 				</div>
 			</div>
-		</section>
+		</div>
 	);
 };
 
