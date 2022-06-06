@@ -1,11 +1,29 @@
 @import "./variables";
 
+.app {
+	background-color: var(--background-primary) !important;
+	color: red !important;
+}
+
+// HTML overrides
+a {
+	color: var(--accent);
+	transition: 0.3s ease-in-out;
+
+	&:hover,
+	&:focus {
+		color: var(--accent) !important;
+	}
+}
+
+// Bulma overrides
 .navbar {
+	background-color: var(--background-primary);
+
 	.navbar-brand,
 	.navbar-menu,
 	.navbar-item {
 		margin: 12px 8px;
-		background-color: var(--background-primary);
 		color: var(--foreground-primary);
 	}
 

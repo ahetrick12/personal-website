@@ -1,0 +1,28 @@
+@import "./overrides";
+@import "./variables";
+
+#root {
+	#introduction {
+		background-image: url("../images/LPUP_Screenshot.png");
+		background-color: blue;
+
+		.hero-body {
+			margin: 3rem auto 9rem auto;
+		}
+
+		.container {
+			.title {
+				color: var(--foreground-primary);
+			}
+
+			.subtitle {
+				color: var(--foreground-secondary);
+			}
+		}
+	}
+	#about {
+		.title {
+			color: var(--foreground-primary);
+		}
+	}
+}
