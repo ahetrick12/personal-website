@@ -2,7 +2,7 @@
 
 .app {
 	background-color: var(--background-primary) !important;
-	color: red !important;
+	color: var(--foreground-primary) !important;
 }
 
 // HTML overrides
@@ -16,7 +16,26 @@ a {
 	}
 }
 
+footer {
+	background-color: var(--background-primary);
+	padding: 2rem !important;
+
+	p {
+		font-size: 16px;
+	}
+}
+
 // Bulma overrides
+.title {
+	color: var(--foreground-primary);
+	text-align: center;
+}
+
+.subtitle {
+	color: var(--foreground-secondary);
+	text-align: center;
+}
+
 .navbar {
 	background-color: var(--background-primary);
 
@@ -25,6 +44,7 @@ a {
 	.navbar-item {
 		margin: 12px 8px;
 		color: var(--foreground-primary);
+		background-color: var(--background-primary);
 	}
 
 	.navbar-start,
@@ -51,5 +71,9 @@ a {
 				margin: 0px 8px !important;
 			}
 		}
+	}
+
+	.navbar-burger {
+		color: var(--foreground-primary);
 	}
 }

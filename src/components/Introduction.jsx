@@ -5,7 +5,8 @@ const Introduction = () => {
 				<div class="container">
 					<p className="title is-1 is-spaced">Hi, I'm Alex.</p>
 					<p className="subtitle is-3">
-						Software Engineer, Game Developer, and 3D Artist{" "}
+						Software Engineer, Game Developer, and 3D Artist
+						studying at Rochester Institute of Technology.
 					</p>
 				</div>
 			</div>
