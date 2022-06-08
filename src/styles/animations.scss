@@ -1,0 +1,42 @@
+@keyframes banner1-slide {
+	0% {
+		padding: 0;
+		transform: skewY(0);
+	}
+	100% {
+		padding: 10rem 0 0 0;
+		transform: skewY(-10deg);
+	}
+}
+
+@keyframes banner2-slide {
+	0% {
+		padding: 0;
+		transform: skewY(0);
+	}
+	100% {
+		padding: 12rem 0 2rem 0;
+		transform: skewY(-5deg);
+	}
+}
+
+/* The typing effect */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: orange;
+	}
+}

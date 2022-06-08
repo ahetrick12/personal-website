@@ -6,7 +6,12 @@ import Projects from "./components/Projects";
 import Artwork from "./components/Artwork";
 import Footer from "./components/Footer";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function App() {
+	AOS.init();
+
 	return (
 		<div className="app">
 			<Navbar />
