@@ -4,7 +4,7 @@ const Introduction = () => {
 			<div className="hero-body has-text-centered">
 				<div className="container">
 					<p
-						className="title is-1 is-spaced"
+						className="title is-1"
 						data-aos="fade-up"
 						data-aos-once="true"
 						data-aos-duration="1500"
@@ -17,6 +17,16 @@ const Introduction = () => {
 							Software Engineer, Game Developer, and 3D Artist
 							studying at RIT
 						</p>
+					</div>
+					<div
+						className="button floating"
+						data-aos="fade-down"
+						data-aos-once="true"
+						data-aos-duration="1250"
+						data-aos-delay="3000"
+						data-aos-easing="ease-out"
+					>
+						View More<span>→</span>
 					</div>
 				</div>
 			</div>
