@@ -5,23 +5,19 @@ const Introduction = () => {
 				<div className="container">
 					<p
 						className="title is-1 is-spaced"
-						data-aos="fade-right"
+						data-aos="fade-up"
 						data-aos-once="true"
 						data-aos-duration="1500"
 						data-aos-easing="ease-in-out"
 					>
 						Hi, I'm Alex.
 					</p>
-					<p
-						className="subtitle is-3"
-						data-aos="fade-up"
-						data-aos-once="true"
-						data-aos-duration="2000"
-						data-aos-delay="1000"
-					>
-						Software Engineer, Game Developer, and 3D Artist
-						studying at Rochester Institute of Technology.
-					</p>
+					<div className="typewriter">
+						<p className="subtitle is-3">
+							Software Engineer, Game Developer, and 3D Artist
+							studying at RIT
+						</p>
+					</div>
 				</div>
 			</div>
 			<div className="banner1"></div>

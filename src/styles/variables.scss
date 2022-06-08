@@ -1,7 +1,25 @@
+@import "./animations";
+
 :root {
 	--accent: #5889ca;
 	--background-primary: #16252f;
 	--background-secondary: #2c3a49;
 	--foreground-primary: #ececec;
 	--foreground-secondary: #dddddd;
+}
+
+.typewriter {
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	border-right: 0.2em solid var(--accent); /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+
+	animation: typing 3.2s steps(40, end), blink-caret 0.75s step-end infinite;
+	animation-delay: 1.2s;
+	animation-fill-mode: backwards;
+}
+
+.accent {
+	font-weight: bold;
+	color: var(--accent);
 }
