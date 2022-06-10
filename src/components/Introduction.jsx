@@ -18,16 +18,9 @@ const Introduction = () => {
 							studying at RIT
 						</p>
 					</div>
-					<div
-						className="button floating"
-						data-aos="fade-down"
-						data-aos-once="true"
-						data-aos-duration="1250"
-						data-aos-delay="3000"
-						data-aos-easing="ease-out"
-					>
+					<button className="view-more button">
 						View More<span>→</span>
-					</div>
+					</button>
 				</div>
 			</div>
 			<div className="banner1"></div>

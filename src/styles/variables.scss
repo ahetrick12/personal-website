@@ -7,6 +7,8 @@
 	--background-secondary-alt: #7b8794;
 	--foreground-primary: #ececec;
 	--foreground-secondary: #d1d1d1;
+
+	--intro-slide-anim-dur: 2s;
 }
 
 .typewriter {
@@ -15,7 +17,7 @@
 	white-space: nowrap; /* Keeps the content on a single line */
 	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 
-	animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+	animation: typing 2.4s steps(40, end), blink-caret 0.75s step-end infinite;
 	animation-delay: 0.8s;
 	animation-fill-mode: backwards;
 }
