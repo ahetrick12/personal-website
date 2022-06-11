@@ -16,25 +16,6 @@ a {
 	}
 }
 
-button {
-	color: var(--foreground-primary) !important;
-	background-color: transparent !important;
-	border: 2px solid var(--background-secondary-alt) !important;
-
-	margin: 3rem 0 0 0 !important;
-	transition: all 0.3s ease-out;
-
-	span {
-		padding-left: 0.5rem;
-	}
-
-	&:hover {
-		border-color: var(--accent) !important;
-		color: var(--accent) !important;
-		transform: scale(1.1);
-	}
-}
-
 footer {
 	background-color: var(--background-primary);
 	padding: 2rem !important;
@@ -56,6 +37,25 @@ footer {
 	text-align: center;
 }
 
+.button {
+	color: var(--foreground-primary) !important;
+	background-color: transparent !important;
+	border: 2px solid var(--background-secondary-alt) !important;
+
+	margin: 3rem 0 0 0 !important;
+	transition: all 0.3s ease-out;
+
+	span {
+		padding-left: 0.5rem;
+	}
+
+	&:hover {
+		border-color: var(--accent) !important;
+		color: var(--accent) !important;
+		transform: scale(1.1);
+	}
+}
+
 .navbar {
 	background-color: var(--background-primary);
 
@@ -75,12 +75,29 @@ footer {
 			margin: 0px 12px;
 			border-bottom: 3px solid transparent;
 
-			transition: 0.3s ease-in-out;
+			transition: ease-in-out 0.3s;
 
 			&:hover,
 			&:focus {
 				color: var(--foreground-primary);
-				border-color: var(--accent);
+				//border-color: var(--accent);
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 0%;
+				height: 3px;
+				left: 50%;
+				bottom: 0%;
+
+				background-color: var(--accent);
+				transition: ease-out 0.3s;
+			}
+
+			&:hover::after {
+				width: 100%;
+				left: 0;
 			}
 		}
 
