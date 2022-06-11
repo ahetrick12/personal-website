@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-scroll";
 import Logo from "../images/logo.png";
 
 const Navbar = () => {
@@ -12,7 +13,13 @@ const Navbar = () => {
 				aria-label="main navigation"
 			>
 				<div className="navbar-brand">
-					<img src={Logo} alt="logo" className="image is-64x64 m-2" />
+					<Link to="introduction" smooth={true}>
+						<img
+							src={Logo}
+							alt="logo"
+							className="image is-64x64 m-2"
+						/>
+					</Link>
 					<button
 						onClick={() => {
 							setIsActive(!isActive);
@@ -31,9 +38,41 @@ const Navbar = () => {
 						className="navbar-end"
 						style={{ "flex-grow": 1, "justify-content": "center" }}
 					>
-						<p className="navbar-item">Home</p>
-						<p className="navbar-item">About</p>
-						<p className="navbar-item">Projects</p>
+						<Link
+							to="introduction"
+							smooth={true}
+							className="navbar-item"
+						>
+							Home
+						</Link>
+						<Link
+							to="about-navtarget"
+							smooth={true}
+							className="navbar-item"
+						>
+							About
+						</Link>
+						<Link
+							to="skillsinterests"
+							smooth={true}
+							className="navbar-item"
+						>
+							Skills/Interests
+						</Link>
+						<Link
+							to="projects"
+							smooth={true}
+							className="navbar-item"
+						>
+							Projects
+						</Link>
+						<Link
+							to="artwork"
+							smooth={true}
+							className="navbar-item"
+						>
+							Artwork
+						</Link>
 					</div>
 				</div>
 			</nav>
