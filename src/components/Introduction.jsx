@@ -1,3 +1,5 @@
+import { Link } from "react-scroll";
+
 const Introduction = () => {
 	return (
 		<div id="introduction" className="hero is-fullheight-with-navbar">
@@ -18,13 +20,17 @@ const Introduction = () => {
 							studying at RIT
 						</p>
 					</div>
-					<button className="view-more button">
+					<Link
+						to="about-navtarget"
+						smooth={true}
+						className="view-more button"
+					>
 						View More<span>→</span>
-					</button>
+					</Link>
 				</div>
 			</div>
 			<div className="banner1"></div>
-			<div className="banner2"></div>
+			<div id="about-navtarget" className="banner2"></div>
 		</div>
 	);
 };
