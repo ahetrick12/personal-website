@@ -100,13 +100,12 @@ footer {
 				left: 0;
 			}
 		}
+	}
 
+	.navbar-brand {
 		.is-icon {
-			margin: 0px 4px !important;
-
-			.is-hidden-desktop {
-				margin: 0px 8px !important;
-			}
+			transition: 0.3s ease-out;
+			border-radius: 50%;
 		}
 	}
 

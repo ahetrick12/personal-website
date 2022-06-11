@@ -17,7 +17,7 @@ const Navbar = () => {
 						<img
 							src={Logo}
 							alt="logo"
-							className="image is-64x64 m-2"
+							className="image is-64x64 m-2 is-icon"
 						/>
 					</Link>
 					<button
