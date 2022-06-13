@@ -15,7 +15,12 @@ const Introduction = () => {
 			}
 		};
 		window.addEventListener("scroll", onScroll);
-		return () => window.removeEventListener("scroll", onScroll);
+		window.addEventListener("DOMContentLoaded", onScroll);
+
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("DOMContentLoaded", onScroll);
+		};
 	}, []);
 
 	return (
