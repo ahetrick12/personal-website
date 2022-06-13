@@ -1,6 +1,23 @@
+import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-scroll";
 
 const Introduction = () => {
+	const scrollRef = useRef(null);
+
+	useLayoutEffect(() => {
+		const onScroll = () => {
+			const scrollPos = window.scrollY + window.innerHeight;
+			console.log(scrollPos, window.innerHeight);
+			if (scrollPos <= window.innerHeight) {
+				scrollRef.current.classList.add("active");
+			} else {
+				scrollRef.current.classList.remove("active");
+			}
+		};
+		window.addEventListener("scroll", onScroll);
+		return () => window.removeEventListener("scroll", onScroll);
+	}, []);
+
 	return (
 		<div id="introduction" className="hero is-fullheight-with-navbar">
 			<div className="hero-body has-text-centered">
@@ -31,6 +48,12 @@ const Introduction = () => {
 			</div>
 			<div className="banner1"></div>
 			<div id="about-navtarget" className="banner2"></div>
+			<div className="scroll" ref={scrollRef}>
+				<img
+					src="https://mindyourmanor.ca/wp-content/themes/manor12/assets/imgs/mouse-scroller.svg"
+					alt="scroll"
+				></img>
+			</div>
 		</div>
 	);
 };

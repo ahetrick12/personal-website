@@ -46,6 +46,25 @@
 			animation-name: banner2-slide;
 			animation-duration: var(--intro-slide-anim-dur);
 		}
+
+		.scroll {
+			position: fixed;
+			z-index: 10;
+			bottom: 1rem;
+			left: 50%;
+			opacity: 0%;
+			transition: 0.4s ease-in-out;
+
+			img {
+				height: 3.5rem;
+				width: auto;
+				margin-left: -50%;
+			}
+		}
+
+		.active {
+			opacity: 100% !important;
+		}
 	}
 
 	#about {
@@ -54,16 +73,22 @@
 		box-shadow: 0rem 0.5rem 1rem rgb(0, 0, 0, 0.25);
 		clip-path: inset(0 0 -1rem 0);
 
-		transform: skewY(-5deg);
+		//transform: skewY(-5deg);
 
-		animation-name: about-slide;
-		animation-duration: var(--intro-slide-anim-dur);
+		//animation-name: about-slide;
+		//animation-duration: var(--intro-slide-anim-dur);
 
 		.about-container {
-			transform: skewY(5deg);
+			//transform: skewY(5deg);
 
-			animation-name: about-container-slide;
-			animation-duration: var(--intro-slide-anim-dur);
+			// animation-name: view-more;
+			// animation-duration: 1s;
+			// animation-fill-mode: backwards;
+			// animation-delay: 4s;
+			// animation-timing-function: ease-out;
+
+			//animation-name: about-container-slide;
+			//animation-duration: var(--intro-slide-anim-dur);
 		}
 
 		.description {
