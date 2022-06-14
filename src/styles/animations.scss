@@ -1,24 +1,23 @@
 /* Intro banner slide effects */
 @keyframes banner1-slide {
 	0% {
-		padding: 0;
-		transform: skewY(0);
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 	}
 	100% {
-		padding: 10rem 0 0 0;
-		transform: skewY(-10deg);
+		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 21.5rem);
 	}
 }
 
 @keyframes banner2-slide {
 	0% {
-		padding: 0;
-		transform: skewY(0);
+		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 	}
 	100% {
-		padding: 12rem 0 2rem 0;
-		transform: skewY(-5deg);
+		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 10rem);
 	}
+}
+
+@keyframes banner3-slide {
 }
 
 @keyframes about-slide {
