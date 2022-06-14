@@ -7,7 +7,7 @@ const Introduction = () => {
 	useLayoutEffect(() => {
 		const onScroll = () => {
 			const scrollPos = window.scrollY + window.innerHeight;
-			console.log(scrollPos, window.innerHeight);
+
 			if (scrollPos <= window.innerHeight) {
 				scrollRef.current.classList.add("active");
 			} else {
@@ -27,7 +27,13 @@ const Introduction = () => {
 		<div id="introduction" className="hero is-fullheight-with-navbar">
 			<div className="hero-body has-text-centered">
 				<div className="container">
-					<p className="title is-1">Hi, I'm Alex.</p>
+					<p
+						className="title is-1"
+						data-aos="fade-up"
+						data-aos-duration="2000"
+					>
+						Hi, I'm Alex.
+					</p>
 					<div className="typewriter">
 						<p className="subtitle is-3">
 							Software Engineer, Game Developer, and 3D Artist
@@ -44,7 +50,9 @@ const Introduction = () => {
 				</div>
 			</div>
 			<div className="banner1"></div>
-			<div id="about-navtarget" className="banner2"></div>
+			<div className="shadow-wrapper">
+				<div id="about-navtarget" className="banner2"></div>
+			</div>
 			<div className="scroll" ref={scrollRef}>
 				<img
 					src="https://mindyourmanor.ca/wp-content/themes/manor12/assets/imgs/mouse-scroller.svg"
