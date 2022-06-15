@@ -31,6 +31,9 @@ const About = () => {
 					</figure>
 				</div>
 			</div>
+			<div className="shadow-wrapper">
+				<div className="banner3"></div>
+			</div>
 		</section>
 	);
 };

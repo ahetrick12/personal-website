@@ -18,23 +18,11 @@
 }
 
 @keyframes banner3-slide {
-}
-
-@keyframes about-slide {
 	0% {
-		transform: skewY(0);
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 	}
 	100% {
-		transform: skewY(-5deg);
-	}
-}
-
-@keyframes about-container-slide {
-	0% {
-		transform: skewY(0);
-	}
-	100% {
-		transform: skewY(5deg);
+		clip-path: polygon(0 100%, 100% 1rem, 100% 0, 0 0);
 	}
 }
 
