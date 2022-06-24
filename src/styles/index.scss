@@ -1,6 +1,10 @@
+@import "bulma";
+
 @import "./animations";
 @import "./overrides";
 @import "./variables";
+
+@import "~bulma-switch";
 
 #root {
 	#introduction {

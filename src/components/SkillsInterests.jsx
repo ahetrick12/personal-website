@@ -1,7 +1,18 @@
 const SkillsInterests = () => {
 	return (
 		<section id="skillsinterests" className="section is-medium">
-			<h1 className="title">Skills / Interests</h1>
+			<div className="is-centered">
+				<h1 className="title">Skills / Interests</h1>
+				<div class="field">
+					<input
+						id="switchRoundedDefault"
+						type="checkbox"
+						name="switchRoundedDefault"
+						class="switch is-rounded"
+						checked="checked"
+					></input>
+				</div>
+			</div>
 			<div className="columns">
 				<div className="column is-half">
 					<p className="subtitle">Skills</p>
