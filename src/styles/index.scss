@@ -101,6 +101,15 @@
 		}
 	}
 
+	#projects {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+
+		.not-fading {
+			transition: 0.3s ease-out !important;
+		}
+	}
+
 	#artwork {
 		background-color: var(--background-secondary);
 		box-shadow: 0rem 0rem 1rem rgb(0, 0, 0, 0.25);
