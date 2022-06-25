@@ -37,6 +37,46 @@ footer {
 	text-align: center;
 }
 
+.card {
+	color: var(--foreground-primary);
+	background-color: var(--background-secondary);
+	border-radius: 10px;
+	margin: 2rem 0.4rem;
+
+	@include breakpoint(extra_small_devices) {
+		width: 340px !important;
+	}
+
+	&:hover,
+	&:focus {
+		transition: 0.3s ease-out !important;
+		box-shadow: 0rem 0.5rem 1rem rgb(0, 0, 0, 0.35) !important;
+		transform: scale(1.075) !important;
+		z-index: 1;
+	}
+
+	.card-content {
+		.image {
+			margin-bottom: 0.5rem !important;
+			color: var(--foreground-secondary) !important;
+		}
+
+		.repo-title {
+			color: var(--foreground-primary);
+			text-decoration-color: var(--accent) !important;
+
+			font-weight: bold;
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.repo-description {
+			color: var(--foreground-secondary);
+			font-size: 1rem;
+		}
+	}
+}
+
 .button {
 	color: var(--foreground-primary) !important;
 	background-color: transparent !important;
