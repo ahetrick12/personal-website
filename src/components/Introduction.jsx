@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-scroll";
+import MouseScroller from "../images/mouse-scroller.svg";
 
 const Introduction = () => {
 	const scrollRef = useRef(null);
@@ -54,10 +55,7 @@ const Introduction = () => {
 				<div id="about-navtarget" className="banner2"></div>
 			</div>
 			<div className="scroll" ref={scrollRef}>
-				<img
-					src="https://mindyourmanor.ca/wp-content/themes/manor12/assets/imgs/mouse-scroller.svg"
-					alt="scroll"
-				></img>
+				<img src={MouseScroller} alt="scroll"></img>
 			</div>
 		</div>
 	);
