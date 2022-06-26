@@ -1,3 +1,20 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+
+const SkillInterestTile = ({ name, icon }) => {
+	return (
+		<li className="column is-one-third">
+			<div className="box">
+				<FontAwesomeIcon
+					className="image is-32x32"
+					icon={icon}
+				></FontAwesomeIcon>
+				<span>{name}</span>
+			</div>
+		</li>
+	);
+};
+
 const SkillsInterests = () => {
 	return (
 		<section id="skillsinterests" className="section is-medium">
@@ -17,43 +34,62 @@ const SkillsInterests = () => {
 				<div className="column is-half">
 					<p className="subtitle">Skills</p>
 					<ul className="columns is-multiline mx-0 is-centered is-mobile">
-						<li className="column is-one-third">Java</li>
-						<li className="column is-one-third">Python</li>
-						<li className="column is-one-third">Git</li>
-						<li className="column is-one-third">C#</li>
-						<li className="column is-one-third">C</li>
-						<li className="column is-one-third">C++</li>
-						<li className="column is-one-third">HTML/CSS/JS</li>
-						<li className="column is-one-third">TypeScript</li>
-						<li className="column is-one-third">React</li>
-						<li className="column is-one-third">Angular</li>
-						<li className="column is-one-third">Bulma</li>
-						<li className="column is-one-third">Node</li>
-						<li className="column is-one-third">HLSL</li>
-						<li className="column is-one-third">Unity3D</li>
-						<li className="column is-one-third">Blender</li>
-						<li className="column is-one-third">Inkscape</li>
+						<SkillInterestTile name="Java" icon={faLaptopCode} />
+						<SkillInterestTile name="Python" icon={faLaptopCode} />
+						<SkillInterestTile name="Git" icon={faLaptopCode} />
+						<SkillInterestTile name="C#" icon={faLaptopCode} />
+						<SkillInterestTile name="C" icon={faLaptopCode} />
+						<SkillInterestTile name="C++" icon={faLaptopCode} />
+						<SkillInterestTile
+							name="HTML/CSS/JS"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile
+							name="TypeScript"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile name="React" icon={faLaptopCode} />
+						<SkillInterestTile name="Angular" icon={faLaptopCode} />
+						<SkillInterestTile name="Bulma" icon={faLaptopCode} />
+						<SkillInterestTile name="Sass" icon={faLaptopCode} />
+						<SkillInterestTile name="Node" icon={faLaptopCode} />
+						<SkillInterestTile name="HLSL" icon={faLaptopCode} />
+						<SkillInterestTile name="Unity3D" icon={faLaptopCode} />
+						<SkillInterestTile name="Blender" icon={faLaptopCode} />
+						<SkillInterestTile
+							name="Inkscape"
+							icon={faLaptopCode}
+						/>
 					</ul>
 				</div>
 				<div className="column is-half">
 					<p className="subtitle">Interests</p>
 					<ul className="columns is-multiline mx-0 is-centered is-mobile">
-						<li className="column is-one-third">Web Development</li>
-						<li className="column is-one-third">
-							Game Development
-						</li>
-						<li className="column is-one-third">3D Art</li>
-						<li className="column is-one-third">Design</li>
-						<li className="column is-one-third">Philosophy</li>
-						<li className="column is-one-third">
-							Entrepreneurship
-						</li>
-						<li className="column is-one-third">
-							Music Composition/Production
-						</li>
-						<li className="column is-one-third">Oboe</li>
-						<li className="column is-one-third">Saxophone</li>
-						<li className="column is-one-third">Piano</li>
+						<SkillInterestTile
+							name="Web Development"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile
+							name="Game Development"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile name="3D Art" icon={faLaptopCode} />
+						<SkillInterestTile name="Design" icon={faLaptopCode} />
+						<SkillInterestTile
+							name="Philosophy"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile
+							name="Entrepreneurship"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile name="Music" icon={faLaptopCode} />
+						<SkillInterestTile name="Oboe" icon={faLaptopCode} />
+						<SkillInterestTile
+							name="Saxophone"
+							icon={faLaptopCode}
+						/>
+						<SkillInterestTile name="Piano" icon={faLaptopCode} />
 					</ul>
 				</div>
 			</div>
