@@ -13,6 +13,8 @@ const ProjectTile = ({ icon, href, title, description, index }) => {
 	return (
 		<a
 			href={href}
+			target="_blank"
+			rel="noreferrer"
 			className="card column is-one-quarter"
 			data-aos="fade-up"
 			data-aos-duration="500"
