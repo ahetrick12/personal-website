@@ -16,6 +16,19 @@ a {
 	}
 }
 
+hr {
+	margin-top: 10rem;
+	height: 2px;
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		100% 0,
+		from(var(--background-primary)),
+		to(var(--background-primary)),
+		color-stop(50%, var(--background-secondary-alt))
+	);
+}
+
 footer {
 	background-color: var(--background-primary);
 	padding: 2rem !important;
@@ -37,6 +50,25 @@ footer {
 	text-align: center;
 }
 
+.button {
+	color: var(--foreground-primary) !important;
+	background-color: transparent !important;
+	border: 2px solid var(--background-secondary-alt) !important;
+
+	margin: 3rem 0 0 0 !important;
+	transition: all 0.3s ease-out;
+
+	span {
+		padding-left: 0.5rem;
+	}
+
+	&:hover {
+		border-color: var(--accent) !important;
+		color: var(--accent) !important;
+		transform: scale(1.1);
+	}
+}
+
 .card {
 	color: var(--foreground-primary);
 	background-color: var(--background-secondary);
@@ -47,8 +79,7 @@ footer {
 		width: 340px !important;
 	}
 
-	&:hover,
-	&:focus {
+	&:hover {
 		box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
 		transform: scale(1.075) !important;
 		z-index: 1;
@@ -73,25 +104,6 @@ footer {
 			color: var(--foreground-secondary);
 			font-size: 1rem;
 		}
-	}
-}
-
-.button {
-	color: var(--foreground-primary) !important;
-	background-color: transparent !important;
-	border: 2px solid var(--background-secondary-alt) !important;
-
-	margin: 3rem 0 0 0 !important;
-	transition: all 0.3s ease-out;
-
-	span {
-		padding-left: 0.5rem;
-	}
-
-	&:hover {
-		border-color: var(--accent) !important;
-		color: var(--accent) !important;
-		transform: scale(1.1);
 	}
 }
 

@@ -93,6 +93,7 @@ const SkillsInterests = () => {
 					</ul>
 				</div>
 			</div>
+			<hr />
 		</section>
 	);
 };
