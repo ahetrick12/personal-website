@@ -8,7 +8,6 @@ const SkillInterestTile = ({ name, icon, aosType, index }) => {
 			data-aos={aosType}
 			data-aos-duration="500"
 			data-aos-delay={index * 100}
-			data-aos-once={true}
 			data-aos-anchor="#skillsinterests"
 			data-aos-anchor-placement="top-center"
 		>

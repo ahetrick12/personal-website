@@ -19,7 +19,6 @@ const ProjectTile = ({ icon, href, title, description, index }) => {
 			data-aos="fade-up"
 			data-aos-duration="500"
 			data-aos-delay={index * 150}
-			data-aos-once={true}
 			data-aos-anchor="#projects-trigger"
 			data-aos-anchor-placement="top-center"
 			onMouseOver={onHover}
