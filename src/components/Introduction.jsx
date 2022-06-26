@@ -15,6 +15,7 @@ const Introduction = () => {
 				scrollRef.current.classList.remove("active");
 			}
 		};
+
 		window.addEventListener("scroll", onScroll);
 		window.addEventListener("DOMContentLoaded", onScroll);
 
