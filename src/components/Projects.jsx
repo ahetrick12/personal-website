@@ -18,6 +18,8 @@ const ProjectTile = ({ icon, href, title, description, index }) => {
 			data-aos-duration="500"
 			data-aos-delay={index * 150}
 			data-aos-once={true}
+			data-aos-anchor="#projects-trigger"
+			data-aos-anchor-placement="top-center"
 			onMouseOver={onHover}
 			ref={tileRef}
 		>
@@ -37,7 +39,10 @@ const Projects = () => {
 	return (
 		<section id="projects" className="section is-medium">
 			<h1 className="title">Projects</h1>
-			<div className="columns is-multiline is-centered is-mobile">
+			<div
+				id="projects-trigger"
+				className="columns is-multiline is-centered is-mobile"
+			>
 				<ProjectTile
 					icon={faLaptopCode}
 					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
