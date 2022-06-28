@@ -211,7 +211,11 @@ const SkillsInterests = () => {
 					</ul>
 				</div>
 			</div>
-			<hr data-aos="lengthen" data-aos-duration="1300" />
+			<hr
+				className="primary"
+				data-aos="lengthen"
+				data-aos-duration="1300"
+			/>
 		</section>
 	);
 };
