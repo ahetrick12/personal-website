@@ -37,6 +37,9 @@ const ProjectTile = ({ icon, href, title, description, index }) => {
 };
 
 const Projects = () => {
+	//TODO: Use example from here:
+	//https://stackoverflow.com/questions/57860661/react-bulma-how-can-i-get-gap-between-my-columns-and-how-to-center-my-button-in
+
 	return (
 		<section id="projects" className="section is-medium">
 			<h1 className="title">Projects</h1>
