@@ -30,3 +30,8 @@
 .shadow-wrapper {
 	filter: drop-shadow(0rem 0 1rem rgba(0, 0, 0, 0.5));
 }
+
+.not-fading-button {
+	transition: 0.25s ease-out !important;
+	transition-delay: 0 !important;
+}

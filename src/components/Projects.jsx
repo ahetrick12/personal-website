@@ -7,7 +7,7 @@ const ProjectTile = ({ icon, href, title, description, index }) => {
 	const tileRef = useRef(null);
 
 	const onHover = () => {
-		tileRef.current.classList.add("not-fading");
+		tileRef.current.classList.add("not-fading-button");
 	};
 
 	return (
