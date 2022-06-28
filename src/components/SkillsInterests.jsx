@@ -31,7 +31,7 @@ const SkillsInterests = () => {
 					data-aos="title-appear"
 					data-aos-duration="1500"
 					data-aos-anchor="#skillsinterests"
-					data-aos-anchor-placement="top-bottom"
+					data-aos-anchor-placement="top-center"
 				>
 					Skills / Interests
 				</h1>
@@ -47,7 +47,15 @@ const SkillsInterests = () => {
 			</div>
 			<div className="columns">
 				<div className="column is-half">
-					<p className="subtitle">Skills</p>
+					<p
+						className="subtitle"
+						data-aos="fade-right"
+						data-aos-duration="1800"
+						data-aos-anchor="#skillsinterests"
+						data-aos-anchor-placement="top-center"
+					>
+						Skills
+					</p>
 					<ul className="columns is-multiline mx-0 is-centered is-mobile">
 						<SkillInterestTile
 							name="Java"
@@ -154,7 +162,15 @@ const SkillsInterests = () => {
 					</ul>
 				</div>
 				<div className="column is-half">
-					<p className="subtitle">Interests</p>
+					<p
+						className="subtitle"
+						data-aos="fade-left"
+						data-aos-duration="1800"
+						data-aos-anchor="#skillsinterests"
+						data-aos-anchor-placement="top-center"
+					>
+						Interests
+					</p>
 					<ul className="columns is-multiline mx-0 is-centered is-mobile">
 						<SkillInterestTile
 							name="Web Development"
