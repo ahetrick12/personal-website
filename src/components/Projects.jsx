@@ -42,7 +42,15 @@ const Projects = () => {
 
 	return (
 		<section id="projects" className="section is-medium">
-			<h1 className="title">Projects</h1>
+			<h1
+				className="title underline"
+				data-aos="title-appear"
+				data-aos-duration="1500"
+				data-aos-anchor="#projects"
+				data-aos-anchor-placement="top-bottom"
+			>
+				Projects
+			</h1>
 			<div
 				id="projects-trigger"
 				className="columns is-multiline is-centered is-mobile"

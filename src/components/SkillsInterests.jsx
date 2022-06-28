@@ -26,7 +26,15 @@ const SkillsInterests = () => {
 	return (
 		<section id="skillsinterests" className="section is-medium">
 			<div className="is-centered">
-				<h1 className="title">Skills / Interests</h1>
+				<h1
+					className="title underline"
+					data-aos="title-appear"
+					data-aos-duration="1500"
+					data-aos-anchor="#skillsinterests"
+					data-aos-anchor-placement="top-bottom"
+				>
+					Skills / Interests
+				</h1>
 				<div class="field">
 					<input
 						id="switchRoundedDefault"

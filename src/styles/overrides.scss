@@ -50,9 +50,10 @@ footer {
 // Bulma overrides
 .title {
 	color: var(--foreground-primary);
-	text-align: center;
 	font-size: 36px;
 	padding-bottom: 1rem;
+	width: fit-content;
+	margin: auto;
 }
 
 .subtitle {
@@ -143,7 +144,6 @@ footer {
 			&:hover,
 			&:focus {
 				color: var(--foreground-primary);
-				//border-color: var(--accent);
 			}
 
 			&::after {

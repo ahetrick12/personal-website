@@ -81,3 +81,31 @@
 		box-shadow: -2rem 1rem 0rem var(--background-primary);
 	}
 }
+
+[data-aos="title-appear"] {
+	transform: translate3d(0rem, -10rem, 0);
+	opacity: 0;
+
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 0%;
+		height: 0.3rem;
+		left: 50%;
+		bottom: 0%;
+
+		background-color: var(--accent);
+		transition: ease-out 1.5s;
+	}
+
+	&.aos-animate {
+		transform: translate3d(0rem, 0rem, 0);
+		opacity: 1;
+
+		&::after {
+			width: 110%;
+			left: -5%;
+		}
+	}
+}
