@@ -31,7 +31,7 @@ const About = () => {
 	return (
 		<section id="about">
 			<div className="about-container">
-				<div className="columns px-6 py-3">
+				<div className="columns px-6">
 					<div className="description column is-two-thirds">
 						<h2
 							className="title"
@@ -115,7 +115,7 @@ const About = () => {
 								className="is-rounded"
 								src={Alex}
 								alt="Alex"
-								data-aos="fade-left"
+								data-aos="about-image-slide"
 								data-aos-duration="2000"
 								data-aos-anchor="#about"
 								data-aos-anchor-placement="top-bottom"
