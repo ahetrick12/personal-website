@@ -19,6 +19,7 @@
 
 			.title {
 				font-size: 3.5rem;
+				padding-bottom: 0 !important;
 			}
 
 			.view-more {
@@ -79,12 +80,38 @@
 		.about-container {
 			background-color: var(--background-secondary);
 			position: relative;
-		}
-
-		.description {
 			color: var(--foreground-primary);
-			font-size: 18px;
-			font-weight: normal;
+
+			.description {
+				padding: 0 12rem 0rem 12rem;
+			}
+
+			p {
+				padding-bottom: 1rem;
+				font-size: 1.2rem;
+			}
+
+			hr {
+				margin: 2rem -6rem;
+			}
+
+			a {
+				display: inline-block;
+				padding: 0px 0.4rem;
+				color: var(--foreground-primary);
+
+				.icon {
+					width: 1.8rem;
+					height: auto;
+					transition: 0.15s ease-out;
+
+					&:hover,
+					&:focus {
+						transform: translateY(-0.5rem);
+						color: var(--accent);
+					}
+				}
+			}
 		}
 
 		.shadow-wrapper {
@@ -122,15 +149,15 @@
 				padding: 8px;
 			}
 		}
+
+		.columns {
+			margin-bottom: 5rem;
+		}
 	}
 
 	#projects {
 		padding-right: 0 !important;
 		padding-left: 0 !important;
-
-		.not-fading {
-			transition: 0.25s ease-out !important;
-		}
 	}
 
 	#artwork {
