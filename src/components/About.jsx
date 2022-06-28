@@ -1,4 +1,4 @@
-import Alex from "../images/Alex.jpg";
+import Alex from "../images/Alex4.jpg";
 
 import {
 	faTwitter,
