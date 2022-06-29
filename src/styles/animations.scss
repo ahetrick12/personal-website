@@ -83,7 +83,7 @@
 }
 
 [data-aos="title-appear"] {
-	transform: translate3d(0rem, -10rem, 0);
+	transform: translate3d(0rem, -5rem, 0);
 	opacity: 0;
 
 	&::after {
@@ -96,7 +96,7 @@
 		bottom: 0%;
 
 		background-color: var(--accent);
-		transition: ease-out 1.5s;
+		transition: ease-out 1.75s;
 	}
 
 	&.aos-animate {
