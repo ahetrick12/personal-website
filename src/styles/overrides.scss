@@ -122,21 +122,24 @@ footer {
 
 .navbar {
 	position: fixed;
-	background-color: white; //var(--background-primary);
-	transition: ease-out 0.15s;
+	background-color: transparent;
+
+	transition: ease-out 0.5s;
 
 	&.at-top {
-		padding: 0.9rem 0.5rem;
+		padding: 0.9rem 0.4rem;
 	}
 
 	&.scrolling-up {
-		padding: 0.1rem 0.5rem;
-		//box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.25);
+		padding: 0.2rem 0.5rem;
+		box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(10px);
+		background-color: var(--background-primary);
 	}
 
 	&.scrolling-down {
 		transform: translateY(-100%);
-		padding: 0.1rem 0.5rem;
+		padding: 0.2rem 0.5rem;
 	}
 
 	.navbar-start,

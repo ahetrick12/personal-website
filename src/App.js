@@ -4,6 +4,7 @@ import SkillsInterests from "./components/SkillsInterests";
 import Projects from "./components/Projects";
 import Artwork from "./components/Artwork";
 import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -14,6 +15,7 @@ function App() {
 
 	return (
 		<div className="app">
+			<Navbar />
 			<Introduction />
 			<About />
 			<SkillsInterests />
