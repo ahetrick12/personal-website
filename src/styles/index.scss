@@ -86,6 +86,10 @@
 			position: relative;
 			color: var(--foreground-primary);
 
+			.columns {
+				padding-top: 2rem;
+			}
+
 			.description {
 				padding: 2rem 12rem 0rem 12rem;
 			}
