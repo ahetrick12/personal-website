@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const LinkIcon = ({ index, icon, link }) => {
 	return (
 		<a
+			className="social"
 			href={link}
 			target="_blank"
 			rel="noreferrer"
@@ -51,9 +52,15 @@ const About = () => {
 							>
 								Hi there! I’m Alex Hetrick, a developer and
 								artist from Pittsburgh, Pennsylvania. I’m
-								currently a second-year student at the Rochester
-								Institute of Technology studying software
-								engineering.
+								currently a second-year student at the{" "}
+								<a
+									href="https://www.rit.edu"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Rochester Institute of Technology
+								</a>{" "}
+								studying software engineering.
 							</p>
 							<p
 								data-aos="fade-right"
@@ -63,10 +70,25 @@ const About = () => {
 								data-aos-anchor-placement="top-bottom"
 							>
 								I often go by Ventuar online, and have built a
-								brand around that name as a publisher on the
-								Unity Asset Store and CGTrader, designing and
-								developing tools and 3D art assets for other
-								game developers to use in their projects.
+								brand around that name as a publisher on the{" "}
+								<a
+									href="https://assetstore.unity.com/publishers/36086"
+									target="_blank"
+									rel="noreferrer"
+								>
+									Unity Asset Store
+								</a>{" "}
+								and{" "}
+								<a
+									href="https://www.cgtrader.com/ventuar3d"
+									target="_blank"
+									rel="noreferrer"
+								>
+									CGTrader
+								</a>
+								, designing and developing tools and 3D art
+								assets for other game developers to use in their
+								projects.
 							</p>
 						</div>
 						<hr

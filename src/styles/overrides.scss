@@ -6,13 +6,32 @@
 }
 
 // HTML overrides
-a {
-	color: var(--accent);
-	transition: 0.3s ease-in-out;
+p > a {
+	display: inline-block;
+	position: relative;
+	padding: 0 !important; // Remove the automatically added space before/after anchor tags
+	color: var(--accent) !important;
+	transition: 0.3s ease-out;
 
 	&:hover,
-	&:focus {
-		color: var(--accent) !important;
+	&:focus,
+	&:active {
+		color: var(--accent);
+
+		&:after {
+			width: 100%;
+		}
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 1px;
+		position: relative;
+		bottom: 0.25em;
+		background-color: var(--accent);
+		transition: 0.3s ease-out;
 	}
 }
 
