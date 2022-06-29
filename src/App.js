@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar";
 import Introduction from "./components/Introduction";
 import About from "./components/About";
 import SkillsInterests from "./components/SkillsInterests";
