@@ -1,9 +1,73 @@
-import { useState } from "react";
+import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { Link } from "react-scroll";
 import Logo from "../images/logo.png";
 
 const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);
+	const [lastScrollPos, setLastScrollPos] = useState(
+		window.scrollY + window.innerHeight
+	);
+	const [scrollStatus, setScrollStatus] = useState("top");
+
+	const navbarRef = useRef(null);
+
+	const removeAllClasses = () => {
+		navbarRef.current.classList.remove("at-top");
+		navbarRef.current.classList.remove("scrolling-up");
+		navbarRef.current.classList.remove("scrolling-down");
+	};
+
+	const addClass = (c) => {
+		navbarRef.current.classList.add(c);
+	};
+
+	useLayoutEffect(() => {
+		const onScroll = () => {
+			const scrollPos = window.scrollY + window.innerHeight;
+
+			// Being at top takes priority over scroll directionality
+			if (scrollPos <= window.innerHeight) {
+				// at top
+				setScrollStatus("top");
+			} else if (scrollPos > lastScrollPos) {
+				// scrolling down
+				setScrollStatus("down");
+			} else {
+				// scrolling up
+				setScrollStatus("up");
+			}
+
+			setLastScrollPos(scrollPos);
+		};
+
+		window.addEventListener("scroll", onScroll);
+		window.addEventListener("DOMContentLoaded", onScroll);
+
+		return () => {
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("DOMContentLoaded", onScroll);
+		};
+	}, [lastScrollPos, scrollStatus]);
+
+	// Fired when scroll status is asynchronously updated
+	useEffect(() => {
+		removeAllClasses();
+
+		switch (scrollStatus) {
+			case "top":
+				addClass("at-top");
+				break;
+			case "down":
+				addClass("scrolling-down");
+				break;
+			case "up":
+				addClass("scrolling-up");
+				break;
+			default:
+				addClass("at-top");
+				break;
+		}
+	}, [scrollStatus]);
 
 	return (
 		<section class="section">
@@ -11,6 +75,7 @@ const Navbar = () => {
 				className="navbar is-transparent is-fixed-top "
 				role="navigation"
 				aria-label="main navigation"
+				ref={navbarRef}
 			>
 				<div className="navbar-brand">
 					<Link to="introduction" smooth={true}>

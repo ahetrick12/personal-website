@@ -122,29 +122,33 @@ footer {
 
 .navbar {
 	background-color: var(--background-primary);
+	transition: ease-out 0.15s;
 
-	.navbar-brand,
-	.navbar-menu,
-	.navbar-item {
-		margin: 12px 8px;
-		color: var(--foreground-primary);
-		background-color: var(--background-primary);
+	&.at-top {
+		padding: 0.8rem 0.5rem;
+	}
+
+	&.scrolling-up {
+		padding: 0.1rem 0.5rem;
+		box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.25);
+	}
+
+	&.scrolling-down {
+		transform: translateY(-100%);
+		padding: 0.1rem 0.5rem;
 	}
 
 	.navbar-start,
 	.navbar-center,
 	.navbar-end {
 		.navbar-item {
+			color: var(--foreground-primary);
+
 			background: none;
 			margin: 0px 12px;
 			border-bottom: 3px solid transparent;
 
 			transition: ease-in-out 0.3s;
-
-			&:hover,
-			&:focus {
-				color: var(--foreground-primary);
-			}
 
 			&::after {
 				content: "";
@@ -152,7 +156,7 @@ footer {
 				width: 0%;
 				height: 3px;
 				left: 50%;
-				bottom: 0%;
+				bottom: 5%;
 
 				background-color: var(--accent);
 				transition: ease-out 0.3s;
