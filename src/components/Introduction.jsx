@@ -28,7 +28,6 @@ const Introduction = () => {
 
 	return (
 		<div id="introduction" className="hero is-fullheight">
-			<Navbar />
 			<div className="hero-body has-text-centered">
 				<div className="container">
 					<p
