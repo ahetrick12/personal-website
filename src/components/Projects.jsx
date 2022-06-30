@@ -1,14 +1,32 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLaptopCode } from "@fortawesome/free-solid-svg-icons";
+import {
+	faLaptopCode,
+	faUpRightFromSquare,
+	faLinkSlash,
+} from "@fortawesome/free-solid-svg-icons";
+import { useLayoutEffect } from "react";
 
-const ProjectTile = ({ icon, href, title, description, index }) => {
+const ProjectTile = ({ icon, href, title, description, tech, wip, index }) => {
+	const [isActive, setIsActive] = useState(true);
+
 	const tileRef = useRef(null);
 
 	const onHover = () => {
 		tileRef.current.classList.add("not-fading-button");
 	};
+
+	useLayoutEffect(() => {
+		setIsActive(href === "" ? false : true);
+	}, [href]);
+
+	// When setIsActive is asynchronously complete, add the class to the tileRef
+	useEffect(() => {
+		if (!isActive) {
+			tileRef.current.classList.add("disabled");
+		}
+	}, [isActive]);
 
 	return (
 		<a
@@ -29,12 +47,67 @@ const ProjectTile = ({ icon, href, title, description, index }) => {
 					className="image is-96x96 m-auto"
 					icon={icon}
 				/>
-				<h2 className="repo-title is-underlined">{title}</h2>
-				<p className=" repo-description">{description}</p>
+				<h2 className="proj-title is-underlined">{title}</h2>
+				<p className="proj-description">{description}</p>
+				<div className="proj-tech">
+					{tech.map((tech, i) => (
+						<p>{tech}</p>
+					))}
+				</div>
+				{wip === true && <p className="wip">WIP</p>}
+				<FontAwesomeIcon
+					className={`image go-to is-32x32 ${
+						isActive ? "active" : ""
+					}`}
+					icon={href !== "" ? faUpRightFromSquare : faLinkSlash}
+				/>
 			</div>
 		</a>
 	);
 };
+
+const projects = [
+	{
+		title: "Low Poly Underwater Pack",
+		description:
+			"A vast collection of underwater-themed art, tools, and shaders in a beautiful low-poly art style that allows game developers easily create vast and stunning underwater worlds",
+		technology: ["Unity3D", "C#", "HLSL", "Blender", "Inkscape"],
+		link: "https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-underwater-pack-197874",
+		wip: false,
+	},
+	{
+		title: "Personal Website",
+		description:
+			"My personal website, the one you're on right now, built with React and Bulma.",
+		technology: ["React", "Bulma", "HTML", "SCSS", "JS"],
+		link: "https://github.com/ahetrick12/personal-website",
+		wip: false,
+	},
+	{
+		title: "Notion Notetaker",
+		description:
+			"A chrome extension that allows offers a streamlined approach to taking notes in your notion workspace.",
+		technology: ["HTML", "CSS", "JS"],
+		link: "https://github.com/ahetrick12/Notion-Notetaker",
+		wip: true,
+	},
+	{
+		title: "Artist Corner E-store",
+		description:
+			"An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261",
+		technology: ["Angular", "Java", "Typescript", "HTML", "CSS", "JS"],
+		link: "",
+		wip: false,
+	},
+	{
+		title: "Game Jam Games",
+		description:
+			"A collection of games I've made for game jams throughout my life, all hosted on itch.io",
+		technology: ["Unity3D", "C#", "Blender", "Inkscape"],
+		link: "https://ventuargames.itch.io/",
+		wip: false,
+	},
+];
 
 const Projects = () => {
 	//TODO: Use example from here:
@@ -55,48 +128,17 @@ const Projects = () => {
 				id="projects-trigger"
 				className="columns is-multiline is-centered is-mobile"
 			>
-				<ProjectTile
-					icon={faLaptopCode}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					title="Title"
-					description="Lemme tell you all bout this gurl"
-					index={0}
-				></ProjectTile>
-				<ProjectTile
-					icon={faLaptopCode}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					title="Title"
-					description="Lemme tell you all bout this gurl"
-					index={1}
-				></ProjectTile>
-				<ProjectTile
-					icon={faLaptopCode}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					title="Title"
-					description="Lemme tell you all bout this gurl"
-					index={2}
-				></ProjectTile>
-				<ProjectTile
-					icon={faLaptopCode}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					title="Title"
-					description="Lemme tell you all bout this gurl"
-					index={3}
-				></ProjectTile>
-				<ProjectTile
-					icon={faLaptopCode}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					title="Title"
-					description="Lemme tell you all bout this gurl"
-					index={4}
-				></ProjectTile>
-				<ProjectTile
-					icon={faLaptopCode}
-					href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-					title="Title"
-					description="Lemme tell you all bout this gurl"
-					index={5}
-				></ProjectTile>
+				{projects.map((project, i) => (
+					<ProjectTile
+						icon={faLaptopCode}
+						href={project.link}
+						title={project.title}
+						description={project.description}
+						tech={project.technology}
+						wip={project.wip}
+						index={i}
+					/>
+				))}
 			</div>
 		</section>
 	);

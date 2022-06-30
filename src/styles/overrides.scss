@@ -111,19 +111,59 @@ footer {
 		width: 340px !important;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus {
 		box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
 		transform: scale(1.075) !important;
 		z-index: 1;
 	}
 
-	.card-content {
-		.image {
-			margin-bottom: 0.5rem !important;
-			color: var(--foreground-secondary) !important;
+	&.disabled {
+		cursor: default;
+
+		&:active {
+			pointer-events: none;
 		}
 
-		.repo-title {
+		&:focus {
+			.go-to {
+				animation-name: broken-link;
+				animation-duration: 0.9s;
+				animation-timing-function: ease-in-out;
+			}
+		}
+	}
+
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.image {
+			margin-bottom: 0.5rem !important;
+			color: var(--foreground-secondary);
+
+			&.go-to {
+				position: absolute;
+				top: 1.5rem;
+				right: 1.5rem;
+
+				color: grey;
+
+				transition: ease-out 0.2s;
+
+				&.active {
+					color: var(--foreground-secondary) !important;
+
+					&:hover,
+					&:focus {
+						color: var(--accent) !important;
+					}
+				}
+			}
+		}
+
+		.proj-title {
 			color: var(--foreground-primary);
 			text-decoration-color: var(--accent) !important;
 
@@ -132,9 +172,45 @@ footer {
 			margin-bottom: 1rem;
 		}
 
-		.repo-description {
+		.proj-description {
 			color: var(--foreground-secondary);
 			font-size: 1rem;
+		}
+
+		.proj-tech {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+
+			margin-top: 1.5rem;
+
+			p {
+				align-self: flex-end;
+
+				color: var(--foreground-secondary);
+				background-color: var(--background-secondary-alt);
+
+				font-size: 0.75rem;
+				width: fit-content;
+				border-radius: 5px;
+				margin-right: 0.3rem;
+				padding: 0.4rem;
+			}
+		}
+
+		.wip {
+			position: absolute;
+			color: var(--foreground-primary);
+			background-color: orange;
+			font-weight: bold;
+			padding: 0.5rem;
+			font-size: 0.8rem;
+			border-radius: 12px;
+			top: 1rem;
+			left: 1rem;
+		}
+
+		.go-to {
 		}
 	}
 }

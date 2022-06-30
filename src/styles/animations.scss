@@ -58,6 +58,34 @@
 	}
 }
 
+/* Animation for project with no link */
+@keyframes broken-link {
+	0% {
+		transform: translateY(0rem);
+	}
+	20% {
+		transform: translateY(-0.5rem) scale(1.05);
+	}
+	30% {
+		transform: rotate(0.1turn) translateY(-0.5rem) scale(1.05);
+	}
+	40% {
+		transform: rotate(-0.1turn) translateY(-0.5rem) scale(1.05);
+	}
+	50% {
+		transform: rotate(0.1turn) translateY(-0.5rem) scale(1.05);
+	}
+	60% {
+		transform: rotate(-0.1turn) translateY(-0.5rem) scale(1.05);
+	}
+	80% {
+		transform: translateY(-0.5rem) scale(1.05);
+	}
+	100% {
+		transform: translateY(0rem);
+	}
+}
+
 /* Custom AOS animations*/
 [data-aos="lengthen"] {
 	clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
