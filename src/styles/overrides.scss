@@ -10,13 +10,13 @@ p > a {
 	display: inline-block;
 	position: relative;
 	padding: 0 !important; // Remove the automatically added space before/after anchor tags
-	color: var(--accent) !important;
-	transition: 0.3s ease-out;
+	color: var(--accent-alt) !important;
+	transition: 0.5s ease-out;
 
 	&:hover,
 	&:focus,
 	&:active {
-		color: var(--accent);
+		color: var(--accent-alt);
 
 		&:after {
 			width: 100%;
@@ -146,11 +146,11 @@ footer {
 	transition: ease-out 0.5s;
 
 	&.at-top {
-		padding: 0.9rem 0.4rem;
+		padding: 1rem 0.75rem;
 	}
 
 	&.scrolling-up {
-		padding: 0.2rem 0.5rem;
+		padding: 0.2rem 0.75rem;
 		box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.25);
 		backdrop-filter: blur(10px);
 		background-color: var(--background-primary);
@@ -158,7 +158,7 @@ footer {
 
 	&.scrolling-down {
 		transform: translateY(-100%);
-		padding: 0.2rem 0.5rem;
+		padding: 0.2rem 0.75rem;
 	}
 
 	.navbar-start,
