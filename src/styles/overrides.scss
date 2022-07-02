@@ -294,6 +294,11 @@ footer {
 		.is-icon {
 			transition: 0.3s ease-out;
 			border-radius: 50%;
+
+			&:hover,
+			&:focus {
+				transform: translateX(0.4rem);
+			}
 		}
 	}
 
