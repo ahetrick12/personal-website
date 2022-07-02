@@ -115,10 +115,9 @@ footer {
 	&:focus {
 		box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
 		transform: scale(1.075) !important;
-		z-index: 1;
 
 		.card-image {
-			transform: scale(1.05);
+			transform: scale(1.06);
 		}
 	}
 
@@ -142,13 +141,13 @@ footer {
 		display: flex;
 		flex-direction: column;
 		height: 100%;
-		//padding: 0;
 
-		.image-wrapper {
+		.shadow-wrapper {
 			display: inline-block;
-			overflow: hidden;
+
 			margin: -2.25rem -2.25rem 0.5rem -2.25rem;
 			width: calc(100% + 4.5rem);
+
 			clip-path: polygon(
 				0 0,
 				100% 0,
@@ -157,14 +156,31 @@ footer {
 			); // So the drop shadow doesn't bleed out the sides
 			filter: drop-shadow(0 0.3rem 0.3rem rgba(0, 0, 0, 0.6));
 
-			.card-image {
-				width: 100%;
-				height: 12rem;
-				margin: 0;
+			.image-wrapper {
+				overflow: hidden;
 				border-radius: 10px 10px 0 0;
-				object-fit: cover;
-				clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
-				transition: 0.6s ease-out;
+				clip-path: polygon(
+					0 0,
+					100% 0,
+					100% 90%,
+					0% 100%
+				); // Diagonal cutoff
+
+				.card-image {
+					width: 100%;
+					height: 12rem;
+					margin: 0;
+					object-fit: cover;
+
+					clip-path: polygon(
+						0 0,
+						100% 0,
+						100% 90%,
+						0% 100%
+					); // Same cutoff as parent to prevent weird artifacts during hover transition
+
+					transition: 0.5s ease-out;
+				}
 			}
 		}
 

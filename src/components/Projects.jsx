@@ -57,19 +57,17 @@ const ProjectTile = ({
 			ref={tileRef}
 		>
 			<div className="card-content has-text-centered">
-				{/* <FontAwesomeIcon
-					className="image is-96x96 m-auto"
-					icon={icon}
-				/> */}
-				<div className="image-wrapper">
-					<img
-						src={image}
-						alt="lpup"
-						className="image card-image"
-						style={{
-							"object-position": imagePos,
-						}}
-					/>
+				<div className="shadow-wrapper">
+					<div className="image-wrapper">
+						<img
+							src={image}
+							alt="lpup"
+							className="image card-image"
+							style={{
+								"object-position": imagePos,
+							}}
+						/>
+					</div>
 				</div>
 				<h2 className="proj-title is-underlined">{title}</h2>
 				<p className="proj-description">{description}</p>
