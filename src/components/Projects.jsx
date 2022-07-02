@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,9 +6,23 @@ import {
 	faUpRightFromSquare,
 	faLinkSlash,
 } from "@fortawesome/free-solid-svg-icons";
-import { useLayoutEffect } from "react";
 
-const ProjectTile = ({ icon, href, title, description, tech, wip, index }) => {
+import LPUP_Screnshot from "../images/lpup.png";
+import personal_website from "../images/personal-website.png";
+import notion_notetaker from "../images/notion-notetaker.jpg";
+import artist_corner from "../images/artist-corner.png";
+import gamejams from "../images/gamejams.png";
+
+const ProjectTile = ({
+	image,
+	imagePos,
+	href,
+	title,
+	description,
+	tech,
+	wip,
+	index,
+}) => {
 	const [isActive, setIsActive] = useState(true);
 
 	const tileRef = useRef(null);
@@ -43,10 +57,20 @@ const ProjectTile = ({ icon, href, title, description, tech, wip, index }) => {
 			ref={tileRef}
 		>
 			<div className="card-content has-text-centered">
-				<FontAwesomeIcon
+				{/* <FontAwesomeIcon
 					className="image is-96x96 m-auto"
 					icon={icon}
-				/>
+				/> */}
+				<div className="image-wrapper">
+					<img
+						src={image}
+						alt="lpup"
+						className="image card-image"
+						style={{
+							"object-position": imagePos,
+						}}
+					/>
+				</div>
 				<h2 className="proj-title is-underlined">{title}</h2>
 				<p className="proj-description">{description}</p>
 				<div className="proj-tech">
@@ -68,6 +92,8 @@ const ProjectTile = ({ icon, href, title, description, tech, wip, index }) => {
 
 const projects = [
 	{
+		image: LPUP_Screnshot,
+		imagePos: "50% 60%",
 		title: "Low Poly Underwater Pack",
 		description:
 			"A vast collection of underwater-themed art, tools, and shaders in a beautiful low-poly art style that allows game developers easily create vast and stunning underwater worlds",
@@ -76,6 +102,8 @@ const projects = [
 		wip: false,
 	},
 	{
+		image: personal_website,
+		imagePos: "50% 15%",
 		title: "Personal Website",
 		description:
 			"My personal website, the one you're on right now, built with React and Bulma.",
@@ -84,6 +112,8 @@ const projects = [
 		wip: false,
 	},
 	{
+		image: notion_notetaker,
+		imagePos: "50% 50%",
 		title: "Notion Notetaker",
 		description:
 			"A chrome extension that allows offers a streamlined approach to taking notes in your notion workspace.",
@@ -92,6 +122,8 @@ const projects = [
 		wip: true,
 	},
 	{
+		image: artist_corner,
+		imagePos: "50% 12%",
 		title: "Artist Corner E-store",
 		description:
 			"An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261",
@@ -100,6 +132,8 @@ const projects = [
 		wip: false,
 	},
 	{
+		image: gamejams,
+		imagePos: "50% 45%",
 		title: "Game Jam Games",
 		description:
 			"A collection of games I've made for game jams throughout my life, all hosted on itch.io",
@@ -110,9 +144,6 @@ const projects = [
 ];
 
 const Projects = () => {
-	//TODO: Use example from here:
-	//https://stackoverflow.com/questions/57860661/react-bulma-how-can-i-get-gap-between-my-columns-and-how-to-center-my-button-in
-
 	return (
 		<section id="projects" className="section is-medium">
 			<h1
@@ -130,7 +161,8 @@ const Projects = () => {
 			>
 				{projects.map((project, i) => (
 					<ProjectTile
-						icon={faLaptopCode}
+						image={project.image}
+						imagePos={project.imagePos}
 						href={project.link}
 						title={project.title}
 						description={project.description}
