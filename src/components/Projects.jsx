@@ -2,7 +2,6 @@ import { useRef, useState, useEffect, useLayoutEffect } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faLaptopCode,
 	faUpRightFromSquare,
 	faLinkSlash,
 } from "@fortawesome/free-solid-svg-icons";
@@ -16,6 +15,7 @@ import gamejams from "../images/gamejams.png";
 const ProjectTile = ({
 	image,
 	imagePos,
+	inverted,
 	href,
 	title,
 	description,
@@ -82,7 +82,7 @@ const ProjectTile = ({
 				<FontAwesomeIcon
 					className={`image go-to is-32x32 ${
 						isActive ? "active" : ""
-					}`}
+					} ${inverted ? "inverted" : ""}`}
 					icon={href !== "" ? faUpRightFromSquare : faLinkSlash}
 				/>
 			</div>
@@ -94,6 +94,7 @@ const projects = [
 	{
 		image: LPUP_Screnshot,
 		imagePos: "50% 60%",
+		iconColInvert: false,
 		title: "Low Poly Underwater Pack",
 		description:
 			"A vast collection of underwater-themed art, tools, and shaders in a beautiful low-poly art style that allows game developers easily create vast and stunning underwater worlds",
@@ -104,6 +105,7 @@ const projects = [
 	{
 		image: personal_website,
 		imagePos: "50% 15%",
+		iconColInvert: false,
 		title: "Personal Website",
 		description:
 			"My personal website, the one you're on right now, built with React and Bulma.",
@@ -114,6 +116,7 @@ const projects = [
 	{
 		image: notion_notetaker,
 		imagePos: "50% 50%",
+		iconColInvert: true,
 		title: "Notion Notetaker",
 		description:
 			"A chrome extension that allows offers a streamlined approach to taking notes in your notion workspace.",
@@ -124,6 +127,7 @@ const projects = [
 	{
 		image: artist_corner,
 		imagePos: "50% 12%",
+		iconColInvert: false,
 		title: "Artist Corner E-store",
 		description:
 			"An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261",
@@ -134,6 +138,7 @@ const projects = [
 	{
 		image: gamejams,
 		imagePos: "50% 45%",
+		iconColInvert: false,
 		title: "Game Jam Games",
 		description:
 			"A collection of games I've made for game jams throughout my life, all hosted on itch.io",
@@ -163,6 +168,7 @@ const Projects = () => {
 					<ProjectTile
 						image={project.image}
 						imagePos={project.imagePos}
+						inverted={project.iconColInvert}
 						href={project.link}
 						title={project.title}
 						description={project.description}

@@ -172,12 +172,23 @@ footer {
 				right: 1.5rem;
 				z-index: 10;
 
-				color: grey;
-
 				transition: ease-out 0.2s;
 
+				color: lightgrey;
+				filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.5));
+
+				&.inverted {
+					color: grey;
+					filter: drop-shadow(0 0 0.15rem rgba(255, 255, 255, 0.5));
+				}
+
 				&.active {
-					color: var(--foreground-secondary) !important;
+					color: var(--foreground-secondary);
+
+					&.inverted {
+						color: var(--background-secondary);
+						$shadow_col: rgb(0, 0, 0, 1.4);
+					}
 
 					&:hover,
 					&:focus {
