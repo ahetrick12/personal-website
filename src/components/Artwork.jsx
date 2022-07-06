@@ -1,8 +1,19 @@
+import { useEffect } from "react";
+import ArtworkDataset from "./ArtworkDataset";
+
 const Artwork = () => {
+	const artwork = ArtworkDataset();
+
+	useEffect(() => {
+		console.log(artwork);
+	}, [artwork]);
+
 	return (
 		<section id="artwork" className="section is-medium">
 			<h1 className="title">Artwork</h1>
-			<p className="has-text-centered">Pull from or link to ArtStation</p>
+			{artwork.map((artwork, i) => (
+				<img src={artwork.image} alt="artwork" />
+			))}
 		</section>
 	);
 };
