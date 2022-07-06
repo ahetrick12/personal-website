@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import ArtworkDataset from "./ArtworkDataset";
+import Flickity from "react-flickity-component";
 
 const Artwork = () => {
 	const artwork = ArtworkDataset();
@@ -11,9 +12,11 @@ const Artwork = () => {
 	return (
 		<section id="artwork" className="section is-medium">
 			<h1 className="title">Artwork</h1>
-			{artwork.map((artwork, i) => (
-				<img src={artwork.image} alt="artwork" />
-			))}
+			<Flickity>
+				{artwork.map((artwork, i) => (
+					<img src={artwork.image} alt="artwork" />
+				))}
+			</Flickity>
 		</section>
 	);
 };
