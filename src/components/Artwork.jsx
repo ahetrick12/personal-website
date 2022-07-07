@@ -12,9 +12,15 @@ const Artwork = () => {
 	return (
 		<section id="artwork" className="section is-medium">
 			<h1 className="title">Artwork</h1>
-			<Flickity>
+			<Flickity className="carousel">
 				{artwork.map((artwork, i) => (
-					<img src={artwork.image} alt="artwork" />
+					<div className="carousel-cell">
+						<img
+							className="image"
+							src={artwork.image}
+							alt="artwork"
+						/>
+					</div>
 				))}
 			</Flickity>
 		</section>
