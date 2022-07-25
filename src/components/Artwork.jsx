@@ -15,7 +15,7 @@ const Artwork = () => {
 				className="title"
 				data-aos="title-appear"
 				data-aos-duration="1500"
-				data-aos-anchor="#projects"
+				data-aos-anchor="#artwork"
 				data-aos-anchor-placement="top-bottom"
 			>
 				Artwork
@@ -27,6 +27,8 @@ const Artwork = () => {
 							className="image"
 							src={artwork.image}
 							alt="artwork"
+							data-aos="fade-up"
+							data-aos-duration="1000"
 						/>
 					</div>
 				))}
