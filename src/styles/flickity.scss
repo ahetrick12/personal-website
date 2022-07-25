@@ -143,12 +143,12 @@ https://flickity.metafizzy.co
 		margin: 0 8px;
 		background: var(--foreground-primary);
 		border-radius: 50%;
-		opacity: 0.25;
+		opacity: 0.45;
 		transition: 0.15s ease-out;
 		cursor: pointer;
 
 		&:hover {
-			transform: scale(1.1) translateY(-20%);
+			transform: scale(1.05) translateY(-30%);
 		}
 
 		&.is-selected {
