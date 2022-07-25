@@ -27,7 +27,7 @@ const SkillsInterests = () => {
 		<section id="skillsinterests" className="section is-medium">
 			<div className="is-centered">
 				<h1
-					className="title underline"
+					className="title"
 					data-aos="title-appear"
 					data-aos-duration="1500"
 					data-aos-anchor="#skillsinterests"

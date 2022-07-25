@@ -11,7 +11,15 @@ const Artwork = () => {
 
 	return (
 		<section id="artwork" className="section is-medium">
-			<h1 className="title">Artwork</h1>
+			<h1
+				className="title"
+				data-aos="title-appear"
+				data-aos-duration="1500"
+				data-aos-anchor="#projects"
+				data-aos-anchor-placement="top-bottom"
+			>
+				Artwork
+			</h1>
 			<Flickity className="carousel">
 				{artwork.map((artwork, i) => (
 					<div className="carousel-cell">

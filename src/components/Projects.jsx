@@ -150,7 +150,7 @@ const Projects = () => {
 	return (
 		<section id="projects" className="section is-medium">
 			<h1
-				className="title underline"
+				className="title"
 				data-aos="title-appear"
 				data-aos-duration="1500"
 				data-aos-anchor="#projects"

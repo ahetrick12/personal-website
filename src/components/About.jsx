@@ -35,7 +35,7 @@ const About = () => {
 				<div className="columns px-6">
 					<div className="description column is-two-thirds">
 						<h2
-							className="title underline"
+							className="title"
 							data-aos="title-appear"
 							data-aos-duration="1500"
 							data-aos-anchor="#about"
