@@ -57,13 +57,11 @@ const Artwork = () => {
 				<Flickity className="carousel">
 					{artwork.map((artwork, i) => (
 						<div className="carousel-cell">
-							<div className="image-container">
-								<img
-									className="image"
-									src={artwork.image}
-									alt="artwork"
-								/>
-							</div>
+							<img
+								className="image"
+								src={artwork.image}
+								alt="artwork"
+							/>
 						</div>
 					))}
 				</Flickity>
