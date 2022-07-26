@@ -146,8 +146,8 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-			<div className="shadow-wrapper">
-				<div className="banner3"></div>
+			<div className="shadow-wrapper bottom-cutoff">
+				<div className="banner-bottom"></div>
 			</div>
 		</section>
 	);

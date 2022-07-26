@@ -1,0 +1,44 @@
+.banner-behind {
+	position: absolute;
+	bottom: -5vh;
+	left: 0;
+
+	background-color: var(--background-primary);
+	padding: 25.2rem 100% 0 0;
+	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 21.5rem);
+
+	animation-name: banner1-slide;
+	animation-duration: var(--intro-slide-anim-dur);
+}
+
+.banner-top {
+	background-color: var(--background-secondary);
+	padding: 14rem 0 0 0;
+	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 10rem);
+
+	animation-name: banner2-slide;
+	animation-duration: var(--intro-slide-anim-dur);
+}
+
+.banner-bottom {
+	background-color: var(--background-secondary);
+	clip-path: polygon(0 100%, 100% 1rem, 100% 0, 0 0);
+	padding: 10rem 0 0 0;
+
+	animation-name: banner3-slide;
+	animation-duration: var(--intro-slide-anim-dur);
+}
+
+.shadow-wrapper {
+	filter: drop-shadow(0rem 0 1rem rgba(0, 0, 0, 0.5));
+
+	&.top-cutoff {
+		clip-path: inset(-5rem 0 0.2rem 0);
+		transform: translateY(0.3rem);
+	}
+
+	&.bottom-cutoff {
+		clip-path: inset(0.2rem 0 -5rem 0);
+		transform: translateY(-0.2rem);
+	}
+}

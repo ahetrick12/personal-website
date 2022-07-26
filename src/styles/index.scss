@@ -1,5 +1,6 @@
 @import "bulma";
 
+@import "./slanted-section.scss";
 @import "./animations";
 @import "./overrides";
 @import "./variables";
@@ -36,28 +37,6 @@
 				animation-delay: 4s;
 				animation-timing-function: ease-out;
 			}
-		}
-
-		.banner1 {
-			position: absolute;
-			bottom: -5vh;
-			left: 0;
-
-			background-color: var(--background-primary);
-			padding: 25.2rem 100% 0 0;
-			clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 21.5rem);
-
-			animation-name: banner1-slide;
-			animation-duration: var(--intro-slide-anim-dur);
-		}
-
-		.banner2 {
-			background-color: var(--background-secondary);
-			padding: 14rem 0 0 0;
-			clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 10rem);
-
-			animation-name: banner2-slide;
-			animation-duration: var(--intro-slide-anim-dur);
 		}
 
 		.scroll {
@@ -126,19 +105,6 @@
 				}
 			}
 		}
-
-		.shadow-wrapper {
-			clip-path: inset(0.5rem 0 -5rem 0);
-
-			.banner3 {
-				background-color: var(--background-secondary);
-				clip-path: polygon(0 100%, 100% 1rem, 100% 0, 0 0);
-				padding: 10rem 0 0 0;
-
-				animation-name: banner3-slide;
-				animation-duration: var(--intro-slide-anim-dur);
-			}
-		}
 	}
 
 	#skillsinterests {
@@ -174,19 +140,28 @@
 	}
 
 	#artwork {
-		background-color: var(--background-secondary);
-		box-shadow: 0rem 0rem 1rem rgb(0, 0, 0, 0.25);
+		.artwork-container {
+			// background-color: var(--background-secondary);
+			// position: relative;
+			// color: var(--foreground-primary);
+			// padding: 2rem 12rem 0rem 12rem;
+			// margin-bottom: 5rem;
 
-		.carousel {
-			.carousel-cell {
-				width: 75%;
-				aspect-ratio: 17 / 9;
+			background-color: var(--background-secondary);
+			//box-shadow: 0rem 0rem 1rem rgb(0, 0, 0, 0.25);
+			padding-bottom: 4rem;
 
-				.image {
-					border-radius: 10px;
-					max-width: 100%;
-					max-height: 100%;
-					margin: auto;
+			.carousel {
+				.carousel-cell {
+					width: 75%;
+					aspect-ratio: 17 / 9;
+
+					.image {
+						border-radius: 10px;
+						max-width: 100%;
+						max-height: 100%;
+						margin: auto;
+					}
 				}
 			}
 		}

@@ -148,7 +148,7 @@ const projects = [
 
 const Projects = () => {
 	return (
-		<section id="projects" className="section is-medium">
+		<section id="projects" className="section">
 			<h1
 				className="title"
 				data-aos="title-appear"
@@ -175,6 +175,9 @@ const Projects = () => {
 						index={i}
 					/>
 				))}
+			</div>
+			<div className="shadow-wrapper top-cutoff">
+				<div id="about-navtarget" className="banner-top"></div>
 			</div>
 		</section>
 	);

@@ -43,27 +43,32 @@ const Artwork = () => {
 	// }, []);
 
 	return (
-		<section id="artwork" className="section is-medium">
-			<h1
-				className="title"
-				data-aos="title-appear"
-				data-aos-duration="1500"
-				data-aos-anchor="#artwork"
-				data-aos-anchor-placement="top-bottom"
-			>
-				Artwork
-			</h1>
-			<Flickity className="carousel">
-				{artwork.map((artwork, i) => (
-					<div className="carousel-cell">
-						<img
-							className="image"
-							src={artwork.image}
-							alt="artwork"
-						/>
-					</div>
-				))}
-			</Flickity>
+		<section id="artwork">
+			<div className="artwork-container">
+				<h1
+					className="title"
+					data-aos="title-appear"
+					data-aos-duration="1500"
+					data-aos-anchor="#artwork"
+					data-aos-anchor-placement="top-bottom"
+				>
+					Artwork
+				</h1>
+				<Flickity className="carousel">
+					{artwork.map((artwork, i) => (
+						<div className="carousel-cell">
+							<img
+								className="image"
+								src={artwork.image}
+								alt="artwork"
+							/>
+						</div>
+					))}
+				</Flickity>
+			</div>
+			<div className="shadow-wrapper bottom-cutoff">
+				<div className="banner-bottom"></div>
+			</div>
 		</section>
 	);
 };
