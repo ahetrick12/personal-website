@@ -141,14 +141,7 @@
 
 	#artwork {
 		.artwork-container {
-			// background-color: var(--background-secondary);
-			// position: relative;
-			// color: var(--foreground-primary);
-			// padding: 2rem 12rem 0rem 12rem;
-			// margin-bottom: 5rem;
-
 			background-color: var(--background-secondary);
-			//box-shadow: 0rem 0rem 1rem rgb(0, 0, 0, 0.25);
 			padding-bottom: 4rem;
 
 			.carousel {
@@ -156,11 +149,21 @@
 					width: 75%;
 					aspect-ratio: 17 / 9;
 
-					.image {
-						border-radius: 10px;
+					.image-container {
+						aspect-ratio: 16 / 9;
 						max-width: 100%;
 						max-height: 100%;
+						border-radius: 2.5rem;
+						overflow: hidden;
 						margin: auto;
+
+						.image {
+							transition: 0.3s ease-out;
+
+							&:hover {
+								transform: scale(1.05) !important;
+							}
+						}
 					}
 				}
 			}
