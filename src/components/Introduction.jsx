@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import MouseScroller from "../images/mouse-scroller.svg";
-import BackgroundVideo from "../images/Test2.mp4";
+import BackgroundVideo from "../images/intro-video.mp4";
 
 const Introduction = () => {
 	const scrollRef = useRef(null);
