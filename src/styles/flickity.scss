@@ -46,7 +46,7 @@ https://flickity.metafizzy.co
 /* ---- Flickity-button ---- */
 .flickity-button {
 	position: absolute;
-	transition: 0.3s ease-out;
+	transition: 0.2s ease-out;
 	background: hsla(0, 0%, 100%, 0.6);
 	border: none;
 	color: var(--foreground-primary);
@@ -81,19 +81,19 @@ https://flickity.metafizzy.co
 /* ---- Previous/next buttons ---- */
 .flickity-prev-next-button {
 	top: 50%;
-	width: 44px;
-	height: 44px;
+	width: 3.5rem;
+	height: 3.5rem;
 	border-radius: 50%;
 
 	/* vertically center */
 	//transform: translateY(-50%);
 
 	&.previous {
-		left: 10px;
+		left: 2rem;
 	}
 
 	&.next {
-		right: 10px;
+		right: 2rem;
 	}
 
 	.flickity-button-icon {
