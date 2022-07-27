@@ -72,7 +72,7 @@ const Navbar = () => {
 	return (
 		<section class="section">
 			<nav
-				className="navbar is-transparent is-fixed-top "
+				className="navbar is-transparent is-fixed-top at-top"
 				role="navigation"
 				aria-label="main navigation"
 				ref={navbarRef}

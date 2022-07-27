@@ -21,7 +21,6 @@ const LinkIcon = ({ index, icon, link }) => {
 			data-aos-duration="500"
 			data-aos-delay={index * 300}
 			data-aos-anchor="#about"
-			data-aos-anchor-placement="top-bottom"
 		>
 			<FontAwesomeIcon className="icon" icon={icon} />
 		</a>
@@ -39,7 +38,6 @@ const About = () => {
 							data-aos="title-appear"
 							data-aos-duration="1500"
 							data-aos-anchor="#about"
-							data-aos-anchor-placement="top-bottom"
 						>
 							About
 						</h2>
@@ -48,7 +46,6 @@ const About = () => {
 								data-aos="fade-right"
 								data-aos-duration="1000"
 								data-aos-anchor="#about"
-								data-aos-anchor-placement="top-bottom"
 							>
 								Hi there! I’m Alex Hetrick, a developer and
 								artist from Pittsburgh, Pennsylvania. I’m
@@ -67,7 +64,6 @@ const About = () => {
 								data-aos-duration="1000"
 								data-aos-delay="200"
 								data-aos-anchor="#about"
-								data-aos-anchor-placement="top-bottom"
 							>
 								I often go by Ventuar online, and have built a
 								brand around that name as a publisher on the{" "}
@@ -96,7 +92,6 @@ const About = () => {
 							data-aos="lengthen"
 							data-aos-duration="2000"
 							data-aos-anchor="#about"
-							data-aos-anchor-placement="top-bottom"
 						/>
 						<div>
 							<LinkIcon
@@ -140,7 +135,6 @@ const About = () => {
 								data-aos="about-image-slide"
 								data-aos-duration="2000"
 								data-aos-anchor="#about"
-								data-aos-anchor-placement="top-bottom"
 							/>
 						</figure>
 					</div>
