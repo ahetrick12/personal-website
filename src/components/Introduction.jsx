@@ -1,7 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import MouseScroller from "../images/mouse-scroller.svg";
-import Navbar from "./Navbar";
+import BackgroundVideo from "../images/Test2.mp4";
 
 const Introduction = () => {
 	const scrollRef = useRef(null);
@@ -28,6 +28,11 @@ const Introduction = () => {
 
 	return (
 		<div id="introduction" className="hero is-fullheight">
+			<div className="video-wrapper">
+				<video autoPlay loop muted id="video">
+					<source src={BackgroundVideo} type="video/mp4" />
+				</video>
+			</div>
 			<div className="hero-body has-text-centered">
 				<div className="container">
 					<p
