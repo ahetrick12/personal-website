@@ -5,42 +5,65 @@ import Flickity from "react-flickity-component";
 const Artwork = () => {
 	const artwork = ArtworkDataset();
 
-	// const sleep = (milliseconds) => {
-	// 	return new Promise((resolve) => setTimeout(resolve, milliseconds));
-	// };
+	const sleep = (milliseconds) => {
+		return new Promise((resolve) => setTimeout(resolve, milliseconds));
+	};
 
-	// useLayoutEffect(() => {
-	// 	let dots = [];
-	// 	sleep(1000).then(() => {
-	// 		dots = document.querySelectorAll(".dot");
-	// 		console.log(dots);
+	useLayoutEffect(() => {
+		let dots = [];
+		let prevButton;
+		let nextButton;
 
-	// 		// for (var i = 0; i < dots.length; i++) {
-	// 		// 	dots[i].setAttribute("data-aos", "fade");
-	// 		// 	//dots[i].setAttribute("data-aos-delay", i * 100);
-	// 		// 	dots[i].setAttribute("data-aos-duration", "200");
-	// 		// 	dots[i].setAttribute("data-aos-anchor", "#projects");
-	// 		// 	// dots[i].setAttribute("data-aos-anchor-placement", "top-bottom");
-	// 		// }
+		sleep(500).then(() => {
+			dots = document.querySelectorAll(".dot");
+			console.log(dots);
 
-	// 		const onScroll = () => {
-	// 			//const scrollPos = window.scrollY + window.innerHeight;
-	// 			const bottom = dots[0].getBoundingClientRect().bottom;
+			prevButton = document.querySelector(
+				".flickity-prev-next-button.previous"
+			);
+			nextButton = document.querySelector(
+				".flickity-prev-next-button.next"
+			);
 
-	// 			//console.log(scrollPos + " : " + bottom);
-	// 			console.log(window.innerHeight - bottom);
-	// 			if (window.innerHeight - bottom > 20) {
-	// 				for (var i = 0; i < dots.length; i++) {
-	// 					dots[i].style.transitionDelay = i * 50 + "ms";
-	// 					dots[i].style.opacity = "0.45";
-	// 				}
-	// 			}
-	// 		};
+			for (var i = 0; i < dots.length; i++) {
+				dots[i].classList.add("hidden");
+			}
 
-	// 		window.addEventListener("scroll", onScroll);
-	// 		window.addEventListener("DOMContentLoaded", onScroll);
-	// 	});
-	// }, []);
+			prevButton.classList.add("hidden");
+			nextButton.classList.add("hidden");
+		});
+
+		const onScroll = () => {
+			//const scrollPos = window.scrollY + window.innerHeight;
+
+			// Prev next buttons
+			const buttonsTop = document
+				.querySelector(".flickity-prev-next-button")
+				.getBoundingClientRect().bottom;
+
+			if (window.innerHeight - buttonsTop > 20) {
+				prevButton.classList.remove("hidden");
+				nextButton.classList.remove("hidden");
+			}
+
+			// Dots
+			const dotsTop = document
+				.querySelector(".dot")
+				.getBoundingClientRect().top; //dots[0].getBoundingClientRect().bottom;
+
+			// console.log(scrollPos + " : " + dotsTop);
+			// console.log(window.innerHeight - dotsTop);
+			if (window.innerHeight - dotsTop > 20) {
+				for (var i = 0; i < dots.length; i++) {
+					dots[i].style.transitionDelay = i * 50 + "ms";
+					dots[i].classList.remove("hidden");
+				}
+			}
+		};
+
+		window.addEventListener("scroll", onScroll);
+		window.addEventListener("DOMContentLoaded", onScroll);
+	}, []);
 
 	return (
 		<section id="artwork">
@@ -61,6 +84,9 @@ const Artwork = () => {
 								className="image"
 								src={artwork.image}
 								alt="artwork"
+								// data-aos="fade-up"
+								// data-aos-duration="3000"
+								// data-aos-anchor="#artwork"
 							/>
 						</div>
 					))}
