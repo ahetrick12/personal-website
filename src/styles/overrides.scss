@@ -80,26 +80,6 @@ footer {
 	text-align: center;
 }
 
-.button {
-	color: var(--foreground-primary) !important;
-	background-color: transparent !important;
-	border: 2px solid var(--background-secondary-alt) !important;
-	margin: 3rem 0 0 0 !important;
-
-	transition: all 0.3s ease-out;
-	backface-visibility: hidden;
-
-	&:hover {
-		border-color: var(--accent) !important;
-		color: var(--accent) !important;
-		transform: scale(1.1);
-	}
-
-	span {
-		padding-left: 0.5rem;
-	}
-}
-
 .card {
 	color: var(--foreground-primary);
 	background-color: var(--background-secondary);

@@ -1,4 +1,5 @@
 import Alex from "../images/Alex4.jpg";
+import { useRef } from "react";
 
 import {
 	faTwitter,
@@ -28,6 +29,12 @@ const LinkIcon = ({ index, icon, link }) => {
 };
 
 const About = () => {
+	const buttonRef = useRef(null);
+
+	const onHover = () => {
+		buttonRef.current.classList.add("not-fading-button");
+	};
+
 	return (
 		<section id="about">
 			<div className="about-container">
@@ -41,7 +48,7 @@ const About = () => {
 						>
 							About
 						</h2>
-						<div>
+						<div className="bio">
 							<p
 								data-aos="fade-right"
 								data-aos-duration="1000"
@@ -86,6 +93,20 @@ const About = () => {
 								assets for other game developers to use in their
 								projects.
 							</p>
+							<a
+								href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+								className="resume button is-rounded"
+								rel="noreferrer"
+								target="_blank"
+								data-aos="fade-right"
+								data-aos-duration="1500"
+								data-aos-delay="400"
+								data-aos-anchor="#about"
+								ref={buttonRef}
+								onMouseEnter={onHover}
+							>
+								View Resume
+							</a>
 						</div>
 						<hr
 							className="secondary"
