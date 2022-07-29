@@ -29,21 +29,12 @@ const SkillsInterests = () => {
 				>
 					Skills / Interests
 				</h1>
-				<div class="field">
-					<input
-						id="switchRoundedDefault"
-						type="checkbox"
-						name="switchRoundedDefault"
-						class="switch is-rounded"
-						checked="checked"
-					></input>
-				</div>
 			</div>
 			<div className="columns">
 				<div className="column is-half">
 					<p
-						className="subtitle"
-						data-aos="fade-right"
+						className="subtitle skills"
+						data-aos="skills-subtitle"
 						data-aos-duration="1800"
 						data-aos-anchor="#skillsinterests"
 						data-aos-anchor-placement="top-center"
@@ -559,8 +550,8 @@ const SkillsInterests = () => {
 				</div>
 				<div className="column is-half">
 					<p
-						className="subtitle"
-						data-aos="fade-left"
+						className="subtitle interests"
+						data-aos="interests-subtitle"
 						data-aos-duration="1800"
 						data-aos-anchor="#skillsinterests"
 						data-aos-anchor-placement="top-center"

@@ -154,6 +154,26 @@
 
 		.columns {
 			margin-bottom: 5rem;
+
+			.subtitle {
+				background: var(--accent);
+				margin-top: 2rem;
+				padding: 1rem 0;
+				font-size: 22px;
+				color: var(--foreground-primary);
+
+				&.skills {
+					text-align: left !important;
+					border-radius: 0 2rem 2rem 0;
+					padding-left: 5rem;
+				}
+
+				&.interests {
+					text-align: right !important;
+					border-radius: 2rem 0 0 2rem;
+					padding-right: 5rem;
+				}
+			}
 		}
 	}
 

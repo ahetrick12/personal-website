@@ -137,3 +137,25 @@
 		}
 	}
 }
+
+[data-aos="skills-subtitle"] {
+	transform: translateX(calc(-100% - -6rem));
+	opacity: 0;
+
+	&.aos-animate {
+		transform: translateX(-6rem);
+		opacity: 1;
+		box-shadow: 1rem 0.7rem 0rem var(--background-secondary);
+	}
+}
+
+[data-aos="interests-subtitle"] {
+	transform: translateX(calc(100% + 6rem));
+	opacity: 0;
+
+	&.aos-animate {
+		transform: translateX(6rem);
+		opacity: 1;
+		box-shadow: -1rem 0.7rem 0rem var(--background-secondary);
+	}
+}
