@@ -56,7 +56,7 @@
 				animation-name: view-more;
 				animation-duration: 1s;
 				animation-fill-mode: backwards;
-				animation-delay: 4s;
+				animation-delay: 4.5s;
 				animation-timing-function: ease-out;
 
 				&.button {
@@ -137,6 +137,7 @@
 
 						&:hover {
 							transform: scale(1.125);
+							font-size: 1.1rem;
 
 							box-shadow: -0.5rem 0.4rem 0rem
 								var(--background-primary);

@@ -39,6 +39,7 @@ const Introduction = () => {
 						className="title is-1"
 						data-aos="fade-up"
 						data-aos-duration="2000"
+						data-aos-delay="200"
 					>
 						Hi, I'm Alex.
 					</p>

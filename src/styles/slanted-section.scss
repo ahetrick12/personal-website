@@ -9,6 +9,8 @@
 
 	animation-name: banner1-slide;
 	animation-duration: var(--intro-slide-anim-dur);
+	animation-delay: 500ms;
+	animation-fill-mode: backwards;
 }
 
 .banner-top {
@@ -18,6 +20,8 @@
 
 	animation-name: banner2-slide;
 	animation-duration: var(--intro-slide-anim-dur);
+	animation-delay: 500ms;
+	animation-fill-mode: backwards;
 }
 
 .banner-bottom {
@@ -27,6 +31,8 @@
 
 	animation-name: banner3-slide;
 	animation-duration: var(--intro-slide-anim-dur);
+	animation-delay: 500ms;
+	animation-fill-mode: backwards;
 }
 
 .shadow-wrapper {
