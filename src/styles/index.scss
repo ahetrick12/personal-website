@@ -268,4 +268,27 @@
 			border-radius: 2rem;
 		}
 	}
+
+	#footer {
+		.content {
+			//position: relative;
+
+			hr {
+				margin-bottom: 3rem;
+			}
+
+			.columns {
+				p {
+					display: inline-block;
+				}
+
+				.links {
+					text-align: right;
+					display: inline-block;
+					align-self: flex-end;
+					border: 2px black solid;
+				}
+			}
+		}
+	}
 }
