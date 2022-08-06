@@ -29,11 +29,23 @@ const Contact = () => {
 			>
 				Contact
 			</h1>
-			<div className="section contact-container" ref={formRef}>
+			<div
+				className="section contact-container"
+				data-aos="contact-box"
+				data-aos-duration="2000"
+				data-aos-anchor="#contact"
+				ref={formRef}
+			>
 				{/* Name */}
 				<div className="field is-horizontal">
 					<div className="field-body">
-						<div className="field">
+						<div
+							className="field"
+							data-aos="fade-right"
+							data-aos-duration="1000"
+							data-aos-delay="300"
+							data-aos-anchor="#contact"
+						>
 							<label class="label">First Name</label>
 							<div class="control has-icons-left" id="first-name">
 								<input
@@ -47,7 +59,13 @@ const Contact = () => {
 								</span>
 							</div>
 						</div>
-						<div className="field">
+						<div
+							className="field"
+							data-aos="fade-left"
+							data-aos-duration="1000"
+							data-aos-delay="600"
+							data-aos-anchor="#contact"
+						>
 							<label class="label">Last Name</label>
 							<div class="control has-icons-left" id="last-name">
 								<input
@@ -64,7 +82,13 @@ const Contact = () => {
 					</div>
 				</div>
 				{/* Email */}
-				<div class="field">
+				<div
+					class="field"
+					data-aos="fade-up"
+					data-aos-duration="1000"
+					data-aos-delay="900"
+					data-aos-anchor="#contact"
+				>
 					<label class="label">Email</label>
 					<div
 						class="control has-icons-left has-icons-right"
@@ -86,7 +110,13 @@ const Contact = () => {
 					<p class="help is-danger">This email is invalid</p>
 				</div>
 				{/* Message */}
-				<div class="field">
+				<div
+					class="field"
+					data-aos="fade-up"
+					data-aos-duration="1000"
+					data-aos-delay="1200"
+					data-aos-anchor="#contact"
+				>
 					<label class="label">Message</label>
 					<div class="control" id="message">
 						<textarea
