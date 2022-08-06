@@ -258,4 +258,16 @@
 			}
 		}
 	}
+
+	#contact {
+		.contact-container {
+			background-color: var(--background-secondary);
+			padding: 3rem 4rem !important;
+			width: 85%;
+			margin: auto auto 2rem auto;
+			border-radius: 2rem;
+
+			box-shadow: -1.6rem 1.2rem 0rem var(--background-primary-shadow);
+		}
+	}
 }

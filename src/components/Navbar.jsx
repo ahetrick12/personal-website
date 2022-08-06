@@ -138,6 +138,13 @@ const Navbar = () => {
 						>
 							Artwork
 						</Link>
+						<Link
+							to="contact"
+							smooth={true}
+							className="navbar-item"
+						>
+							Contact
+						</Link>
 					</div>
 				</div>
 			</nav>
