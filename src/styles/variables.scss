@@ -37,3 +37,23 @@
 	transition: 0.25s ease-out !important;
 	transition-delay: 0 !important;
 }
+
+a.social {
+	display: inline-block;
+	padding: 0px 0.4rem;
+	color: var(--foreground-primary);
+
+	.icon {
+		width: 1.8rem;
+		height: auto;
+		transition: 0.15s ease-out;
+	}
+
+	&:hover,
+	&:focus {
+		.icon {
+			transform: translateY(-0.5rem);
+			color: var(--accent);
+		}
+	}
+}

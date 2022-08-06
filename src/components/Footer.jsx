@@ -1,3 +1,5 @@
+import SocialLinks from "./SocialLinks";
+
 const Footer = () => {
 	return (
 		<footer id="footer">
@@ -31,7 +33,9 @@ const Footer = () => {
 						Designed and developed by Alex Hetrick | © 2022 <br />
 						All Rights Reserved.
 					</p>
-					<div className="column is-one-quarter links">hi there</div>
+					<div className="column is-one-quarter links">
+						<SocialLinks />
+					</div>
 				</div>
 			</div>
 		</footer>
