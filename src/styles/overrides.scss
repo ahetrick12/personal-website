@@ -1,8 +1,21 @@
 @import "./variables";
 
 .app {
+	font-family: "Poppins", sans-serif !important;
 	background-color: var(--background-primary) !important;
 	color: var(--foreground-primary) !important;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: local("Poppins"),
+		url(../fonts/Poppins-ExtraLight.otf) format("opentype");
+}
+
+@font-face {
+	font-family: "Poppins";
+	font-weight: 900;
+	src: local("Poppins"), url(../fonts/Poppins-SemiBold.otf) format("opentype");
 }
 
 // HTML overrides
