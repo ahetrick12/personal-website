@@ -1,9 +1,9 @@
 @import "./variables";
 @import "./font-faces";
+@import "./mixins";
 
 .app {
 	font-family: "Outfit", sans-serif !important;
-	//letter-spacing: 1px !important;
 	background-color: var(--background-primary) !important;
 	color: var(--foreground-primary) !important;
 }
@@ -36,17 +36,6 @@ p > a {
 		background-color: var(--accent);
 		transition: 0.3s ease-out;
 	}
-}
-
-@mixin fade-ends($fade-color) {
-	background: -webkit-gradient(
-		linear,
-		0 0,
-		100% 0,
-		from($fade-color),
-		to($fade-color),
-		color-stop(50%, var(--background-secondary-alt))
-	);
 }
 
 hr {

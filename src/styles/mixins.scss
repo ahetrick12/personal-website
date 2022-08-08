@@ -1,0 +1,10 @@
+@mixin fade-ends($fade-color) {
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		100% 0,
+		from($fade-color),
+		to($fade-color),
+		color-stop(50%, var(--background-secondary-alt))
+	);
+}
