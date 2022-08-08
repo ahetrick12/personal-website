@@ -1,21 +1,11 @@
 @import "./variables";
+@import "./font-faces";
 
 .app {
-	font-family: "Poppins", sans-serif !important;
+	font-family: "Outfit", sans-serif !important;
+	//letter-spacing: 1px !important;
 	background-color: var(--background-primary) !important;
 	color: var(--foreground-primary) !important;
-}
-
-@font-face {
-	font-family: "Poppins";
-	src: local("Poppins"),
-		url(../fonts/Poppins-ExtraLight.otf) format("opentype");
-}
-
-@font-face {
-	font-family: "Poppins";
-	font-weight: 900;
-	src: local("Poppins"), url(../fonts/Poppins-SemiBold.otf) format("opentype");
 }
 
 // HTML overrides
@@ -82,7 +72,7 @@ footer {
 // Bulma overrides
 .title {
 	color: var(--foreground-primary);
-	font-size: 36px;
+	font-size: 2.5rem;
 	padding-bottom: 1rem;
 	width: fit-content;
 	margin: auto;
