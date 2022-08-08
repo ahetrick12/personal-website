@@ -11,8 +11,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 function App() {
-	AOS.init({ once: true });
+	AOS.init({ once: true, anchorPlacement: "center-center" });
 	AOS.refresh();
+
+	window.addEventListener("load", AOS.refresh);
 
 	return (
 		<div className="app">

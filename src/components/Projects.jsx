@@ -154,10 +154,20 @@ const Projects = () => {
 				data-aos="title-appear"
 				data-aos-duration="1500"
 				data-aos-anchor="#projects"
-				data-aos-anchor-placement="top-bottom"
+				data-aos-anchor-placement="top-center"
 			>
 				Projects
 			</h1>
+			<p
+				className="subtitle left is-4"
+				data-aos="fade-right"
+				data-aos-duration="1800"
+				data-aos-delay="200"
+				data-aos-anchor="#projects"
+				data-aos-anchor-placement="top-center"
+			>
+				A selection of the things I've made over the years.
+			</p>
 			<div
 				id="projects-trigger"
 				className="columns is-multiline is-centered is-mobile"

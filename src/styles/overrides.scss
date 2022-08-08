@@ -75,8 +75,6 @@ footer {
 
 	&.left {
 		margin: auto auto 1rem 8% !important;
-		// display: list-item;
-		// list-style-type: square;
 
 		&::before {
 			content: "■";
@@ -90,9 +88,6 @@ footer {
 
 	&.right {
 		margin: auto 8% 1rem auto !important;
-		// display: list-item;
-		// list-style-type: square;
-		// direction: rtl;
 
 		&::before {
 			content: "■";
@@ -103,16 +98,24 @@ footer {
 			color: var(--accent);
 		}
 	}
-
-	// &::marker {
-	// 	color: var(--accent);
-	// 	font-size: 6rem;
-	// }
 }
 
 .subtitle {
 	color: var(--foreground-secondary);
-	text-align: center;
+
+	&.center {
+		text-align: center;
+	}
+
+	&.left {
+		margin: auto auto 1rem 12% !important;
+		text-align: left;
+	}
+
+	&.right {
+		margin: auto 12% 1rem auto !important;
+		text-align: right;
+	}
 }
 
 .card {

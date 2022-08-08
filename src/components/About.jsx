@@ -19,14 +19,26 @@ const About = () => {
 							data-aos="title-appear"
 							data-aos-duration="1500"
 							data-aos-anchor="#about"
+							data-aos-anchor-placement="center-bottom"
 						>
 							About
 						</h2>
+						<p
+							className="subtitle left is-4"
+							data-aos="fade-right"
+							data-aos-duration="1800"
+							data-aos-delay="200"
+							data-aos-anchor="#about"
+							data-aos-anchor-placement="center-bottom"
+						>
+							A little bit about me.
+						</p>
 						<div className="bio">
 							<p
 								data-aos="fade-right"
 								data-aos-duration="1000"
 								data-aos-anchor="#about"
+								data-aos-anchor-placement="center-bottom"
 							>
 								Hi there! I’m Alex Hetrick, a developer and
 								artist from Pittsburgh, Pennsylvania. I’m
@@ -45,6 +57,7 @@ const About = () => {
 								data-aos-duration="1000"
 								data-aos-delay="200"
 								data-aos-anchor="#about"
+								data-aos-anchor-placement="center-bottom"
 							>
 								I often go by Ventuar online, and have built a
 								brand around that name as a publisher on the{" "}
@@ -76,6 +89,7 @@ const About = () => {
 								data-aos-duration="1500"
 								data-aos-delay="400"
 								data-aos-anchor="#about"
+								data-aos-anchor-placement="center-bottom"
 								ref={buttonRef}
 								onMouseEnter={onHover}
 							>
@@ -87,6 +101,7 @@ const About = () => {
 							data-aos="lengthen"
 							data-aos-duration="2000"
 							data-aos-anchor="#about"
+							data-aos-anchor-placement="center-bottom"
 						/>
 						<SocialLinks />
 					</div>
@@ -99,6 +114,7 @@ const About = () => {
 								data-aos="about-image-slide"
 								data-aos-duration="2000"
 								data-aos-anchor="#about"
+								data-aos-anchor-placement="center-bottom"
 							/>
 						</figure>
 					</div>

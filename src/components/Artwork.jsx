@@ -73,20 +73,34 @@ const Artwork = () => {
 					data-aos="title-appear"
 					data-aos-duration="1500"
 					data-aos-anchor="#artwork"
-					data-aos-anchor-placement="top-bottom"
+					data-aos-anchor-placement="top-center"
 				>
 					Artwork
 				</h1>
+				<p
+					className="subtitle right is-4"
+					data-aos="fade-left"
+					data-aos-duration="1800"
+					data-aos-delay="200"
+					data-aos-anchor="#artwork"
+					data-aos-anchor-placement="top-center"
+				>
+					I make art from time to time. Here's a bit of what I've
+					made!
+				</p>
 				<Flickity className="carousel">
 					{artwork.map((artwork, i) => (
-						<div className="carousel-cell">
+						<div
+							className="carousel-cell"
+							data-aos="fade-up"
+							data-aos-duration="1000"
+							data-aos-anchor="#artwork"
+							data-aos-anchor-placement="top-center"
+						>
 							<img
 								className="image"
 								src={artwork.image}
 								alt="artwork"
-								// data-aos="fade-up"
-								// data-aos-duration="3000"
-								// data-aos-anchor="#artwork"
 							/>
 						</div>
 					))}

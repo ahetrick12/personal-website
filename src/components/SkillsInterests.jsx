@@ -29,6 +29,16 @@ const SkillsInterests = () => {
 				>
 					Skills / Interests
 				</h1>
+				<p
+					className="subtitle right is-4"
+					data-aos="fade-left"
+					data-aos-duration="1800"
+					data-aos-delay="200"
+					data-aos-anchor="#skillsinterests"
+					data-aos-anchor-placement="top-center"
+				>
+					Get to know some things I do and like!
+				</p>
 			</div>
 			<div className="columns">
 				<div className="column is-half">

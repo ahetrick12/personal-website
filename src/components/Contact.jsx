@@ -25,15 +25,26 @@ const Contact = () => {
 				data-aos="title-appear"
 				data-aos-duration="1500"
 				data-aos-anchor="#contact"
-				data-aos-anchor-placement="top-bottom"
+				data-aos-anchor-placement="top-center"
 			>
 				Contact
 			</h1>
+			<p
+				className="subtitle left is-4"
+				data-aos="fade-right"
+				data-aos-duration="1800"
+				data-aos-delay="200"
+				data-aos-anchor="#contact"
+				data-aos-anchor-placement="top-center"
+			>
+				Get in touch with me!
+			</p>
 			<div
 				className="section contact-container"
 				data-aos="contact-box"
 				data-aos-duration="2000"
 				data-aos-anchor="#contact"
+				data-aos-anchor-placement="top-center"
 				ref={formRef}
 			>
 				{/* Name */}
@@ -45,6 +56,7 @@ const Contact = () => {
 							data-aos-duration="1000"
 							data-aos-delay="300"
 							data-aos-anchor="#contact"
+							data-aos-anchor-placement="top-center"
 						>
 							<label class="label">First Name</label>
 							<div class="control has-icons-left" id="first-name">
@@ -65,6 +77,7 @@ const Contact = () => {
 							data-aos-duration="1000"
 							data-aos-delay="600"
 							data-aos-anchor="#contact"
+							data-aos-anchor-placement="top-center"
 						>
 							<label class="label">Last Name</label>
 							<div class="control has-icons-left" id="last-name">
