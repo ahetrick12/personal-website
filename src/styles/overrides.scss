@@ -4,7 +4,11 @@
 
 .app {
 	font-family: "Outfit", sans-serif !important;
+
 	background-color: var(--background-primary) !important;
+	// background-image: url("../images/background-test.jpg") !important;
+	// background-blend-mode: multiply;
+
 	color: var(--foreground-primary) !important;
 }
 
@@ -50,7 +54,7 @@ hr {
 }
 
 footer {
-	background-color: var(--background-primary);
+	//background-color: var(--background-primary);
 	padding: 2rem !important;
 
 	p {
@@ -61,10 +65,49 @@ footer {
 // Bulma overrides
 .title {
 	color: var(--foreground-primary);
-	font-size: 2.5rem;
+	font-size: 4rem;
 	padding-bottom: 1rem;
 	width: fit-content;
-	margin: auto;
+
+	&.center {
+		margin: auto auto 1rem auto;
+	}
+
+	&.left {
+		margin: auto auto 1rem 8% !important;
+		// display: list-item;
+		// list-style-type: square;
+
+		&::before {
+			content: "■";
+			position: absolute;
+			left: -1em; /* Adjust this value so that it appears where you want. */
+			bottom: 0.3em;
+			font-size: 1.1em; /* Adjust this value so that it appears what size you want. */
+			color: var(--accent);
+		}
+	}
+
+	&.right {
+		margin: auto 8% 1rem auto !important;
+		// display: list-item;
+		// list-style-type: square;
+		// direction: rtl;
+
+		&::before {
+			content: "■";
+			position: absolute;
+			right: -1em; /* Adjust this value so that it appears where you want. */
+			bottom: 0.3em;
+			font-size: 1.1em; /* Adjust this value so that it appears what size you want. */
+			color: var(--accent);
+		}
+	}
+
+	// &::marker {
+	// 	color: var(--accent);
+	// 	font-size: 6rem;
+	// }
 }
 
 .subtitle {

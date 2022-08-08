@@ -69,7 +69,7 @@ const Artwork = () => {
 		<section id="artwork">
 			<div className="artwork-container">
 				<h1
-					className="title"
+					className="title right"
 					data-aos="title-appear"
 					data-aos-duration="1500"
 					data-aos-anchor="#artwork"

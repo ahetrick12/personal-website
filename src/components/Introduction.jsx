@@ -36,7 +36,7 @@ const Introduction = () => {
 			<div className="hero-body has-text-centered">
 				<div className="container">
 					<p
-						className="title is-1"
+						className="title center is-1"
 						data-aos="fade-up"
 						data-aos-duration="2000"
 						data-aos-delay="200"
