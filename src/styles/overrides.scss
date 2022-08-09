@@ -403,7 +403,8 @@ footer {
 
 			&:hover,
 			&:focus {
-				transform: translateX(0.4rem);
+				transform: scale(1.15);
+				box-shadow: -0.4rem 0.3rem 0rem var(--background-secondary);
 			}
 		}
 	}

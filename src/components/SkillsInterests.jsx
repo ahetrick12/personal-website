@@ -37,7 +37,7 @@ const SkillsInterests = () => {
 					data-aos-anchor="#skillsinterests"
 					data-aos-anchor-placement="top-center"
 				>
-					Get to know some things I do and like!
+					Some of the things I do and like!
 				</p>
 			</div>
 			<div className="columns">
