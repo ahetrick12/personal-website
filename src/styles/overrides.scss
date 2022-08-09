@@ -404,7 +404,9 @@ footer {
 			&:hover,
 			&:focus {
 				transform: scale(1.15);
-				box-shadow: -0.4rem 0.3rem 0rem var(--background-secondary);
+
+				box-shadow: 0 0 0 5px var(--background-primary),
+					0 0 0 9px var(--accent);
 			}
 		}
 	}
