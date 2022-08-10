@@ -13,11 +13,17 @@ const Artwork = () => {
 		let dots = [];
 		let prevButton;
 		let nextButton;
+		let artImages;
 
 		sleep(500).then(() => {
+			// Dots
 			dots = document.querySelectorAll(".dot");
-			console.log(dots);
 
+			for (var i = 0; i < dots.length; i++) {
+				dots[i].classList.add("hidden");
+			}
+
+			// Buttons
 			prevButton = document.querySelector(
 				".flickity-prev-next-button.previous"
 			);
@@ -25,12 +31,14 @@ const Artwork = () => {
 				".flickity-prev-next-button.next"
 			);
 
-			for (var i = 0; i < dots.length; i++) {
-				dots[i].classList.add("hidden");
-			}
-
 			prevButton.classList.add("hidden");
 			nextButton.classList.add("hidden");
+
+			// Images
+			artImages = document.querySelectorAll(".art-image");
+
+			onScroll();
+			onDOMChange();
 		});
 
 		const onScroll = () => {
@@ -49,10 +57,8 @@ const Artwork = () => {
 			// Dots
 			const dotsTop = document
 				.querySelector(".dot")
-				.getBoundingClientRect().top; //dots[0].getBoundingClientRect().bottom;
+				.getBoundingClientRect().top;
 
-			// console.log(scrollPos + " : " + dotsTop);
-			// console.log(window.innerHeight - dotsTop);
 			if (window.innerHeight - dotsTop > 20) {
 				for (var i = 0; i < dots.length; i++) {
 					dots[i].style.transitionDelay = i * 50 + "ms";
@@ -61,8 +67,30 @@ const Artwork = () => {
 			}
 		};
 
+		const onDOMChange = () => {
+			// Update image overlays to conform to image size when anything is changed
+			for (var j = 0; j < artImages.length; j++) {
+				let height = artImages[j].height;
+				let width = artImages[j].width;
+
+				let overlay =
+					artImages[j].parentElement.querySelector(".image-overlay");
+				let transition = overlay.style.transition;
+
+				overlay.style.transition = "0s";
+
+				overlay.style.height = height + 25 + "px";
+				overlay.style.width = width + 25 + "px";
+				overlay.style.margin = "auto";
+
+				sleep(10).then(() => {
+					overlay.style.transition = transition;
+				});
+			}
+		};
+
 		window.addEventListener("scroll", onScroll);
-		window.addEventListener("DOMContentLoaded", onScroll);
+		window.addEventListener("resize", onDOMChange);
 	}, []);
 
 	return (
@@ -97,8 +125,9 @@ const Artwork = () => {
 							data-aos-anchor="#artwork"
 							data-aos-anchor-placement="top-center"
 						>
+							<div className="image-overlay"></div>
 							<img
-								className="image"
+								className="art-image"
 								src={artwork.image}
 								alt="artwork"
 							/>
