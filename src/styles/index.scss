@@ -222,41 +222,117 @@
 			.carousel {
 				.carousel-cell {
 					aspect-ratio: 16 / 9;
-					width: 80%;
+					width: 85%;
 					display: flex;
 					overflow: visible;
 					pointer-events: none;
 
 					&:hover {
 						.image-overlay {
-							transform: scale(1.025) !important;
+							transform: scale(1.03);
+
+							.overlay-info {
+								&::before {
+									opacity: 1;
+								}
+
+								.title {
+									color: var(--foreground-primary) !important;
+									text-decoration-color: var(
+										--accent
+									) !important;
+
+									transform: translateX(0);
+								}
+
+								.description {
+									color: var(--foreground-primary);
+									transform: translateX(0);
+								}
+							}
 						}
 
 						.art-image {
-							transform: scale(1.025);
-							box-shadow: -1.7rem 1.4rem 0rem
+							transform: scale(1.03);
+							box-shadow: -1.8rem 1.5rem 0rem
 								var(--background-primary);
 						}
 					}
 
 					.image-overlay {
+						z-index: 10;
 						position: absolute;
 						top: 0;
 						right: 0;
 						bottom: 0;
 						left: 0;
+						margin: auto;
 
-						z-index: 10;
 						pointer-events: none;
-						border-radius: 3rem;
-
 						transition: 0.3s ease-out;
+
+						border-radius: 3rem;
 						outline: 5px solid var(--background-secondary-alt);
+
+						.overlay-info {
+							position: absolute;
+							top: 0;
+							right: 0;
+							bottom: 0;
+							left: 0;
+
+							height: calc(100% - 23px);
+							width: calc(100% - 23px);
+							display: flex;
+							flex-direction: column;
+							margin: auto;
+
+							transition: 0.6s ease-out;
+
+							&::before {
+								content: "";
+								position: absolute;
+								top: 0;
+								right: 0;
+								bottom: 0;
+								left: 0;
+								background: linear-gradient(
+									0deg,
+									rgba(0, 0, 0, 0.8) 0%,
+									rgba(255, 255, 255, 0) 30%,
+									rgba(0, 0, 0, 0.8) 100%
+								);
+								border-radius: 2.5rem;
+
+								opacity: 0;
+								transition: 0.45s ease-out;
+							}
+
+							.title {
+								transition: inherit;
+
+								color: transparent;
+								text-decoration-color: transparent;
+
+								transform: translateX(-3rem);
+							}
+
+							.description {
+								transition: inherit;
+								transition-delay: 0.2s;
+
+								color: transparent;
+								margin-top: auto;
+								font-size: 1.2rem;
+
+								transform: translateX(3rem);
+							}
+						}
 					}
 
 					.art-image {
-						max-width: calc(100% - 4rem);
-						max-height: calc(100% - 4rem);
+						max-width: calc(100% - 5.5rem);
+						max-height: calc(100% - 5.5rem);
 						border-radius: 2.5rem;
 						margin: auto;
 						pointer-events: auto;

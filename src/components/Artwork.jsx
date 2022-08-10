@@ -81,7 +81,6 @@ const Artwork = () => {
 
 				overlay.style.height = height + 25 + "px";
 				overlay.style.width = width + 25 + "px";
-				overlay.style.margin = "auto";
 
 				sleep(10).then(() => {
 					overlay.style.transition = transition;
@@ -125,7 +124,16 @@ const Artwork = () => {
 							data-aos-anchor="#artwork"
 							data-aos-anchor-placement="top-center"
 						>
-							<div className="image-overlay"></div>
+							<div className="image-overlay">
+								<div className="overlay-info p-6">
+									<h2 className="title is-underlined">
+										Title
+									</h2>
+									<p className="description">
+										Some description text would go here
+									</p>
+								</div>
+							</div>
 							<img
 								className="art-image"
 								src={artwork.image}
