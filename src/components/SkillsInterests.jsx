@@ -102,11 +102,11 @@ const SkillsInterests = () => {
 											id="a"
 										>
 											<stop
-												stop-color="#387EB8"
+												stopColor="#387EB8"
 												offset="0%"
 											/>
 											<stop
-												stop-color="#366994"
+												stopColor="#366994"
 												offset="100%"
 											/>
 										</linearGradient>
@@ -118,11 +118,11 @@ const SkillsInterests = () => {
 											id="b"
 										>
 											<stop
-												stop-color="#FFE052"
+												stopColor="#FFE052"
 												offset="0%"
 											/>
 											<stop
-												stop-color="#FFC331"
+												stopColor="#FFC331"
 												offset="100%"
 											/>
 										</linearGradient>
@@ -547,7 +547,7 @@ const SkillsInterests = () => {
 										/>
 										<path
 											d="M96.085 91.118c15.81 12.845 21.741 11.865 51.43 9.884l279.888-16.806c5.936 0 1-5.922-.98-6.906L379.94 43.686c-8.907-6.915-20.773-14.834-43.516-12.853L65.408 50.6c-9.884.98-11.858 5.922-7.922 9.883zm16.804 65.228v294.491c0 15.827 7.909 21.748 25.71 20.769l307.597-17.799c17.81-.979 19.794-11.865 19.794-24.722V136.57c0-12.836-4.938-19.758-15.84-18.77l-321.442 18.77c-11.863.997-15.82 6.931-15.82 19.776zm303.659 15.797c1.972 8.903 0 17.798-8.92 18.799l-14.82 2.953v217.412c-12.868 6.916-24.734 10.87-34.622 10.87-15.831 0-19.796-4.945-31.654-19.76l-96.944-152.19v147.248l30.677 6.922s0 17.78-24.75 17.78l-68.23 3.958c-1.982-3.958 0-13.832 6.921-15.81l17.805-4.935V210.7l-24.721-1.981c-1.983-8.903 2.955-21.74 16.812-22.736l73.195-4.934 100.889 154.171V198.836l-25.723-2.952c-1.974-10.884 5.927-18.787 15.819-19.767zM42.653 23.919l281.9-20.76c34.618-2.969 43.525-.98 65.283 14.825l89.986 63.247c14.848 10.876 19.797 13.837 19.797 25.693v346.883c0 21.74-7.92 34.597-35.608 36.564L136.64 510.14c-20.785.991-30.677-1.971-41.562-15.815l-66.267-85.978C16.938 392.52 12 380.68 12 366.828V58.495c0-17.778 7.922-32.608 30.653-34.576z"
-											fill-rule="evenodd"
+											fillRule="evenodd"
 											id="path2"
 										/>
 									</g>
@@ -636,9 +636,9 @@ const SkillsInterests = () => {
 									<g
 										id="Vivid.JS"
 										stroke="none"
-										stroke-width="1"
+										strokeWidth="1"
 										fill="none"
-										fill-rule="evenodd"
+										fillRule="evenodd"
 									>
 										<g
 											id="Vivid-Icons"
@@ -1047,37 +1047,37 @@ const SkillsInterests = () => {
 									/>
 									<polygon
 										fill="#E4C05C"
-										//stroke:#E4C05C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+										//stroke:#E4C05C;strokeWidth:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 										points="
 								36.439,18 37.439,17 37.439,15 36.439,14 34.439,14 33.439,15 33.439,17 34.439,18 "
 									/>
 									<polygon
 										fill="#E4C05C"
-										//stroke:#E4C05C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+										//stroke:#E4C05C;strokeWidth:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 										points="
 								31.439,23 32.439,22 32.439,20 31.439,19 29.439,19 28.439,20 28.439,22 29.439,23 "
 									/>
 									<polygon
 										fill="#E4C05C"
-										//stroke:#E4C05C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+										//stroke:#E4C05C;strokeWidth:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 										points="
 								26.439,28 27.439,27 27.439,25 26.439,24 24.439,24 23.439,25 23.439,27 24.439,28 "
 									/>
 									<polygon
 										fill="#E4C05C"
-										//stroke:#E4C05C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+										//stroke:#E4C05C;strokeWidth:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 										points="
 								21.439,33 22.439,32 22.439,30 21.439,29 19.439,29 18.439,30 18.439,32 19.439,33 "
 									/>
 									<polygon
 										fill="#E4C05C"
-										//stroke:#E4C05C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+										//stroke:#E4C05C;strokeWidth:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 										points="
 								16.439,38 17.439,37 17.439,35 16.439,34 14.439,34 13.439,35 13.439,37 14.439,38 "
 									/>
 									<polygon
 										fill="#E4C05C"
-										//stroke:#E4C05C;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
+										//stroke:#E4C05C;strokeWidth:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;"
 										points="
 								11.439,43 12.439,42 12.439,40 11.439,39 9.439,39 8.439,40 8.439,42 9.439,43 "
 									/>

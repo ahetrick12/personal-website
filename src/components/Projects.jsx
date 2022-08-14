@@ -64,7 +64,7 @@ const ProjectTile = ({
 							alt="lpup"
 							className="image card-image"
 							style={{
-								"object-position": imagePos,
+								"objectPosition": imagePos,
 							}}
 						/>
 					</div>
@@ -72,8 +72,8 @@ const ProjectTile = ({
 				<h2 className="proj-title is-underlined">{title}</h2>
 				<p className="proj-description">{description}</p>
 				<div className="proj-tech">
-					{tech.map((tech, i) => (
-						<p>{tech}</p>
+					{tech.map((tech, index) => (
+						<p key={index}>{tech}</p>
 					))}
 				</div>
 				{wip === true && <p className="wip">WIP</p>}
@@ -172,7 +172,7 @@ const Projects = () => {
 				id="projects-trigger"
 				className="columns is-multiline is-centered is-mobile"
 			>
-				{projects.map((project, i) => (
+				{projects.map((project, index) => (
 					<ProjectTile
 						image={project.image}
 						imagePos={project.imagePos}
@@ -182,7 +182,8 @@ const Projects = () => {
 						description={project.description}
 						tech={project.technology}
 						wip={project.wip}
-						index={i}
+						index={index}
+						key={index}
 					/>
 				))}
 			</div>

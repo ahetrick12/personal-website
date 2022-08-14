@@ -58,15 +58,18 @@ const Contact = () => {
 							data-aos-anchor="#contact"
 							data-aos-anchor-placement="top-center"
 						>
-							<label class="label">First Name</label>
-							<div class="control has-icons-left" id="first-name">
+							<label className="label">First Name</label>
+							<div
+								className="control has-icons-left"
+								id="first-name"
+							>
 								<input
-									class="input is-rounded"
+									className="input is-rounded"
 									type="text"
 									placeholder="John"
-									autocomplete="given-name"
+									autoComplete="given-name"
 								/>
-								<span class="icon is-small is-left">
+								<span className="icon is-small is-left">
 									<FontAwesomeIcon icon={faUser} />
 								</span>
 							</div>
@@ -79,15 +82,18 @@ const Contact = () => {
 							data-aos-anchor="#contact"
 							data-aos-anchor-placement="top-center"
 						>
-							<label class="label">Last Name</label>
-							<div class="control has-icons-left" id="last-name">
+							<label className="label">Last Name</label>
+							<div
+								className="control has-icons-left"
+								id="last-name"
+							>
 								<input
-									class="input is-rounded"
+									className="input is-rounded"
 									type="text"
 									placeholder="Smith"
-									autocomplete="family-name"
+									autoComplete="family-name"
 								/>
-								<span class="icon is-small is-left">
+								<span className="icon is-small is-left">
 									<FontAwesomeIcon icon={faUser} />
 								</span>
 							</div>
@@ -96,44 +102,44 @@ const Contact = () => {
 				</div>
 				{/* Email */}
 				<div
-					class="field"
+					className="field"
 					data-aos="fade-up"
 					data-aos-duration="1000"
 					data-aos-delay="900"
 					data-aos-anchor="#contact"
 				>
-					<label class="label">Email</label>
+					<label className="label">Email</label>
 					<div
-						class="control has-icons-left has-icons-right"
+						className="control has-icons-left has-icons-right"
 						id="email"
 					>
 						<input
-							class="input is-rounded is-danger"
+							className="input is-rounded is-danger"
 							type="email"
-							autocomplete="email"
+							autoComplete="email"
 							placeholder="hello@gmail.com"
 						/>
-						<span class="icon is-small is-left">
+						<span className="icon is-small is-left">
 							<FontAwesomeIcon icon={faEnvelope} />
 						</span>
-						<span class="icon is-small is-right">
-							<i class="fas fa-exclamation-triangle"></i>
+						<span className="icon is-small is-right">
+							<i className="fas fa-exclamation-triangle"></i>
 						</span>
 					</div>
-					<p class="help is-danger">This email is invalid</p>
+					<p className="help is-danger">This email is invalid</p>
 				</div>
 				{/* Message */}
 				<div
-					class="field"
+					className="field"
 					data-aos="fade-up"
 					data-aos-duration="1000"
 					data-aos-delay="1200"
 					data-aos-anchor="#contact"
 				>
-					<label class="label">Message</label>
-					<div class="control" id="message">
+					<label className="label">Message</label>
+					<div className="control" id="message">
 						<textarea
-							class="textarea is-rounded"
+							className="textarea is-rounded"
 							rows="10"
 							placeholder="Your message here"
 						></textarea>
