@@ -7,8 +7,6 @@ const Contact = () => {
 	const formRef = useRef(null);
 
 	useEffect(() => {
-		console.log("set");
-
 		formRef.current.addEventListener("focusin", (event) => {
 			event.target.parentNode.classList.add("focused");
 		});

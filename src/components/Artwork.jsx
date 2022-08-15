@@ -1,14 +1,10 @@
-import { useEffect, useLayoutEffect, useState } from "react";
-import ArtworkDataset from "./ArtworkDataset";
-import Flickity from "react-flickity-component";
+// import { useEffect, useLayoutEffect, useRef } from "react";
+import Carousel from "./Carousel";
 
 const Artwork = () => {
-	const [isLoaded, setIsLoaded] = useState(false);
-	const artwork = ArtworkDataset();
-
-	const sleep = (milliseconds) => {
-		return new Promise((resolve) => setTimeout(resolve, milliseconds));
-	};
+	// useEffect(() => {
+	// 	console.log(isLoaded);
+	// }, [isLoaded]);
 
 	// useEffect(() => {
 	// let dots = [];
@@ -121,41 +117,9 @@ const Artwork = () => {
 					I make art from time to time. Here's a bit of what I've
 					made!
 				</p>
-				<Flickity className="carousel">
-					{artwork.map((art, index) => {
-						if (index === artwork.length - 1) {
-							console.log(index);
-							setIsLoaded(true);
-						}
-						return (
-							<div
-								className="carousel-cell"
-								data-aos="fade-up"
-								data-aos-duration="1000"
-								data-aos-anchor="#artwork"
-								data-aos-anchor-placement="top-center"
-								key={index}
-							>
-								<div className="image-overlay">
-									<div className="overlay-info p-6">
-										<h2 className="title is-underlined">
-											Title
-										</h2>
-										<p className="description">
-											Some description text would go here
-										</p>
-									</div>
-								</div>
-								<img
-									className="art-image"
-									src={art.image}
-									alt="artwork"
-								/>
-							</div>
-						);
-					})}
-				</Flickity>
+				<Carousel />
 			</div>
+
 			<div className="shadow-wrapper bottom-cutoff">
 				<div className="banner-bottom"></div>
 			</div>
