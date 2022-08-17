@@ -101,10 +101,7 @@ const Navbar = () => {
 					</button>
 				</div>
 				<div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
-					<div
-						className="navbar-end"
-						style={{ "flexGrow": 1, "justifyContent": "center" }}
-					>
+					<div className="navbar-end" style={{ "flexGrow": 1 }}>
 						<Link
 							to="introduction"
 							smooth={true}
