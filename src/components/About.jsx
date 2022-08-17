@@ -82,7 +82,7 @@ const About = () => {
 							</p>
 							<a
 								href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-								className="resume button is-rounded"
+								className="button accent-button is-rounded"
 								rel="noreferrer"
 								target="_blank"
 								data-aos="fade-right"

@@ -3,6 +3,8 @@ import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 
+import emailjs from "@emailjs/browser";
+
 const Contact = () => {
 	const formRef = useRef(null);
 
@@ -17,6 +19,36 @@ const Contact = () => {
 			event.target.parentNode.classList.remove("focused");
 		});
 	}, []);
+
+	const handleSubmit = (event) => {
+		event.preventDefault();
+
+		const emailData = {
+			to_name: "Alex",
+		};
+
+		const formData = Object.fromEntries(new FormData(formRef.current));
+		Object.assign(emailData, formData);
+
+		emailjs
+			.send(
+				process.env.REACT_APP_SERVICE_ID,
+				process.env.REACT_APP_TEMPLATE_ID,
+				emailData,
+				process.env.REACT_APP_PUBLIC_KEY
+			)
+			.then(
+				(result) => {
+					alert(
+						"Message Sent, We will get back to you shortly",
+						result.text
+					);
+				},
+				(error) => {
+					alert("An error occurred, Please try again", error.text);
+				}
+			);
+	};
 
 	return (
 		<div id="contact" className="section">
@@ -39,13 +71,14 @@ const Contact = () => {
 			>
 				Get in touch with me!
 			</p>
-			<div
+			<form
 				className="section contact-container"
 				data-aos="contact-box"
 				data-aos-duration="2000"
 				data-aos-anchor="#contact"
 				data-aos-anchor-placement="top-center"
 				ref={formRef}
+				onSubmit={handleSubmit}
 			>
 				{/* Name */}
 				<div className="field is-horizontal">
@@ -64,7 +97,8 @@ const Contact = () => {
 									class="input is-rounded"
 									type="text"
 									placeholder="John"
-									autocomplete="given-name"
+									autoComplete="given-name"
+									name="first_name"
 								/>
 								<span class="icon is-small is-left">
 									<FontAwesomeIcon icon={faUser} />
@@ -85,7 +119,8 @@ const Contact = () => {
 									class="input is-rounded"
 									type="text"
 									placeholder="Smith"
-									autocomplete="family-name"
+									autoComplete="family-name"
+									name="last_name"
 								/>
 								<span class="icon is-small is-left">
 									<FontAwesomeIcon icon={faUser} />
@@ -110,8 +145,9 @@ const Contact = () => {
 						<input
 							class="input is-rounded is-danger"
 							type="email"
-							autocomplete="email"
 							placeholder="hello@gmail.com"
+							autoComplete="email"
+							name="email"
 						/>
 						<span class="icon is-small is-left">
 							<FontAwesomeIcon icon={faEnvelope} />
@@ -136,10 +172,21 @@ const Contact = () => {
 							class="textarea is-rounded"
 							rows="10"
 							placeholder="Your message here"
+							name="message"
 						></textarea>
 					</div>
 				</div>
-			</div>
+				<div className="field">
+					<div className="control">
+						<button
+							type="submit"
+							className="button accent-button is-rounded"
+						>
+							Submit
+						</button>
+					</div>
+				</div>
+			</form>
 		</div>
 	);
 };
