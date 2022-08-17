@@ -70,7 +70,7 @@ const Navbar = () => {
 	}, [scrollStatus]);
 
 	return (
-		<section class="section">
+		<section className="section">
 			<nav
 				className="navbar is-transparent is-fixed-top at-top"
 				role="navigation"
@@ -89,7 +89,9 @@ const Navbar = () => {
 						onClick={() => {
 							setIsActive(!isActive);
 						}}
-						class={`navbar-burger ${isActive ? "is-active" : ""}`}
+						className={`navbar-burger ${
+							isActive ? "is-active" : ""
+						}`}
 						aria-label="menu"
 						aria-expanded="false"
 					>
@@ -101,7 +103,7 @@ const Navbar = () => {
 				<div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
 					<div
 						className="navbar-end"
-						style={{ "flex-grow": 1, "justify-content": "center" }}
+						style={{ "flexGrow": 1, "justifyContent": "center" }}
 					>
 						<Link
 							to="introduction"

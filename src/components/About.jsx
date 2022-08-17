@@ -106,7 +106,7 @@ const About = () => {
 						<SocialLinks />
 					</div>
 					<div className="column is-one-third">
-						<figure class="image">
+						<figure className="image">
 							<img
 								className="is-rounded"
 								src={Alex}
