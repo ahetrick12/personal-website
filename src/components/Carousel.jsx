@@ -131,11 +131,13 @@ const Carousel = () => {
 			// Dots
 			const dotsBottom = dots[0].getBoundingClientRect().bottom;
 			if (window.innerHeight - dotsBottom > 20) {
-				for (var i = 0; i < dots.length; i++) {
-					//dots[i].style.transitionDelay = i * 20 + "ms";
-
-					dots[i].classList.remove("hidden");
-				}
+				(async () => {
+					for (var i = 0; i < dots.length; i++) {
+						//dots[i].style.transitionDelay = i * 20 + "ms";
+						dots[i].classList.remove("hidden");
+						await sleep(50);
+					}
+				})();
 			}
 		};
 	}, []);
