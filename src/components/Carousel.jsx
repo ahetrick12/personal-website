@@ -1,4 +1,4 @@
-import { React, useRef, useEffect, useLayoutEffect } from "react";
+import { React, useEffect, useLayoutEffect } from "react";
 import ArtworkDataset from "./ArtworkDataset";
 
 import Flickity from "react-flickity-component";
