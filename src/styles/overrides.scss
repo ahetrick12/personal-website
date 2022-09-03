@@ -4,12 +4,12 @@
 
 .app {
 	font-family: "Outfit", sans-serif !important;
-
 	background-color: var(--background-primary) !important;
 	// background-image: url("../images/background-test.jpg") !important;
 	// background-blend-mode: multiply;
 
 	color: var(--foreground-primary) !important;
+	overflow-x: hidden;
 }
 
 // HTML overrides
@@ -116,6 +116,16 @@ footer {
 		margin: auto 12% 1rem auto !important;
 		text-align: right;
 	}
+
+	&.typewriter {
+		@include until(1180px) {
+			font-size: 1.4rem !important;
+		}
+
+		@include until(840px) {
+			font-size: 1.1rem !important;
+		}
+	}
 }
 
 .accent-button {
@@ -146,9 +156,9 @@ footer {
 
 	transition: 0.4s ease-out;
 
-	@include breakpoint(extra_small_devices) {
-		width: 340px !important;
-	}
+	// @include breakpoint(extra_small_devices) {
+	// 	width: 340px !important;
+	// }
 
 	&::after {
 		content: "";

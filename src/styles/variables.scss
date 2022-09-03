@@ -18,14 +18,24 @@
 }
 
 .typewriter {
-	overflow: hidden; /* Ensures the content is not revealed until the animation */
-	border-right: 0.2em solid var(--accent); /* The typwriter cursor */
-	white-space: nowrap; /* Keeps the content on a single line */
-	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	$breakpoint: 620px;
 
-	animation: typing 2.4s steps(40, end), blink-caret 0.75s infinite;
-	animation-delay: 1.3s;
-	animation-fill-mode: backwards;
+	@include from($breakpoint) {
+		overflow: hidden; /* Ensures the content is not revealed until the animation */
+		border-right: 0.2em solid var(--accent); /* The typwriter cursor */
+		white-space: nowrap; /* Keeps the content on a single line */
+		margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+
+		animation: typing 2.4s steps(40, end), blink-caret 0.75s infinite;
+		animation-fill-mode: backwards;
+		animation-delay: 1.3s;
+	}
+
+	@include until($breakpoint) {
+		animation: view-more 2.4s;
+		animation-fill-mode: backwards;
+		animation-delay: 1.3s;
+	}
 }
 
 .accent {

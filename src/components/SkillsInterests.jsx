@@ -706,21 +706,6 @@ const SkillsInterests = () => {
 										fill="#E2E0D0"
 										points="218.745,0 218.745,218.21 29.775,109.1 "
 									/>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
-									<g></g>
 								</svg>
 							}
 							aosType="fade-up-left"

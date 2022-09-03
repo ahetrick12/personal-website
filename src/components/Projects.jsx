@@ -170,7 +170,7 @@ const Projects = () => {
 			</p>
 			<div
 				id="projects-trigger"
-				className="columns is-multiline is-centered is-mobile"
+				className="columns is-multiline is-centered"
 			>
 				{projects.map((project, index) => (
 					<ProjectTile
