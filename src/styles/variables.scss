@@ -15,6 +15,14 @@
 	--foreground-inverted: #2c2c2c;
 
 	--intro-slide-anim-dur: 2s;
+
+	--banner1-height: 21.5rem;
+	--banner2-height: 10rem;
+
+	@include mobile {
+		--banner1-height: 10.75rem !important;
+		--banner2-height: 5rem !important;
+	}
 }
 
 .typewriter {

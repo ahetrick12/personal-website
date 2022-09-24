@@ -4,7 +4,7 @@
 		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 	}
 	100% {
-		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 21.5rem);
+		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner1-height));
 	}
 }
 
@@ -13,7 +13,7 @@
 		clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 	}
 	100% {
-		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 10rem);
+		clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner2-height));
 	}
 }
 

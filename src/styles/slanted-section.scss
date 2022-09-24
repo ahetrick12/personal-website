@@ -4,8 +4,8 @@
 	left: 0;
 
 	background-color: var(--background-primary);
-	padding: 25.2rem 100% 0 0;
-	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 21.5rem);
+	padding: calc(var(--banner1-height) + 4rem) 100% 0 0;
+	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner1-height));
 
 	animation-name: banner1-slide;
 	animation-duration: var(--intro-slide-anim-dur);
@@ -15,8 +15,8 @@
 
 .banner-top {
 	background-color: var(--background-secondary);
-	padding: 14rem 0 0 0;
-	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 10rem);
+	padding: calc(var(--banner2-height) + 4rem) 0 0 0;
+	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner2-height));
 
 	animation-name: banner2-slide;
 	animation-duration: var(--intro-slide-anim-dur);
@@ -27,7 +27,7 @@
 .banner-bottom {
 	background-color: var(--background-secondary);
 	clip-path: polygon(0 100%, 100% 1rem, 100% 0, 0 0);
-	padding: 10rem 0 0 0;
+	padding: var(--banner2-height) 0 0 0;
 
 	animation-name: banner3-slide;
 	animation-duration: var(--intro-slide-anim-dur);
