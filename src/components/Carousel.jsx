@@ -160,10 +160,10 @@ const Carousel = () => {
 					>
 						<div className="image-overlay">
 							<div className="overlay-info p-6">
-								<h2 className="title is-underlined">Title</h2>
-								<p className="description">
-									Some description text would go here
-								</p>
+								<h2 className="title is-underlined">
+									{art.title}
+								</h2>
+								<p className="description">{art.description}</p>
 							</div>
 						</div>
 						<img

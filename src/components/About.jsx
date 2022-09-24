@@ -1,6 +1,7 @@
-import Alex from "../images/Alex4.jpg";
 import { useRef } from "react";
+import Alex from "../images/Alex4.jpg";
 import SocialLinks from "./SocialLinks";
+import Resume from "../images/Alex_Hetrick_Resume.pdf";
 
 const About = () => {
 	const buttonRef = useRef(null);
@@ -81,7 +82,7 @@ const About = () => {
 								projects.
 							</p>
 							<a
-								href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+								href={Resume}
 								className="button accent-button is-rounded"
 								rel="noreferrer"
 								target="_blank"

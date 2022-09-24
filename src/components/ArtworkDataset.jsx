@@ -10,25 +10,26 @@ function ArtworkDataset() {
 		},
 		{
 			image: images.TimmyFront,
-			title: "Mountain Forest",
-			description: "",
+			title: "Quadraped Robot",
+			description:
+				"A quadraped spider-like robot that I made for a friend. His name is Timothy.",
 			link: "",
 		},
 		{
 			image: images.TimmySide,
-			title: "Mountain Forest",
-			description: "",
+			title: "Quadraped Robot",
+			description: "A side view of Timmy.",
 			link: "",
 		},
 		{
 			image: images.ShipDeck,
-			title: "Mountain Forest",
-			description: "",
+			title: "Low Poly Underwater Pack",
+			description: "A shot of the ship deck",
 			link: "",
 		},
 		{
 			image: images.Corals1,
-			title: "Mountain Forest",
+			title: "Low Poly Underwater Pack",
 			description: "",
 			link: "",
 		},
