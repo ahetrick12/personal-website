@@ -1,16 +1,20 @@
 const SkillInterestTile = ({ name, icon, aosType, index }) => {
 	return (
 		<li
-			className="column is-one-third"
+			className="column is-half-mobile is-one-third-tablet is-half-desktop is-one-third-fullhd"
 			data-aos={aosType}
 			data-aos-duration="500"
 			data-aos-delay={index * 100}
 			data-aos-anchor="#skillsinterests"
 			data-aos-anchor-placement="top-center"
 		>
-			<div className="box">
-				<div className="image is-32x32">{icon}</div>
-				<span>{name}</span>
+			<div className="tile columns is-desktop">
+				<div className="column is-one-fifth-widescreen is-one-quarter-fullhd">
+					<div className="image is-32x32">{icon}</div>
+				</div>
+				<div className="column">
+					<span>{name}</span>
+				</div>
 			</div>
 		</li>
 	);
@@ -40,8 +44,8 @@ const SkillsInterests = () => {
 					Some of the things I do and like!
 				</p>
 			</div>
-			<div className="columns">
-				<div className="column is-half">
+			<div className="columns is-widescreen">
+				<div className="column is-half-desktop is-full-touch">
 					<p
 						className="subtitle skills"
 						data-aos="skills-subtitle"
@@ -558,7 +562,7 @@ const SkillsInterests = () => {
 						/>
 					</ul>
 				</div>
-				<div className="column is-half">
+				<div className="column is-half-desktop is-full-touch">
 					<p
 						className="subtitle interests"
 						data-aos="interests-subtitle"
