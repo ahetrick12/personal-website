@@ -55,7 +55,7 @@ const SkillsInterests = () => {
 					>
 						Skills
 					</p>
-					<ul className="columns is-multiline mx-0 is-centered is-mobile">
+					<ul className="columns is-multiline mr-5 is-centered is-mobile">
 						<SkillInterestTile
 							name="Java"
 							icon={
@@ -572,7 +572,7 @@ const SkillsInterests = () => {
 					>
 						Interests
 					</p>
-					<ul className="columns is-multiline mx-0 is-centered is-mobile">
+					<ul className="columns is-multiline ml-5 is-centered is-mobile">
 						<SkillInterestTile
 							name="Web Development"
 							icon={

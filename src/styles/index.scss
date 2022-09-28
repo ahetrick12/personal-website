@@ -218,11 +218,16 @@
 	}
 
 	#projects {
-		padding-right: 0 !important;
-		padding-left: 0 !important;
+		padding-right: 0;
+		padding-left: 0;
 
 		.columns {
-			margin-top: 2rem;
+			padding-right: 2rem;
+			padding-left: 2rem;
+
+			@include touch {
+				padding: 0 5rem;
+			}
 		}
 	}
 
