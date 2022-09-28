@@ -13,8 +13,8 @@ const About = () => {
 	return (
 		<section id="about">
 			<div className="about-container">
-				<div className="columns px-6">
-					<div className="description column is-two-thirds">
+				<div className="columns is-desktop px-6">
+					<div className="description column is-full-touch is-two-thirds-desktop">
 						<h2
 							className="title left"
 							data-aos="title-appear"
@@ -106,7 +106,7 @@ const About = () => {
 						/>
 						<SocialLinks />
 					</div>
-					<div className="column is-one-third">
+					<div className="avatar column is-full-touch is-one-third-desktop">
 						<figure className="image">
 							<img
 								className="is-rounded"
