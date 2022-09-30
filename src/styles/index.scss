@@ -281,7 +281,22 @@
 			.carousel {
 				.carousel-cell {
 					aspect-ratio: 16 / 9;
-					width: 85%;
+
+					@include mobile {
+						width: 85%;
+						margin: 2rem 0rem;
+					}
+
+					@include tablet {
+						width: 80%;
+						margin: 1rem 0rem;
+					}
+
+					@include widescreen {
+						width: 75%;
+						margin: 0;
+					}
+
 					display: flex;
 					overflow: visible;
 					pointer-events: none;
@@ -390,8 +405,21 @@
 					}
 
 					.art-image {
-						max-width: calc(100% - 5.5rem);
-						max-height: calc(100% - 5.5rem);
+						@include touch {
+							max-width: calc(100% - 2rem);
+							max-height: calc(100% - 2rem);
+						}
+
+						@include desktop {
+							max-width: calc(100% - 3rem);
+							max-height: calc(100% - 3rem);
+						}
+
+						@include widescreen {
+							max-width: calc(100% - 6rem);
+							max-height: calc(100% - 6rem);
+						}
+
 						border-radius: 2.5rem;
 						margin: auto;
 						pointer-events: auto;

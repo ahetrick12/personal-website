@@ -86,7 +86,11 @@ https://flickity.metafizzy.co
 	border-radius: 50%;
 
 	/* vertically center */
-	//transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	@include touch {
+		display: none;
+	}
 
 	&.previous {
 		left: 2rem;
@@ -136,9 +140,9 @@ https://flickity.metafizzy.co
 .flickity-page-dots {
 	position: absolute;
 	width: 100%;
-	bottom: 0;
-	transform: translateY(200%);
-	padding: 0;
+	bottom: -2rem;
+	transform: translateY(0%);
+	padding: 0 1rem;
 	margin: 0;
 	list-style: none;
 	text-align: center;
