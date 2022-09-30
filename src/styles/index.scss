@@ -302,8 +302,8 @@
 					aspect-ratio: 16 / 9;
 
 					@include mobile {
-						width: 85%;
-						margin: 2rem 0rem;
+						width: 90%;
+						margin: 1rem 0rem;
 					}
 
 					@include tablet {
@@ -320,7 +320,8 @@
 					overflow: visible;
 					pointer-events: none;
 
-					&:hover {
+					&:hover,
+					&:focus {
 						.image-overlay {
 							transform: scale(1.03);
 
@@ -346,13 +347,19 @@
 						}
 
 						.art-image {
-							transform: scale(1.03);
-							box-shadow: -1.8rem 1.5rem 0rem
-								var(--background-primary);
+							@include tablet {
+								transform: scale(1.03);
+								box-shadow: -1.8rem 1.5rem 0rem
+									var(--background-primary);
+							}
 						}
 					}
 
 					.image-overlay {
+						@include mobile {
+							display: none;
+						}
+
 						z-index: 10;
 						position: absolute;
 						top: 0;
@@ -424,7 +431,12 @@
 					}
 
 					.art-image {
-						@include touch {
+						@include mobile {
+							max-width: calc(100% - 0.5rem);
+							max-height: calc(100% - 0.5rem);
+						}
+
+						@include tablet {
 							max-width: calc(100% - 2rem);
 							max-height: calc(100% - 2rem);
 						}
