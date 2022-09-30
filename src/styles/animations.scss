@@ -106,7 +106,13 @@
 		transform: translate3d(0rem, -4rem, 0);
 		opacity: 1;
 
-		box-shadow: -2rem 1rem 0rem var(--background-primary);
+		@include until(475px) {
+			box-shadow: -1rem 0.5rem 0rem var(--background-primary);
+		}
+
+		@include from(475px) {
+			box-shadow: -2rem 1rem 0rem var(--background-primary);
+		}
 	}
 }
 

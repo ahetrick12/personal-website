@@ -49,7 +49,7 @@ const Contact = () => {
 	};
 
 	return (
-		<div id="contact" className="section">
+		<div id="contact">
 			<h1
 				className="title left"
 				data-aos="title-appear"
