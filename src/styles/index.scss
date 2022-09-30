@@ -16,7 +16,7 @@
 		// background-repeat: no-repeat;
 		// background-position: right top;
 
-		margin-top: -6rem;
+		margin-top: -4rem;
 
 		.video-wrapper {
 			&::after {
@@ -57,11 +57,20 @@
 			}
 
 			.view-more {
+				$breakpoint: 620px;
+
 				animation-name: view-more;
-				animation-duration: 1s;
+				animation-duration: 1.5s;
 				animation-fill-mode: backwards;
-				animation-delay: 4.5s;
 				animation-timing-function: ease-out;
+
+				@include until($breakpoint) {
+					animation-delay: 3s;
+				}
+
+				@include from($breakpoint) {
+					animation-delay: 4.5s;
+				}
 
 				&.button {
 					color: var(--foreground-primary) !important;

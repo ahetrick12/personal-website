@@ -71,10 +71,14 @@ footer {
 
 	&.center {
 		margin: auto auto 1rem auto;
+
+		@include desktop {
+			font-size: 4.5rem !important;
+		}
 	}
 
 	&.left {
-		margin: auto auto 1rem 8% !important;
+		margin: auto auto 1rem 5rem !important;
 
 		&::before {
 			content: "■";
@@ -87,7 +91,7 @@ footer {
 	}
 
 	&.right {
-		margin: auto 8% 1rem auto !important;
+		margin: auto 5rem 1rem auto !important;
 
 		&::before {
 			content: "■";
@@ -123,7 +127,7 @@ footer {
 		}
 
 		@include until(840px) {
-			font-size: 1.1rem !important;
+			font-size: 1.2rem !important;
 		}
 	}
 }

@@ -11,13 +11,13 @@
 	--background-primary-shadow: #13191e;
 
 	--foreground-primary: #ececec;
-	--foreground-secondary: #bfbebe;
+	--foreground-secondary: #cbcbcb;
 	--foreground-inverted: #2c2c2c;
 
 	--intro-slide-anim-dur: 2s;
 
-	--banner1-height: 21.5rem;
-	--banner2-height: 10rem;
+	--banner1-height: 20.5rem;
+	--banner2-height: 9rem;
 
 	@include mobile {
 		--banner1-height: 10.75rem !important;
@@ -42,7 +42,7 @@
 	@include until($breakpoint) {
 		animation: view-more 2.4s;
 		animation-fill-mode: backwards;
-		animation-delay: 1.3s;
+		animation-delay: 1s;
 	}
 }
 

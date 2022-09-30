@@ -36,7 +36,7 @@ const Introduction = () => {
 			<div className="hero-body has-text-centered">
 				<div className="container is-fluid">
 					<p
-						className="title center is-1"
+						className="title center"
 						data-aos="fade-up"
 						data-aos-duration="2000"
 						data-aos-delay="200"
@@ -47,7 +47,7 @@ const Introduction = () => {
 						className=""
 						style={{ width: "fit-content", margin: "auto" }}
 					>
-						<p className="typewriter subtitle is-3">
+						<p className="subtitle typewriter is-4">
 							Software Engineer, Game Developer, and 3D Artist
 							studying at RIT
 						</p>
