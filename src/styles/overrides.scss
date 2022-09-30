@@ -407,10 +407,6 @@ footer {
 		border-radius: 1.5rem;
 		padding: 1rem;
 	}
-
-	// &::placeholder {
-	// 	color: var(--foreground-secondary-inverted);
-	// }
 }
 
 .navbar {
@@ -421,6 +417,12 @@ footer {
 
 	&.at-top {
 		padding: 1rem 0.75rem;
+
+		&.mobile-menu-active {
+			@include touch {
+				backdrop-filter: blur(10px);
+			}
+		}
 	}
 
 	&.scrolling-up {
@@ -483,5 +485,11 @@ footer {
 
 	.navbar-burger {
 		color: var(--foreground-primary);
+		margin: auto 0 auto auto;
+	}
+
+	.navbar-menu {
+		background-color: transparent;
+		box-shadow: 0 0 0 black !important;
 	}
 }

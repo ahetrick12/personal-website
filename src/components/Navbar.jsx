@@ -11,14 +11,19 @@ const Navbar = () => {
 
 	const navbarRef = useRef(null);
 
+	const addClass = (c) => {
+		navbarRef.current.classList.add(c);
+	};
+
+	const removeClass = (c) => {
+		navbarRef.current.classList.remove(c);
+	};
+
 	const removeAllClasses = () => {
 		navbarRef.current.classList.remove("at-top");
 		navbarRef.current.classList.remove("scrolling-up");
 		navbarRef.current.classList.remove("scrolling-down");
-	};
-
-	const addClass = (c) => {
-		navbarRef.current.classList.add(c);
+		navbarRef.current.classList.remove("mobile-menu-active");
 	};
 
 	useLayoutEffect(() => {
@@ -68,6 +73,13 @@ const Navbar = () => {
 				break;
 		}
 	}, [scrollStatus]);
+
+	useEffect(() => {
+		console.log("ASFLKJ");
+
+		if (isActive) addClass("mobile-menu-active");
+		else removeClass("mobile-menu-active");
+	}, [isActive]);
 
 	return (
 		<section className="section">
