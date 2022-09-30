@@ -25,11 +25,6 @@ function App() {
 
 	window.addEventListener("load", AOS.refresh);
 
-	// Onload
-	window.onload = function () {
-		aload();
-	};
-
 	return (
 		<div className="app">
 			<Navbar />
