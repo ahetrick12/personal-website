@@ -151,8 +151,15 @@ footer {
 	color: var(--foreground-primary);
 	background-color: var(--background-secondary);
 	border-radius: 10px;
+	margin: auto;
 
-	margin: 1.5rem 1rem;
+	@include touch {
+		margin: 1.5rem 0rem;
+	}
+
+	@include desktop {
+		margin: 1.5rem 1rem;
+	}
 
 	backface-visibility: hidden;
 
@@ -175,21 +182,23 @@ footer {
 		outline: 3px solid transparent;
 	}
 
-	&:hover,
-	&:focus {
-		box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
-		transform: scale(1.075) !important;
+	@include desktop {
+		&:hover,
+		&:focus {
+			box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
+			transform: scale(1.075) !important;
 
-		&::after {
-			width: calc(100% + 20px);
-			height: calc(100% + 20px);
-			margin: -10px;
+			&::after {
+				width: calc(100% + 20px);
+				height: calc(100% + 20px);
+				margin: -10px;
 
-			outline: 3px solid var(--background-secondary-alt);
-		}
+				outline: 3px solid var(--background-secondary-alt);
+			}
 
-		.card-image {
-			transform: scale(1.06);
+			.card-image {
+				transform: scale(1.06);
+			}
 		}
 	}
 

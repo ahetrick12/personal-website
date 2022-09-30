@@ -259,8 +259,16 @@
 			padding-right: 2rem;
 			padding-left: 2rem;
 
-			@include touch {
+			@include tablet-only {
 				padding: 0 5rem;
+			}
+
+			@include mobile {
+				padding: 0 3rem;
+			}
+
+			@include until(550px) {
+				padding: 0 2rem;
 			}
 		}
 	}
