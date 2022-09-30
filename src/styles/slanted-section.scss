@@ -5,6 +5,11 @@
 
 	background-color: var(--background-primary);
 	padding: calc(var(--banner1-height) + 4rem) 100% 0 0;
+
+	@include mobile {
+		padding: calc(var(--banner1-height) + 6.5rem) 100% 0 0;
+	}
+
 	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner1-height));
 
 	animation-name: banner1-slide;
@@ -16,6 +21,11 @@
 .banner-top {
 	background-color: var(--background-secondary);
 	padding: calc(var(--banner2-height) + 4rem) 0 0 0;
+
+	@include mobile {
+		padding: calc(var(--banner2-height) + 6rem) 0 0 0;
+	}
+
 	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner2-height));
 
 	animation-name: banner2-slide;

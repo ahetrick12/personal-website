@@ -168,7 +168,7 @@ const Carousel = () => {
 						</div>
 						<img
 							className="art-image"
-							data-aload={art.image}
+							src={art.image}
 							alt="artwork"
 						/>
 					</div>
