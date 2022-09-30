@@ -29,7 +29,7 @@ const Introduction = () => {
 	return (
 		<div id="introduction" className="hero is-fullheight">
 			<div className="video-wrapper">
-				<video id="video" autoPlay loop muted playsInline>
+				<video id="video" autoplay loop muted playsinline>
 					<source src={BackgroundVideo} type="video/mp4" />
 				</video>
 			</div>

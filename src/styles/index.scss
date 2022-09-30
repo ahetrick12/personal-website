@@ -155,17 +155,19 @@
 			.avatar {
 				margin: auto;
 
+				@include touch {
+					padding-top: 4rem;
+				}
+
 				@include until(450px) {
-					display: none;
+					width: 100%;
 				}
 
 				@include mobile {
-					padding-top: 4rem;
 					width: 80%;
 				}
 
 				@include tablet-only {
-					padding-top: 4rem;
 					width: 50%;
 				}
 

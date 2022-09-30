@@ -1,11 +1,11 @@
-const SkillInterestTile = ({ name, icon, aosType, index }) => {
+const SkillInterestTile = ({ name, icon, aosType, index, anchor }) => {
 	return (
 		<li
 			className="column is-half-mobile is-one-third-tablet is-half-desktop is-one-third-fullhd"
 			data-aos={aosType}
 			data-aos-duration="500"
 			data-aos-delay={index * 100}
-			data-aos-anchor="#skillsinterests"
+			data-aos-anchor={anchor}
 			data-aos-anchor-placement="top-center"
 		>
 			<div className="tile columns is-desktop">
@@ -44,7 +44,7 @@ const SkillsInterests = () => {
 					Some of the things I do and like!
 				</p>
 			</div>
-			<div className="columns is-widescreen">
+			<div className="columns is-desktop">
 				<div className="column is-half-desktop is-full-touch">
 					<p
 						className="subtitle skills"
@@ -88,6 +88,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={0}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Python"
@@ -143,6 +144,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={1}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Git"
@@ -160,6 +162,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={2}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="C#"
@@ -189,6 +192,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={3}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="C"
@@ -217,6 +221,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={4}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="C++"
@@ -254,6 +259,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={5}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="HTML"
@@ -279,6 +285,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={6}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="CSS"
@@ -304,6 +311,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={7}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="JavaScript"
@@ -324,6 +332,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={8}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="TypeScript"
@@ -345,6 +354,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={9}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="React"
@@ -365,6 +375,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={10}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Angular"
@@ -390,6 +401,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={11}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Bulma"
@@ -406,6 +418,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={12}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Sass"
@@ -422,6 +435,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={13}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="NodeJS"
@@ -439,6 +453,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={14}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="HLSL"
@@ -464,6 +479,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={15}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Unity3D"
@@ -487,6 +503,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={16}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Blender"
@@ -511,6 +528,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={17}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Inkscape"
@@ -534,6 +552,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={18}
+							anchor=".subtitle.skills"
 						/>
 						<SkillInterestTile
 							name="Notion"
@@ -559,6 +578,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-right"
 							index={19}
+							anchor=".subtitle.skills"
 						/>
 					</ul>
 				</div>
@@ -625,6 +645,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={0}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Game Development"
@@ -677,6 +698,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={1}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="3D Art"
@@ -714,6 +736,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={2}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Design"
@@ -743,6 +766,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={3}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Philosophy"
@@ -847,6 +871,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={4}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Entrepreneurship"
@@ -939,6 +964,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={5}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Music"
@@ -996,6 +1022,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={6}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Oboe"
@@ -1074,6 +1101,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={7}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Saxophone"
@@ -1170,6 +1198,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={8}
+							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
 							name="Piano"
@@ -1357,6 +1386,7 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={9}
+							anchor=".subtitle.interests"
 						/>
 					</ul>
 				</div>
