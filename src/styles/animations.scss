@@ -166,7 +166,13 @@
 	transform: scale(0.9);
 
 	&.aos-animate {
-		box-shadow: -1.6rem 1.2rem 0rem var(--background-primary-shadow);
+		@include mobile {
+			box-shadow: -0.8rem 0.7rem 0rem var(--background-primary-shadow);
+		}
+
+		@include tablet {
+			box-shadow: -1.6rem 1.2rem 0rem var(--background-primary-shadow);
+		}
 		opacity: 1;
 		transform: scale(1);
 	}
