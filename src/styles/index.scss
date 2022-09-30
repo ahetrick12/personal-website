@@ -45,7 +45,13 @@
 		}
 
 		&.is-fullheight {
-			height: 110vh;
+			@include mobile {
+				height: 105vh;
+			}
+
+			@include tablet {
+				height: 110vh;
+			}
 		}
 
 		.hero-body {
