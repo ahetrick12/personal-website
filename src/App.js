@@ -12,8 +12,6 @@ import Navbar from "./components/Navbar";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import aload from "aload";
-
 export const ThemeContext = React.createContext({
 	heroLoaded: false,
 	toggleHeroLoaded: () => {},
