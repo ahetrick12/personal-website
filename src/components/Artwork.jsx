@@ -1,5 +1,7 @@
-// import { useEffect, useLayoutEffect, useRef } from "react";
-import Carousel from "./Carousel";
+import React from "react";
+import { Suspense } from "react";
+
+const CarouselLazy = React.lazy(() => import("./Carousel"));
 
 const Artwork = () => {
 	return (
@@ -25,7 +27,9 @@ const Artwork = () => {
 					I make art from time to time. Here's a bit of what I've
 					made!
 				</p>
-				<Carousel />
+				<Suspense fallback={<div>Loading...</div>}>
+					<CarouselLazy />
+				</Suspense>
 			</div>
 
 			<div className="shadow-wrapper bottom-cutoff">
