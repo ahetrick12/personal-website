@@ -42,7 +42,7 @@ const Introduction = () => {
 				<FontAwesomeIcon
 					className="icon is-large"
 					icon={icon}
-					style={{ animationDelay: index + "s" }}
+					style={{ animationDelay: index + 2 + "s" }}
 				/>
 			</a>
 		);
