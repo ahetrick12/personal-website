@@ -22,7 +22,7 @@ const SkillInterestTile = ({ name, icon, aosType, index, anchor }) => {
 
 const SkillsInterests = () => {
 	return (
-		<section id="skillsinterests" className="section is-medium">
+		<section id="skillsinterests" className="section">
 			<div className="is-centered">
 				<h1
 					className="title right"
