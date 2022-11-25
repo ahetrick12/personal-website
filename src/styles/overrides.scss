@@ -43,14 +43,16 @@ p > a {
 }
 
 hr {
-	height: 3px;
+	height: 4px;
 
-	&.primary {
-		@include fade-ends(var(--background-primary));
-	}
-	&.secondary {
-		@include fade-ends(var(--background-secondary));
-	}
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		100% 0,
+		from(transparent),
+		to(transparent),
+		color-stop(50%, var(--background-secondary-alt))
+	);
 }
 
 footer {
@@ -360,6 +362,16 @@ footer {
 
 .section {
 	padding-bottom: 0;
+}
+
+.icon {
+	&:hover,
+	&:focus {
+		.icon {
+			transform: translateY(-0.3rem);
+			color: var(--accent);
+		}
+	}
 }
 
 .control {

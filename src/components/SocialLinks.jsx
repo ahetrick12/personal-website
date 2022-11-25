@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const LinkIcon = ({ index, icon, link }) => {
 	return (
 		<a
-			className="social"
+			className="social icon-parent"
 			href={link}
 			target="_blank"
 			rel="noreferrer"

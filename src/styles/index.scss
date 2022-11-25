@@ -65,7 +65,7 @@
 			.view-more {
 				$breakpoint: 620px;
 
-				animation-name: view-more;
+				animation-name: key-links-appear;
 				animation-duration: 1.5s;
 				animation-fill-mode: backwards;
 				animation-timing-function: ease-out;
@@ -82,7 +82,7 @@
 					color: var(--foreground-primary) !important;
 					background-color: transparent !important;
 					border: 2px solid var(--background-secondary-alt) !important;
-					margin: 3rem 0 0 0 !important;
+					margin: 2rem 0 0 0 !important;
 					border-radius: 0.5rem;
 					padding: 1rem 1.25rem !important;
 					font-size: 1rem !important;
@@ -105,6 +105,13 @@
 						padding-left: 0.5rem;
 					}
 				}
+			}
+
+			.icon {
+				animation-name: key-links-appear;
+				animation-duration: 1s;
+				animation-fill-mode: backwards;
+				animation-timing-function: ease-out;
 			}
 		}
 

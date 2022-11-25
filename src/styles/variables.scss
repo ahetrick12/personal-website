@@ -66,11 +66,19 @@ a.social {
 		height: auto;
 		transition: 0.15s ease-out;
 	}
+}
+
+.icon-parent {
+	color: var(--foreground-primary);
+
+	.icon {
+		transition: 0.2s all ease-out;
+	}
 
 	&:hover,
 	&:focus {
 		.icon {
-			transform: translateY(-0.5rem);
+			transform: translateY(-0.3rem);
 			color: var(--accent);
 		}
 	}
