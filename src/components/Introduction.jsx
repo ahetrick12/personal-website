@@ -6,6 +6,7 @@ import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 
 import MouseScroller from "../images/mouse-scroller.svg";
 import BackgroundVideo from "../images/intro-video.mp4";
+import Resume from "../images/Alex_Hetrick_Resume.pdf";
 
 const Introduction = () => {
 	const scrollRef = useRef(null);
@@ -55,7 +56,7 @@ const Introduction = () => {
 				</video>
 			</div>
 			<div className="hero-body has-text-centered">
-				<div className="container is-fluid">
+				<div className="container is-fluid pt-6">
 					<p
 						className="title center"
 						data-aos="fade-up"
@@ -87,26 +88,26 @@ const Introduction = () => {
 						data-aos-duration="1300"
 						data-aos-delay="3000"
 					></hr>
-					<div className="columns is-centered">
-						<div className="column is-1 has-text-right">
+					<div className="columns is-centered is-multiline is-mobile">
+						<div className="column is-1-desktop is-2-tablet has-text-right">
 							<LinkIcon
 								index={0}
-								icon={faFileLines}
-								link="https://twitter.com/Ventuargames"
+								icon={faLinkedin}
+								link="http://www.linkedin.com/in/ahetrick12"
 							/>
 						</div>
-						<div className="column is-1">
+						<div className="column is-1-desktop is-2-tablet">
 							<LinkIcon
 								index={1}
 								icon={faGithub}
-								link="https://twitter.com/Ventuargames"
+								link="https://github.com/ahetrick12"
 							/>
 						</div>
-						<div className="column is-1 has-text-left">
+						<div className="column is-1-desktop is-2-tablet has-text-left">
 							<LinkIcon
 								index={2}
-								icon={faLinkedin}
-								link="https://twitter.com/Ventuargames"
+								icon={faFileLines}
+								link={Resume}
 							/>
 						</div>
 					</div>
