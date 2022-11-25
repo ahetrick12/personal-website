@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Alex from "../../media/alex.jpg";
+import Alex from "../../media/alex.webp";
 import SocialLinks from "../SocialLinks";
 import Resume from "../../media/resume.pdf";
 
