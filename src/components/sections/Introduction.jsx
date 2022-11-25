@@ -74,11 +74,7 @@ const Introduction = () => {
 							studying at RIT
 						</p>
 					</div>
-					<Link
-						to="about-navtarget"
-						smooth={true}
-						className="view-more button"
-					>
+					<Link to="about" smooth={true} className="view-more button">
 						View More<span>→</span>
 					</Link>
 					<hr
@@ -115,7 +111,7 @@ const Introduction = () => {
 			</div>
 			<div className="banner-behind"></div>
 			<div className="shadow-wrapper top-cutoff">
-				<div id="about-navtarget" className="banner-top"></div>
+				<div className="banner-top"></div>
 			</div>
 			<div className="scroll" ref={scrollRef}>
 				<img src={MouseScroller} alt="scroll"></img>

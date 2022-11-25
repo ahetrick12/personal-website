@@ -121,11 +121,7 @@ const Navbar = () => {
 						>
 							Home
 						</Link>
-						<Link
-							to="about-navtarget"
-							smooth={true}
-							className="navbar-item"
-						>
+						<Link to="about" smooth={true} className="navbar-item">
 							About
 						</Link>
 						<Link
