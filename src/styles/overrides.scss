@@ -1,0 +1,507 @@
+@import "./variables";
+@import "./font-faces";
+@import "./mixins";
+
+.app {
+	font-family: "Outfit", sans-serif !important;
+	background-color: var(--background-primary) !important;
+	// background-image: url("../images/background-test.jpg") !important;
+	// background-blend-mode: multiply;
+
+	color: var(--foreground-primary) !important;
+	overflow-x: hidden;
+}
+
+// HTML overrides
+p > a {
+	display: inline-block;
+	position: relative;
+	padding: 0 !important; // Remove the automatically added space before/after anchor tags
+	color: var(--accent-alt) !important;
+	transition: 0.5s ease-out;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: var(--accent-alt);
+
+		&:after {
+			width: 100%;
+		}
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 1px;
+		position: relative;
+		bottom: 0.25em;
+		background-color: var(--accent);
+		transition: 0.3s ease-out;
+	}
+}
+
+hr {
+	height: 4px;
+
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		100% 0,
+		from(transparent),
+		to(transparent),
+		color-stop(50%, var(--background-secondary-alt))
+	);
+}
+
+footer {
+	//background-color: var(--background-primary);
+	padding: 2rem !important;
+
+	p {
+		font-size: 16px;
+	}
+}
+
+// Bulma overrides
+.title {
+	color: var(--foreground-primary);
+	font-size: 4rem;
+	padding-bottom: 1rem;
+	width: fit-content;
+
+	&.center {
+		margin: auto auto 1rem auto;
+
+		@include desktop {
+			font-size: 4.5rem !important;
+		}
+	}
+
+	&.left {
+		margin: auto auto 1rem 5rem !important;
+
+		&::before {
+			content: "■";
+			position: absolute;
+			left: -1em; /* Adjust this value so that it appears where you want. */
+			bottom: 0.3em;
+			font-size: 1.1em; /* Adjust this value so that it appears what size you want. */
+			color: var(--accent);
+		}
+	}
+
+	&.right {
+		margin: auto 5rem 1rem auto !important;
+		text-align: right;
+
+		&::before {
+			content: "■";
+			position: absolute;
+			right: -1em; /* Adjust this value so that it appears where you want. */
+			bottom: 0.3em;
+			font-size: 1.1em; /* Adjust this value so that it appears what size you want. */
+			color: var(--accent);
+		}
+	}
+}
+
+.subtitle {
+	color: var(--foreground-secondary);
+
+	&.center {
+		text-align: center;
+	}
+
+	&.left {
+		margin: auto auto 1rem 12% !important;
+		text-align: left;
+	}
+
+	&.right {
+		margin: auto 12% 1rem auto !important;
+		text-align: right;
+	}
+
+	&.typewriter {
+		@include until(1180px) {
+			font-size: 1.4rem !important;
+		}
+
+		@include until(840px) {
+			font-size: 1.2rem !important;
+		}
+	}
+}
+
+.accent-button {
+	font-size: 1.1rem;
+	margin-top: 1rem;
+	color: var(--foreground-primary);
+	background-color: var(--accent);
+	padding: 1.5rem 1.75rem;
+	border: none;
+	transition: 0.3s ease-out;
+
+	&:hover,
+	&:focus {
+		color: var(--foreground-primary);
+		transform: scale(1.125) translate(0) !important;
+		font-size: 1.1rem;
+
+		box-shadow: -0.5rem 0.4rem 0rem var(--background-primary);
+	}
+}
+
+.card {
+	color: var(--foreground-primary);
+	background-color: var(--background-secondary);
+	border-radius: 10px;
+	margin: auto;
+
+	@include touch {
+		margin: 1.5rem 0rem;
+	}
+
+	@include desktop {
+		margin: 1.5rem 1rem;
+	}
+
+	backface-visibility: hidden;
+
+	transition: 0.4s ease-out;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 15px;
+		transition: 0.3s ease-out;
+
+		outline: 3px solid transparent;
+	}
+
+	@include desktop {
+		&:hover,
+		&:focus {
+			box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
+			transform: scale(1.075) !important;
+
+			&::after {
+				width: calc(100% + 20px);
+				height: calc(100% + 20px);
+				margin: -10px;
+
+				outline: 3px solid var(--background-secondary-alt);
+			}
+
+			.card-image {
+				transform: scale(1.06);
+			}
+		}
+	}
+
+	&.disabled {
+		cursor: default;
+
+		&:active {
+			pointer-events: none;
+		}
+
+		&:focus {
+			.go-to {
+				animation-name: broken-link;
+				animation-duration: 0.9s;
+				animation-timing-function: ease-in-out;
+			}
+		}
+	}
+
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.shadow-wrapper {
+			display: inline-block;
+
+			margin: -2.25rem -2.25rem 0.5rem -2.25rem;
+			width: calc(100% + 4.5rem);
+
+			clip-path: polygon(
+				0 0,
+				100% 0,
+				100% 200%,
+				0% 200%
+			); // So the drop shadow doesn't bleed out the sides
+			filter: drop-shadow(0 0.3rem 0.3rem rgba(0, 0, 0, 0.6));
+
+			.image-wrapper {
+				overflow: hidden;
+				border-radius: 10px 10px 0 0;
+				clip-path: polygon(
+					0 0,
+					100% 0,
+					100% 90%,
+					0% 100%
+				); // Diagonal cutoff
+
+				.card-image {
+					width: 100%;
+					height: 12rem;
+					margin: 0;
+					object-fit: cover;
+
+					clip-path: polygon(
+						0 0,
+						100% 0,
+						100% 90%,
+						0% 100%
+					); // Same cutoff as parent to prevent weird artifacts during hover transition
+
+					transition: 0.5s ease-out;
+				}
+			}
+		}
+
+		.image {
+			margin-bottom: 0.5rem;
+			color: var(--foreground-secondary);
+
+			&.go-to {
+				position: absolute;
+				top: 1.5rem;
+				right: 1.5rem;
+				z-index: 10;
+
+				transition: ease-out 0.2s;
+
+				color: lightgrey;
+				filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.5));
+
+				&.inverted {
+					color: grey;
+					filter: drop-shadow(0 0 0.15rem rgba(255, 255, 255, 0.5));
+				}
+
+				&.active {
+					color: var(--foreground-secondary);
+
+					&.inverted {
+						color: var(--background-secondary);
+						$shadow_col: rgb(0, 0, 0, 1.4);
+					}
+
+					&:hover,
+					&:focus {
+						color: var(--accent) !important;
+					}
+				}
+			}
+		}
+
+		.proj-title {
+			color: var(--foreground-primary);
+			text-decoration-color: var(--accent) !important;
+
+			font-weight: bold;
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		.proj-description {
+			color: var(--foreground-secondary);
+			font-size: 1rem;
+		}
+
+		.proj-tech {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			margin-top: 1.5rem;
+
+			p {
+				align-self: flex-end;
+
+				color: var(--foreground-secondary);
+				background-color: var(--background-secondary-alt);
+
+				font-size: 0.75rem;
+				width: fit-content;
+				border-radius: 5px;
+				margin-right: 0.3rem;
+				margin-top: 0.3rem;
+				padding: 0.4rem;
+			}
+		}
+
+		.wip {
+			position: absolute;
+			color: var(--foreground-primary);
+			background-color: orange;
+			font-weight: bold;
+			padding: 0.5rem;
+			font-size: 0.8rem;
+			border-radius: 12px;
+			top: 1rem;
+			left: 1rem;
+			z-index: 10;
+		}
+	}
+}
+
+.section {
+	padding-bottom: 0;
+}
+
+.icon {
+	&:hover,
+	&:focus {
+		.icon {
+			transform: translateY(-0.3rem);
+			color: var(--accent);
+		}
+	}
+}
+
+.control {
+	transform: scale(1);
+	// -webkit-transition: all 0.3s ease-in-out;
+	// -moz-transition: all 0.3s ease-in-out;
+	// -ms-transition: all 0.3s ease-in-out;
+	// -o-transition: all 0.3s ease-in-out;
+	transition: 0.3s ease-out;
+
+	&.focused {
+		transform: scale(1.025);
+
+		.textarea {
+			box-shadow: -0.7rem 0.6rem 0rem var(--background-primary);
+		}
+
+		.input {
+			box-shadow: -0.5rem 0.4rem 0rem var(--background-primary);
+		}
+	}
+}
+
+.label {
+	color: var(--foreground-primary);
+	font-size: 1.05rem;
+	font-weight: normal;
+
+	&:after {
+		content: " *";
+		color: rgb(255, 77, 0);
+	}
+}
+
+.textarea,
+.input {
+	background-color: var(--foreground-primary);
+	color: var(--foreground-inverted);
+	border: none !important;
+	box-shadow: 0rem 0rem 0rem var(--background-primary);
+
+	transition: 0.3s ease-out !important;
+
+	&.textarea {
+		border-radius: 1.5rem;
+		padding: 1rem;
+	}
+}
+
+.navbar {
+	position: fixed;
+	background-color: transparent;
+
+	transition: ease-out 0.5s;
+
+	&.at-top {
+		padding: 1rem 0.75rem;
+
+		&.mobile-menu-active {
+			@include touch {
+				backdrop-filter: blur(10px);
+			}
+		}
+	}
+
+	&.scrolling-up {
+		padding: 0.2rem 0.75rem;
+		box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(10px);
+		background-color: var(--background-primary);
+	}
+
+	&.scrolling-down {
+		transform: translateY(-100%);
+		padding: 0.2rem 0.75rem;
+	}
+
+	.navbar-start,
+	.navbar-center,
+	.navbar-end {
+		.navbar-item {
+			color: var(--foreground-primary);
+
+			background: none;
+			margin: 0px 12px;
+			border-bottom: 3px solid transparent;
+
+			transition: ease-in-out 0.3s;
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 0%;
+				height: 3px;
+				left: 50%;
+				bottom: 5%;
+
+				background-color: var(--accent);
+				transition: ease-out 0.3s;
+			}
+
+			&:hover::after {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+
+	.navbar-brand {
+		.is-icon {
+			transition: 0.3s ease-out;
+			border-radius: 50%;
+
+			&:hover,
+			&:focus {
+				transform: scale(1.15);
+
+				box-shadow: 0 0 0 5px var(--background-primary),
+					0 0 0 9px var(--accent);
+			}
+		}
+	}
+
+	.navbar-burger {
+		color: var(--foreground-primary);
+		margin: auto 0 auto auto;
+	}
+
+	.navbar-menu {
+		background-color: transparent;
+		box-shadow: 0 0 0 black !important;
+	}
+}
