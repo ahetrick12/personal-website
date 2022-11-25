@@ -1,7 +1,7 @@
 import React from "react";
 import { Suspense } from "react";
 
-const CarouselLazy = React.lazy(() => import("./Carousel"));
+const CarouselLazy = React.lazy(() => import("../Carousel"));
 
 const Artwork = () => {
 	return (

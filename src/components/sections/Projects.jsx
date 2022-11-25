@@ -6,11 +6,11 @@ import {
 	faLinkSlash,
 } from "@fortawesome/free-solid-svg-icons";
 
-import LPUP_Screnshot from "../images/lpup.png";
-import personal_website from "../images/personal-website.png";
-import notion_notetaker from "../images/notion-notetaker.jpg";
-import artist_corner from "../images/artist-corner.png";
-import gamejams from "../images/gamejams.png";
+import LPUP_Screnshot from "../../media/project-banners/lpup.png";
+import personal_website from "../../media/project-banners/personal-website.png";
+import notion_notetaker from "../../media/project-banners/notion-notetaker.jpg";
+import artist_corner from "../../media/project-banners/artist-corner.png";
+import gamejams from "../../media/project-banners/gamejams.png";
 
 const ProjectTile = ({
 	image,

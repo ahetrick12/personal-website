@@ -1,6 +1,6 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { Link } from "react-scroll";
-import Logo from "../images/logo.png";
+import Logo from "../../media/logo.png";
 
 const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);

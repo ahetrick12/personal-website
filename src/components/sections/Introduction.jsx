@@ -4,9 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 
-import MouseScroller from "../images/mouse-scroller.svg";
-import BackgroundVideo from "../images/intro-video.mp4";
-import Resume from "../images/Alex_Hetrick_Resume.pdf";
+import MouseScroller from "../../media/mouse-scroller.svg";
+import BackgroundVideo from "../../media/intro-video.mp4";
+import Resume from "../../media/resume.pdf";
 
 const Introduction = () => {
 	const scrollRef = useRef(null);

@@ -1,13 +1,13 @@
 import React from "react";
 
-import Introduction from "./components/Introduction";
-import About from "./components/About";
-import SkillsInterests from "./components/SkillsInterests";
-import Projects from "./components/Projects";
-import Artwork from "./components/Artwork";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import Introduction from "./components/sections/Introduction";
+import About from "./components/sections/About";
+import SkillsInterests from "./components/sections/SkillsInterests";
+import Projects from "./components/sections/Projects";
+import Artwork from "./components/sections/Artwork";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/sections/Footer";
+import Navbar from "./components/sections/Navbar";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
