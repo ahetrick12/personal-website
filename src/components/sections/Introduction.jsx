@@ -78,7 +78,6 @@ const Introduction = () => {
 						View More<span>→</span>
 					</Link>
 					<hr
-						width="25%"
 						className="primary mx-auto my-5"
 						data-aos="lengthen"
 						data-aos-duration="1300"

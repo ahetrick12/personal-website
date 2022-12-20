@@ -136,6 +136,24 @@
 			transition: 0.6s ease-in-out;
 			transition-delay: 5s;
 		}
+
+		hr {
+			@include mobile {
+				width: 75%;
+			}
+
+			@include tablet {
+				width: 50%;
+			}
+
+			@include desktop {
+				width: 35%;
+			}
+
+			@include widescreen {
+				width: 27%;
+			}
+		}
 	}
 
 	#about {
