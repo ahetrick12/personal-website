@@ -5,7 +5,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faFileLines } from "@fortawesome/free-solid-svg-icons";
 
 import MouseScroller from "../../media/mouse-scroller.svg";
-import BackgroundVideo from "../../media/intro-video.mp4";
+import BackgroundVideo from "../../media/intro-video.m4v";
 import Resume from "../../media/resume.pdf";
 
 const Introduction = () => {
