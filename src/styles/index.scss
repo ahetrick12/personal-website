@@ -11,7 +11,7 @@
 #root {
 	#introduction {
 		// background-image: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)),
-		// 	url("../images/intro-video.mp4");
+		// 	url("../media/intro-video.mp4");
 		// background-size: cover;
 		// background-repeat: no-repeat;
 		// background-position: right top;
@@ -135,6 +135,24 @@
 			opacity: 1;
 			transition: 0.6s ease-in-out;
 			transition-delay: 5s;
+		}
+
+		hr {
+			@include mobile {
+				width: 75%;
+			}
+
+			@include tablet {
+				width: 50%;
+			}
+
+			@include desktop {
+				width: 35%;
+			}
+
+			@include widescreen {
+				width: 27%;
+			}
 		}
 	}
 
