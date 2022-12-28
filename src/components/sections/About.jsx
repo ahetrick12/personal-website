@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import Alex from "../../media/alex.webp";
+import Alex from "../../media/about/alex.webp";
 import SocialLinks from "../SocialLinks";
-import Resume from "../../media/resume.pdf";
+import Resume from "../../media/about/resume.pdf";
 
 const About = () => {
 	const buttonRef = useRef(null);
@@ -41,17 +41,18 @@ const About = () => {
 								data-aos-anchor="#about"
 								data-aos-anchor-placement="top-center"
 							>
-								Hi there! I’m Alex Hetrick, a developer and
-								artist from Pittsburgh, Pennsylvania. I’m
-								currently a second-year student at the{" "}
+								Hi there! I’m Alex Hetrick, a software engineer
+								and artist from Pittsburgh, Pennsylvania. I’m
+								currently a second-year student studying
+								software engineering at the{" "}
 								<a
 									href="https://www.rit.edu"
 									target="_blank"
 									rel="noreferrer"
 								>
 									Rochester Institute of Technology
-								</a>{" "}
-								studying software engineering.
+								</a>
+								.
 							</p>
 							<p
 								data-aos="fade-right"
@@ -61,7 +62,8 @@ const About = () => {
 								data-aos-anchor-placement="top-center"
 							>
 								I often go by Ventuar online, and have built a
-								brand around that name as a publisher on the{" "}
+								brand around that name as an asset publisher on
+								the{" "}
 								<a
 									href="https://assetstore.unity.com/publishers/36086"
 									target="_blank"
@@ -77,9 +79,9 @@ const About = () => {
 								>
 									CGTrader
 								</a>
-								, designing and developing tools and 3D art
-								assets for other game developers to use in their
-								projects.
+								, designing and developing tools, 3D art assets,
+								and resources to help other game developers
+								fully realize their projects and ideas.
 							</p>
 							<a
 								href={Resume}

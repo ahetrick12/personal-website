@@ -112,17 +112,6 @@ const projects = [
 		wip: false,
 	},
 	{
-		image: notion_notetaker,
-		imagePos: "50% 50%",
-		iconColInvert: true,
-		title: "Notion Notetaker",
-		description:
-			"A chrome extension that allows offers a streamlined approach to taking notes in your notion workspace.",
-		technology: ["HTML", "CSS", "JS"],
-		link: "https://github.com/ahetrick12/Notion-Notetaker",
-		wip: true,
-	},
-	{
 		image: artist_corner,
 		imagePos: "50% 12%",
 		iconColInvert: false,
@@ -130,7 +119,7 @@ const projects = [
 		description:
 			"An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261",
 		technology: ["Angular", "Java", "Typescript", "HTML", "CSS", "JS"],
-		link: "",
+		link: "https://github.com/ahetrick12/artist-corner-estore",
 		wip: false,
 	},
 	{
@@ -143,6 +132,17 @@ const projects = [
 		technology: ["Unity3D", "C#", "Blender", "Inkscape"],
 		link: "https://ventuargames.itch.io/",
 		wip: false,
+	},
+	{
+		image: notion_notetaker,
+		imagePos: "50% 50%",
+		iconColInvert: true,
+		title: "Notion Notetaker",
+		description:
+			"A chrome extension that allows offers a streamlined approach to taking notes in your notion workspace. Very early in development.",
+		technology: ["HTML", "CSS", "JS"],
+		link: "https://github.com/ahetrick12/notion-notetaker",
+		wip: true,
 	},
 ];
 

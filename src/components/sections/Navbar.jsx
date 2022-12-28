@@ -1,6 +1,6 @@
 import { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { Link } from "react-scroll";
-import Logo from "../../media/logo.webp";
+import Logo from "../../media/intro/logo.webp";
 
 const Navbar = () => {
 	const [isActive, setIsActive] = useState(false);
