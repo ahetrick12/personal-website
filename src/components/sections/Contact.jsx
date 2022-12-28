@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useRef, useState } from "react";
 import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
@@ -6,6 +6,11 @@ import { useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+	const [firstNameValidity, setFirstNameValidity] = useState(false);
+	const [lastNameValidity, setLastNameValidity] = useState(false);
+	const [emailValidity, setEmailValidity] = useState(false);
+	const [messageValidity, setmessageValidity] = useState(false);
+
 	const formRef = useRef(null);
 
 	useEffect(() => {
@@ -17,6 +22,19 @@ const Contact = () => {
 			event.target.parentNode.classList.remove("focused");
 		});
 	}, []);
+
+	const validateName = (event) => {
+		const name = event.target.value;
+		const nameRegex = /(\S){1,30}/;
+
+		console.log(name + ": " + nameRegex.test(name));
+
+		if (!nameRegex.test(name)) {
+			event.target.setCustomValidity("Please enter a valid name");
+		} else {
+			event.target.setCustomValidity("");
+		}
+	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
@@ -97,9 +115,10 @@ const Contact = () => {
 								<input
 									className="input is-rounded"
 									type="text"
-									placeholder="John"
+									placeholder="Joe"
 									autoComplete="given-name"
 									name="first_name"
+									onChange={validateName}
 								/>
 								<span className="icon is-small is-left">
 									<FontAwesomeIcon icon={faUser} />
@@ -122,7 +141,7 @@ const Contact = () => {
 								<input
 									className="input is-rounded"
 									type="text"
-									placeholder="Smith"
+									placeholder="Biden"
 									autoComplete="family-name"
 									name="last_name"
 								/>
@@ -149,10 +168,11 @@ const Contact = () => {
 						<input
 							className="input is-rounded is-danger"
 							type="email"
-							placeholder="hello@gmail.com"
+							placeholder="president@whitehouse.gov"
 							autoComplete="email"
 							name="email"
 						/>
+						<p className="help is-danger">This email is invalid</p>
 						<span className="icon is-small is-left">
 							<FontAwesomeIcon icon={faEnvelope} />
 						</span>
@@ -160,7 +180,6 @@ const Contact = () => {
 							<i className="fas fa-exclamation-triangle"></i>
 						</span>
 					</div>
-					<p className="help is-danger">This email is invalid</p>
 				</div>
 				{/* Message */}
 				<div

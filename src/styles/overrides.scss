@@ -407,7 +407,8 @@ footer {
 .input {
 	background-color: var(--foreground-primary);
 	color: var(--foreground-inverted);
-	border: none !important;
+	border: 3px solid;
+	border-color: transparent;
 	box-shadow: 0rem 0rem 0rem var(--background-primary);
 
 	transition: 0.3s ease-out !important;
