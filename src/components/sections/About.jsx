@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import Alex from "../../media/alex.webp";
+import Alex from "../../media/about/alex.webp";
 import SocialLinks from "../SocialLinks";
-import Resume from "../../media/resume.pdf";
+import Resume from "../../media/about/resume.pdf";
 
 const About = () => {
 	const buttonRef = useRef(null);
