@@ -1,6 +1,5 @@
-import { React, useRef, useState } from "react";
+import { React, useRef } from "react";
 import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 
 import emailjs from "@emailjs/browser";

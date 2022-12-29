@@ -1,12 +1,26 @@
 import { React, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect } from "react";
+import { useRef } from "react";
 
 const FieldValidationMessage = (props) => {
-	const [validationMessage, setValidationMessage] = useState("");
+	const [validationMessage, setValidationMessage] = useState(undefined);
+
+	let fieldRef = useRef(props.tag + " is-rounded");
 
 	let Wrapper = props.tag;
 	let outputName = props.name.replace("_", " ");
 	let classname = props.tag + " is-rounded";
+
+	useEffect(() => {
+		fieldRef.current.classList.remove("is-danger");
+
+		if (validationMessage === undefined) return;
+
+		if (validationMessage.length > 0) {
+			fieldRef.current.classList.add("is-danger");
+		}
+	}, [validationMessage]);
 
 	return (
 		<div className="control has-icons-left" id={props.id}>
@@ -25,6 +39,7 @@ const FieldValidationMessage = (props) => {
 						setValidationMessage
 					)
 				}
+				ref={fieldRef}
 			/>
 			<span className="icon is-small is-left">
 				<FontAwesomeIcon icon={props.icon} />
