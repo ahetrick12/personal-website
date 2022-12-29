@@ -9,6 +9,7 @@ const Contact = () => {
 	const formRef = useRef(null);
 
 	const validTextRegex = /(\S){1,30}/;
+	const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 	useEffect(() => {
 		formRef.current.addEventListener("focusin", (event) => {
@@ -26,6 +27,17 @@ const Contact = () => {
 
 		if (!validTextRegex.test(firstName)) {
 			validationText = "Please enter a " + prop;
+		}
+
+		setStateFunction(validationText);
+	};
+
+	const validateEmailInput = (event, obj, prop, setStateFunction) => {
+		const email = event.target.value;
+		let validationText = "";
+
+		if (!validEmailRegex.test(email)) {
+			validationText = "Please enter a valid email address";
 		}
 
 		setStateFunction(validationText);
@@ -152,7 +164,7 @@ const Contact = () => {
 						placeholder="president@whitehouse.gov"
 						autoComplete="email"
 						name="email"
-						validation={validateTextInput}
+						validation={validateEmailInput}
 						icon={faEnvelope}
 					/>
 				</div>

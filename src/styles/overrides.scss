@@ -379,15 +379,21 @@ footer {
 	// -o-transition: all 0.3s ease-in-out;
 	transition: 0.3s ease-out;
 
-	&.focused {
-		transform: scale(1.025);
+	.icon {
+		transition: 0.15s ease-out;
+	}
 
+	&.focused {
 		.textarea {
 			box-shadow: -0.7rem 0.6rem 0rem var(--background-primary);
 		}
 
 		.input {
 			box-shadow: -0.5rem 0.4rem 0rem var(--background-primary);
+		}
+
+		.icon {
+			transform: scale(1.1);
 		}
 	}
 }
@@ -410,13 +416,22 @@ footer {
 	border: 3px solid;
 	border-color: transparent;
 	box-shadow: 0rem 0rem 0rem var(--background-primary);
+	margin-bottom: 0.25rem;
 
 	transition: 0.3s ease-out !important;
 
 	&.textarea {
 		border-radius: 1.5rem;
 		padding: 1rem;
+		resize: vertical;
 	}
+}
+
+.help {
+	position: absolute;
+	font-size: 0.8rem;
+	margin-bottom: 0.25rem;
+	transform: translateY(-0.5rem);
 }
 
 .navbar {
