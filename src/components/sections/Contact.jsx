@@ -4,14 +4,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 
 import emailjs from "@emailjs/browser";
+import FieldValidationMessage from "../FieldValidationMessage";
 
 const Contact = () => {
-	const [firstNameValidity, setFirstNameValidity] = useState(false);
-	const [lastNameValidity, setLastNameValidity] = useState(false);
-	const [emailValidity, setEmailValidity] = useState(false);
-	const [messageValidity, setmessageValidity] = useState(false);
-
 	const formRef = useRef(null);
+
+	const validTextRegex = /(\S){1,30}/;
 
 	useEffect(() => {
 		formRef.current.addEventListener("focusin", (event) => {
@@ -23,17 +21,15 @@ const Contact = () => {
 		});
 	}, []);
 
-	const validateName = (event) => {
-		const name = event.target.value;
-		const nameRegex = /(\S){1,30}/;
+	const validateTextInput = (event, obj, prop, setStateFunction) => {
+		const firstName = event.target.value;
+		let validationText = "";
 
-		console.log(name + ": " + nameRegex.test(name));
-
-		if (!nameRegex.test(name)) {
-			event.target.setCustomValidity("Please enter a valid name");
-		} else {
-			event.target.setCustomValidity("");
+		if (!validTextRegex.test(firstName)) {
+			validationText = "Please enter a " + prop;
 		}
+
+		setStateFunction(validationText);
 	};
 
 	const handleSubmit = (event) => {
@@ -108,22 +104,16 @@ const Contact = () => {
 							data-aos-anchor-placement="top-center"
 						>
 							<label className="label">First Name</label>
-							<div
-								className="control has-icons-left"
+							<FieldValidationMessage
 								id="first-name"
-							>
-								<input
-									className="input is-rounded"
-									type="text"
-									placeholder="Joe"
-									autoComplete="given-name"
-									name="first_name"
-									onChange={validateName}
-								/>
-								<span className="icon is-small is-left">
-									<FontAwesomeIcon icon={faUser} />
-								</span>
-							</div>
+								tag="input"
+								type="text"
+								placeholder="Joe"
+								autoComplete="given-name"
+								name="first_name"
+								validation={validateTextInput}
+								icon={faUser}
+							/>
 						</div>
 						<div
 							className="field"
@@ -134,21 +124,16 @@ const Contact = () => {
 							data-aos-anchor-placement="top-center"
 						>
 							<label className="label">Last Name</label>
-							<div
-								className="control has-icons-left"
+							<FieldValidationMessage
 								id="last-name"
-							>
-								<input
-									className="input is-rounded"
-									type="text"
-									placeholder="Biden"
-									autoComplete="family-name"
-									name="last_name"
-								/>
-								<span className="icon is-small is-left">
-									<FontAwesomeIcon icon={faUser} />
-								</span>
-							</div>
+								tag="input"
+								type="text"
+								placeholder="Biden"
+								autoComplete="given-name"
+								name="last_name"
+								validation={validateTextInput}
+								icon={faUser}
+							/>
 						</div>
 					</div>
 				</div>
@@ -161,25 +146,16 @@ const Contact = () => {
 					data-aos-anchor="#contact"
 				>
 					<label className="label">Email</label>
-					<div
-						className="control has-icons-left has-icons-right"
+					<FieldValidationMessage
 						id="email"
-					>
-						<input
-							className="input is-rounded is-danger"
-							type="email"
-							placeholder="president@whitehouse.gov"
-							autoComplete="email"
-							name="email"
-						/>
-						<p className="help is-danger">This email is invalid</p>
-						<span className="icon is-small is-left">
-							<FontAwesomeIcon icon={faEnvelope} />
-						</span>
-						<span className="icon is-small is-right">
-							<i className="fas fa-exclamation-triangle"></i>
-						</span>
-					</div>
+						tag="input"
+						type="email"
+						placeholder="president@whitehouse.gov"
+						autoComplete="email"
+						name="email"
+						validation={validateTextInput}
+						icon={faEnvelope}
+					/>
 				</div>
 				{/* Message */}
 				<div
@@ -190,14 +166,17 @@ const Contact = () => {
 					data-aos-anchor="#contact"
 				>
 					<label className="label">Message</label>
-					<div className="control" id="message">
-						<textarea
-							className="textarea is-rounded"
-							rows="10"
-							placeholder="Your message here"
-							name="message"
-						></textarea>
-					</div>
+					<FieldValidationMessage
+						id="message"
+						tag="textarea"
+						rows={10}
+						type="text"
+						placeholder="Your message here"
+						autoComplete=""
+						name="message"
+						validation={validateTextInput}
+						icon=""
+					/>
 				</div>
 				<div className="field">
 					<div className="control">
