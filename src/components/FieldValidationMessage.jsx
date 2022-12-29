@@ -10,7 +10,7 @@ const FieldValidationMessage = (props) => {
 
 	let Wrapper = props.tag;
 	let outputName = props.name.replace("_", " ");
-	let classname = props.tag + " is-rounded";
+	let classname = props.tag + " is-rounded is-medium";
 
 	useEffect(() => {
 		fieldRef.current.classList.remove("is-danger");

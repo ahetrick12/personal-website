@@ -20,7 +20,8 @@
 }
 
 // Override bulma-defined variables before importing it
-$input-hover-border-color: transparent;
+$input-border-color: var(--background-secondary);
+$input-hover-border-color: var(--background-secondary);
 $input-focus-border-color: var(--accent);
 
 @import "bulma";
