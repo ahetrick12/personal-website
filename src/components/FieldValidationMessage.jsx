@@ -1,16 +1,32 @@
-import { React, useState } from "react";
+import { React, useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
-import { useRef } from "react";
+import { forwardRef } from "react";
+import { useImperativeHandle } from "react";
 
-const FieldValidationMessage = (props) => {
+const FieldValidationMessage = forwardRef((props, ref) => {
 	const [validationMessage, setValidationMessage] = useState(undefined);
 
-	let fieldRef = useRef(props.tag + " is-rounded");
+	const fieldRef = useRef(null);
 
 	let Wrapper = props.tag;
-	let outputName = props.name.replace("_", " ");
 	let classname = props.tag + " is-rounded is-medium";
+
+	useImperativeHandle(ref, () => ({
+		validate: () => {
+			props.validation(
+				fieldRef.current.value,
+				props.regex,
+				props.messageText,
+				setValidationMessage,
+				props.setState
+			);
+		},
+
+		focus: () => {
+			fieldRef.current.focus();
+		},
+	}));
 
 	useEffect(() => {
 		fieldRef.current.classList.remove("is-danger");
@@ -20,7 +36,7 @@ const FieldValidationMessage = (props) => {
 		if (validationMessage.length > 0) {
 			fieldRef.current.classList.add("is-danger");
 		}
-	}, [validationMessage]);
+	}, [fieldRef, validationMessage]);
 
 	return (
 		<div className="control has-icons-left" id={props.id}>
@@ -33,20 +49,23 @@ const FieldValidationMessage = (props) => {
 				rows={props.rows}
 				onChange={(event) =>
 					props.validation(
-						event,
-						this,
-						outputName,
-						setValidationMessage
+						event.target.value,
+						props.regex,
+						props.messageText,
+						setValidationMessage,
+						props.setState
 					)
 				}
 				ref={fieldRef}
 			/>
-			<span className="icon is-small is-left">
-				<FontAwesomeIcon icon={props.icon} />
-			</span>
+			{props.icon !== "" && (
+				<span className="icon is-small is-left">
+					<FontAwesomeIcon icon={props.icon} />
+				</span>
+			)}
 			<p className="help is-danger">{validationMessage}</p>
 		</div>
 	);
-};
+});
 
 export default FieldValidationMessage;

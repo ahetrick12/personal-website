@@ -1,4 +1,4 @@
-import { React, useRef } from "react";
+import { React, useState, useRef } from "react";
 import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 
@@ -7,6 +7,17 @@ import FieldValidationMessage from "../FieldValidationMessage";
 
 const Contact = () => {
 	const formRef = useRef(null);
+	const submitButtonRef = useRef(null);
+
+	const firstNameRef = useRef(null);
+	const lastNameRef = useRef(null);
+	const emailRef = useRef(null);
+	const messageRef = useRef(null);
+
+	const [firstNameValid, setFirstNameValid] = useState(null);
+	const [lastNameValid, setLastNameValid] = useState(null);
+	const [emailValid, setEmailValid] = useState(null);
+	const [messageValid, setMessageValid] = useState(null);
 
 	const validTextRegex = /(\S){1,30}/;
 	const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -21,30 +32,30 @@ const Contact = () => {
 		});
 	}, []);
 
-	const validateTextInput = (event, obj, prop, setStateFunction) => {
-		const firstName = event.target.value;
+	const validateInput = (value, regex, message, setMessage, setValid) => {
 		let validationText = "";
 
-		if (!validTextRegex.test(firstName)) {
-			validationText = "Please enter a " + prop;
+		if (!regex.test(value)) {
+			validationText = message;
 		}
 
-		setStateFunction(validationText);
-	};
-
-	const validateEmailInput = (event, obj, prop, setStateFunction) => {
-		const email = event.target.value;
-		let validationText = "";
-
-		if (!validEmailRegex.test(email)) {
-			validationText = "Please enter a valid email address";
-		}
-
-		setStateFunction(validationText);
+		setMessage(validationText);
+		setValid(validationText === "");
 	};
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+
+		let refList = [firstNameRef, lastNameRef, emailRef, messageRef];
+		let validFLagList = [
+			firstNameValid,
+			lastNameValid,
+			emailValid,
+			messageValid,
+		];
+
+		let isValid = submitValidation(refList, validFLagList);
+		if (!isValid) return;
 
 		const emailData = {
 			to_name: "Alex",
@@ -62,6 +73,14 @@ const Contact = () => {
 			)
 			.then(
 				(result) => {
+					formRef.current.reset();
+					submitButtonRef.current.blur();
+
+					setFirstNameValid(null);
+					setLastNameValid(null);
+					setEmailValid(null);
+					setMessageValid(null);
+
 					alert(
 						"Message Sent, We will get back to you shortly",
 						result.text
@@ -71,6 +90,29 @@ const Contact = () => {
 					alert("An error occurred, Please try again", error.text);
 				}
 			);
+
+		submitButtonRef.current.blur();
+	};
+
+	const submitValidation = (refs, validFlags) => {
+		let isValid = true;
+
+		refs.forEach((ref) => {
+			ref.current.validate();
+		});
+
+		for (let i = 0; i < refs.length; i++) {
+			const ref = refs[i];
+			const validFlag = validFlags[i];
+
+			if (!validFlag) {
+				ref.current.focus();
+				isValid = false;
+				break;
+			}
+		}
+
+		return isValid;
 	};
 
 	return (
@@ -118,11 +160,14 @@ const Contact = () => {
 							<FieldValidationMessage
 								id="first-name"
 								tag="input"
-								type="text"
 								placeholder="Joe"
 								autoComplete="given-name"
 								name="first_name"
-								validation={validateTextInput}
+								messageText="Please enter a first name"
+								regex={validTextRegex}
+								validation={validateInput}
+								setState={setFirstNameValid}
+								ref={firstNameRef}
 								icon={faUser}
 							/>
 						</div>
@@ -138,11 +183,14 @@ const Contact = () => {
 							<FieldValidationMessage
 								id="last-name"
 								tag="input"
-								type="text"
 								placeholder="Biden"
 								autoComplete="given-name"
 								name="last_name"
-								validation={validateTextInput}
+								messageText="Please enter a last name"
+								regex={validTextRegex}
+								validation={validateInput}
+								setState={setLastNameValid}
+								ref={lastNameRef}
 								icon={faUser}
 							/>
 						</div>
@@ -160,11 +208,14 @@ const Contact = () => {
 					<FieldValidationMessage
 						id="email"
 						tag="input"
-						type="email"
 						placeholder="president@whitehouse.gov"
 						autoComplete="email"
 						name="email"
-						validation={validateEmailInput}
+						messageText="Please enter a valid email address"
+						regex={validEmailRegex}
+						validation={validateInput}
+						setState={setEmailValid}
+						ref={emailRef}
 						icon={faEnvelope}
 					/>
 				</div>
@@ -181,11 +232,14 @@ const Contact = () => {
 						id="message"
 						tag="textarea"
 						rows={10}
-						type="text"
 						placeholder="Your message here"
 						autoComplete=""
 						name="message"
-						validation={validateTextInput}
+						messageText="Please enter a message"
+						regex={validTextRegex}
+						validation={validateInput}
+						setState={setMessageValid}
+						ref={messageRef}
 						icon=""
 					/>
 				</div>
@@ -194,6 +248,7 @@ const Contact = () => {
 						<button
 							type="submit"
 							className="button accent-button is-rounded"
+							ref={submitButtonRef}
 						>
 							Submit
 						</button>
