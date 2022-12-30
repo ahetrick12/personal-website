@@ -14,15 +14,15 @@ const ContactModal = (props) => {
 					className="image is-128x128"
 					icon={faCheckSquare}
 				/>
-				<header class="modal-card-head">
-					<p class="modal-card-title">Success!</p>
+				<header className="modal-card-head">
+					<p className="modal-card-title">Success!</p>
 				</header>
 				<section className="modal-card-body">
 					Your email has been sent
 				</section>
-				<footer class="modal-card-foot">
+				<footer className="modal-card-foot">
 					<button
-						class="button accent-button is-rounded"
+						className="button accent-button is-rounded"
 						onClick={() => props.toggle()}
 					>
 						Sweeeeeet!

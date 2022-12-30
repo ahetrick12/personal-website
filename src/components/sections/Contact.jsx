@@ -120,8 +120,6 @@ const Contact = () => {
 	};
 
 	const toggleModal = () => {
-		console.log(!modalActive);
-
 		const html = document.querySelector("html");
 		html.style.overflow = !modalActive ? "hidden" : "auto";
 
