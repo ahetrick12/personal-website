@@ -75,8 +75,6 @@ const Navbar = () => {
 	}, [scrollStatus]);
 
 	useEffect(() => {
-		console.log("ASFLKJ");
-
 		if (isActive) addClass("mobile-menu-active");
 		else removeClass("mobile-menu-active");
 	}, [isActive]);

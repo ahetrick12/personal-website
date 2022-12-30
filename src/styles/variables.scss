@@ -1,6 +1,5 @@
-@import "./animations";
-
 :root {
+	// Initialize CSS variables
 	--accent: #4576b7;
 	--accent-semitransparent: #4576b776;
 	--accent-alt: #6ea5ec;
@@ -18,7 +17,17 @@
 
 	--banner1-height: 20.5rem;
 	--banner2-height: 9rem;
+}
 
+// Override bulma-defined variables before importing it
+$input-border-color: var(--background-secondary);
+$input-hover-border-color: var(--background-secondary);
+$input-focus-border-color: var(--accent);
+
+@import "bulma";
+@import "./animations";
+
+:root {
 	@include mobile {
 		--banner1-height: 10.75rem !important;
 		--banner2-height: 5rem !important;

@@ -1,12 +1,29 @@
-import { React, useRef } from "react";
+import { React, useState, useRef } from "react";
 import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect } from "react";
 
 import emailjs from "@emailjs/browser";
+import FieldValidationMessage from "../FieldValidationMessage";
+import ContactModal from "../ContactModal";
 
 const Contact = () => {
 	const formRef = useRef(null);
+	const submitButtonRef = useRef(null);
+
+	const firstNameRef = useRef(null);
+	const lastNameRef = useRef(null);
+	const emailRef = useRef(null);
+	const messageRef = useRef(null);
+
+	const [firstNameValid, setFirstNameValid] = useState(null);
+	const [lastNameValid, setLastNameValid] = useState(null);
+	const [emailValid, setEmailValid] = useState(null);
+	const [messageValid, setMessageValid] = useState(null);
+
+	const [modalActive, setModalActive] = useState(false);
+
+	const validTextRegex = /(\S){1,30}/;
+	const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 	useEffect(() => {
 		formRef.current.addEventListener("focusin", (event) => {
@@ -18,8 +35,33 @@ const Contact = () => {
 		});
 	}, []);
 
+	const validateInput = (value, regex, message, setMessage, setValid) => {
+		let validationText = "";
+
+		if (!regex.test(value)) {
+			validationText = message;
+		}
+
+		setMessage(validationText);
+		setValid(validationText === "");
+	};
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
+
+		let refList = [firstNameRef, lastNameRef, emailRef, messageRef];
+		let validFLagList = [
+			firstNameValid,
+			lastNameValid,
+			emailValid,
+			messageValid,
+		];
+
+		let isValid = submitValidation(refList, validFLagList);
+		if (!isValid) return;
+
+		// Send email
+		submitButtonRef.current.classList.add("is-loading");
 
 		const emailData = {
 			to_name: "Alex",
@@ -37,15 +79,51 @@ const Contact = () => {
 			)
 			.then(
 				(result) => {
-					alert(
-						"Message Sent, We will get back to you shortly",
-						result.text
-					);
+					formRef.current.reset();
+					submitButtonRef.current.blur();
+					submitButtonRef.current.classList.remove("is-loading");
+
+					setFirstNameValid(null);
+					setLastNameValid(null);
+					setEmailValid(null);
+					setMessageValid(null);
+
+					toggleModal();
 				},
 				(error) => {
 					alert("An error occurred, Please try again", error.text);
 				}
 			);
+
+		submitButtonRef.current.blur();
+	};
+
+	const submitValidation = (refs, validFlags) => {
+		let isValid = true;
+
+		refs.forEach((ref) => {
+			ref.current.validate();
+		});
+
+		for (let i = 0; i < refs.length; i++) {
+			const ref = refs[i];
+			const validFlag = validFlags[i];
+
+			if (!validFlag) {
+				ref.current.focus();
+				isValid = false;
+				break;
+			}
+		}
+
+		return isValid;
+	};
+
+	const toggleModal = () => {
+		const html = document.querySelector("html");
+		html.style.overflow = !modalActive ? "hidden" : "auto";
+
+		setModalActive(!modalActive);
 	};
 
 	return (
@@ -90,21 +168,19 @@ const Contact = () => {
 							data-aos-anchor-placement="top-center"
 						>
 							<label className="label">First Name</label>
-							<div
-								className="control has-icons-left"
+							<FieldValidationMessage
 								id="first-name"
-							>
-								<input
-									className="input is-rounded"
-									type="text"
-									placeholder="John"
-									autoComplete="given-name"
-									name="first_name"
-								/>
-								<span className="icon is-small is-left">
-									<FontAwesomeIcon icon={faUser} />
-								</span>
-							</div>
+								tag="input"
+								placeholder="Joe"
+								autoComplete="given-name"
+								name="first_name"
+								messageText="Please enter a first name"
+								regex={validTextRegex}
+								validation={validateInput}
+								setState={setFirstNameValid}
+								ref={firstNameRef}
+								icon={faUser}
+							/>
 						</div>
 						<div
 							className="field"
@@ -115,21 +191,19 @@ const Contact = () => {
 							data-aos-anchor-placement="top-center"
 						>
 							<label className="label">Last Name</label>
-							<div
-								className="control has-icons-left"
+							<FieldValidationMessage
 								id="last-name"
-							>
-								<input
-									className="input is-rounded"
-									type="text"
-									placeholder="Smith"
-									autoComplete="family-name"
-									name="last_name"
-								/>
-								<span className="icon is-small is-left">
-									<FontAwesomeIcon icon={faUser} />
-								</span>
-							</div>
+								tag="input"
+								placeholder="Biden"
+								autoComplete="given-name"
+								name="last_name"
+								messageText="Please enter a last name"
+								regex={validTextRegex}
+								validation={validateInput}
+								setState={setLastNameValid}
+								ref={lastNameRef}
+								icon={faUser}
+							/>
 						</div>
 					</div>
 				</div>
@@ -142,25 +216,19 @@ const Contact = () => {
 					data-aos-anchor="#contact"
 				>
 					<label className="label">Email</label>
-					<div
-						className="control has-icons-left has-icons-right"
+					<FieldValidationMessage
 						id="email"
-					>
-						<input
-							className="input is-rounded is-danger"
-							type="email"
-							placeholder="hello@gmail.com"
-							autoComplete="email"
-							name="email"
-						/>
-						<span className="icon is-small is-left">
-							<FontAwesomeIcon icon={faEnvelope} />
-						</span>
-						<span className="icon is-small is-right">
-							<i className="fas fa-exclamation-triangle"></i>
-						</span>
-					</div>
-					<p className="help is-danger">This email is invalid</p>
+						tag="input"
+						placeholder="president@whitehouse.gov"
+						autoComplete="email"
+						name="email"
+						messageText="Please enter a valid email address"
+						regex={validEmailRegex}
+						validation={validateInput}
+						setState={setEmailValid}
+						ref={emailRef}
+						icon={faEnvelope}
+					/>
 				</div>
 				{/* Message */}
 				<div
@@ -171,26 +239,34 @@ const Contact = () => {
 					data-aos-anchor="#contact"
 				>
 					<label className="label">Message</label>
-					<div className="control" id="message">
-						<textarea
-							className="textarea is-rounded"
-							rows="10"
-							placeholder="Your message here"
-							name="message"
-						></textarea>
-					</div>
+					<FieldValidationMessage
+						id="message"
+						tag="textarea"
+						rows={10}
+						placeholder="Your message here"
+						autoComplete=""
+						name="message"
+						messageText="Please enter a message"
+						regex={validTextRegex}
+						validation={validateInput}
+						setState={setMessageValid}
+						ref={messageRef}
+						icon=""
+					/>
 				</div>
 				<div className="field">
 					<div className="control">
 						<button
 							type="submit"
 							className="button accent-button is-rounded"
+							ref={submitButtonRef}
 						>
 							Submit
 						</button>
 					</div>
 				</div>
 			</form>
+			<ContactModal active={modalActive} toggle={toggleModal} />
 		</div>
 	);
 };

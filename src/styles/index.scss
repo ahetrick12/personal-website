@@ -1,9 +1,8 @@
-@import "bulma";
-
-@import "./slanted-section.scss";
-@import "./animations";
-@import "./overrides";
+// Variables HAS to be at the top because that's where we import bulma
 @import "./variables";
+@import "./animations";
+@import "./slanted-section.scss";
+@import "./overrides";
 @import "./flickity";
 
 @import "~bulma-switch";
