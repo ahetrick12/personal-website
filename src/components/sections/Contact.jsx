@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 import emailjs from "@emailjs/browser";
 import FieldValidationMessage from "../FieldValidationMessage";
+import ContactModal from "../ContactModal";
 
 const Contact = () => {
 	const formRef = useRef(null);
@@ -18,6 +19,8 @@ const Contact = () => {
 	const [lastNameValid, setLastNameValid] = useState(null);
 	const [emailValid, setEmailValid] = useState(null);
 	const [messageValid, setMessageValid] = useState(null);
+
+	const [modalActive, setModalActive] = useState(false);
 
 	const validTextRegex = /(\S){1,30}/;
 	const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -57,6 +60,9 @@ const Contact = () => {
 		let isValid = submitValidation(refList, validFLagList);
 		if (!isValid) return;
 
+		// Send email
+		submitButtonRef.current.classList.add("is-loading");
+
 		const emailData = {
 			to_name: "Alex",
 		};
@@ -75,16 +81,14 @@ const Contact = () => {
 				(result) => {
 					formRef.current.reset();
 					submitButtonRef.current.blur();
+					submitButtonRef.current.classList.remove("is-loading");
 
 					setFirstNameValid(null);
 					setLastNameValid(null);
 					setEmailValid(null);
 					setMessageValid(null);
 
-					alert(
-						"Message Sent, We will get back to you shortly",
-						result.text
-					);
+					toggleModal();
 				},
 				(error) => {
 					alert("An error occurred, Please try again", error.text);
@@ -113,6 +117,15 @@ const Contact = () => {
 		}
 
 		return isValid;
+	};
+
+	const toggleModal = () => {
+		console.log(!modalActive);
+
+		const html = document.querySelector("html");
+		html.style.overflow = !modalActive ? "hidden" : "auto";
+
+		setModalActive(!modalActive);
 	};
 
 	return (
@@ -255,6 +268,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</form>
+			<ContactModal active={modalActive} toggle={toggleModal} />
 		</div>
 	);
 };
