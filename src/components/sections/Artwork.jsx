@@ -6,7 +6,7 @@ const CarouselLazy = React.lazy(() => import("../Carousel"));
 const Artwork = () => {
 	return (
 		<section id="artwork">
-			<div className="artwork-container">
+			<div className="section">
 				<h1
 					className="title right"
 					data-aos="title-appear"
