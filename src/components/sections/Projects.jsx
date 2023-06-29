@@ -11,6 +11,7 @@ import personal_website from "../../media/project-banners/personal-website.webp"
 import notion_notetaker from "../../media/project-banners/notion-notetaker.webp";
 import artist_corner from "../../media/project-banners/artist-corner.webp";
 import gamejams from "../../media/project-banners/gamejams.webp";
+import mabel from "../../media/project-banners/mabel.webp";
 
 const ProjectTile = ({
 	image,
@@ -90,6 +91,17 @@ const ProjectTile = ({
 
 const projects = [
 	{
+		image: mabel,
+		imagePos: "50% 50%",
+		iconColInvert: false,
+		title: "Multi-Armed Bandit EvaLuator (MABEL)",
+		description:
+			"An NSF research project through the Rochester Institute of Technology to develop a tool to evaluate multi-armed bandit algorithms' ability to detect faulty sensor readings in autonomous connected vehicles",
+		technology: ["Python", "ML"],
+		link: "https://icmab.github.io/MABEL/",
+		wip: false,
+	},
+	{
 		image: LPUP_Screnshot,
 		imagePos: "50% 60%",
 		iconColInvert: false,
@@ -132,17 +144,6 @@ const projects = [
 		technology: ["Unity3D", "C#", "Blender", "Inkscape"],
 		link: "https://ventuargames.itch.io/",
 		wip: false,
-	},
-	{
-		image: notion_notetaker,
-		imagePos: "50% 50%",
-		iconColInvert: true,
-		title: "Notion Notetaker",
-		description:
-			"A chrome extension that allows offers a streamlined approach to taking notes in your notion workspace. Very early in development.",
-		technology: ["HTML", "CSS", "JS"],
-		link: "https://github.com/ahetrick12/notion-notetaker",
-		wip: true,
 	},
 ];
 
