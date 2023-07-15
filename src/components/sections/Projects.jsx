@@ -9,7 +9,6 @@ import {
 import LPUP_Screnshot from "../../media/project-banners/lpup.webp";
 import personal_website from "../../media/project-banners/personal-website.webp";
 import powerup_hackathon from "../../media/project-banners/poweruptech.webp";
-import notion_notetaker from "../../media/project-banners/notion-notetaker.webp";
 import artist_corner from "../../media/project-banners/artist-corner.webp";
 import gamejams from "../../media/project-banners/gamejams.webp";
 import mabel from "../../media/project-banners/mabel.webp";

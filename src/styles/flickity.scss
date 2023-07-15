@@ -47,13 +47,14 @@ https://flickity.metafizzy.co
 .flickity-button {
 	position: absolute;
 	transition: 0.2s ease-out;
+	transform: translateY(-50%);
 	background: hsla(0, 0%, 100%, 0.6);
 	border: none;
 	color: var(--foreground-primary);
 
 	&:hover {
 		background: var(--foreground-secondary);
-		transform: scale(1.15);
+		transform: scale(1.15) translateY(-50%);
 		cursor: pointer;
 	}
 
@@ -84,9 +85,6 @@ https://flickity.metafizzy.co
 	width: 3.5rem;
 	height: 3.5rem;
 	border-radius: 50%;
-
-	/* vertically center */
-	transform: translateY(-50%);
 
 	@include touch {
 		display: none;

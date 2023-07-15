@@ -318,6 +318,7 @@
 		.section {
 			background-color: var(--background-secondary);
 			padding-bottom: 4rem;
+			padding-top: 0 !important;
 
 			.carousel {
 				.carousel-cell {

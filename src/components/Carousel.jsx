@@ -88,6 +88,7 @@ const Carousel = () => {
 			nextButton.classList.add("hidden");
 
 			window.addEventListener("resize", updateImageBorder);
+			window.addEventListener("load", updateImageBorder);
 			window.addEventListener("scroll", onScroll);
 
 			onScroll();
