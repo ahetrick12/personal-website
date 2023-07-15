@@ -8,6 +8,7 @@ import {
 
 import LPUP_Screnshot from "../../media/project-banners/lpup.webp";
 import personal_website from "../../media/project-banners/personal-website.webp";
+import powerup_hackathon from "../../media/project-banners/poweruptech.webp";
 import notion_notetaker from "../../media/project-banners/notion-notetaker.webp";
 import artist_corner from "../../media/project-banners/artist-corner.webp";
 import gamejams from "../../media/project-banners/gamejams.webp";
@@ -97,7 +98,7 @@ const projects = [
 		title: "Multi-Armed Bandit EvaLuator (MABEL)",
 		description:
 			"An NSF research project through the Rochester Institute of Technology to develop a tool to evaluate multi-armed bandit algorithms' ability to detect faulty sensor readings in autonomous connected vehicles",
-		technology: ["Python", "ML"],
+		technology: ["Python", "Plotly Dash", "AI/ML"],
 		link: "https://icmab.github.io/MABEL/",
 		wip: false,
 	},
@@ -113,13 +114,31 @@ const projects = [
 		wip: false,
 	},
 	{
+		image: powerup_hackathon,
+		imagePos: "50% 50%",
+		iconColInvert: true,
+		title: "Powerup Tech Buffalo Community Hackathon",
+		description:
+			"A service that allows the Say Yes Buffalo organization to quantitatively track alumni engagement in social media job postings fully autonomously",
+		technology: [
+			"React",
+			"TailwindCSS",
+			"NodeJS",
+			"PostgreSQL",
+			"Prisma",
+			"Render",
+		],
+		link: "https://devpost.com/software/say-yes-buffalo-team-22?ref_content=contribution-prompt&ref_feature=engagement&ref_medium=email&utm_campaign=contribution-prompt&utm_content=contribution_reminder&utm_medium=email&utm_source=transactional#app-team",
+		wip: false,
+	},
+	{
 		image: personal_website,
 		imagePos: "50% 15%",
 		iconColInvert: false,
 		title: "Personal Website",
 		description:
 			"My personal website, the one you're on right now, built with React and Bulma.",
-		technology: ["React", "Bulma", "HTML", "SCSS", "JS"],
+		technology: ["React", "Bulma", "EmailJS", "HTML", "SCSS", "JS"],
 		link: "https://github.com/ahetrick12/personal-website",
 		wip: false,
 	},
@@ -130,7 +149,15 @@ const projects = [
 		title: "Artist Corner E-store",
 		description:
 			"An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261",
-		technology: ["Angular", "Java", "Typescript", "HTML", "CSS", "JS"],
+		technology: [
+			"Angular",
+			"Java",
+			"Spring Boot",
+			"Typescript",
+			"HTML",
+			"CSS",
+			"JS",
+		],
 		link: "https://github.com/ahetrick12/artist-corner-estore",
 		wip: false,
 	},

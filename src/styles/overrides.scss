@@ -190,18 +190,18 @@ footer {
 		&:hover,
 		&:focus {
 			box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
-			transform: scale(1.075) !important;
+			transform: scale(1.04) !important;
 
 			&::after {
-				width: calc(100% + 20px);
-				height: calc(100% + 20px);
-				margin: -10px;
+				width: calc(100% + 16px);
+				height: calc(100% + 16px);
+				margin: -8px;
 
 				outline: 3px solid var(--background-secondary-alt);
 			}
 
 			.card-image {
-				transform: scale(1.06);
+				transform: scale(1.03);
 			}
 		}
 	}
@@ -310,8 +310,10 @@ footer {
 			text-decoration-color: var(--accent) !important;
 
 			font-weight: bold;
-			font-size: 2rem;
-			margin-bottom: 1rem;
+			font-size: 1.75rem;
+			margin-bottom: 0.75rem;
+			margin-right: -0.5rem;
+			margin-left: -0.5rem;
 		}
 
 		.proj-description {
@@ -325,7 +327,7 @@ footer {
 			flex-direction: row;
 			flex-wrap: wrap;
 
-			margin: 1.5rem -0.5rem 0 -0.5rem;
+			margin: 1.25rem -0.5rem 0 -0.5rem;
 
 			p {
 				align-self: flex-end;
