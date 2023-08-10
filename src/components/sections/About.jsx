@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import Alex from "../../media/about/alex.webp";
+import Alex from "../../media/about/alex2.webp";
 import SocialLinks from "../SocialLinks";
 import Resume from "../../media/about/resume.pdf";
 
@@ -12,28 +12,28 @@ const About = () => {
 
 	return (
 		<section id="about">
-			<div className="about-container">
-				<div className="columns is-desktop px-6">
+			<div className="section">
+				<h1
+					className="title left"
+					data-aos="title-appear"
+					data-aos-duration="1500"
+					data-aos-anchor="#about"
+					data-aos-anchor-placement="top-center"
+				>
+					About
+				</h1>
+				<p
+					className="subtitle left is-4"
+					data-aos="fade-right"
+					data-aos-duration="1800"
+					data-aos-delay="200"
+					data-aos-anchor="#about"
+					data-aos-anchor-placement="top-center"
+				>
+					A little bit about me.
+				</p>
+				<div className="columns is-desktop">
 					<div className="description column is-full-touch is-two-thirds-desktop">
-						<h2
-							className="title left"
-							data-aos="title-appear"
-							data-aos-duration="1500"
-							data-aos-anchor="#about"
-							data-aos-anchor-placement="top-center"
-						>
-							About
-						</h2>
-						<p
-							className="subtitle left is-4"
-							data-aos="fade-right"
-							data-aos-duration="1800"
-							data-aos-delay="200"
-							data-aos-anchor="#about"
-							data-aos-anchor-placement="top-center"
-						>
-							A little bit about me.
-						</p>
 						<div className="bio">
 							<p
 								data-aos="fade-right"
@@ -98,17 +98,17 @@ const About = () => {
 							>
 								View Resume
 							</a>
+							<hr
+								className="secondary"
+								data-aos="lengthen"
+								data-aos-duration="2000"
+								data-aos-anchor="#about"
+								data-aos-anchor-placement="top-center"
+							/>
+							<SocialLinks />
 						</div>
-						<hr
-							className="secondary"
-							data-aos="lengthen"
-							data-aos-duration="2000"
-							data-aos-anchor="#about"
-							data-aos-anchor-placement="top-center"
-						/>
-						<SocialLinks />
 					</div>
-					<div className="avatar column is-full-touch is-one-third-desktop">
+					<div className="avatar column is-full-touch is-one-third-desktop px-6">
 						<figure className="image">
 							<img
 								className="is-rounded"
