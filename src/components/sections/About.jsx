@@ -43,8 +43,8 @@ const About = () => {
 							>
 								Hi there! I’m Alex Hetrick, a software engineer
 								and artist from Pittsburgh, Pennsylvania. I’m
-								currently a second-year student studying
-								software engineering at the{" "}
+								currently a third-year student studying software
+								engineering at the{" "}
 								<a
 									href="https://www.rit.edu"
 									target="_blank"

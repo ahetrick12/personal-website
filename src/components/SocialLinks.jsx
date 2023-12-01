@@ -31,28 +31,28 @@ const SocialLinks = () => {
 		<div>
 			<LinkIcon
 				index={0}
-				icon={faTwitter}
-				link="https://twitter.com/Ventuargames"
-			/>
-			<LinkIcon
-				index={1}
-				icon={faYoutube}
-				link="https://www.youtube.com/channel/UCXvQbHsROTGAeKYoSc-wBUg/featured"
-			/>
-			<LinkIcon
-				index={2}
 				icon={faLinkedin}
 				link="https://www.linkedin.com/in/alex-hetrick-421a51157/"
 			/>
 			<LinkIcon
-				index={3}
+				index={1}
 				icon={faGithub}
 				link="https://github.com/ahetrick12"
 			/>
 			<LinkIcon
-				index={4}
+				index={2}
 				icon={faUnity}
 				link="https://assetstore.unity.com/publishers/36086"
+			/>
+			<LinkIcon
+				index={3}
+				icon={faTwitter}
+				link="https://twitter.com/Ventuargames"
+			/>
+			<LinkIcon
+				index={4}
+				icon={faYoutube}
+				link="https://www.youtube.com/channel/UCXvQbHsROTGAeKYoSc-wBUg/featured"
 			/>
 			<LinkIcon
 				index={5}
