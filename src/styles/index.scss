@@ -354,7 +354,8 @@
 						margin: 0;
 					}
 
-					display: flex;
+					display: inline-flex;
+					position: relative;
 					overflow: visible;
 					pointer-events: none;
 
@@ -392,6 +393,8 @@
 							}
 						}
 					}
+
+					$width: 100%;
 
 					.image-overlay {
 						@include mobile {
