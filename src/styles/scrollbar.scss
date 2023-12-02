@@ -1,0 +1,18 @@
+body::-webkit-scrollbar {
+	width: 0;
+}
+
+.os-theme-custom {
+	--os-size: 16px;
+	--os-padding-axis: 6px;
+	--os-padding-perpendicular: 4px;
+
+	--os-handle-perpendicular-size-hover: 150%;
+	--os-handle-perpendicular-size-active: 150%;
+
+	--os-handle-border-radius: 100px;
+
+	--os-handle-bg: rgba(236, 236, 236, 0.5);
+	--os-handle-bg-hover: rgba(236, 236, 236, 0.7);
+	--os-handle-bg-active: rgba(236, 236, 236, 0.7);
+}

@@ -4,10 +4,25 @@
 @import "./slanted-section.scss";
 @import "./overrides";
 @import "./flickity";
+@import "./scrollbar";
 
 @import "~bulma-switch";
 
 #root {
+	&::-webkit-scrollbar {
+		width: 16px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: #e4e4e4;
+		border-radius: 100px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #d4aa70;
+		border-radius: 100px;
+	}
+
 	#introduction {
 		// background-image: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)),
 		// 	url("../media/intro-video.mp4");
