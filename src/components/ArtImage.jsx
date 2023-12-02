@@ -1,4 +1,3 @@
-import userEvent from "@testing-library/user-event";
 import React from "react";
 import { useRef } from "react";
 import { useLayoutEffect } from "react";

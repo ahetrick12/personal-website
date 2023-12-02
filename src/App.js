@@ -13,10 +13,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 import "overlayscrollbars/styles/overlayscrollbars.css";
-import {
-	OverlayScrollbarsComponent,
-	useOverlayScrollbars,
-} from "overlayscrollbars-react";
+import { useOverlayScrollbars } from "overlayscrollbars-react";
 
 export const ThemeContext = React.createContext({
 	heroLoaded: false,
@@ -24,18 +21,17 @@ export const ThemeContext = React.createContext({
 });
 
 function App() {
-	const [initBodyOverlayScrollbars, getBodyOverlayScrollbarsInstance] =
-		useOverlayScrollbars({
-			defer: true,
-			paddingAbsolute: true,
-			options: {
-				scrollbars: {
-					theme: "os-theme-custom",
-					autoHide: "move",
-					autoHideDelay: 700,
-				},
+	const [initBodyOverlayScrollbars] = useOverlayScrollbars({
+		defer: true,
+		paddingAbsolute: true,
+		options: {
+			scrollbars: {
+				theme: "os-theme-custom",
+				autoHide: "move",
+				autoHideDelay: 700,
 			},
-		});
+		},
+	});
 
 	useEffect(() => {
 		initBodyOverlayScrollbars(document.body);
