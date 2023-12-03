@@ -1,1 +1,19 @@
-// Nothing here right now
+@use "sass:math";
+
+@mixin aspect($width: 16, $height: 9) {
+	aspect-ratio: math.div($width, $height);
+
+	@supports not (aspect-ratio: math.div($width, $height)) {
+		&::before {
+			content: "";
+			float: left;
+			padding-top: calc((#{$height} / #{$width}) * 100%);
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+	}
+}

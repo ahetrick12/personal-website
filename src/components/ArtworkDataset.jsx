@@ -69,7 +69,7 @@ function ArtworkDataset() {
 			image: images.Jim2,
 			title: "Cel-Shaded Jim",
 			description:
-				"Jim, sporting a fancy scarf and a stylish custom-build cel shader. He thinks shirts hold back.",
+				"Jim, sporting a fancy scarf and a stylish custom-build cel shader. He thinks shirts hold him back.",
 			link: "",
 		},
 		{
