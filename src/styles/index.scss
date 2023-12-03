@@ -337,8 +337,6 @@
 
 			.carousel {
 				.carousel-cell {
-					@include aspect(16, 9);
-
 					@include mobile {
 						width: 90%;
 						margin: 1rem 0rem;
@@ -394,7 +392,12 @@
 						}
 					}
 
-					$width: 100%;
+					.art-container {
+						border: 2px solid yellow;
+						// width: 100%;
+						margin: auto;
+						height: 100%;
+					}
 
 					.image-overlay {
 						@include mobile {
@@ -500,6 +503,7 @@
 						border-radius: 2.5rem;
 						margin: auto;
 						pointer-events: auto;
+						display: block;
 
 						box-shadow: 0 0 0 var(--background-primary);
 

@@ -5,6 +5,7 @@ import { useLayoutEffect } from "react";
 const ArtImage = (props) => {
 	const artImage = useRef();
 	const overlay = useRef();
+	const cell = useRef();
 
 	useLayoutEffect(() => {
 		const updateImageBorder = () => {
@@ -16,9 +17,15 @@ const ArtImage = (props) => {
 				artImage.current.style.transition;
 			overlay.current.style.height = height + 25 + "px";
 			overlay.current.style.width = width + 25 + "px";
+
+			// Update cell height to maintain 16 by 9 aspect ratio
+			let cellWidth = cell.current.clientWidth;
+			let cellHeight = cellWidth / (16 / 9);
+			cell.current.style.height = cellHeight + "px";
 		};
 
 		const resizeObserver = new ResizeObserver(updateImageBorder);
+		resizeObserver.observe(cell.current);
 		resizeObserver.observe(artImage.current);
 
 		// Cleanup function
@@ -34,7 +41,9 @@ const ArtImage = (props) => {
 			data-aos-duration="1000"
 			data-aos-anchor="#artwork"
 			data-aos-anchor-placement="top-center"
+			ref={cell}
 		>
+			{/* <div className="art-container"> */}
 			<div ref={overlay} className="image-overlay">
 				<div className="overlay-info p-6">
 					<h2 className="title is-underlined">{props.art.title}</h2>
@@ -47,6 +56,7 @@ const ArtImage = (props) => {
 				src={props.art.image}
 				alt="artwork"
 			/>
+			{/* </div> */}
 		</div>
 	);
 };
