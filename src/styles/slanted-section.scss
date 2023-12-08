@@ -10,6 +10,10 @@
 		padding: calc(var(--banner1-height) + 15vh) 100% 0 0;
 	}
 
+	@include until(410px) {
+		padding: calc(var(--banner1-height) + 6vh) 100% 0 0;
+	}
+
 	clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner1-height));
 
 	animation-name: banner1-slide;
