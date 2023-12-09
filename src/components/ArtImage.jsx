@@ -12,11 +12,15 @@ const ArtImage = (props) => {
 			// Update image overlays to conform to image size when anything is changed
 			let height = artImage.current.height;
 			let width = artImage.current.width;
+			let borderOffset = getComputedStyle(
+				document.documentElement
+			).getPropertyValue("--art-image-border-offset");
+			borderOffset = parseInt(borderOffset, 10);
 
 			overlay.current.style.transition =
 				artImage.current.style.transition;
-			overlay.current.style.height = height + 25 + "px";
-			overlay.current.style.width = width + 25 + "px";
+			overlay.current.style.height = height + borderOffset + "px";
+			overlay.current.style.width = width + borderOffset + "px";
 
 			// Update cell height to maintain 16 by 9 aspect ratio
 			let cellWidth = cell.current.clientWidth;

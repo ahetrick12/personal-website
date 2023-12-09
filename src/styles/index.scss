@@ -336,19 +336,22 @@
 			padding-top: 0 !important;
 
 			.carousel {
+				margin-right: -3rem;
+				margin-left: -3rem;
+
 				.carousel-cell {
 					@include mobile {
-						width: 90%;
+						width: 82%;
 						margin: 1rem 0rem;
 					}
 
 					@include tablet {
-						width: 80%;
+						width: 78%;
 						margin: 1rem 0rem;
 					}
 
 					@include widescreen {
-						width: 75%;
+						width: 70%;
 						margin: 0;
 					}
 
@@ -386,6 +389,12 @@
 						.art-image {
 							@include tablet {
 								transform: scale(1.03);
+								box-shadow: -1.3rem 1rem 0rem
+									var(--background-primary);
+							}
+
+							@include desktop {
+								transform: scale(1.03);
 								box-shadow: -1.8rem 1.5rem 0rem
 									var(--background-primary);
 							}
@@ -418,6 +427,10 @@
 						border-radius: 3rem;
 						outline: 5px solid var(--background-secondary-alt);
 
+						@include touch {
+							outline: 4px solid var(--background-secondary-alt);
+						}
+
 						.overlay-info {
 							position: absolute;
 							top: 0;
@@ -425,8 +438,17 @@
 							bottom: 0;
 							left: 0;
 
-							height: calc(100% - 24px);
-							width: calc(100% - 24px);
+							@include touch {
+								padding: 2.5rem !important;
+							}
+
+							// Sometimes the height or width is randomly off by 1px
+							height: calc(
+								100% - var(--art-image-border-offset) + 1px
+							);
+							width: calc(
+								100% - var(--art-image-border-offset) + 1px
+							);
 							display: flex;
 							flex-direction: column;
 							margin: auto;
@@ -464,6 +486,10 @@
 								font-size: 3rem;
 
 								transform: translateX(-3rem);
+
+								@include touch {
+									font-size: 2.25rem;
+								}
 							}
 
 							.description {
@@ -475,14 +501,23 @@
 								font-size: 1.2rem;
 
 								transform: translateX(3rem);
+
+								@include touch {
+									font-size: 1rem;
+								}
 							}
 						}
 					}
 
 					.art-image {
+						box-shadow: 0 0 0 var(--background-primary);
+
 						@include mobile {
 							max-width: calc(100% - 0.5rem);
 							max-height: calc(100% - 0.5rem);
+
+							box-shadow: -0.5rem 0.3rem 0rem
+								var(--background-primary);
 						}
 
 						@include tablet {
@@ -504,8 +539,6 @@
 						margin: auto;
 						pointer-events: auto;
 						display: block;
-
-						box-shadow: 0 0 0 var(--background-primary);
 
 						transition: 0.3s ease-out;
 					}

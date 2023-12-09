@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import Logo from "../../media/intro/logo.webp";
 
 const Navbar = () => {
-	const [isActive, setIsActive] = useState(false);
+	const [mobileMenuActive, setMobileMenuActive] = useState(false);
 	const [lastScrollPos, setLastScrollPos] = useState(
 		window.scrollY + window.innerHeight
 	);
@@ -40,6 +40,7 @@ const Navbar = () => {
 			} else {
 				// scrolling up
 				setScrollStatus("up");
+				setMobileMenuActive(false);
 			}
 
 			setLastScrollPos(scrollPos);
@@ -75,9 +76,9 @@ const Navbar = () => {
 	}, [scrollStatus]);
 
 	useEffect(() => {
-		if (isActive) addClass("mobile-menu-active");
+		if (mobileMenuActive) addClass("mobile-menu-active");
 		else removeClass("mobile-menu-active");
-	}, [isActive]);
+	}, [mobileMenuActive]);
 
 	return (
 		<section className="section">
@@ -97,10 +98,10 @@ const Navbar = () => {
 					</Link>
 					<button
 						onClick={() => {
-							setIsActive(!isActive);
+							setMobileMenuActive(!mobileMenuActive);
 						}}
 						className={`navbar-burger ${
-							isActive ? "is-active" : ""
+							mobileMenuActive ? "is-active" : ""
 						}`}
 						aria-label="menu"
 						aria-expanded="false"
@@ -110,7 +111,11 @@ const Navbar = () => {
 						<span aria-hidden="true"></span>
 					</button>
 				</div>
-				<div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
+				<div
+					className={`navbar-menu ${
+						mobileMenuActive ? "is-active" : ""
+					}`}
+				>
 					<div className="navbar-end" style={{ "flexGrow": 1 }}>
 						<Link
 							to="introduction"

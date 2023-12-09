@@ -33,8 +33,31 @@ function App() {
 		},
 	});
 
+	function detectBrowser() {
+		var userAgent = navigator.userAgent;
+
+		var browsers = {
+			"Chrome":
+				/Chrome/.test(userAgent) && /Google Inc/.test(navigator.vendor),
+			"Safari":
+				/Safari/.test(userAgent) &&
+				/Apple Computer/.test(navigator.vendor),
+			"Firefox": /Firefox/.test(userAgent),
+			"Edge": /Edg/.test(userAgent),
+			"Opera": /OPR/.test(userAgent),
+			"Internet Explorer": /MSIE|Trident/.test(userAgent),
+		};
+
+		return (
+			Object.keys(browsers).find((browser) => browsers[browser]) ||
+			"Other"
+		);
+	}
+
 	useEffect(() => {
-		initBodyOverlayScrollbars(document.body);
+		if (detectBrowser() !== "Safari") {
+			initBodyOverlayScrollbars(document.body);
+		}
 	}, [initBodyOverlayScrollbars]);
 
 	AOS.init({ once: true, anchorPlacement: "center-center" });
@@ -56,6 +79,7 @@ function App() {
 		<div className="app">
 			<Navbar />
 			<Introduction />
+			<div></div>
 			<About />
 			<SkillsInterests />
 			<Projects />
