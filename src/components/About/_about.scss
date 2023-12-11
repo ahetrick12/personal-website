@@ -1,0 +1,72 @@
+#about {
+	.section {
+		background-color: var(--background-secondary);
+		position: relative;
+		color: var(--foreground-primary);
+		padding-top: 1rem;
+
+		.description {
+			.bio {
+				@include mobile {
+					padding: 1rem 0rem 0rem 0rem;
+				}
+
+				@include tablet-only {
+					padding: 1rem 5rem 0rem 5rem;
+				}
+
+				@include desktop {
+					padding: 1rem 10rem 0rem 5rem;
+				}
+
+				.title {
+					font-size: 3.5rem !important;
+				}
+
+				p {
+					font-size: 1.25rem;
+					padding-bottom: 1rem;
+					color: var(--foreground-primary);
+				}
+			}
+		}
+
+		.avatar {
+			margin: auto;
+
+			@include until(475px) {
+				padding-top: 6rem !important;
+				width: 100%;
+				transform: scale(1.2);
+			}
+
+			@include touch {
+				padding-top: 4rem;
+			}
+
+			@include mobile {
+				width: 80%;
+			}
+
+			@include tablet-only {
+				width: 50%;
+			}
+
+			@include desktop {
+				transform: scale(1.4) translateY(-15%);
+
+				@include until(1280px) {
+					transform: translateX(-1.5rem) scale(1.4) translateY(-15%);
+				}
+
+				@include from(1370px) {
+					transform: scale(1.25) translateY(-15%);
+				}
+			}
+		}
+
+		hr {
+			margin: 2rem -6rem;
+		}
+	}
+}

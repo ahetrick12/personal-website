@@ -1,0 +1,228 @@
+@import "./variables";
+
+.app {
+	font-family: "Outfit", sans-serif !important;
+	background-color: var(--background-primary) !important;
+	color: var(--foreground-primary) !important;
+	overflow-x: hidden;
+}
+
+// HTML overrides
+p > a {
+	display: inline-block;
+	position: relative;
+	padding: 0 !important; // Remove the automatically added space before/after anchor tags
+	color: var(--accent-alt) !important;
+	transition: 0.5s ease-out;
+
+	&:hover,
+	&:active {
+		color: var(--accent-alt);
+
+		&:after {
+			width: 100%;
+		}
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		width: 0;
+		height: 1px;
+		position: relative;
+		bottom: 0.25em;
+		background-color: var(--accent);
+		transition: 0.3s ease-out;
+	}
+}
+
+hr {
+	height: 4px;
+
+	background: -webkit-gradient(
+		linear,
+		0 0,
+		100% 0,
+		from(transparent),
+		to(transparent),
+		color-stop(50%, var(--background-secondary-alt))
+	);
+}
+
+footer {
+	//background-color: var(--background-primary);
+	padding: 2rem !important;
+
+	p {
+		font-size: 16px;
+	}
+}
+
+// Bulma overrides
+.title {
+	color: var(--foreground-primary);
+	font-size: 4rem;
+	padding-bottom: 1rem;
+	width: fit-content;
+
+	&.center {
+		margin: auto auto 1rem auto;
+
+		@include desktop {
+			font-size: 4.5rem !important;
+		}
+	}
+
+	&.left {
+		margin: auto auto 1rem 5rem !important;
+
+		&::before {
+			content: "■";
+			position: absolute;
+			left: -1em; /* Adjust this value so that it appears where you want. */
+			bottom: 0.3em;
+			font-size: 1.1em; /* Adjust this value so that it appears what size you want. */
+			color: var(--accent);
+		}
+	}
+
+	&.right {
+		margin: auto 5rem 1rem auto !important;
+		text-align: right;
+
+		&::before {
+			content: "■";
+			position: absolute;
+			right: -1em; /* Adjust this value so that it appears where you want. */
+			bottom: 0.3em;
+			font-size: 1.1em; /* Adjust this value so that it appears what size you want. */
+			color: var(--accent);
+		}
+	}
+}
+
+.subtitle {
+	color: var(--foreground-secondary);
+
+	&.center {
+		text-align: center;
+	}
+
+	&.left {
+		margin: auto auto 1rem 7.5% !important;
+		text-align: left;
+	}
+
+	&.right {
+		margin: auto 7.5% 1rem auto !important;
+		text-align: right;
+	}
+
+	&.typewriter {
+		@include until(1180px) {
+			font-size: 1.4rem !important;
+		}
+
+		@include until(840px) {
+			font-size: 1.2rem !important;
+		}
+	}
+}
+
+.accent-button {
+	font-size: 1.1rem;
+	margin-top: 1rem;
+	color: var(--foreground-primary);
+	background-color: var(--accent);
+	padding: 1.5rem 1.75rem;
+	border: none;
+	transition: 0.3s ease-out;
+
+	&:hover {
+		color: var(--foreground-primary);
+		transform: scale(1.125) translate(0) !important;
+		font-size: 1.1rem;
+
+		box-shadow: -0.5rem 0.4rem 0rem var(--background-primary);
+	}
+}
+
+.section {
+	padding-bottom: 0;
+}
+
+.icon {
+	&:hover,
+	&:focus {
+		.icon {
+			transform: translateY(-0.3rem);
+			color: var(--accent);
+		}
+	}
+}
+
+.control {
+	transition: 0.3s ease-out;
+
+	.icon {
+		transform: translateY(-0.1rem);
+		transition: 0.15s ease-out;
+		margin: auto;
+	}
+
+	&.focused {
+		transform: translateY(-0.25rem);
+
+		.textarea {
+			box-shadow: -0.7rem 0.6rem 0rem var(--background-primary);
+			border-width: 3px;
+		}
+
+		.input {
+			box-shadow: -0.5rem 0.4rem 0rem var(--background-primary);
+		}
+
+		.icon {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.label {
+	color: var(--foreground-primary);
+	font-size: 1.05rem;
+	font-weight: normal;
+	margin-bottom: 0.2rem !important;
+
+	&:after {
+		content: " *";
+		color: rgb(255, 77, 0);
+	}
+}
+
+.textarea,
+.input {
+	background-color: var(--foreground-primary);
+	color: var(--foreground-inverted);
+
+	font-size: 1.1rem !important;
+	padding: 1.25rem;
+	border-width: 3px;
+	box-shadow: 0rem 0rem 0rem var(--background-primary);
+	margin-bottom: 0.3rem;
+
+	transition: 0.3s ease-out !important;
+
+	&.textarea {
+		border-radius: 1.5rem;
+		padding: 1rem;
+		resize: vertical;
+	}
+}
+
+.help {
+	position: absolute;
+	font-size: 0.75rem;
+	margin-bottom: 0.25rem;
+	transform: translateY(-0.5rem) translateX(0.5rem);
+}

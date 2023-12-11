@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
-import Introduction from "./components/sections/Introduction";
-import About from "./components/sections/About";
-import SkillsInterests from "./components/sections/SkillsInterests";
-import Projects from "./components/sections/Projects";
-import Artwork from "./components/sections/Artwork";
-import Contact from "./components/sections/Contact";
-import Footer from "./components/sections/Footer";
-import Navbar from "./components/sections/Navbar";
+import Introduction from "./components/Introduction/Introduction";
+import About from "./components/About/About";
+import SkillsInterests from "./components/SkillsInterests/SkillsInterests";
+import Projects from "./components/Projects/Projects";
+import Artwork from "./components/Artwork/Artwork";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+import Navbar from "./components/Navbar/Navbar";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -79,7 +79,6 @@ function App() {
 		<div className="app">
 			<Navbar />
 			<Introduction />
-			<div></div>
 			<About />
 			<SkillsInterests />
 			<Projects />

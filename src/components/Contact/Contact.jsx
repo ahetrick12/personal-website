@@ -3,8 +3,8 @@ import { faEnvelope, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useEffect } from "react";
 
 import emailjs from "@emailjs/browser";
-import FieldValidationMessage from "../FieldValidationMessage";
-import ContactModal from "../ContactModal";
+import FieldValidationMessage from "./FieldValidationMessage";
+import ContactModal from "./ContactModal";
 
 const Contact = () => {
 	const formRef = useRef(null);

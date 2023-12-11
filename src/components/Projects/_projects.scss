@@ -1,0 +1,222 @@
+#projects {
+	.columns {
+		@include tablet-only {
+			padding: 0 5rem;
+		}
+
+		@include mobile {
+			padding: 0 3rem;
+		}
+
+		@include until(550px) {
+			padding: 0 2rem;
+		}
+	}
+}
+
+.card {
+	color: var(--foreground-primary);
+	background-color: var(--background-secondary);
+	border-radius: 10px;
+	margin: auto;
+
+	@include touch {
+		margin: 1.5rem 0rem;
+	}
+
+	@include desktop {
+		margin: 1.5rem 1rem;
+	}
+
+	backface-visibility: hidden;
+
+	transition: 0.4s ease-out;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		border-radius: 15px;
+		transition: 0.3s ease-out;
+
+		outline: 3px solid transparent;
+	}
+
+	@include desktop {
+		&:hover {
+			box-shadow: 0rem 0.3rem 1rem rgb(0, 0, 0, 0.5) !important;
+			transform: scale(1.04) !important;
+
+			&::after {
+				width: calc(100% + 16px);
+				height: calc(100% + 16px);
+				margin: -8px;
+
+				outline: 3px solid var(--background-secondary-alt);
+			}
+
+			.card-image {
+				transform: scale(1.03);
+			}
+		}
+	}
+
+	&.disabled {
+		cursor: default;
+
+		&:active {
+			pointer-events: none;
+		}
+
+		&:focus {
+			.go-to {
+				animation-name: broken-link;
+				animation-duration: 0.9s;
+				animation-timing-function: ease-in-out;
+			}
+		}
+	}
+
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+
+		.shadow-wrapper {
+			display: inline-block;
+
+			margin: -2.25rem -2.25rem 0.5rem -2.25rem;
+			width: calc(100% + 4.5rem);
+
+			clip-path: polygon(
+				0 0,
+				100% 0,
+				100% 200%,
+				0% 200%
+			); // So the drop shadow doesn't bleed out the sides
+			filter: drop-shadow(0 0.3rem 0.3rem rgba(0, 0, 0, 0.6));
+
+			.image-wrapper {
+				overflow: hidden;
+				border-radius: 10px 10px 0 0;
+				clip-path: polygon(
+					0 0,
+					100% 0,
+					100% 90%,
+					0% 100%
+				); // Diagonal cutoff
+
+				.card-image {
+					width: 100%;
+					height: 12rem;
+					margin: 0;
+					object-fit: cover;
+
+					clip-path: polygon(
+						0 0,
+						100% 0,
+						100% 90%,
+						0% 100%
+					); // Same cutoff as parent to prevent weird artifacts during hover transition
+
+					transition: 0.5s ease-out;
+				}
+			}
+		}
+
+		.image {
+			margin-bottom: 0.5rem;
+			color: var(--foreground-secondary);
+
+			&.go-to {
+				position: absolute;
+				top: 1.5rem;
+				right: 1.5rem;
+				z-index: 10;
+
+				transition: ease-out 0.2s;
+
+				color: lightgrey;
+				filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.5));
+
+				&.inverted {
+					color: grey;
+					filter: drop-shadow(0 0 0.15rem rgba(255, 255, 255, 0.5));
+				}
+
+				&.active {
+					color: var(--foreground-secondary);
+
+					&.inverted {
+						color: var(--background-secondary);
+						$shadow_col: rgb(0, 0, 0, 1.4);
+					}
+
+					&:hover,
+					&:focus {
+						color: var(--accent) !important;
+					}
+				}
+			}
+		}
+
+		.proj-title {
+			color: var(--foreground-primary);
+			text-decoration-color: var(--accent) !important;
+
+			font-weight: bold;
+			font-size: 1.75rem;
+			margin-bottom: 0.75rem;
+			margin-right: -0.5rem;
+			margin-left: -0.5rem;
+		}
+
+		.proj-description {
+			color: var(--foreground-secondary);
+			font-size: 1rem;
+		}
+
+		.proj-tech {
+			flex: 1;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			margin: 1.25rem -0.5rem 0 -0.5rem;
+
+			p {
+				align-self: flex-end;
+
+				color: var(--foreground-secondary);
+				background-color: var(--background-secondary-alt);
+
+				font-size: 0.75rem;
+				width: fit-content;
+				border-radius: 5px;
+				margin-right: 0.3rem;
+				margin-top: 0.3rem;
+				padding: 0.4rem;
+			}
+		}
+
+		.wip {
+			position: absolute;
+			color: var(--foreground-primary);
+			background-color: orange;
+			font-weight: bold;
+			padding: 0.5rem;
+			font-size: 0.8rem;
+			border-radius: 12px;
+			top: 1rem;
+			left: 1rem;
+			z-index: 10;
+		}
+	}
+}
