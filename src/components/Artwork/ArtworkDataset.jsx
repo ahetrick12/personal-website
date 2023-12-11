@@ -1,4 +1,4 @@
-import images from "../media/artwork";
+import images from "../../media/artwork";
 
 function ArtworkDataset() {
 	const artwork = [
