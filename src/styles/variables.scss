@@ -1,3 +1,5 @@
+@import "./animations";
+
 :root {
 	// Initialize CSS variables
 	--accent: #4576b7;
@@ -21,14 +23,6 @@
 	// Must be in px
 	--art-image-border-offset: 24px;
 }
-
-// Override bulma-defined variables before importing it
-$input-border-color: var(--background-secondary);
-$input-hover-border-color: var(--background-secondary);
-$input-focus-border-color: var(--accent);
-
-@import "bulma";
-@import "./animations";
 
 :root {
 	@include mobile {

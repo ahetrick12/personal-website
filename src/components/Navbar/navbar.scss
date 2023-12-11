@@ -1,0 +1,84 @@
+.navbar {
+	position: fixed;
+	background-color: transparent;
+
+	transition: ease-out 0.5s;
+
+	&.at-top {
+		padding: 1rem 0.75rem;
+
+		&.mobile-menu-active {
+			@include touch {
+				backdrop-filter: blur(10px);
+			}
+		}
+	}
+
+	&.scrolling-up {
+		padding: 0.2rem 0.75rem;
+		box-shadow: 0 0.5rem 0.8rem rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(10px);
+		background-color: var(--background-primary);
+	}
+
+	&.scrolling-down {
+		transform: translateY(-100%);
+		padding: 0.2rem 0.75rem;
+	}
+
+	.navbar-start,
+	.navbar-center,
+	.navbar-end {
+		.navbar-item {
+			color: var(--foreground-primary);
+
+			background: none;
+			margin: 0px 12px;
+			border-bottom: 3px solid transparent;
+
+			transition: ease-in-out 0.3s;
+
+			&::after {
+				content: "";
+				position: absolute;
+				width: 0%;
+				height: 3px;
+				left: 50%;
+				bottom: 5%;
+
+				background-color: var(--accent);
+				transition: ease-out 0.3s;
+			}
+
+			&:hover::after {
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+
+	.navbar-brand {
+		.is-icon {
+			transition: 0.3s ease-out;
+			border-radius: 50%;
+
+			&:hover,
+			&:focus {
+				transform: scale(1.15);
+
+				box-shadow: 0 0 0 5px var(--background-primary),
+					0 0 0 9px var(--accent);
+			}
+		}
+	}
+
+	.navbar-burger {
+		color: var(--foreground-primary);
+		margin: auto 0 auto auto;
+	}
+
+	.navbar-menu {
+		background-color: transparent;
+		box-shadow: 0 0 0 black !important;
+	}
+}
