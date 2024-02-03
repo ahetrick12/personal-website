@@ -1,5 +1,6 @@
 import { useRef } from "react";
-import Alex from "../../media/about/alex2.webp";
+// import Alex from "../../media/about/alex2.webp";
+import NewAlex from "../../media/about/alex3.png";
 import SocialLinks from "../SocialLinks";
 import Resume from "../../media/about/resume.pdf";
 
@@ -112,7 +113,7 @@ const About = () => {
 						<figure className="image">
 							<img
 								className="is-rounded"
-								src={Alex}
+								src={NewAlex}
 								alt="Alex"
 								data-aos="about-image-slide"
 								data-aos-duration="2000"

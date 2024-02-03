@@ -107,7 +107,7 @@
 }
 
 [data-aos="about-image-slide"] {
-	transform: translate3d(15rem, 0rem, 0);
+	transform: translate3d(5rem, -2rem, 0);
 	box-shadow: 0rem 0rem 0rem var(--background-primary);
 	opacity: 0;
 
@@ -118,11 +118,11 @@
 		opacity: 1;
 
 		@include until(475px) {
-			box-shadow: -1rem 0.5rem 0rem var(--background-primary);
+			// box-shadow: -1rem 0.5rem 0rem var(--background-primary);
 		}
 
 		@include from(475px) {
-			box-shadow: -2rem 1rem 0rem var(--background-primary);
+			// box-shadow: -2rem 1rem 0rem var(--background-primary);
 		}
 	}
 }
