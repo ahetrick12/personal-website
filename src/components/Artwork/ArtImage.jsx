@@ -2,7 +2,7 @@ import React from "react";
 import { useRef } from "react";
 import { useLayoutEffect } from "react";
 
-import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ArtImage = (props) => {
 	const artImage = useRef();
