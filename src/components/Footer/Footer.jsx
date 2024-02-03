@@ -30,7 +30,7 @@ const Footer = () => {
 						</a>
 						.
 						<br />
-						Designed and developed by Alex Hetrick | © 2023 <br />
+						Designed and developed by Alex Hetrick | © 2024 <br />
 						All Rights Reserved.
 					</p>
 					<div className="column is-one-quarter links">
