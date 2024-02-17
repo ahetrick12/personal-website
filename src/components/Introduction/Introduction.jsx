@@ -63,7 +63,7 @@ const Introduction = () => {
 						data-aos-duration="2000"
 						data-aos-delay="200"
 					>
-						Hi, I'm Alex.
+						Hello, I'm Alex.
 					</p>
 					<div
 						className="mx-auto my-1"
