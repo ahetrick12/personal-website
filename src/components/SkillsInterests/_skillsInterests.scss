@@ -39,7 +39,7 @@
 		}
 
 		@include mobile {
-			margin: 0.15rem !important;
+			margin: 0.1rem !important;
 		}
 
 		.column {
@@ -103,8 +103,8 @@
 		margin-bottom: 5rem;
 
 		@include touch {
-			padding-left: 1rem;
-			padding-right: 1rem;
+			padding-left: 0.3rem;
+			padding-right: 0.3rem;
 		}
 
 		&.skills {
