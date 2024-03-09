@@ -1,8 +1,10 @@
 #artwork {
 	.section {
 		background-color: var(--background-secondary);
-		padding-bottom: 4rem;
+		padding-bottom: 4.5rem;
 		padding-top: 0 !important;
+		display: flex;
+		flex-direction: column;
 
 		.carousel {
 			margin-right: -3rem;

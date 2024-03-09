@@ -9,10 +9,10 @@ const SkillInterestTile = ({ name, icon, aosType, index, anchor }) => {
 			data-aos-anchor-placement="top-center"
 		>
 			<div className="tile columns is-desktop">
-				<div className="column is-one-fifth-widescreen is-one-quarter-fullhd">
-					<div className="image is-32x32">{icon}</div>
+				<div className="column icon-column is-one-quarter-widescreen">
+					<div className="icon">{icon}</div>
 				</div>
-				<div className="column">
+				<div className="column name-column">
 					<span>{name}</span>
 				</div>
 			</div>
@@ -23,7 +23,7 @@ const SkillInterestTile = ({ name, icon, aosType, index, anchor }) => {
 const SkillsInterests = () => {
 	return (
 		<section id="skillsinterests" className="section">
-			<div className="is-centered">
+			<div className="is-centered container">
 				<h1
 					className="title right"
 					data-aos="title-appear"
@@ -60,7 +60,7 @@ const SkillsInterests = () => {
 							name="Java"
 							icon={
 								<svg
-									viewBox="0 0 256 346"
+									viewBox="0 0 294 398"
 									xmlns="http://www.w3.org/2000/svg"
 									preserveAspectRatio="xMinYMin meet"
 								>
@@ -594,7 +594,7 @@ const SkillsInterests = () => {
 					</p>
 					<ul className="columns interests is-multiline is-centered is-mobile">
 						<SkillInterestTile
-							name="Web Development"
+							name="WebDev"
 							icon={
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -648,7 +648,7 @@ const SkillsInterests = () => {
 							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile
-							name="Game Development"
+							name="GameDev"
 							icon={
 								<svg
 									viewBox="0 -11 45 45"
@@ -871,99 +871,6 @@ const SkillsInterests = () => {
 							}
 							aosType="fade-up-left"
 							index={4}
-							anchor=".subtitle.interests"
-						/>
-						<SkillInterestTile
-							name="Entrepreneurship"
-							icon={
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									viewBox="0 0 460 460"
-								>
-									<g id="XMLID_784_">
-										<polygon
-											id="XMLID_785_"
-											fill="#DAE0E7"
-											points="0,100 0,360 230,360 240,230 230,100 	"
-										/>
-										<polygon
-											id="XMLID_786_"
-											fill="#8BC0FF"
-											points="115,320 30,330 30,130 115,130 125,225 	"
-										/>
-										<polygon
-											id="XMLID_787_"
-											fill="#3897FF"
-											points="200,130 200,330 115,320 115,130 	"
-										/>
-										<path
-											id="XMLID_788_"
-											fill="#233145"
-											d="M115,150v85c-23.473,0-42.5-19.027-42.5-42.5S91.527,150,115,150z"
-										/>
-										<path
-											id="XMLID_789_"
-											fill="#233145"
-											d="M115,263.755l10,27.609L115,330H30c0-33.444,19.31-62.375,47.391-76.245
-									L115,263.755z"
-										/>
-										<polygon
-											id="XMLID_790_"
-											fill="#FFFFFF"
-											points="77.391,253.755 115,291.364 125,272.559 115,253.755 	"
-										/>
-										<rect
-											id="XMLID_791_"
-											x="230"
-											y="100"
-											fill="#BEC8D6"
-											width="230"
-											height="260"
-										/>
-										<rect
-											id="XMLID_792_"
-											x="230"
-											y="154.7"
-											fill="#6B81A1"
-											width="200"
-											height="30"
-										/>
-										<rect
-											id="XMLID_793_"
-											x="230"
-											y="214.7"
-											fill="#6B81A1"
-											width="200"
-											height="30"
-										/>
-										<rect
-											id="XMLID_794_"
-											x="230"
-											y="274.7"
-											fill="#6B81A1"
-											width="200"
-											height="30"
-										/>
-										<path
-											id="XMLID_795_"
-											fill="#121923"
-											d="M115,150c23.473,0,42.5,19.027,42.5,42.5S138.473,235,115,235V150z"
-										/>
-										<path
-											id="XMLID_796_"
-											fill="#121923"
-											d="M200,330h-85v-38.636l37.609-37.609C180.69,267.625,200,296.556,200,330z"
-										/>
-										<polygon
-											id="XMLID_797_"
-											fill="#DAE0E7"
-											points="115,291.364 152.609,253.755 115,253.755 	"
-										/>
-									</g>
-								</svg>
-							}
-							aosType="fade-up-left"
-							index={5}
 							anchor=".subtitle.interests"
 						/>
 						<SkillInterestTile

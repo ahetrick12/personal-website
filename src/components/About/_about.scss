@@ -1,72 +1,85 @@
 #about {
+	// display: flex;
+	// justify-content: center;
+
 	.section {
-		background-color: var(--background-secondary);
 		position: relative;
+		background-color: var(--background-secondary);
 		color: var(--foreground-primary);
 		padding-top: 1rem;
+		display: flex;
+		justify-content: center;
 
-		.description {
-			.bio {
-				@include mobile {
-					padding: 1rem 0rem 0rem 0rem;
+		.frame {
+			max-width: 1200px;
+
+			.description {
+				.bio {
+					@include mobile {
+						padding: 0.5rem 0rem 0rem 0rem;
+					}
+
+					@include tablet-only {
+						padding: 1rem 5rem 0rem 5rem;
+					}
+
+					@include desktop {
+						padding: 1rem 10rem 0rem 5rem;
+					}
+
+					.title {
+						font-size: 3.5rem !important;
+					}
+
+					p {
+						font-size: 1.25rem;
+						padding-bottom: 1rem;
+						color: var(--foreground-primary);
+
+						@include mobile {
+							font-size: 1.1rem;
+						}
+					}
+				}
+			}
+
+			.avatar {
+				margin: auto;
+
+				@include touch {
+					padding: 1rem 0 0 0;
+					width: 100%;
+					max-width: 550px;
 				}
 
-				@include tablet-only {
-					padding: 1rem 5rem 0rem 5rem;
+				@include until(475px) {
+					padding-top: 6rem !important;
+					width: 100%;
+					max-width: 350px;
+					transform: scale(1.4);
 				}
 
 				@include desktop {
-					padding: 1rem 10rem 0rem 5rem;
-				}
+					padding: 0;
 
-				.title {
-					font-size: 3.5rem !important;
-				}
+					@include until(1217px) {
+						transform: translateX(-2rem) scale(2.25);
+					}
 
-				p {
-					font-size: 1.25rem;
-					padding-bottom: 1rem;
-					color: var(--foreground-primary);
-				}
-			}
-		}
+					@include widescreen {
+						transform: scale(1.5) translateY(-7%) translateX(-2rem);
+						max-width: 400px;
+					}
 
-		.avatar {
-			margin: auto;
-
-			@include until(475px) {
-				padding-top: 6rem !important;
-				width: 100%;
-				transform: scale(1.2);
-			}
-
-			@include touch {
-				padding-top: 4rem;
-			}
-
-			@include mobile {
-				width: 80%;
-			}
-
-			@include tablet-only {
-				width: 50%;
-			}
-
-			@include desktop {
-				transform: scale(1.4) translateY(-15%);
-
-				@include until(1280px) {
-					transform: translateX(-1.5rem) scale(1.4) translateY(-15%);
-				}
-
-				@include from(1370px) {
-					transform: scale(1.5) translateY(-7%);
+					@include until(1115px) {
+						transform: translateX(-2rem) scale(2.4);
+					}
 				}
 			}
-		}
 
-		hr {
-			margin: 2rem -6rem;
+			hr {
+				margin: 2rem -6rem;
+			}
 		}
 	}
 }

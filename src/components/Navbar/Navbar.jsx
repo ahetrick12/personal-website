@@ -10,6 +10,7 @@ const Navbar = () => {
 	const [scrollStatus, setScrollStatus] = useState("top");
 
 	const navbarRef = useRef(null);
+	const hamburgerMenuRef = useRef(null);
 
 	const addClass = (c) => {
 		navbarRef.current.classList.add(c);
@@ -112,11 +113,17 @@ const Navbar = () => {
 					</button>
 				</div>
 				<div
-					className={`navbar-menu ${
-						mobileMenuActive ? "is-active" : ""
+					ref={hamburgerMenuRef}
+					className={`navbar-menu is-active ${
+						mobileMenuActive ? "is-expanded" : ""
 					}`}
 				>
-					<div className="navbar-end" style={{ "flexGrow": 1 }}>
+					<div
+						className={`navbar-end ${
+							mobileMenuActive ? "is-expanded" : ""
+						}`}
+						style={{ "flexGrow": 1 }}
+					>
 						<Link
 							to="introduction"
 							smooth={true}

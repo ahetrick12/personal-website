@@ -1,5 +1,7 @@
 #projects {
 	.columns {
+		margin-top: 1rem;
+
 		@include tablet-only {
 			padding: 0 5rem;
 		}

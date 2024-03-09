@@ -69,6 +69,17 @@
 	}
 }
 
+@keyframes mobile-nav-link-appear {
+	0% {
+		opacity: 0;
+		transform: translateX(-1.5rem);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
 /* Animation for project with no link */
 @keyframes broken-link {
 	0% {
