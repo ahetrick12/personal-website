@@ -1,7 +1,7 @@
 const SkillInterestTile = ({ name, icon, aosType, index, anchor }) => {
 	return (
 		<li
-			className="column is-half-mobile is-one-third-tablet is-half-desktop is-one-third-fullhd"
+			className="column tile-column is-half-mobile is-one-third-tablet is-half-desktop is-one-third-fullhd"
 			data-aos={aosType}
 			data-aos-duration="500"
 			data-aos-delay={index * 100}
