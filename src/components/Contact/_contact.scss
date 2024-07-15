@@ -1,29 +1,29 @@
 #contact {
-	.contact-container {
-		background-color: var(--background-secondary);
+  .contact-container {
+    background-color: var(--background-secondary);
 
-		@include mobile {
-			padding: 1.5rem 2rem !important;
-			width: 90%;
-		}
+    @include mobile {
+      padding: 1.5rem 2rem !important;
+      width: 90%;
+    }
 
-		@include tablet {
-			padding: 2rem 2.5rem;
-			width: 85%;
-		}
+    @include tablet {
+      padding: 2rem 2.5rem;
+      width: 85%;
+    }
 
-		@include desktop {
-			padding: 3rem 4rem !important;
-			width: 80%;
-		}
+    @include desktop {
+      padding: 3rem 4rem !important;
+      width: 80%;
+    }
 
-		margin: 3rem auto;
-		border-radius: 2rem;
-	}
+    margin: 3rem auto;
+    border-radius: 2rem;
+  }
 
-	.field {
-		.accent-button {
-			font-size: 1.3rem;
-		}
-	}
+  .field {
+    .accent-button {
+      font-size: 1.3rem;
+    }
+  }
 }

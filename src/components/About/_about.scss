@@ -1,85 +1,85 @@
 #about {
-	// display: flex;
-	// justify-content: center;
+  // display: flex;
+  // justify-content: center;
 
-	.section {
-		position: relative;
-		background-color: var(--background-secondary);
-		color: var(--foreground-primary);
-		padding-top: 1rem;
-		display: flex;
-		justify-content: center;
+  .section {
+    position: relative;
+    background-color: var(--background-secondary);
+    color: var(--foreground-primary);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
 
-		.frame {
-			max-width: 1200px;
+    .frame {
+      max-width: 1200px;
 
-			.description {
-				.bio {
-					@include mobile {
-						padding: 0.5rem 0rem 0rem 0rem;
-					}
+      .description {
+        .bio {
+          @include mobile {
+            padding: 0.5rem 0rem 0rem 0rem;
+          }
 
-					@include tablet-only {
-						padding: 1rem 5rem 0rem 5rem;
-					}
+          @include tablet-only {
+            padding: 1rem 5rem 0rem 5rem;
+          }
 
-					@include desktop {
-						padding: 1rem 10rem 0rem 5rem;
-					}
+          @include desktop {
+            padding: 1rem 10rem 0rem 5rem;
+          }
 
-					.title {
-						font-size: 3.5rem !important;
-					}
+          .title {
+            font-size: 3.5rem !important;
+          }
 
-					p {
-						font-size: 1.25rem;
-						padding-bottom: 1rem;
-						color: var(--foreground-primary);
+          p {
+            font-size: 1.25rem;
+            padding-bottom: 1rem;
+            color: var(--foreground-primary);
 
-						@include mobile {
-							font-size: 1.1rem;
-						}
-					}
-				}
-			}
+            @include mobile {
+              font-size: 1.1rem;
+            }
+          }
+        }
+      }
 
-			.avatar {
-				margin: auto;
+      .avatar {
+        margin: auto;
 
-				@include touch {
-					padding: 1rem 0 0 0;
-					width: 100%;
-					max-width: 550px;
-				}
+        @include touch {
+          padding: 1rem 0 0 0;
+          width: 100%;
+          max-width: 550px;
+        }
 
-				@include until(475px) {
-					padding-top: 6rem !important;
-					width: 100%;
-					max-width: 350px;
-					transform: scale(1.4);
-				}
+        @include until(475px) {
+          padding-top: 6rem !important;
+          width: 100%;
+          max-width: 350px;
+          transform: scale(1.4);
+        }
 
-				@include desktop {
-					padding: 0;
+        @include desktop {
+          padding: 0;
 
-					@include until(1217px) {
-						transform: translateX(-2rem) scale(2.25);
-					}
+          @include until(1217px) {
+            transform: translateX(-2rem) scale(2.25);
+          }
 
-					@include widescreen {
-						transform: scale(1.5) translateY(-7%) translateX(-2rem);
-						max-width: 400px;
-					}
+          @include widescreen {
+            transform: scale(1.5) translateY(-7%) translateX(-2rem);
+            max-width: 400px;
+          }
 
-					@include until(1115px) {
-						transform: translateX(-2rem) scale(2.4);
-					}
-				}
-			}
+          @include until(1115px) {
+            transform: translateX(-2rem) scale(2.4);
+          }
+        }
+      }
 
-			hr {
-				margin: 2rem -6rem;
-			}
-		}
-	}
+      hr {
+        margin: 2rem -6rem;
+      }
+    }
+  }
 }
