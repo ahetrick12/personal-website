@@ -80,10 +80,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        process.env.REACT_APP_SERVICE_ID ?? '',
-        process.env.REACT_APP_TEMPLATE_ID ?? '',
+        import.meta.env.VITE_SERVICE_ID ?? '',
+        import.meta.env.VITE_TEMPLATE_ID ?? '',
         emailData,
-        process.env.REACT_APP_PUBLIC_KEY ?? ''
+        import.meta.env.VITE_PUBLIC_KEY ?? ''
       )
       .then(
         () => {
@@ -99,7 +99,7 @@ const Contact = () => {
           toggleModal();
         },
         (error: EmailJSResponseStatus) => {
-          alert('An error occurred, Please try again\n' + error.text);
+          alert('An error occurred, Please try again\n' + error);
         }
       );
 
