@@ -1,3 +1,5 @@
+@use '../../styles/base' as *;
+
 #projects {
   .columns {
     margin-top: 1rem;
@@ -21,6 +23,9 @@
   background-color: var(--background-secondary);
   border-radius: 10px;
   margin: auto;
+  backface-visibility: hidden;
+  transition: 0.4s ease-out;
+  box-shadow: 0 0.5rem 0.5rem 0rem rgba(0, 0, 0, 0.15);
 
   @include touch {
     margin: 1.5rem 0rem;
@@ -29,10 +34,6 @@
   @include desktop {
     margin: 1.5rem 1rem;
   }
-
-  backface-visibility: hidden;
-
-  transition: 0.4s ease-out;
 
   &::after {
     content: '';

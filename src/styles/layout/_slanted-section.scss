@@ -1,10 +1,19 @@
+@use '../base' as *;
+
 .banner-behind {
   position: absolute;
-  bottom: -5vh;
+  bottom: 0;
   left: 0;
 
   background-color: var(--background-primary);
   padding: calc(var(--banner1-height) + 5vh) 100% 0 0;
+
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner1-height));
+
+  animation-name: banner1-slide;
+  animation-duration: var(--intro-slide-anim-dur);
+  animation-delay: 500ms;
+  animation-fill-mode: backwards;
 
   @include mobile {
     padding: calc(var(--banner1-height) + 15vh) 100% 0 0;
@@ -13,22 +22,11 @@
   @include until(410px) {
     padding: calc(var(--banner1-height) + 6vh) 100% 0 0;
   }
-
-  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner1-height));
-
-  animation-name: banner1-slide;
-  animation-duration: var(--intro-slide-anim-dur);
-  animation-delay: 500ms;
-  animation-fill-mode: backwards;
 }
 
 .banner-top {
   background-color: var(--background-secondary);
   padding: calc(var(--banner2-height) + 12vh) 0 0 0;
-
-  @include mobile {
-    padding: calc(var(--banner2-height) + 14vh) 0 0 0;
-  }
 
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 var(--banner2-height));
 
@@ -36,6 +34,10 @@
   animation-duration: var(--intro-slide-anim-dur);
   animation-delay: 500ms;
   animation-fill-mode: backwards;
+
+  @include mobile {
+    padding: calc(var(--banner2-height) + 14vh) 0 0 0;
+  }
 }
 
 .banner-bottom {

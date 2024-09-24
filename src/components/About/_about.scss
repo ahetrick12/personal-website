@@ -1,7 +1,6 @@
-#about {
-  // display: flex;
-  // justify-content: center;
+@use '../../styles/base' as *;
 
+#about {
   .section {
     position: relative;
     background-color: var(--background-secondary);

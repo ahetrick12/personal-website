@@ -1,47 +1,35 @@
 // Poppins
 @font-face {
   font-family: 'Poppins';
-  src:
-    local('Poppins'),
-    url(../../fonts/Poppins/Poppins-ExtraLight.otf) format('opentype');
+  src: local('Poppins'), url(src/fonts/Poppins/Poppins-ExtraLight.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'Poppins';
   font-weight: 900;
-  src:
-    local('Poppins'),
-    url(../../fonts/Poppins/Poppins-SemiBold.otf) format('opentype');
+  src: local('Poppins'), url(src/fonts/Poppins/Poppins-SemiBold.otf) format('opentype');
 }
 
 // Jacques
 @font-face {
   font-family: 'Hando';
-  src:
-    local('Hando'),
-    url(../../fonts/Hando/HandoSoftTrial-Regular.ttf) format('truetype');
+  src: local('Hando'), url(src/fonts/Hando/HandoSoftTrial-Regular.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Hando';
   font-weight: 900;
-  src:
-    local('Hando'),
-    url(../../fonts/Hando/HandoSoftTrial-Bold.ttf) format('truetype');
+  src: local('Hando'), url(src/fonts/Hando/HandoSoftTrial-Bold.ttf) format('truetype');
 }
 
 // Outfit
 @font-face {
   font-family: 'Outfit';
-  src:
-    local('Outfit'),
-    url(../../fonts/Outfit/Outfit-Light.ttf) format('truetype');
+  src: local('Outfit'), url(src/fonts/Outfit/Outfit-Light.ttf) format('truetype');
 }
 
 @font-face {
   font-family: 'Outfit';
   font-weight: 900;
-  src:
-    local('Outfit'),
-    url(../../fonts/Outfit/Outfit-SemiBold.ttf) format('truetype');
+  src: local('Outfit'), url(src/fonts/Outfit/Outfit-SemiBold.ttf) format('truetype');
 }

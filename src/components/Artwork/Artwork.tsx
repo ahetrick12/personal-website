@@ -1,7 +1,7 @@
-import React from 'react';
 import { Suspense } from 'react';
+import Carousel from './Carousel';
 
-const CarouselLazy = React.lazy(() => import('./Carousel'));
+// const CarouselLazy: React.LazyExoticComponent<React.ComponentType<any>> = React.lazy(() => import('./Carousel'));
 
 const Artwork = () => {
   return (
@@ -26,9 +26,7 @@ const Artwork = () => {
         >
           I make art from time to time. Here's a bit of what I've made!
         </p>
-        <Suspense fallback={<div>Loading...</div>}>
-          <CarouselLazy />
-        </Suspense>
+        <Carousel />
       </div>
 
       <div className="shadow-wrapper bottom-cutoff">

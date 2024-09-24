@@ -1,6 +1,10 @@
+@use '../../styles/base' as *;
+
 #contact {
   .contact-container {
     background-color: var(--background-secondary);
+    margin: 3rem auto;
+    border-radius: 2rem;
 
     @include mobile {
       padding: 1.5rem 2rem !important;
@@ -16,14 +20,36 @@
       padding: 3rem 4rem !important;
       width: 80%;
     }
-
-    margin: 3rem auto;
-    border-radius: 2rem;
   }
 
   .field {
     .accent-button {
       font-size: 1.3rem;
+    }
+  }
+
+  .form-icon {
+    color: var(--text-input-placeholder);
+  }
+
+  .control {
+    padding-bottom: 0.5rem;
+    .input,
+    .textarea {
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &:focus-within {
+      .input,
+      .textarea {
+        border: 3px solid var(--accent);
+      }
+
+      .form-icon {
+        color: var(--accent);
+      }
     }
   }
 }

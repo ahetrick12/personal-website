@@ -1,5 +1,8 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html
+    lang="en"
+    data-overlayscrollbars-initialize
+>
     <head>
         <meta charset="utf-8" />
         <link
@@ -59,7 +62,7 @@
             content="#1b262e"
         />
         <meta
-            name="apple-mobile-web-app-capable"
+            name="mobile-web-app-capable"
             content="yes"
         />
         <meta
@@ -72,12 +75,19 @@
         />
         <link
             rel="manifest"
-            href="%PUBLIC_URL%/manifest.json"
+            href="/manifest.json"
         />
         <title>Alex Hetrick</title>
     </head>
-    <body style="background-color: #1b262e">
+    <body
+        data-overlayscrollbars-initialize
+        style="background-color: #1b262e"
+    >
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
+        <script
+            type="module"
+            src="./src/index.tsx"
+        ></script>
     </body>
 </html>

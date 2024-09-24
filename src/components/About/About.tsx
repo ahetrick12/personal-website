@@ -1,13 +1,14 @@
 import { useRef } from 'react';
-// import Alex from "../../media/about/alex2.webp";
-import NewAlex from '../../media/about/alex.webp';
-import SocialLinks from '../SocialLinks';
+import Alex from '../../media/about/alex.webp';
+import { SocialLinks } from '../';
 import Resume from '../../media/about/resume.pdf';
 
 const About = () => {
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLAnchorElement>(null);
 
   const onHover = () => {
+    if (!buttonRef.current) return;
+
     buttonRef.current.classList.add('not-fading-button');
   };
 
@@ -44,7 +45,7 @@ const About = () => {
                   data-aos-anchor-placement="top-center"
                 >
                   Hi there! I’m Alex Hetrick, a software engineer and artist from Pittsburgh, Pennsylvania. I’m
-                  currently a third-year student studying software engineering at the{' '}
+                  currently a fourth-year student studying software engineering at the{' '}
                   <a
                     href="https://www.rit.edu"
                     target="_blank"
@@ -81,6 +82,7 @@ const About = () => {
                   realize their projects and ideas.
                 </p>
                 <a
+                  ref={buttonRef}
                   href={Resume}
                   className="button accent-button is-rounded"
                   rel="noreferrer"
@@ -90,7 +92,6 @@ const About = () => {
                   data-aos-delay="400"
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
-                  ref={buttonRef}
                   onMouseEnter={onHover}
                 >
                   View Resume
@@ -109,7 +110,7 @@ const About = () => {
               <figure className="image">
                 <img
                   className="is-rounded"
-                  src={NewAlex}
+                  src={Alex}
                   alt="Alex"
                   data-aos="about-image-slide"
                   data-aos-duration="2000"

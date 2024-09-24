@@ -1,7 +1,8 @@
 import images from '../../media/artwork';
+import { ArtworkItem } from './ArtworkItem';
 
 function ArtworkDataset() {
-  const artwork = [
+  const artwork: ArtworkItem[] = [
     {
       image: images.MountainForest,
       title: 'Mountain Forest',

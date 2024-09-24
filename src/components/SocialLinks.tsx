@@ -1,8 +1,21 @@
-import React from 'react';
-import { faTwitter, faYoutube, faLinkedin, faGithub, faUnity, faArtstation } from '@fortawesome/free-brands-svg-icons';
+import {
+  faTwitter,
+  faYoutube,
+  faLinkedin,
+  faGithub,
+  faUnity,
+  faArtstation,
+  IconDefinition,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const LinkIcon = ({ index, icon, link }) => {
+interface LinkIconProps {
+  index: number;
+  icon: IconDefinition;
+  link: string;
+}
+
+const LinkIcon = ({ index, icon, link }: LinkIconProps) => {
   return (
     <a
       className="social icon-parent"
@@ -22,7 +35,7 @@ const LinkIcon = ({ index, icon, link }) => {
   );
 };
 
-const SocialLinks = () => {
+export const SocialLinks = () => {
   return (
     <div>
       <LinkIcon
@@ -58,5 +71,3 @@ const SocialLinks = () => {
     </div>
   );
 };
-
-export default SocialLinks;

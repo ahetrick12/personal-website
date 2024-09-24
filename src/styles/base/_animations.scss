@@ -1,3 +1,5 @@
+@use 'bulma/sass/utilities/mixins' as *;
+
 /* Intro banner slide effects */
 @keyframes banner1-slide {
   0% {
@@ -201,7 +203,10 @@
     @include tablet {
       box-shadow: -1.6rem 1.2rem 0rem var(--background-primary-shadow);
     }
-    opacity: 1;
-    transform: scale(1);
+
+    & {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }

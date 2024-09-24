@@ -7,22 +7,22 @@ const Navbar = () => {
   const [lastScrollPos, setLastScrollPos] = useState(window.scrollY + window.innerHeight);
   const [scrollStatus, setScrollStatus] = useState('top');
 
-  const navbarRef = useRef(null);
+  const navbarRef = useRef<HTMLElement>(null);
   const hamburgerMenuRef = useRef(null);
 
-  const addClass = (c) => {
-    navbarRef.current.classList.add(c);
+  const addClass = (c: string) => {
+    navbarRef.current?.classList.add(c);
   };
 
-  const removeClass = (c) => {
-    navbarRef.current.classList.remove(c);
+  const removeClass = (c: string) => {
+    navbarRef.current?.classList.remove(c);
   };
 
   const removeAllClasses = () => {
-    navbarRef.current.classList.remove('at-top');
-    navbarRef.current.classList.remove('scrolling-up');
-    navbarRef.current.classList.remove('scrolling-down');
-    navbarRef.current.classList.remove('mobile-menu-active');
+    navbarRef.current?.classList.remove('at-top');
+    navbarRef.current?.classList.remove('scrolling-up');
+    navbarRef.current?.classList.remove('scrolling-down');
+    navbarRef.current?.classList.remove('mobile-menu-active');
   };
 
   useLayoutEffect(() => {
@@ -106,6 +106,7 @@ const Navbar = () => {
             aria-label="menu"
             aria-expanded="false"
           >
+            <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

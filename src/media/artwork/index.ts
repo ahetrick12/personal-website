@@ -33,7 +33,7 @@ import Mech from './mech.webp';
 import Monk from './monk.webp';
 import CavernSword from './cavern-sword.webp';
 
-const images = {
+export const images = {
   MountainForest,
   TimmyFront,
   TimmySide,

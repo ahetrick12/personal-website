@@ -1,4 +1,4 @@
-import { React, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import ArtworkDataset from './ArtworkDataset';
 import ArtImage from './ArtImage';
 
@@ -7,13 +7,13 @@ import Flickity from 'react-flickity-component';
 const Carousel = () => {
   const artwork = ArtworkDataset();
 
-  const sleep = (milliseconds) => {
+  const sleep = (milliseconds: number) => {
     return new Promise((resolve) => setTimeout(resolve, milliseconds));
   };
 
   // Single element
-  const getElementByClassAsync = (className) => {
-    return new Promise((resolve) => {
+  const getElementByClassAsync = (className: string) => {
+    return new Promise<Element>((resolve) => {
       const getElement = () => {
         const element = document.querySelector('.' + className);
 
@@ -29,14 +29,14 @@ const Carousel = () => {
   };
 
   // Multiple elements
-  const getElementsByClassAsync = (className) => {
-    return new Promise((resolve) => {
+  const getElementsByClassAsync = (className: string) => {
+    return new Promise<Element[]>((resolve) => {
       const getElement = () => {
         const elements = document.querySelectorAll('.' + className);
 
         // Wait for elements to be findable and for them to have the correct height
         if (elements.length > 0) {
-          resolve(elements);
+          resolve(Array.from(elements));
         } else {
           requestAnimationFrame(getElement);
         }
@@ -46,27 +46,9 @@ const Carousel = () => {
   };
 
   useLayoutEffect(() => {
-    let dots = [];
-    let prevButton;
-    let nextButton;
-
-    (async () => {
-      // Dots
-      dots = await getElementsByClassAsync('dot');
-      for (var i = 0; i < dots.length; i++) {
-        dots[i].classList.add('hidden');
-      }
-
-      // Buttons
-      prevButton = await getElementByClassAsync('flickity-prev-next-button.previous');
-      nextButton = await getElementByClassAsync('flickity-prev-next-button.next');
-
-      prevButton.classList.add('hidden');
-      nextButton.classList.add('hidden');
-
-      window.addEventListener('scroll', onScroll);
-      onScroll();
-    })();
+    let dots: Element[] = [];
+    let prevButton: Element;
+    let nextButton: Element;
 
     const onScroll = () => {
       // Prev next buttons
@@ -88,18 +70,34 @@ const Carousel = () => {
         })();
       }
     };
+
+    (async () => {
+      // Dots
+      dots = (await getElementsByClassAsync('dot')) as Element[];
+      for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.add('hidden');
+      }
+
+      // Buttons
+      prevButton = await getElementByClassAsync('flickity-prev-next-button.previous');
+      nextButton = await getElementByClassAsync('flickity-prev-next-button.next');
+
+      prevButton.classList.add('hidden');
+      nextButton.classList.add('hidden');
+
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+    })();
   }, []);
 
   return (
     <Flickity className="carousel">
-      {artwork.map((art, index) => {
-        return (
-          <ArtImage
-            key={index}
-            art={art}
-          />
-        );
-      })}
+      {artwork.map((art, index) => (
+        <ArtImage
+          key={index}
+          art={art}
+        />
+      ))}
     </Flickity>
   );
 };

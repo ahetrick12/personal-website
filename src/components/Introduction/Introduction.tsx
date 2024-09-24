@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
@@ -9,16 +10,16 @@ import BackgroundVideo from '../../media/intro/intro-video.m4v';
 import Resume from '../../media/about/resume.pdf';
 
 const Introduction = () => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const onScroll = () => {
       const scrollPos = window.scrollY + window.innerHeight;
 
       if (scrollPos <= window.innerHeight) {
-        scrollRef.current.classList.add('active');
+        scrollRef.current?.classList.add('active');
       } else {
-        scrollRef.current.classList.remove('active');
+        scrollRef.current?.classList.remove('active');
       }
     };
 
@@ -31,10 +32,11 @@ const Introduction = () => {
     };
   }, []);
 
-  const LinkIcon = ({ index, icon, link }) => {
+  const LinkIcon = (props: { index: number; icon: IconProp; link: string }) => {
+    const { index, icon, link } = props;
     return (
       <a
-        className="icon-parent"
+        className="icon-parent intro-icon-selectarea"
         href={link}
         target="_blank"
         rel="noreferrer"
@@ -97,7 +99,7 @@ const Introduction = () => {
             data-aos-delay="3000"
           ></hr>
           <div className="columns is-centered is-multiline is-mobile">
-            <div className="column is-1-desktop is-2-tablet has-text-right">
+            <div className="column is-1-desktop is-2-tablet">
               <LinkIcon
                 index={0}
                 icon={faLinkedin}
@@ -111,7 +113,7 @@ const Introduction = () => {
                 link="https://github.com/ahetrick12"
               />
             </div>
-            <div className="column is-1-desktop is-2-tablet has-text-left">
+            <div className="column is-1-desktop is-2-tablet">
               <LinkIcon
                 index={2}
                 icon={faFileLines}

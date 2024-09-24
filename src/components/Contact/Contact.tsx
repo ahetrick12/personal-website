@@ -1,24 +1,25 @@
-import { React, useState, useRef } from 'react';
+import React, { useState, useRef, RefObject, FormEvent } from 'react';
 import { faEnvelope, faUser } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from 'react';
 
-import emailjs from '@emailjs/browser';
-import FieldValidationMessage from './FieldValidationMessage';
-import ContactModal from './ContactModal';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { FieldValidationMessage, ContactModal } from './';
+
+type HTMLFormField = HTMLInputElement | HTMLTextAreaElement;
 
 const Contact = () => {
-  const formRef = useRef(null);
-  const submitButtonRef = useRef(null);
+  const formRef = useRef<HTMLFormElement>(null);
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
 
-  const firstNameRef = useRef(null);
-  const lastNameRef = useRef(null);
-  const emailRef = useRef(null);
-  const messageRef = useRef(null);
+  const firstNameRef = useRef<HTMLInputElement>(null);
+  const lastNameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
-  const [firstNameValid, setFirstNameValid] = useState(null);
-  const [lastNameValid, setLastNameValid] = useState(null);
-  const [emailValid, setEmailValid] = useState(null);
-  const [messageValid, setMessageValid] = useState(null);
+  const [firstNameValid, setFirstNameValid] = useState(false);
+  const [lastNameValid, setLastNameValid] = useState(false);
+  const [emailValid, setEmailValid] = useState(false);
+  const [messageValid, setMessageValid] = useState(false);
 
   const [modalActive, setModalActive] = useState(false);
 
@@ -26,16 +27,28 @@ const Contact = () => {
   const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
   useEffect(() => {
-    formRef.current.addEventListener('focusin', (event) => {
-      event.target.parentNode.classList.add('focused');
+    formRef.current?.addEventListener('focusin', (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (!target.parentElement) return;
+
+      target.parentElement.classList.add('focused');
     });
 
-    formRef.current.addEventListener('focusout', (event) => {
-      event.target.parentNode.classList.remove('focused');
+    formRef.current?.addEventListener('focusout', (event) => {
+      const target = event.target as HTMLElement;
+      if (!target.parentElement) return;
+
+      target.parentElement.classList.remove('focused');
     });
   }, []);
 
-  const validateInput = (value, regex, message, setMessage, setValid) => {
+  const validateInput = (
+    value: string,
+    regex: RegExp,
+    message: string,
+    setMessage: React.Dispatch<React.SetStateAction<string>>,
+    setValid: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
     let validationText = '';
 
     if (!regex.test(value)) {
@@ -46,66 +59,66 @@ const Contact = () => {
     setValid(validationText === '');
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    let refList = [firstNameRef, lastNameRef, emailRef, messageRef];
-    let validFLagList = [firstNameValid, lastNameValid, emailValid, messageValid];
+    const refList: RefObject<HTMLFormField>[] = [firstNameRef, lastNameRef, emailRef, messageRef];
+    const validFLagList: boolean[] = [firstNameValid, lastNameValid, emailValid, messageValid];
 
-    let isValid = submitValidation(refList, validFLagList);
+    const isValid = submitValidation(refList, validFLagList);
     if (!isValid) return;
 
     // Send email
-    submitButtonRef.current.classList.add('is-loading');
+    submitButtonRef.current?.classList.add('is-loading');
 
     const emailData = {
       to_name: 'Alex',
     };
 
-    const formData = Object.fromEntries(new FormData(formRef.current));
+    const formData = Object.fromEntries(new FormData(formRef.current!));
     Object.assign(emailData, formData);
 
     emailjs
       .send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE_ID,
+        process.env.REACT_APP_SERVICE_ID ?? '',
+        process.env.REACT_APP_TEMPLATE_ID ?? '',
         emailData,
-        process.env.REACT_APP_PUBLIC_KEY
+        process.env.REACT_APP_PUBLIC_KEY ?? ''
       )
       .then(
-        (result) => {
-          formRef.current.reset();
-          submitButtonRef.current.blur();
-          submitButtonRef.current.classList.remove('is-loading');
+        () => {
+          formRef.current?.reset();
+          submitButtonRef.current?.blur();
+          submitButtonRef.current?.classList.remove('is-loading');
 
-          setFirstNameValid(null);
-          setLastNameValid(null);
-          setEmailValid(null);
-          setMessageValid(null);
+          setFirstNameValid(false);
+          setLastNameValid(false);
+          setEmailValid(false);
+          setMessageValid(false);
 
           toggleModal();
         },
-        (error) => {
-          alert('An error occurred, Please try again', error.text);
+        (error: EmailJSResponseStatus) => {
+          alert('An error occurred, Please try again\n' + error.text);
         }
       );
 
-    submitButtonRef.current.blur();
+    submitButtonRef.current?.blur();
   };
 
-  const submitValidation = (refs, validFlags) => {
+  const submitValidation = (refs: RefObject<HTMLFormField>[], validFlags: boolean[]) => {
     let isValid = true;
 
-    refs.forEach((ref) => {
-      ref.current.validate();
-    });
+    // refs.forEach((ref) => {
+    //    ref.current.validate();
+    // });
 
     for (let i = 0; i < refs.length; i++) {
       const ref = refs[i];
       const validFlag = validFlags[i];
 
       if (!validFlag) {
-        ref.current.focus();
+        ref.current?.focus();
         isValid = false;
         break;
       }
@@ -116,6 +129,8 @@ const Contact = () => {
 
   const toggleModal = () => {
     const html = document.querySelector('html');
+    if (!html) return;
+
     html.style.overflow = !modalActive ? 'hidden' : 'auto';
 
     setModalActive(!modalActive);
@@ -152,7 +167,7 @@ const Contact = () => {
         data-aos-anchor="#contact"
         data-aos-anchor-placement="top-center"
         ref={formRef}
-        onSubmit={handleSubmit}
+        onSubmit={(e) => handleSubmit(e)}
       >
         {/* Name */}
         <div className="field is-horizontal">
@@ -175,8 +190,8 @@ const Contact = () => {
                 messageText="Please enter a first name"
                 regex={validTextRegex}
                 validation={validateInput}
-                setState={setFirstNameValid}
-                ref={firstNameRef}
+                setValid={setFirstNameValid}
+                fieldRef={firstNameRef}
                 icon={faUser}
               />
             </div>
@@ -198,8 +213,8 @@ const Contact = () => {
                 messageText="Please enter a last name"
                 regex={validTextRegex}
                 validation={validateInput}
-                setState={setLastNameValid}
-                ref={lastNameRef}
+                setValid={setLastNameValid}
+                fieldRef={lastNameRef}
                 icon={faUser}
               />
             </div>
@@ -223,8 +238,8 @@ const Contact = () => {
             messageText="Please enter a valid email address"
             regex={validEmailRegex}
             validation={validateInput}
-            setState={setEmailValid}
-            ref={emailRef}
+            setValid={setEmailValid}
+            fieldRef={emailRef}
             icon={faEnvelope}
           />
         </div>
@@ -247,9 +262,9 @@ const Contact = () => {
             messageText="Please enter a message"
             regex={validTextRegex}
             validation={validateInput}
-            setState={setMessageValid}
-            ref={messageRef}
-            icon=""
+            setValid={setMessageValid}
+            fieldRef={messageRef}
+            icon={undefined}
           />
         </div>
         <div className="field">

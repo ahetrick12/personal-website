@@ -1,3 +1,5 @@
+@use 'bulma/sass/utilities/mixins' as *;
+
 .typewriter {
   $breakpoint: 620px;
 
@@ -7,9 +9,7 @@
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 
-    animation:
-      typing 2.4s steps(40, end),
-      blink-caret 0.75s infinite;
+    animation: typing 2.4s steps(40, end), blink-caret 0.75s infinite;
     animation-fill-mode: backwards;
     animation-delay: 1.3s;
   }

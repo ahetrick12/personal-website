@@ -1,19 +1,30 @@
 {
-  "tabWidth": 2,
-  "printWidth": 120,
-  "semi": true,
-  "trailingComma": "es5",
-  "singleQuote": true,
-  "bracketSpacing": true,
-  "bracketSameLine": false,
-  "singleAttributePerLine": true,
-  "arrowParens": "always",
-  "overrides": [
-    {
-      "files": "*.html",
-      "options": {
-        "tabWidth": 4
-      }
-    }
-  ]
+    "tabWidth": 2,
+    "printWidth": 120,
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "bracketSameLine": false,
+    "singleAttributePerLine": true,
+    "arrowParens": "always",
+    "importOrder": [
+        "^react",
+        "^(?!(hooks|types|utils|shared|modules|[./])).+",
+        "^hooks",
+        "^types",
+        "^utils",
+        "^shared",
+        "modules",
+        "^[./]"
+    ],
+    "importOrderSeparation": false,
+    "overrides": [
+        {
+            "files": "*.html",
+            "options": {
+                "tabWidth": 4
+            }
+        }
+    ]
 }

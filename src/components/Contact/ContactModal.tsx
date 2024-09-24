@@ -3,8 +3,13 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheckSquare } from '@fortawesome/free-solid-svg-icons';
 
-const ContactModal = (props) => {
-  let className = 'modal ' + (props.active ? 'is-active' : '');
+interface ContactModalProps {
+  active: boolean;
+  toggle: () => void;
+}
+
+const ContactModal = (props: ContactModalProps) => {
+  const className = 'modal ' + (props.active ? 'is-active' : '');
 
   return (
     <div className={className}>
