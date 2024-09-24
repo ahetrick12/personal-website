@@ -1,23 +1,23 @@
 #footer {
-	.content {
-		//position: relative;
+  .content {
+    //position: relative;
 
-		hr {
-			margin-bottom: 3rem;
-		}
+    hr {
+      margin-bottom: 3rem;
+    }
 
-		.columns {
-			p {
-				display: inline-block;
-			}
+    .columns {
+      p {
+        display: inline-block;
+      }
 
-			.links {
-				text-align: right;
-				display: inline-block;
-				align-self: flex-end;
-				display: flex;
-				justify-content: center;
-			}
-		}
-	}
+      .links {
+        text-align: right;
+        display: inline-block;
+        align-self: flex-end;
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
 }

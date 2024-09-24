@@ -1,57 +1,59 @@
+@use 'bulma/sass/utilities/mixins' as *;
+
 .typewriter {
-	$breakpoint: 620px;
+  $breakpoint: 620px;
 
-	@include from($breakpoint) {
-		overflow: hidden; /* Ensures the content is not revealed until the animation */
-		border-right: 0.1em solid var(--accent); /* The typwriter cursor */
-		white-space: nowrap; /* Keeps the content on a single line */
-		margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  @include from($breakpoint) {
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: 0.1em solid var(--accent); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
 
-		animation: typing 2.4s steps(40, end), blink-caret 0.75s infinite;
-		animation-fill-mode: backwards;
-		animation-delay: 1.3s;
-	}
+    animation: typing 2.4s steps(40, end), blink-caret 0.75s infinite;
+    animation-fill-mode: backwards;
+    animation-delay: 1.3s;
+  }
 
-	@include until($breakpoint) {
-		animation: view-more 2.4s;
-		animation-fill-mode: backwards;
-		animation-delay: 1s;
-	}
+  @include until($breakpoint) {
+    animation: view-more 2.4s;
+    animation-fill-mode: backwards;
+    animation-delay: 1s;
+  }
 }
 
 .accent {
-	font-weight: bold;
-	color: var(--accent);
+  font-weight: bold;
+  color: var(--accent);
 }
 
 .not-fading-button {
-	transition: 0.25s ease-out !important;
-	transition-delay: 0 !important;
+  transition: 0.25s ease-out !important;
+  transition-delay: 0 !important;
 }
 
 a.social {
-	display: inline-block;
-	padding: 0rem 0.4rem 1rem 0.4rem;
-	color: var(--foreground-primary);
+  display: inline-block;
+  padding: 0rem 0.4rem 1rem 0.4rem;
+  color: var(--foreground-primary);
 
-	.icon {
-		width: 1.8rem;
-		height: auto;
-		transition: 0.15s ease-out;
-	}
+  .icon {
+    width: 1.8rem;
+    height: auto;
+    transition: 0.15s ease-out;
+  }
 }
 
 .icon-parent {
-	color: var(--foreground-primary);
+  color: var(--foreground-primary);
 
-	.icon {
-		transition: 0.2s all ease-out;
-	}
+  .icon {
+    transition: 0.2s all ease-out;
+  }
 
-	&:hover {
-		.icon {
-			transform: translateY(-0.3rem);
-			color: var(--accent);
-		}
-	}
+  &:hover {
+    .icon {
+      transform: translateY(-0.3rem);
+      color: var(--accent);
+    }
+  }
 }

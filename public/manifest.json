@@ -1,25 +1,25 @@
 {
-	"short_name": "Alex Hetrick",
-	"name": "Alex Hetrick | Software Engineer, Game Developer, 3D Artist",
-	"icons": [
-		{
-			"src": "./icons/favicon.ico",
-			"sizes": "64x64 32x32 24x24 16x16",
-			"type": "image/x-icon"
-		},
-		{
-			"src": "./icons/logo192.png",
-			"type": "image/png",
-			"sizes": "192x192"
-		},
-		{
-			"src": "./icons/logo256.png",
-			"sizes": "256x256",
-			"type": "image/png"
-		}
-	],
-	"start_url": ".",
-	"display": "standalone",
-	"theme_color": "#1b262e",
-	"background_color": "#1b262e"
+  "short_name": "Alex Hetrick",
+  "name": "Alex Hetrick | Software Engineer, Game Developer, 3D Artist",
+  "icons": [
+    {
+      "src": "./icons/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./icons/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icons/logo256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1b262e",
+  "background_color": "#1b262e"
 }

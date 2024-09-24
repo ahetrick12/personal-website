@@ -1,142 +1,144 @@
+@use '../../styles/base' as *;
+
 #skillsinterests {
-	padding-bottom: 0 !important;
+  padding-bottom: 0 !important;
 
-	.container {
-		display: flex;
-		flex-direction: column;
-	}
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
 
-	.tile-column {
-		&:hover {
-			.tile {
-				transition: 0.15s ease-out;
-				transform: scale(1.1);
-				box-shadow: -0.3rem 0.2rem 0rem var(--background-secondary);
+  .tile-column {
+    &:hover {
+      .tile {
+        transition: 0.15s ease-out;
+        transform: scale(1.1);
+        box-shadow: -0.3rem 0.2rem 0rem var(--background-secondary);
 
-				.icon {
-					transform: scale(1.75);
-				}
-			}
-		}
-	}
+        .icon {
+          transform: scale(1.75);
+        }
+      }
+    }
+  }
 
-	.tile {
-		display: flex;
-		justify-content: center;
-		margin: 0.05rem !important;
-		padding: 0rem;
-		transition: 0.75s ease-out;
+  .tile {
+    display: flex;
+    justify-content: center;
+    margin: 0.05rem !important;
+    padding: 0rem;
+    transition: 0.75s ease-out;
 
-		color: var(--foreground-primary);
-		background-color: var(--background-primary);
+    color: var(--foreground-primary);
+    background-color: var(--background-primary);
 
-		border-radius: 10px;
-		border: 3px solid var(--background-secondary);
+    border-radius: 10px;
+    border: 3px solid var(--background-secondary);
 
-		@include until-widescreen {
-			text-align: center;
-			flex-direction: column;
-		}
+    @include until-widescreen {
+      text-align: center;
+      flex-direction: column;
+    }
 
-		@include mobile {
-			margin: 0.1rem !important;
-		}
+    @include mobile {
+      margin: 0.1rem !important;
+    }
 
-		.column {
-			padding: 1.25rem;
+    .column {
+      padding: 1.25rem;
 
-			@include until-widescreen {
-				padding: 0.5rem;
-			}
-		}
+      @include until-widescreen {
+        padding: 0.5rem;
+      }
+    }
 
-		.icon-column {
-			padding: 0;
-			display: flex;
-			justify-content: center;
-			align-items: center;
+    .icon-column {
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-			.icon {
-				display: block;
-				transform: scale(1.5);
-				transition: 0.4s ease-out;
-			}
+      .icon {
+        display: block;
+        transform: scale(1.5);
+        transition: 0.4s ease-out;
+      }
 
-			@include until-widescreen {
-				padding-top: 1.5rem;
+      @include until-widescreen {
+        padding-top: 1.5rem;
 
-				.icon {
-					transform: scale(1.5);
-				}
-			}
-		}
+        .icon {
+          transform: scale(1.5);
+        }
+      }
+    }
 
-		.name-column {
-			display: flex;
-			align-items: center;
+    .name-column {
+      display: flex;
+      align-items: center;
 
-			@include widescreen {
-				max-width: 65%;
-				overflow: hidden;
-			}
+      @include widescreen {
+        max-width: 65%;
+        overflow: hidden;
+      }
 
-			@include until-widescreen {
-				padding-top: 1rem;
-			}
-		}
+      @include until-widescreen {
+        padding-top: 1rem;
+      }
+    }
 
-		span {
-			font-size: 1.2rem;
-			font-weight: 500;
-			padding: 0.25rem;
-			padding-left: 0;
-			width: 100%;
-			user-select: none;
+    span {
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 0.25rem;
+      padding-left: 0;
+      width: 100%;
+      user-select: none;
 
-			@include until-widescreen {
-				font-size: 1rem;
-			}
-		}
-	}
+      @include until-widescreen {
+        font-size: 1rem;
+      }
+    }
+  }
 
-	.columns {
-		margin-bottom: 5rem;
+  .columns {
+    margin-bottom: 5rem;
 
-		@include touch {
-			padding-left: 0.3rem;
-			padding-right: 0.3rem;
-		}
+    @include touch {
+      padding-left: 0.3rem;
+      padding-right: 0.3rem;
+    }
 
-		&.skills {
-			@include desktop {
-				margin-right: 2.5rem;
-			}
-		}
+    &.skills {
+      @include desktop {
+        margin-right: 2.5rem;
+      }
+    }
 
-		&.interests {
-			@include desktop {
-				margin-left: 2.5rem;
-			}
-		}
+    &.interests {
+      @include desktop {
+        margin-left: 2.5rem;
+      }
+    }
 
-		.subtitle {
-			background: var(--accent);
-			margin-top: 2rem;
-			padding: 1rem 0;
-			font-size: 22px;
-			color: var(--foreground-primary);
+    .subtitle {
+      background: var(--accent);
+      margin-top: 2rem;
+      padding: 1rem 0;
+      font-size: 22px;
+      color: var(--foreground-primary);
 
-			&.skills {
-				text-align: left !important;
-				border-radius: 0 2rem 2rem 0;
-				padding-left: 5rem;
-			}
+      &.skills {
+        text-align: left !important;
+        border-radius: 0 2rem 2rem 0;
+        padding-left: 5rem;
+      }
 
-			&.interests {
-				text-align: right !important;
-				border-radius: 2rem 0 0 2rem;
-				padding-right: 5rem;
-			}
-		}
-	}
+      &.interests {
+        text-align: right !important;
+        border-radius: 2rem 0 0 2rem;
+        padding-right: 5rem;
+      }
+    }
+  }
 }

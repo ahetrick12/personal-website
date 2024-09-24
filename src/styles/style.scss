@@ -1,0 +1,49 @@
+@use './base' as *;
+
+@use './vendors/flickity';
+
+@use './layout/slanted-section';
+@use './layout/scrollbar';
+@use './layout/modal';
+
+@use '../components/Navbar/navbar';
+@use '../components/Introduction/introduction';
+@use '../components/About/about';
+@use '../components/SkillsInterests/skillsInterests';
+@use '../components/Projects/projects';
+@use '../components/Artwork/artwork';
+@use '../components/Contact/contact';
+@use '../components/Footer/footer';
+
+:root {
+  // Initialize CSS variables
+  --accent: #4576b7;
+  --accent-semitransparent: #4576b776;
+  --accent-alt: #6ea5ec;
+
+  --background-primary: #1b262e;
+  --background-secondary: #2c3a49;
+  --background-secondary-alt: #697684;
+  --background-primary-shadow: #13191e;
+
+  --foreground-primary: #ececec;
+  --foreground-secondary: #cbcbcb;
+  --foreground-inverted: #2c2c2c;
+
+  --intro-slide-anim-dur: 2s;
+
+  --banner1-height: 20.5rem;
+  --banner2-height: 9rem;
+
+  // Must be in px
+  --art-image-border-offset: 24px;
+
+  $input-border-color: var(--background-secondary);
+  $input-hover-border-color: var(--background-secondary);
+  $input-focus-border-color: var(--accent);
+
+  // @include mobile {
+  //   --banner1-height: 10.75rem !important;
+  //   --banner2-height: 5rem !important;
+  // }
+}
