@@ -7,7 +7,7 @@ const SkillsInterests = () => {
       id="skillsinterests"
       className="section"
     >
-      <div className="is-centered container">
+      <div className="has-text-right">
         <h1
           className="title right"
           data-aos="title-appear"

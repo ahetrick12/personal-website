@@ -14,10 +14,6 @@
         transition: 0.15s ease-out;
         transform: scale(1.1);
         box-shadow: -0.3rem 0.2rem 0rem var(--background-secondary);
-
-        .icon {
-          transform: scale(1.75);
-        }
       }
     }
   }
@@ -27,7 +23,7 @@
     justify-content: center;
     margin: 0.05rem !important;
     padding: 0rem;
-    transition: 0.75s ease-out;
+    transition: 0.5s ease-out;
 
     color: var(--foreground-primary);
     background-color: var(--background-primary);
@@ -102,7 +98,7 @@
   }
 
   .columns {
-    margin-bottom: 5rem;
+    margin-bottom: 1.5rem;
 
     @include touch {
       padding-left: 0.3rem;
@@ -124,6 +120,7 @@
     .subtitle {
       background: var(--accent);
       margin-top: 2rem;
+      margin-bottom: 3rem;
       padding: 1rem 0;
       font-size: 22px;
       color: var(--foreground-primary);
