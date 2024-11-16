@@ -1,5 +1,4 @@
 import {
-  faTwitter,
   faYoutube,
   faLinkedin,
   faGithub,
@@ -36,38 +35,39 @@ const LinkIcon = ({ index, icon, link }: LinkIconProps) => {
 };
 
 export const SocialLinks = () => {
+  const linkMap = [
+    {
+      icon: faLinkedin,
+      link: 'https://www.linkedin.com/in/ahetrick12/',
+    },
+    {
+      icon: faGithub,
+      link: 'https://github.com/ahetrick12',
+    },
+    {
+      icon: faUnity,
+      link: 'https://assetstore.unity.com/publishers/36086',
+    },
+    {
+      icon: faYoutube,
+      link: 'https://www.youtube.com/channel/UCXvQbHsROTGAeKYoSc-wBUg/featured',
+    },
+    {
+      icon: faArtstation,
+      link: 'https://www.artstation.com/ventuar3d',
+    },
+  ];
+
   return (
     <div>
-      <LinkIcon
-        index={0}
-        icon={faLinkedin}
-        link="https://www.linkedin.com/in/alex-hetrick-421a51157/"
-      />
-      <LinkIcon
-        index={1}
-        icon={faGithub}
-        link="https://github.com/ahetrick12"
-      />
-      <LinkIcon
-        index={2}
-        icon={faUnity}
-        link="https://assetstore.unity.com/publishers/36086"
-      />
-      <LinkIcon
-        index={3}
-        icon={faTwitter}
-        link="https://twitter.com/Ventuargames"
-      />
-      <LinkIcon
-        index={4}
-        icon={faYoutube}
-        link="https://www.youtube.com/channel/UCXvQbHsROTGAeKYoSc-wBUg/featured"
-      />
-      <LinkIcon
-        index={5}
-        icon={faArtstation}
-        link="https://www.artstation.com/ventuar3d"
-      />
+      {linkMap.map((link, index) => (
+        <LinkIcon
+          key={index}
+          index={index}
+          icon={link.icon}
+          link={link.link}
+        />
+      ))}
     </div>
   );
 };
