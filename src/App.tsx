@@ -13,7 +13,7 @@ import { OverlayScrollbars } from 'overlayscrollbars';
 import 'overlayscrollbars/styles/overlayscrollbars.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { BrowserContext, Browser } from './browserContext';
+import { BrowserContext, Browser } from './BrowserContext';
 
 function App() {
   const [browser, setBrowser] = useState<Browser>(Browser.Unknown);
