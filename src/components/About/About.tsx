@@ -1,10 +1,12 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import Alex from '../../media/about/alex.webp';
 import { SocialLinks } from '../';
 import Resume from '../../media/about/resume.pdf';
+import { Browser, BrowserContext } from '../../browserContext';
 
 const About = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
+  const browser = useContext(BrowserContext);
 
   const onHover = () => {
     if (!buttonRef.current) return;
@@ -61,7 +63,7 @@ const About = () => {
               data-aos-anchor="#about"
               data-aos-anchor-placement="top-center"
               data-aos-duration="1800"
-              data-aos-delay="1800"
+              data-aos-delay="1600"
             >
               <span
                 className="text"
@@ -80,7 +82,7 @@ const About = () => {
                 <defs>
                   <mask id="text-mask">
                     <text
-                      x="50%"
+                      x={browser == Browser.Safari ? '48.5%' : '50%'}
                       y="103%"
                       textAnchor="middle"
                       dominantBaseline="middle"

@@ -13,17 +13,11 @@ import { OverlayScrollbars } from 'overlayscrollbars';
 import 'overlayscrollbars/styles/overlayscrollbars.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-enum Browser {
-  Chrome = 'Chrome',
-  Firefox = 'Firefox',
-  Safari = 'Safari',
-  Opera = 'Opera',
-  InternetExplorer = 'Internet Explorer',
-  Unknown = 'Unknown',
-}
+import { BrowserContext, Browser } from './browserContext';
 
 function App() {
+  const [browser, setBrowser] = useState<Browser>(Browser.Unknown);
+
   useEffect(() => {
     function detectBrowser() {
       const userAgent = navigator.userAgent;
@@ -54,31 +48,35 @@ function App() {
           debounce: 100,
         },
       });
-
-      AOS.init({
-        once: true,
-        anchorPlacement: 'center-center',
-      });
     };
 
+    // Use default scrollbars on safari
     const browser = detectBrowser();
+    setBrowser(browser);
 
-    // Use default safari scrollbars
     if (browser !== Browser.Safari) {
       initOverlayScrollbars();
     }
+
+    // Init after overlay scrollbars, since overlay scrollbars causes a reflow
+    AOS.init({
+      once: true,
+      anchorPlacement: 'center-center',
+    });
   }, []);
 
   return (
     <div className={`app`}>
-      <Navbar />
-      <Introduction />
-      <About />
-      <SkillsInterests />
-      <Projects />
-      <Artwork />
-      <Contact />
-      <Footer />
+      <BrowserContext.Provider value={browser}>
+        <Navbar />
+        <Introduction />
+        <About />
+        <SkillsInterests />
+        <Projects />
+        <Artwork />
+        <Contact />
+        <Footer />
+      </BrowserContext.Provider>
     </div>
   );
 }

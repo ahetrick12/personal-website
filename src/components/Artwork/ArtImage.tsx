@@ -43,7 +43,7 @@ const ArtImage = ({ art }: ArtImageProps) => {
 
     if (!artImage.current || !cell.current) return;
 
-    debouncedUpdateImageBorder();
+    updateImageBorder();
 
     const resizeObserver = new ResizeObserver(debouncedUpdateImageBorder);
     resizeObserver.observe(cell.current);

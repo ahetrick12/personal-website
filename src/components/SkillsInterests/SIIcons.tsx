@@ -9,6 +9,8 @@
 export const JavaIcon = () => (
   <svg
     viewBox="0 0 294 398"
+    width={294}
+    height={398}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMinYMin meet"
   >
@@ -38,6 +40,8 @@ export const JavaIcon = () => (
 export const PythonIcon = () => (
   <svg
     viewBox="0 0 256 255"
+    width={256}
+    height={255}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMinYMin meet"
   >
@@ -89,6 +93,8 @@ export const PythonIcon = () => (
 export const GitIcon = () => (
   <svg
     viewBox="0 0 256 256"
+    width={256}
+    height={256}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMinYMin meet"
   >
@@ -103,6 +109,8 @@ export const CSharpIcon = () => (
   <svg
     preserveAspectRatio="xMidYMid"
     viewBox="0 -1.428 255.582 290.108"
+    width={255.582}
+    height={290.108}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -126,7 +134,9 @@ export const CSharpIcon = () => (
 
 export const CIcon = () => (
   <svg
-    viewBox="32.18585611720149 20.47 223.6851360941233 247.05999999999997"
+    viewBox="32.18585611720149 20.47 223 247"
+    width={223}
+    height={247}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -151,6 +161,8 @@ export const CIcon = () => (
 export const CPPIcon = () => (
   <svg
     viewBox="0 0 256 288"
+    width={256}
+    height={288}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMinYMin meet"
   >
@@ -185,7 +197,9 @@ export const HTMLIcon = () => (
   <svg
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 124 141.53199999999998"
+    viewBox="0 0 124 141"
+    width={124}
+    height={141}
   >
     <path
       d="M10.383 126.894L0 0l124 .255-10.979 126.639-50.553 14.638z"
@@ -207,6 +221,8 @@ export const CSSIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 124 141.53"
+    width={124}
+    height={141.53}
   >
     <path
       d="M10.383 126.892L0 0l124 .255-10.979 126.637-50.553 14.638z"
@@ -227,6 +243,8 @@ export const JSIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1052 1052"
+    width={1052}
+    height={1052}
   >
     <path
       fill="#f0db4f"
@@ -242,6 +260,8 @@ export const JSIcon = () => (
 export const TSIcon = () => (
   <svg
     viewBox="0 0 128 128"
+    width={128}
+    height={128}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -258,7 +278,9 @@ export const TSIcon = () => (
 
 export const ReactIcon = () => (
   <svg
-    viewBox="175.7 78 490.6 436.9"
+    viewBox="175.7 78 491 437"
+    width={491}
+    height={437}
     xmlns="http://www.w3.org/2000/svg"
   >
     <g fill="#61dafb">
@@ -275,6 +297,8 @@ export const ReactIcon = () => (
 export const AngularIcon = () => (
   <svg
     viewBox="0 0 256 272"
+    width={256}
+    height={272}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
   >
@@ -297,6 +321,8 @@ export const BulmaIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 128 128"
+    width={128}
+    height={128}
   >
     <path
       fill="#00D1B2"
@@ -309,6 +335,8 @@ export const SassIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 384"
+    width={512}
+    height={384}
   >
     <path
       fill="#CF649A"
@@ -320,6 +348,8 @@ export const SassIcon = () => (
 export const NodeIcon = () => (
   <svg
     viewBox="0 0 256 282"
+    width={256}
+    height={282}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMinYMin meet"
   >
@@ -334,6 +364,8 @@ export const HLSLIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    width={512}
+    height={512}
   >
     <path
       fill="#25B6D2"
@@ -372,6 +404,8 @@ export const UnityIcon = () => (
 
   <svg
     viewBox="0 0 512 512"
+    width={512}
+    height={512}
     xmlns="http://www.w3.org/2000/svg"
     fillRule="evenodd"
     clipRule="evenodd"
@@ -403,7 +437,9 @@ export const UnityIcon = () => (
 
 export const BlenderIcon = () => (
   <svg
-    viewBox="0 0 2472.8 1996.5"
+    viewBox="0 0 2473 1997"
+    width={2473}
+    height={1997}
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -424,7 +460,9 @@ export const BlenderIcon = () => (
 export const NotionIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="12 0.18999999999999906 487.619 510.941"
+    viewBox="12 0.18999999999999906 488 511"
+    width={488}
+    height={511}
   >
     <defs id="defs8" />
     <g id="g841">
@@ -447,6 +485,8 @@ export const WebDevIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    width={512}
+    height={512}
   >
     <rect
       x="160"
@@ -495,6 +535,8 @@ export const WebDevIcon = () => (
 export const GameDevIcon = () => (
   <svg
     viewBox="0 -11 45 45"
+    width={45}
+    height={45}
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
   >
@@ -543,7 +585,9 @@ export const GameDevIcon = () => (
 export const ThreeDArtIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 437.48 437.48"
+    viewBox="0 0 437 437"
+    width={437}
+    height={437}
   >
     <polygon
       fill="#BCBBAF"
@@ -576,6 +620,8 @@ export const ThreeDArtIcon = () => (
 export const DesignIcon = () => (
   <svg
     viewBox="0 0 36 36"
+    width={36}
+    height={36}
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid meet"
   >
@@ -602,6 +648,8 @@ export const PhilosophyIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512 512"
+    width={512}
+    height={512}
   >
     <path
       fill="#FF7226"
@@ -701,7 +749,9 @@ export const PhilosophyIcon = () => (
 export const MusicIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 496.2 496.2"
+    viewBox="0 0 496 496"
+    width={496}
+    height={496}
   >
     <path
       fill="#FABC3D"
@@ -754,7 +804,9 @@ export const MusicIcon = () => (
 export const OboeIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 57.439 57.439"
+    viewBox="0 0 57 57"
+    width={57}
+    height={57}
   >
     <path
       fill="#35495E"
@@ -829,6 +881,8 @@ export const SaxIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 58 58"
+    width={58}
+    height={58}
   >
     <g>
       <path
@@ -921,6 +975,8 @@ export const PianoIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 62 62"
+    width={62}
+    height={62}
   >
     <polygon
       fill="#D7DCE0"
@@ -1104,6 +1160,8 @@ export const WeightliftingIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 30 30"
+    width={30}
+    height={30}
   >
     <defs></defs>
     <g id="Dumbbell">
@@ -1165,6 +1223,8 @@ export const WeightliftingIcon = () => (
 export const ItalyIcon = () => (
   <svg
     viewBox="0 0 64 64"
+    width={64}
+    height={64}
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
     role="img"
@@ -1189,6 +1249,8 @@ export const TailwindIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 122.88 73.29"
+    width={122.88}
+    height={73.29}
   >
     <path
       fill="#06b6d4"
@@ -1201,6 +1263,8 @@ export const NestJSIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 455.95 454.16"
+    width={455.95}
+    height={454.16}
   >
     <path
       fill="#e0234e"
@@ -1217,6 +1281,8 @@ export const PostgresIcon = () => (
     x="0px"
     y="0px"
     viewBox="0 0 120 125"
+    width={120}
+    height={125}
   >
     <style type="text/css"></style>
     <g>
@@ -1276,6 +1342,8 @@ export const FigmaIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="-75 -75 500 650"
+    width={500}
+    height={650}
   >
     <g>
       <path
@@ -1305,6 +1373,8 @@ export const FigmaIcon = () => (
 export const JiraIcon = () => (
   <svg
     viewBox="0 0 256 256"
+    width={256}
+    height={256}
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     preserveAspectRatio="xMidYMid"
@@ -1394,6 +1464,8 @@ export const JiraIcon = () => (
 export const NetlifyIcon = () => (
   <svg
     viewBox="0 0 40 40"
+    width={40}
+    height={40}
     xmlns="http://www.w3.org/2000/svg"
   >
     <defs>
@@ -1523,6 +1595,8 @@ export const NatureIcon = () => (
 export const CatIcon = () => (
   <svg
     viewBox="0 0 36 36"
+    width={36}
+    height={36}
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
     role="img"
