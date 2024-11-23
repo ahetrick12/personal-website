@@ -2,7 +2,7 @@ import { useContext, useRef } from 'react';
 import Alex from '../../media/about/alex.webp';
 import { SocialLinks } from '../';
 import Resume from '../../media/about/resume.pdf';
-import { Browser, BrowserContext } from '../../browserContext';
+import { Browser, BrowserContext } from '../../BrowserContext';
 
 const About = () => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
