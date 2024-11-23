@@ -32,10 +32,22 @@
           color: var(--accent);
           display: inline-block;
           width: fit-content;
+          transition: 0.3s ease-out;
 
           span {
             display: inline-block;
-            vertical-align: bottom;
+            vertical-align: text-bottom;
+            line-height: 2rem;
+            padding-right: 0.05rem;
+          }
+
+          &:hover {
+            filter: drop-shadow(0 0 1rem var(--accent));
+            scale: 1.05;
+
+            span {
+              padding: 0.1rem 0.25rem;
+            }
           }
         }
 
