@@ -14,8 +14,35 @@ import 'overlayscrollbars/styles/overlayscrollbars.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+enum Browser {
+  Chrome = 'Chrome',
+  Firefox = 'Firefox',
+  Safari = 'Safari',
+  Opera = 'Opera',
+  InternetExplorer = 'Internet Explorer',
+  Unknown = 'Unknown',
+}
+
 function App() {
   useEffect(() => {
+    function detectBrowser() {
+      const userAgent = navigator.userAgent;
+
+      if (userAgent.indexOf('Chrome') > -1) {
+        return Browser.Chrome;
+      } else if (userAgent.indexOf('Firefox') > -1) {
+        return Browser.Firefox;
+      } else if (userAgent.indexOf('Safari') > -1) {
+        return Browser.Safari;
+      } else if (userAgent.indexOf('Opera') > -1) {
+        return Browser.Opera;
+      } else if (userAgent.indexOf('MSIE') > -1 || userAgent.indexOf('Trident') > -1) {
+        return Browser.InternetExplorer;
+      } else {
+        return Browser.Unknown;
+      }
+    }
+
     const initOverlayScrollbars = async () => {
       OverlayScrollbars(document.body, {
         scrollbars: {
@@ -34,7 +61,12 @@ function App() {
       });
     };
 
-    initOverlayScrollbars();
+    const browser = detectBrowser();
+
+    // Use default safari scrollbars
+    if (browser !== Browser.Safari) {
+      initOverlayScrollbars();
+    }
   }, []);
 
   return (

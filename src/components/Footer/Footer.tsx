@@ -12,13 +12,21 @@ const Footer = () => {
         <div className="columns is-desktop is-multiline">
           <div className="column" />
           <p className="column is-two-fifths is-full-touch">
-            Powered using{' '}
+            Powered by{' '}
             <a
               href="https://reactjs.org"
               target="_blank"
               rel="noreferrer"
             >
               React
+            </a>
+            ,{' '}
+            <a
+              href="https://vite.dev/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Vite
             </a>{' '}
             and{' '}
             <a
@@ -30,8 +38,9 @@ const Footer = () => {
             </a>
             .
             <br />
-            Designed and developed by Alex Hetrick | © 2024 <br />
-            All Rights Reserved.
+            Designed and developed with <span className="heart">❤</span> by Alex Hetrick
+            <br />
+            <div className="copyright">© 2024 | All Rights Reserved.</div>
           </p>
           <div className="column links is-full-touch">
             <SocialLinks />
