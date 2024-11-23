@@ -18,7 +18,7 @@ function ArtworkDataset() {
     {
       image: images.TimmySide,
       title: 'Quadraped Robot',
-      description: 'A side view of Timmy.',
+      description: "A side view of Timmy. He's camera shy, that's why he's looking away.",
       link: '',
     },
     {
@@ -53,38 +53,38 @@ function ArtworkDataset() {
     },
     {
       image: images.Corals3,
-      title: 'Mountain Forest',
+      title: 'Low Poly Underwater Pack',
       description: 'An underwater scene of corals with a sunken ship in the distance.',
       link: '',
     },
     {
       image: images.LogCabin,
       title: 'Holiday Log Cabin',
-      description: 'A cozy log cabin in the woods during the cold winter months.',
+      description: 'A cozy log cabin in the woods during the cold winter months. Merry Chrysler.',
       link: '',
     },
     {
       image: images.Jim2,
       title: 'Cel-Shaded Jim',
-      description: 'Jim, sporting a fancy scarf and a stylish custom-build cel shader. He thinks shirts hold him back.',
+      description: 'Jim, sporting a fancy scarf and a stylish custom-built cel shader. He thinks shirts hold him back.',
       link: '',
     },
     {
       image: images.Skyscraper,
       title: 'Nighttime Skyscraper',
-      description: 'A sky-view nighttime scene of a skyscraper peaking above the clouds',
+      description: 'A sky-view nighttime scene of a skyscraper peaking above the clouds.',
       link: '',
     },
     {
       image: images.Ruins,
       title: 'Sunset Ruins',
-      description: 'Some stone ruins with a sunset in the background.',
+      description: 'Stone ruins with a sunset in the background.',
       link: '',
     },
     {
       image: images.Alley,
       title: 'Dark Alleyway',
-      description: 'A dark, dimly lit city alleyway.',
+      description: 'A dark, dimly lit city alleyway. Perfect for a shady deal or whatnot.',
       link: '',
     },
     {
@@ -96,7 +96,7 @@ function ArtworkDataset() {
     {
       image: images.CastleOverview1,
       title: 'Low Poly Medieval Castle Pack',
-      description: 'An island with a forest and a windmill, with a castle showing in the background.',
+      description: 'An island with a forest and a windmill, with a castle standing in the background.',
       link: '',
     },
     {
@@ -114,7 +114,7 @@ function ArtworkDataset() {
     {
       image: images.CastleCity,
       title: 'Low Poly Medieval Castle Pack',
-      description: 'The inner city of a castle.',
+      description: 'The inner city of a castle. Just imagine there are people here walking around.',
       link: '',
     },
     {
@@ -126,7 +126,7 @@ function ArtworkDataset() {
     {
       image: images.SmallCastleTown,
       title: 'Low Poly Medieval Castle Pack',
-      description: 'A small town next to a lake.',
+      description: 'A small town next to a lake in the eveningtime.',
       link: '',
     },
     {
@@ -138,61 +138,64 @@ function ArtworkDataset() {
     {
       image: images.RogueKnight,
       title: 'Rogue Knight',
-      description: 'An armored rogue night with a broadsword strapped to his back.',
+      description: 'A rogue knight with jagged armor and a sick looking broadsword on his back.',
       link: '',
     },
     {
       image: images.Face,
       title: 'Head Bust',
-      description: 'An attempt to construct a head and face from scratch.',
+      description: 'An attempt to construct a detailed head and face from scratch. Not bad for 2018.',
       link: '',
     },
     {
       image: images.LivingRoom,
       title: 'Living Room',
-      description: 'A warm, cozy, lived-in living room.',
+      description: "A warm, cozy, lived-in living room. You'll never guess where I took inspiration from.",
       link: '',
     },
     {
       image: images.Dungeon,
       title: 'Throne Room',
-      description: 'A mysterious, omunious, fire-lit throne room.',
+      description: 'A mysterious and ominous fire-lit throne room. Not sure what the chains are for, honestly.',
       link: '',
     },
     {
       image: images.Italy,
       title: 'Italian Lakeside',
-      description: 'A small Italian town along the lake with the setting sun in the background.',
+      description: 'A small Italian town along the lake with the sun setting in the background.',
       link: '',
     },
     {
       image: images.FlailCharacters,
       title: 'Low Poly Characters',
-      description: 'A few medieval-fantasy styled characters I made for a game, unofficially titled Project Flail.',
+      description:
+        'A few medieval-fantasy styled characters I made for a game, unofficially titled Project Flail. Yes, they look like Skyrim Draugrs.',
       link: '',
     },
     {
       image: images.AutumnBridge,
       title: 'Autumn Bridge',
-      description: 'A bridge over a river during autumn, with trees and falling leaves in the background.',
+      description:
+        'A bridge over a river during autumn, with trees and falling leaves in the background. Featured in my most liked tweet ever tweeted.',
       link: '',
     },
     {
       image: images.Odin,
       title: 'Diety Soul + Constructs',
-      description: 'A character made for a modeling challenge with the dual theme of diety soul and "constructs."',
+      description: 'A character made for a modeling challenge with the dual theme of "diety soul" and "constructs."',
       link: '',
     },
     {
       image: images.Dream,
       title: 'Sensory Field + Dream',
-      description: 'A character made for a modeling challenge with the dual theme of diety soul and "dream."',
+      description:
+        'A character made for a modeling challenge with the dual theme of "sensory field" and "dream." I guess I was feeling violent when I made this.',
       link: '',
     },
     {
       image: images.Mech,
       title: 'Mech',
-      description: 'A bipedal mech with guns for hands and a rifle attached to its back.',
+      description: 'A bipedal mech with guns for hands and a rifle over its shoulder.',
       link: '',
     },
     {
@@ -204,7 +207,8 @@ function ArtworkDataset() {
     {
       image: images.CavernSword,
       title: 'Cavern Sword',
-      description: 'A dungeon-like cavern with a glowing sword stuck a rock in the middle of a chasm.',
+      description:
+        'A dungeon-like cavern with a glowing sword stuck a rock in the middle of a chasm. If you pull it out you get +5 attack.',
       link: '',
     },
   ];

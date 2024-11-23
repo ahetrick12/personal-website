@@ -10,6 +10,7 @@ const ArtImage = ({ art }: ArtImageProps) => {
   const artImage = useRef<HTMLImageElement>(null);
   const overlay = useRef<HTMLDivElement>(null);
   const cell = useRef<HTMLDivElement>(null);
+  const debounceTimeout = useRef<any>(null);
 
   useLayoutEffect(() => {
     const updateImageBorder = () => {
@@ -33,11 +34,18 @@ const ArtImage = ({ art }: ArtImageProps) => {
       cell.current.style.height = cellHeight + 'px';
     };
 
+    const debouncedUpdateImageBorder = () => {
+      if (debounceTimeout.current) {
+        clearTimeout(debounceTimeout.current);
+      }
+      debounceTimeout.current = setTimeout(updateImageBorder, 300); // Adjust the delay as needed
+    };
+
     if (!artImage.current || !cell.current) return;
 
-    updateImageBorder();
+    debouncedUpdateImageBorder();
 
-    const resizeObserver = new ResizeObserver(updateImageBorder);
+    const resizeObserver = new ResizeObserver(debouncedUpdateImageBorder);
     resizeObserver.observe(cell.current);
     resizeObserver.observe(artImage.current);
 
