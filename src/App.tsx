@@ -1,5 +1,6 @@
 import React, { Suspense, useEffect, useRef, useState } from 'react';
 
+// TODO: Import all of these from the components index.ts file with one import statement
 import Introduction from './components/Introduction/Introduction';
 import About from './components/About/About';
 import SkillsInterests from './components/SkillsInterests/SkillsInterests';
@@ -8,6 +9,7 @@ import Artwork from './components/Artwork/Artwork';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
+import NavbarTW from './components/Navbar/NavbarTW';
 
 import { OverlayScrollbars } from 'overlayscrollbars';
 import 'overlayscrollbars/styles/overlayscrollbars.css';
@@ -68,7 +70,7 @@ function App() {
   return (
     <div className={`app`}>
       <BrowserContext.Provider value={browser}>
-        <Navbar />
+        <NavbarTW />
         <Introduction />
         <About />
         <SkillsInterests />
