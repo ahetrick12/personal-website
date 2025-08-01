@@ -59,7 +59,7 @@ export const SocialLinks = () => {
   ];
 
   return (
-    <div>
+    <>
       {linkMap.map((link, index) => (
         <LinkIcon
           key={index}
@@ -68,6 +68,6 @@ export const SocialLinks = () => {
           link={link.link}
         />
       ))}
-    </div>
+    </>
   );
 };

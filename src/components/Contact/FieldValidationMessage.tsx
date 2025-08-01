@@ -31,7 +31,7 @@ const FieldValidationMessage = forwardRef((props: FieldValidationMessageProps, r
 
   const fieldRef = props.fieldRef;
 
-  const Wrapper: 'input' | 'textarea' = props.tag;
+  const InputTag: 'input' | 'textarea' = props.tag;
   const classname = props.tag + ' is-rounded is-medium';
 
   useImperativeHandle(ref, () => ({
@@ -55,12 +55,9 @@ const FieldValidationMessage = forwardRef((props: FieldValidationMessageProps, r
   }, [fieldRef, validationMessage]);
 
   return (
-    <div
-      className="control has-icons-left"
-      id={props.id}
-    >
-      <Wrapper
-        className={classname}
+    <div id={props.id}>
+      <InputTag
+        className={`tw-rounded-full tw-pl-16 ${props.tag} `}
         placeholder={props.placeholder}
         autoComplete={props.autoComplete}
         name={props.name}
@@ -71,7 +68,7 @@ const FieldValidationMessage = forwardRef((props: FieldValidationMessageProps, r
         ref={fieldRef}
       />
       {props.icon !== undefined && (
-        <span className="icon form-icon is-small is-left">
+        <span className="tw-text-text-input-placeholder ">
           <FontAwesomeIcon icon={props.icon} />
         </span>
       )}

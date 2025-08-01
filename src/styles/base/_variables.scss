@@ -1,4 +1,4 @@
-@use 'bulma/sass/utilities/mixins' as *;
+// @use 'bulma/sass/utilities/mixins' as *;
 
 :root {
   // Initialize CSS variables
@@ -26,8 +26,8 @@
   // Must be in px
   --art-image-border-offset: 24px;
 
-  @include mobile {
-    --banner1-height: 10.75rem !important;
-    --banner2-height: 5rem !important;
-  }
+  // @include mobile {
+  //   --banner1-height: 10.75rem !important;
+  //   --banner2-height: 5rem !important;
+  // }
 }

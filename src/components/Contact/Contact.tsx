@@ -139,10 +139,10 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="section"
+      className="tw-p-12 tw-pb-0"
     >
       <h1
-        className="title left"
+        className="tw-title left"
         data-aos="title-appear"
         data-aos-duration="1500"
         data-aos-anchor="#contact"
@@ -151,7 +151,7 @@ const Contact = () => {
         Contact
       </h1>
       <p
-        className="subtitle left is-4"
+        className="subtitle left"
         data-aos="fade-right"
         data-aos-duration="1800"
         data-aos-delay="200"
@@ -161,7 +161,7 @@ const Contact = () => {
         Get in touch with me!
       </p>
       <form
-        className="section contact-container"
+        className="contact-container"
         data-aos="contact-box"
         data-aos-duration="2000"
         data-aos-anchor="#contact"
@@ -170,10 +170,10 @@ const Contact = () => {
         onSubmit={(e) => handleSubmit(e)}
       >
         {/* Name */}
-        <div className="field is-horizontal">
-          <div className="field-body">
+        <div className="tw-flex-row tw-mb-3">
+          <div className="tw-flex">
             <div
-              className="field"
+              className="field tw-flex-1"
               data-aos="fade-right"
               data-aos-duration="1000"
               data-aos-delay="300"
@@ -184,7 +184,7 @@ const Contact = () => {
               <FieldValidationMessage
                 id="first-name"
                 tag="input"
-                placeholder="Joe"
+                placeholder="Steve"
                 autoComplete="given-name"
                 name="first_name"
                 messageText="Please enter a first name"
@@ -196,7 +196,7 @@ const Contact = () => {
               />
             </div>
             <div
-              className="field"
+              className="field tw-flex-1"
               data-aos="fade-left"
               data-aos-duration="1000"
               data-aos-delay="600"
@@ -207,7 +207,7 @@ const Contact = () => {
               <FieldValidationMessage
                 id="last-name"
                 tag="input"
-                placeholder="Biden"
+                placeholder="Pineapple"
                 autoComplete="given-name"
                 name="last_name"
                 messageText="Please enter a last name"
@@ -232,7 +232,7 @@ const Contact = () => {
           <FieldValidationMessage
             id="email"
             tag="input"
-            placeholder="president@whitehouse.gov"
+            placeholder="steve@pineapple.edu"
             autoComplete="email"
             name="email"
             messageText="Please enter a valid email address"
@@ -271,7 +271,7 @@ const Contact = () => {
           <div className="control">
             <button
               type="submit"
-              className="button accent-button is-rounded"
+              className="accent-button tw-rounded-full "
               ref={submitButtonRef}
             >
               Submit

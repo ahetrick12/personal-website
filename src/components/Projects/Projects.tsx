@@ -4,10 +4,10 @@ import projects from './projectsData';
 const Projects = () => {
   return (
     <section id="projects">
-      <div className="section">
+      <div className="tw-p-12">
         <h1
-          className="title left"
-          data-aos="title-appear"
+          className="tw-title left"
+          data-aos="tw-title-appear"
           data-aos-duration="1500"
           data-aos-anchor="#projects"
           data-aos-anchor-placement="top-center"
@@ -15,7 +15,7 @@ const Projects = () => {
           Projects
         </h1>
         <p
-          className="subtitle left is-4"
+          className="subtitle left"
           data-aos="fade-right"
           data-aos-duration="1800"
           data-aos-delay="200"
@@ -26,7 +26,7 @@ const Projects = () => {
         </p>
         <div
           id="projects-trigger"
-          className="columns is-multiline is-centered"
+          className="tw-flex tw-flex-wrap tw-justify-center"
         >
           {projects.map((project, index) => (
             <ProjectTile

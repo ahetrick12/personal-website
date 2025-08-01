@@ -38,8 +38,8 @@ export default {
         'banner2-slide': 'banner2-slide var(--intro-slide-anim-dur)',
         'banner3-slide': 'banner3-slide var(--intro-slide-anim-dur)',
         typing: 'typing 0.8s steps(4, end), blink-caret 0.75s infinite',
-        'view-more': 'view-more 2.4s',
-        'key-links-appear': 'key-links-appear 2.4s',
+        'view-more': 'key-links-appear 1.5s 4.5s backwards ease-out',
+        'intro-icon': 'key-links-appear 1s backwards ease-out',
       },
       height: {
         banner1: 'var(--banner1-height)',
@@ -59,5 +59,16 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.bg-hr': {
+          backgroundImage: '-webkit-linear-gradient(left, transparent, var(--background-secondary-alt), transparent)',
+        },
+        '.bg-secondary': {
+          backgroundColor: 'var(--background-secondary)',
+        },
+      });
+    },
+  ],
 };

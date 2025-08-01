@@ -1,14 +1,14 @@
-import React, { Suspense, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // TODO: Import all of these from the components index.ts file with one import statement
-import Introduction from './components/Introduction/Introduction';
-import About from './components/About/About';
+import IntroductionTW from './components/Introduction/IntroductionTW';
+// import About from './components/About/About';
+import AboutTW from './components/About/AboutTW';
 import SkillsInterests from './components/SkillsInterests/SkillsInterests';
 import Projects from './components/Projects/Projects';
 import Artwork from './components/Artwork/Artwork';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
 import NavbarTW from './components/Navbar/NavbarTW';
 
 import { OverlayScrollbars } from 'overlayscrollbars';
@@ -71,8 +71,8 @@ function App() {
     <div className={`app`}>
       <BrowserContext.Provider value={browser}>
         <NavbarTW />
-        <Introduction />
-        <About />
+        <IntroductionTW />
+        <AboutTW />
         <SkillsInterests />
         <Projects />
         <Artwork />

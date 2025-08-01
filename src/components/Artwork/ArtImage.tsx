@@ -64,8 +64,8 @@ const ArtImage = ({ art }: ArtImageProps) => {
           ref={overlay}
           className="image-overlay"
         >
-          <div className="overlay-info p-6">
-            <h2 className="title is-underlined">{art.title}</h2>
+          <div className="overlay-info tw-p-12">
+            <h2 className="title tw-underline">{art.title}</h2>
             <p className="description">{art.description}</p>
           </div>
         </div>

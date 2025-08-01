@@ -1,145 +1,148 @@
 @use '../../styles/base' as *;
 
 #skillsinterests {
-  padding-bottom: 0 !important;
+  // padding-bottom: 0 !important;
 
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
+  // .container {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
 
-  .tile-column {
+  .tile {
     display: flex;
+
+    > * {
+      transition: 0.15s ease-out;
+    }
 
     &:hover {
-      .tile {
-        transition: 0.15s ease-out;
+      > * {
         transform: scale(1.1);
         box-shadow: -0.3rem 0.2rem 0rem var(--background-secondary);
       }
     }
   }
 
-  .tile {
-    display: flex;
-    flex-grow: 1;
-    justify-content: center;
-    margin: 0.05rem !important;
-    padding: 0rem;
-    transition: 0.5s ease-out;
-
+  .section-title {
+    background: var(--accent);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 1rem 0;
+    font-size: 22px;
     color: var(--foreground-primary);
-    background-color: var(--background-primary);
-
-    border-radius: 10px;
-    border: 3px solid var(--background-secondary);
-
-    @include until-widescreen {
-      text-align: center;
-      flex-direction: column;
-    }
-
-    @include mobile {
-      margin: 0.1rem !important;
-    }
-
-    .column {
-      padding: 1.25rem;
-
-      @include until-widescreen {
-        padding: 0.5rem;
-      }
-    }
-
-    .icon-column {
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      .icon {
-        display: flex;
-        transform: scale(1.5);
-        align-items: center;
-        filter: drop-shadow(-0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1));
-      }
-
-      @include until-widescreen {
-        padding-top: 1.5rem;
-
-        .icon {
-          transform: scale(1.5);
-        }
-      }
-    }
-
-    .name-column {
-      display: flex;
-      align-items: center;
-
-      @include widescreen {
-        max-width: 65%;
-        overflow: hidden;
-      }
-
-      @include until-widescreen {
-        padding-top: 1rem;
-      }
-    }
-
-    span {
-      font-size: 1.2rem;
-      font-weight: 500;
-      padding: 0.25rem;
-      padding-left: 0;
-      width: 100%;
-      user-select: none;
-
-      @include until-widescreen {
-        font-size: 1rem;
-      }
-    }
-  }
-
-  .columns {
-    margin-bottom: 1.5rem;
-
-    @include touch {
-      padding-left: 0.3rem;
-      padding-right: 0.3rem;
-    }
 
     &.skills {
-      @include desktop {
-        margin-right: 2.5rem;
-      }
+      text-align: left !important;
+      border-radius: 0 2rem 2rem 0;
+      padding-left: 5rem;
     }
 
     &.interests {
-      @include desktop {
-        margin-left: 2.5rem;
-      }
-    }
-
-    .subtitle {
-      background: var(--accent);
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-      padding: 1rem 0;
-      font-size: 22px;
-      color: var(--foreground-primary);
-
-      &.skills {
-        text-align: left !important;
-        border-radius: 0 2rem 2rem 0;
-        padding-left: 5rem;
-      }
-
-      &.interests {
-        text-align: right !important;
-        border-radius: 2rem 0 0 2rem;
-        padding-right: 5rem;
-      }
+      text-align: right !important;
+      border-radius: 2rem 0 0 2rem;
+      padding-right: 5rem;
     }
   }
+
+  // .tile {
+  //   display: flex;
+  //   flex-grow: 1;
+  //   justify-content: center;
+  //   margin: 0.05rem !important;
+  //   padding: 0rem;
+  //   transition: 0.5s ease-out;
+
+  //   color: var(--foreground-primary);
+  //   background-color: var(--background-primary);
+
+  //   border-radius: 10px;
+  //   border: 3px solid var(--background-secondary);
+
+  //   @include until-widescreen {
+  //     text-align: center;
+  //     flex-direction: column;
+  //   }
+
+  //   @include mobile {
+  //     margin: 0.1rem !important;
+  //   }
+
+  //   .column {
+  //     padding: 1.25rem;
+
+  //     @include until-widescreen {
+  //       padding: 0.5rem;
+  //     }
+  //   }
+
+  //   .icon-column {
+  //     padding: 0;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+
+  //     .icon {
+  //       display: flex;
+  //       transform: scale(1.5);
+  //       align-items: center;
+  //       filter: drop-shadow(-0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1));
+  //     }
+
+  //     @include until-widescreen {
+  //       padding-top: 1.5rem;
+
+  //       .icon {
+  //         transform: scale(1.5);
+  //       }
+  //     }
+  //   }
+
+  //   .name-column {
+  //     display: flex;
+  //     align-items: center;
+
+  //     @include widescreen {
+  //       max-width: 65%;
+  //       overflow: hidden;
+  //     }
+
+  //     @include until-widescreen {
+  //       padding-top: 1rem;
+  //     }
+  //   }
+
+  //   span {
+  //     font-size: 1.2rem;
+  //     font-weight: 500;
+  //     padding: 0.25rem;
+  //     padding-left: 0;
+  //     width: 100%;
+  //     user-select: none;
+
+  //     @include until-widescreen {
+  //       font-size: 1rem;
+  //     }
+  //   }
+  // }
+
+  // .columns {
+  // margin-bottom: 1.5rem;
+
+  // @include touch {
+  //   padding-left: 0.3rem;
+  //   padding-right: 0.3rem;
+  // }
+
+  // &.skills {
+  //   @include desktop {
+  //     margin-right: 2.5rem;
+  //   }
+  // }
+
+  // &.interests {
+  //   @include desktop {
+  //     margin-left: 2.5rem;
+  //   }
+  // }
 }
+// }

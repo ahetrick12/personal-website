@@ -41,7 +41,7 @@ const ProjectTile = (props: ProjectTileProps) => {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="card column is-full-touch is-one-third-desktop is-one-quarter-widescreen"
+      className="tw-relative tw-max-w-full project-card tw-bg-secondary tw-p-3 tw-w-full lg:tw-w-1/3 xl:tw-w-1/4"
       data-aos="fade-up"
       data-aos-duration="500"
       data-aos-delay={index * 150}
@@ -50,7 +50,7 @@ const ProjectTile = (props: ProjectTileProps) => {
       onMouseOver={onHover}
       ref={tileRef}
     >
-      <div className="card-content has-text-centered">
+      <div className="project-card-content tw-text-center">
         <div className="shadow-wrapper">
           <div className="image-wrapper">
             <img
@@ -63,7 +63,7 @@ const ProjectTile = (props: ProjectTileProps) => {
             />
           </div>
         </div>
-        <h2 className="proj-title is-underlined">{title}</h2>
+        <h2 className="proj-title tw-underline">{title}</h2>
         <p className="proj-description">{description}</p>
         <div className="proj-tech">
           {tech.map((tech, index) => (

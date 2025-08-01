@@ -9,7 +9,7 @@ const SkillsInterests = () => {
     >
       <div className="has-text-right">
         <h1
-          className="title right"
+          className="tw-title right"
           data-aos="title-appear"
           data-aos-duration="1500"
           data-aos-anchor="#skillsinterests"
@@ -28,7 +28,7 @@ const SkillsInterests = () => {
           Some of the things I do and like!
         </p>
       </div>
-      <div className="columns is-desktop">
+      <div className="tw-flex tw-flex-col md:tw-flex-row tw-mb-6">
         <SISection
           title="Skills"
           data={skillsData}

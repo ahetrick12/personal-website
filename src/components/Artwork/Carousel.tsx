@@ -91,7 +91,7 @@ const Carousel = () => {
   }, []);
 
   return (
-    <Flickity className="carousel">
+    <Flickity>
       {artwork.map((art, index) => (
         <ArtImage
           key={index}

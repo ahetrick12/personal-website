@@ -4,7 +4,7 @@ import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
 import './styles/tailwind.css';
-import 'bulma/css/bulma.css';
+// import 'bulma/css/bulma.css';
 import './styles/style.scss';
 
 // @ts-ignore

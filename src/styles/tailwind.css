@@ -1,3 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  hr {
+    @apply !tw-h-1 !tw-bg-hr;
+  }
+}
+
+@layer components {
+  .tw-title {
+    @apply tw-text-[var(--foreground-primary)] tw-text-5xl md:tw-text-6xl tw-font-extrabold tw-pb-4 tw-inline-block;
+  }
+
+  .tw-title.center {
+    @apply tw-mx-auto tw-mb-4 lg:tw-text-[4.5rem];
+  }
+
+  .tw-title.left {
+    @apply tw-mx-auto tw-mb-4 tw-ml-10 md:tw-ml-20 before:tw-content-['■'] before:tw-absolute before:-tw-left-16 before:tw-bottom-[0.3em] before:tw-text-[1.1em] before:tw-text-[var(--accent)];
+  }
+
+  .tw-title.right {
+    @apply tw-mx-auto tw-mb-4 tw-mr-10 md:tw-mr-20 tw-text-right tw-self-end tw-w-fit before:tw-content-['■'] before:tw-absolute before:-tw-right-16 before:tw-bottom-[0.3em] before:tw-text-[1.1em] before:tw-text-[var(--accent)];
+  }
+
+  .tw-subtitle {
+    @apply tw-text-[var(--foreground-secondary)] tw-text-[1.2rem] md:tw-text-[1.4rem] lg:tw-text-2xl tw-my-auto tw-mb-4;
+
+    &.center {
+      @apply tw-text-center;
+    }
+
+    &.left {
+      @apply tw-text-left tw-ml-[7.5%] tw-mr-auto;
+    }
+
+    &.right {
+      @apply tw-text-right tw-mr-[7.5%] tw-ml-auto;
+    }
+  }
+
+  .tw-icon {
+    @apply tw-w-12 tw-h-12 hover:-tw-translate-y-1 hover:tw-text-[var(--accent)];
+  }
+}
+
+@layer utilities {
+  .tw-typewriter {
+    @apply tw-overflow-hidden tw-mx-auto;
+  }
+
+  @media (min-width: 640px) {
+    .tw-typewriter {
+      @apply tw-border-r-[0.1em] tw-border-r-[var(--accent)] tw-whitespace-nowrap;
+      animation: typing 2.4s steps(40, end) backwards, blink-caret 0.75s infinite backwards;
+      animation-delay: 1.3s;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .tw-typewriter {
+      animation: view-more 2.4s backwards;
+      animation-delay: 1s;
+    }
+  }
+}

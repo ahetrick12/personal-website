@@ -1,5 +1,3 @@
-@use 'bulma/sass/utilities/mixins' as *;
-
 /* Intro banner slide effects */
 @keyframes banner1-slide {
   0% {
@@ -163,14 +161,6 @@
   &.aos-animate {
     transform: translate3d(0rem, -4rem, 0);
     opacity: 1;
-
-    @include until(475px) {
-      // box-shadow: -1rem 0.5rem 0rem var(--background-primary);
-    }
-
-    @include from(475px) {
-      // box-shadow: -2rem 1rem 0rem var(--background-primary);
-    }
   }
 }
 
@@ -230,13 +220,13 @@
   transform: scale(0.9);
 
   &.aos-animate {
-    @include mobile {
-      box-shadow: -0.8rem 0.7rem 0rem var(--background-primary-shadow);
-    }
+    // @include mobile {
+    //   box-shadow: -0.8rem 0.7rem 0rem var(--background-primary-shadow);
+    // }
 
-    @include tablet {
-      box-shadow: -1.6rem 1.2rem 0rem var(--background-primary-shadow);
-    }
+    // @include tablet {
+    //   box-shadow: -1.6rem 1.2rem 0rem var(--background-primary-shadow);
+    // }
 
     & {
       opacity: 1;

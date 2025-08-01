@@ -10,9 +10,9 @@ interface SISectionProps {
 const SISection = (props: SISectionProps) => {
   const { title, data, aosType } = props;
   return (
-    <div className="column is-half-desktop is-full-touch">
+    <div className="tw-w-full lg:tw-w-1/2 tw-p-3">
       <p
-        className={`subtitle ${title.toLowerCase()}`}
+        className={`${title.toLowerCase()} section-title`}
         data-aos={`${title.toLowerCase()}-subtitle`}
         data-aos-duration="1800"
         data-aos-anchor="#skillsinterests"
@@ -20,7 +20,7 @@ const SISection = (props: SISectionProps) => {
       >
         {title}
       </p>
-      <ul className={`columns ${title.toLowerCase()} is-multiline is-centered is-mobile`}>
+      <ul className={`${title.toLowerCase()} tw-flex tw-flex-wrap`}>
         {data.map((item, index) => (
           <SITile
             key={item.name}

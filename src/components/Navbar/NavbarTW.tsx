@@ -101,6 +101,7 @@ const NavbarTW = () => {
           <Link
             to="introduction"
             smooth={true}
+            onClick={() => setMobileMenuActive(false)}
           >
             <img
               src={Logo}
@@ -113,12 +114,27 @@ const NavbarTW = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuActive(!mobileMenuActive)}
-            className="lg:tw-invisible lg:tw-absolute tw-text-foreground-primary tw-p-2"
-            aria-label="menu"
+            className="lg:tw-invisible lg:tw-absolute"
           >
-            <div className="tw-w-5 tw-h-0.5 tw-bg-current tw-mb-1 tw-transition-all"></div>
-            <div className="tw-w-5 tw-h-0.5 tw-bg-current tw-mb-1 tw-transition-all"></div>
-            <div className="tw-w-5 tw-h-0.5 tw-bg-current tw-transition-all"></div>
+            <div className="tw-relative tw-flex tw-overflow-hidden tw-items-center tw-justify-center tw-rounded-full tw-w-[50px] tw-h-[50px] tw-transform tw-transition-all tw-duration-200">
+              <div className="tw-flex tw-flex-col tw-justify-between tw-w-[20px] tw-h-[20px] tw-transform tw-transition-all tw-duration-300 tw-origin-center tw-overflow-hidden">
+                <div
+                  className={`tw-bg-white lg:tw-bg-transparent tw-h-[2px] tw-w-7 tw-transform tw-transition-all tw-duration-300 tw-origin-left ${
+                    mobileMenuActive ? 'tw-rotate-[42deg]' : ''
+                  }`}
+                ></div>
+                <div
+                  className={`tw-bg-white lg:tw-bg-transparent tw-h-[2px] tw-w-1/2 tw-rounded tw-transform tw-transition-all tw-duration-300 ${
+                    mobileMenuActive ? 'tw-translate-x-10' : ''
+                  }`}
+                ></div>
+                <div
+                  className={`tw-bg-white lg:tw-bg-transparent tw-h-[2px] tw-w-7 tw-transform tw-transition-all tw-duration-300 tw-origin-left ${
+                    mobileMenuActive ? '-tw-rotate-[42deg]' : ''
+                  }`}
+                ></div>
+              </div>
+            </div>
           </button>
         </div>
 

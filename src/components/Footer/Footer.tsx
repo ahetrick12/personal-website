@@ -3,15 +3,15 @@ import { SocialLinks } from '../';
 const Footer = () => {
   return (
     <footer id="footer">
-      <div className="content has-text-centered">
+      <div className="tw-text-center">
         <hr
           className="primary"
           data-aos="lengthen"
           data-aos-duration="1300"
         />
-        <div className="columns is-desktop is-multiline">
-          <div className="column" />
-          <p className="column is-two-fifths is-full-touch">
+        <div className="tw-flex tw-flex-wrap tw-items-end">
+          <div className="tw-flex-1" />
+          <p className="tw-w-2/5">
             Powered by{' '}
             <a
               href="https://reactjs.org"
@@ -30,19 +30,19 @@ const Footer = () => {
             </a>{' '}
             and{' '}
             <a
-              href="https://bulma.io"
+              href="https://tailwindcss.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Bulma
+              Tailwind
             </a>
             .
             <br />
             Designed and developed with <span className="heart">❤</span> by Alex Hetrick
             <br />
-            <div className="copyright">© 2024 | All Rights Reserved.</div>
+            <div className="tw-text-[0.9rem] tw-text-foreground-secondary tw-mt-5">© 2024 | All Rights Reserved.</div>
           </p>
-          <div className="column links is-full-touch">
+          <div className="tw-flex tw-flex-1 tw-justify-end">
             <SocialLinks />
           </div>
         </div>

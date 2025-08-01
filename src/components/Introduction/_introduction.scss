@@ -1,160 +1,160 @@
-@use '../../styles/base' as *;
+// @use '../../styles/base' as *;
 
-#introduction {
-  // background-image: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)),
-  // 	url("../media/intro-video.mp4");
-  // background-size: cover;
-  // background-repeat: no-repeat;
-  // background-position: right top;
+// #introduction {
+// background-image: radial-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.65)),
+// 	url("../media/intro-video.mp4");
+// background-size: cover;
+// background-repeat: no-repeat;
+// background-position: right top;
 
-  position: relative;
-  margin-top: -4rem;
+// position: relative;
+// margin-top: -4rem;
 
-  .video-wrapper {
-    position: relative;
-    // position: absolute;
-    // top: 0;
-    // bottom: -0vh;
+// .video-wrapper {
+//   position: relative;
+//   // posfition: absolute;
+//   // top: 0;
+//   // bottom: -0vh;
 
-    video {
-      position: absolute;
-      top: 0;
-      height: 100vh;
-      width: 100vw;
-      object-fit: cover;
-      filter: saturate(1.15) contrast(1.05);
+//   video {
+//     position: absolute;
+//     top: 0;
+//     height: 100vh;
+//     width: 100vw;
+//     object-fit: cover;
+//     filter: saturate(1.15) contrast(1.05);
 
-      &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-image: radial-gradient(rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 1) 100%);
-      }
-    }
-  }
+//     &::after {
+//       content: '';
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       bottom: 0;
+//       right: 0;
+//       background-image: radial-gradient(rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 0.3) 70%, rgba(0, 0, 0, 1) 100%);
+//     }
+//   }
+// }
 
-  &.is-fullheight {
-    @include mobile {
-      height: 105vh;
-    }
+// &.is-fullheight {
+//   @include mobile {
+//     height: 105vh;
+//   }
 
-    @include tablet {
-      height: 110vh;
-    }
-  }
+//   @include tablet {
+//     height: 110vh;
+//   }
+// }
 
-  .hero-body {
-    //margin: auto;
+// .hero-body {
+//margin: auto;
 
-    .title {
-      font-size: 3.5rem;
-      padding-bottom: 0 !important;
-    }
+// .title {
+//   font-size: 3.5rem;
+//   padding-bottom: 0 !important;
+// }
 
-    .view-more {
-      $breakpoint: 620px;
+// .view-more {
+//   $breakpoint: 620px;
 
-      animation-name: key-links-appear;
-      animation-duration: 1.5s;
-      animation-fill-mode: backwards;
-      animation-timing-function: ease-out;
+//   animation-name: key-links-appear;
+//   animation-duration: 1.5s;
+//   animation-fill-mode: backwards;
+//   animation-timing-function: ease-out;
 
-      @include until($breakpoint) {
-        animation-delay: 3s;
-      }
+//   @include until($breakpoint) {
+//     animation-delay: 3s;
+//   }
 
-      @include from($breakpoint) {
-        animation-delay: 4.5s;
-      }
+//   @include from($breakpoint) {
+//     animation-delay: 4.5s;
+//   }
 
-      &.button {
-        color: var(--foreground-primary) !important;
-        background-color: transparent !important;
-        border: 2px solid var(--background-secondary-alt) !important;
-        margin: 2rem 0 0 0 !important;
-        border-radius: 0.5rem;
-        padding: 0.75rem 1rem !important;
-        font-size: 1rem !important;
+//   &.button {
+//     color: var(--foreground-primary) !important;
+//     background-color: transparent !important;
+//     border: 2px solid var(--background-secondary-alt) !important;
+//     margin: 2rem 0 0 0 !important;
+//     border-radius: 0.5rem;
+//     padding: 0.75rem 1rem !important;
+//     font-size: 1rem !important;
 
-        transition: all 0.3s ease-out;
-        backface-visibility: hidden;
+//     transition: all 0.3s ease-out;
+//     backface-visibility: hidden;
 
-        &:hover {
-          border-color: var(--accent) !important;
-          background-color: var(--accent-semitransparent) !important;
-          //color: var(--accent) !important;
-          transform: scale(1.1);
+//     &:hover {
+//       border-color: var(--accent) !important;
+//       background-color: var(--accent-semitransparent) !important;
+//       //color: var(--accent) !important;
+//       transform: scale(1.1);
 
-          box-shadow: 0 0 0 transparent !important;
-        }
+//       box-shadow: 0 0 0 transparent !important;
+//     }
 
-        span {
-          padding-left: 0.5rem;
-        }
-      }
-    }
+//     span {
+//       padding-left: 0.5rem;
+//     }
+//   }
+// }
 
-    .icon {
-      animation-name: key-links-appear;
-      animation-duration: 1s;
-      animation-fill-mode: backwards;
-      animation-timing-function: ease-out;
-    }
+// .icon {
+//   animation-name: key-links-appear;
+//   animation-duration: 1s;
+//   animation-fill-mode: backwards;
+//   animation-timing-function: ease-out;
+// }
 
-    .intro-icon-selectarea {
-      position: relative;
+// .intro-icon-selectarea {
+//   position: relative;
 
-      &::before {
-        content: '';
-        position: absolute;
-        top: -200%;
-        left: -25%;
-        width: 150%;
-        height: 350%;
-      }
-    }
-  }
+//   &::before {
+//     content: '';
+//     position: absolute;
+//     top: -200%;
+//     left: -25%;
+//     width: 150%;
+//     height: 350%;
+//   }
+// }
+// }
 
-  .scroll {
-    position: fixed;
-    z-index: 10;
-    bottom: 1rem;
-    left: 50%;
+// .scroll {
+//   position: fixed;
+//   z-index: 10;
+//   bottom: 1rem;
+//   left: 50%;
 
-    opacity: 0;
-    transition: 0.6s ease-in-out;
+//   opacity: 0;
+//   transition: 0.6s ease-in-out;
 
-    img {
-      height: 3.5rem;
-      width: auto;
-      margin-left: -50%;
-    }
-  }
+//   img {
+//     height: 3.5rem;
+//     width: auto;
+//     margin-left: -50%;
+//   }
+// }
 
-  .active {
-    opacity: 1;
-    transition: 0.6s ease-in-out;
-    transition-delay: 5s;
-  }
+// .active {
+//   opacity: 1;
+//   transition: 0.6s ease-in-out;
+//   transition-delay: 5s;
+// }
 
-  hr {
-    @include mobile {
-      width: 75%;
-    }
+// hr {
+//   @include mobile {
+//     width: 75%;
+//   }
 
-    @include tablet {
-      width: 50%;
-    }
+//   @include tablet {
+//     width: 50%;
+//   }
 
-    @include desktop {
-      width: 35%;
-    }
+//   @include desktop {
+//     width: 35%;
+//   }
 
-    @include widescreen {
-      width: 27%;
-    }
-  }
-}
+//   @include widescreen {
+//     width: 27%;
+//   }
+// }
+// }
