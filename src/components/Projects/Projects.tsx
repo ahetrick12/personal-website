@@ -24,6 +24,8 @@ const Projects = () => {
         >
           A selection of the things I've made over the years.
         </p>
+      </div>
+      <div>
         <div
           id="projects-trigger"
           className="columns is-multiline is-centered"

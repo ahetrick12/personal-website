@@ -5,6 +5,7 @@ import artist_corner from '../../media/project-banners/artist-corner.webp';
 import gamejams from '../../media/project-banners/gamejams.webp';
 import mabel from '../../media/project-banners/mabel.webp';
 import bmwcf from '../../media/project-banners/bmw-cf.webp';
+import tesla from '../../media/project-banners/energy-config.webp';
 
 interface ProjectProps {
   image: string;
@@ -18,6 +19,15 @@ interface ProjectProps {
 }
 
 const projects: ProjectProps[] = [
+  {
+    image: tesla,
+    imagePos: '50% 50%',
+    title: 'Tesla Energy Configurator',
+    description:
+      "During my Tesla internship I made significant contributions to the redesign of the Tesla Energy Configurator, the web application allowing customers to order Tesla's solar and energy products",
+    technology: ['React', 'Next.js', 'TypeScript', 'visx', 'React Spring', 'Figma'],
+    link: 'https://www.tesla.com/energy/design',
+  },
   {
     image: bmwcf,
     imagePos: '50% 30%',

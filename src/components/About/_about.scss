@@ -155,6 +155,16 @@
             }
           }
 
+          .additional-works {
+            margin-top: 2rem;
+            font-size: 1rem;
+            color: var(--foreground-secondary);
+
+            @include mobile {
+              font-size: 0.8rem;
+            }
+          }
+
           .button {
             @include mobile {
               width: 50%;

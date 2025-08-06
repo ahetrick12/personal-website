@@ -40,7 +40,7 @@ const Footer = () => {
             <br />
             Designed and developed with <span className="heart">❤</span> by Alex Hetrick
             <br />
-            <div className="copyright">© 2024 | All Rights Reserved.</div>
+            <div className="copyright">© 2025 | All Rights Reserved.</div>
           </p>
           <div className="column links is-full-touch">
             <SocialLinks />

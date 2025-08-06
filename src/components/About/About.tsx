@@ -152,7 +152,7 @@ const About = () => {
                   >
                     RIT
                   </a>
-                  , I love approaching technical problems with an artistic mindset.
+                  , I treat each problem I face as an opportunity to be an artist and create something beautiful.
                 </p>
                 <p
                   data-aos="fade-right"
@@ -161,25 +161,24 @@ const About = () => {
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
                 >
-                  As a fourth-year software engineering student, I've put theory into practice through internships at at
-                  both{' '}
-                  <a
-                    href="https://www.mtb.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    M&T Bank
-                  </a>{' '}
-                  and{' '}
+                  As a fifth-year software engineering student, I've put this mentality into practice through
+                  front-end-focused internships at{' '}
                   <a
                     href="https://www.bmw.com/en/index.html"
                     target="_blank"
                     rel="noreferrer"
                   >
                     BMW
+                  </a>{' '}
+                  and{' '}
+                  <a
+                    href="https://www.tesla.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Tesla
                   </a>
-                  . I'm passionate about creating beautiful, user-centered software that makes a real impact on people's
-                  lives, and I'm constantly looking for new opportunities to learn and grow.
+                  , shipping high-visibility, production-grade products used by thousands every day.
                 </p>
                 <p
                   data-aos="fade-right"
@@ -188,7 +187,34 @@ const About = () => {
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
                 >
-                  I also go by Ventuar online, and have built a brand as a 3D artist and game asset publisher on the{' '}
+                  I'm passionate about building products that feel effortless to use and measurably improve people's
+                  lives, and aim to lead a career that leaves the world in a better place than I found it!
+                </p>
+                <a
+                  ref={buttonRef}
+                  href={Resume}
+                  className="button accent-button is-rounded"
+                  rel="noreferrer"
+                  target="_blank"
+                  data-aos="fade-right"
+                  data-aos-duration="1000"
+                  data-aos-delay="2800"
+                  data-aos-anchor="#about"
+                  data-aos-anchor-placement="top-center"
+                  onMouseEnter={onHover}
+                >
+                  View Resume
+                </a>
+                <p
+                  className="additional-works"
+                  data-aos="fade-right"
+                  data-aos-duration="1000"
+                  data-aos-delay="3000"
+                  data-aos-anchor="#about"
+                  data-aos-anchor-placement="top-center"
+                >
+                  P.S. I also go by Ventuar online, and have built a brand as a 3D artist and game asset publisher on
+                  the{' '}
                   <a
                     href="https://assetstore.unity.com/publishers/36086"
                     target="_blank"
@@ -206,21 +232,6 @@ const About = () => {
                   </a>
                   . Check out my work there!
                 </p>
-                <a
-                  ref={buttonRef}
-                  href={Resume}
-                  className="button accent-button is-rounded"
-                  rel="noreferrer"
-                  target="_blank"
-                  data-aos="fade-right"
-                  data-aos-duration="1000"
-                  data-aos-delay="3000"
-                  data-aos-anchor="#about"
-                  data-aos-anchor-placement="top-center"
-                  onMouseEnter={onHover}
-                >
-                  View Resume
-                </a>
                 <hr
                   className="secondary"
                   data-aos="lengthen"
@@ -239,6 +250,7 @@ const About = () => {
                   alt="Alex"
                   data-aos="about-image-slide"
                   data-aos-duration="2000"
+                  data-aos-delay="2200"
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
                 />

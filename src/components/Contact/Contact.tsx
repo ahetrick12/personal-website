@@ -184,7 +184,7 @@ const Contact = () => {
               <FieldValidationMessage
                 id="first-name"
                 tag="input"
-                placeholder="Joe"
+                placeholder="Steve"
                 autoComplete="given-name"
                 name="first_name"
                 messageText="Please enter a first name"
@@ -207,7 +207,7 @@ const Contact = () => {
               <FieldValidationMessage
                 id="last-name"
                 tag="input"
-                placeholder="Biden"
+                placeholder="Pineapple"
                 autoComplete="given-name"
                 name="last_name"
                 messageText="Please enter a last name"
@@ -232,7 +232,7 @@ const Contact = () => {
           <FieldValidationMessage
             id="email"
             tag="input"
-            placeholder="president@whitehouse.gov"
+            placeholder="steve@pineapple.edu"
             autoComplete="email"
             name="email"
             messageText="Please enter a valid email address"
