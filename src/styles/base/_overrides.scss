@@ -40,13 +40,16 @@ p > a {
 hr {
   height: 4px;
 
+  /* For Firefox */
+  background: linear-gradient(to right, transparent 0%, var(--background-secondary-alt) 50%, transparent 100%);
+  /* For Safari/Chrome (WebKit) */
   background: -webkit-gradient(
     linear,
-    0 0,
-    100% 0,
+    left top,
+    right top,
     from(transparent),
-    to(transparent),
-    color-stop(50%, var(--background-secondary-alt))
+    color-stop(50%, var(--background-secondary-alt)),
+    to(transparent)
   );
 }
 

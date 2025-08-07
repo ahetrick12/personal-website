@@ -6,7 +6,7 @@ module.exports = {
     purgecss({
       content: ['./index.html', './src/**/*.{js,jsx,ts,tsx,css,scss}'],
       // grabs things like "flickity-hidden", "is-active", etc.
-      defaultExtractor: (content) => (content.match(/[\w-/:%]+/g) || []).filter(str => !str.endsWith(':')),
+      defaultExtractor: (content) => (content.match(/[\w-/:%]+/g) || []).filter((str) => !str.endsWith(':')),
 
       safelist: {
         // exact class names that JS adds at runtime
@@ -23,8 +23,11 @@ module.exports = {
         // regex-based families to keep wholesale
         deep: [
           /^flickity-/,
-          /^os-/, // OverlayScrollbars
+          /^os-/,
           /^overlayscrollbars/, // OverlayScrollbars
+          /data-aos-delay/,
+          /data-aos-duration/,
+          /^aos-/, // AOS
         ],
       },
 
