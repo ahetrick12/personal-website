@@ -6,7 +6,7 @@ module.exports = {
     purgecss({
       content: ['./index.html', './src/**/*.{js,jsx,ts,tsx,css,scss}'],
       // grabs things like "flickity-hidden", "is-active", etc.
-      defaultExtractor: (content) => content.match(/[\w-/:%]+(?<!:)/g) || [],
+      defaultExtractor: (content) => (content.match(/[\w-/:%]+/g) || []).filter(str => !str.endsWith(':')),
 
       safelist: {
         // exact class names that JS adds at runtime
