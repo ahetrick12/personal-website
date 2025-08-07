@@ -32,7 +32,7 @@ const Introduction = () => {
     };
   }, []);
 
-  const LinkIcon = (props: { index: number; icon: IconProp; link: string }) => {
+  const LinkIcon = (props: { index: number; icon: IconProp; link: string; ariaLabel: string }) => {
     const { index, icon, link } = props;
     return (
       <a
@@ -40,6 +40,7 @@ const Introduction = () => {
         href={link}
         target="_blank"
         rel="noreferrer"
+        aria-label={props.ariaLabel}
       >
         <FontAwesomeIcon
           className="icon is-large"
@@ -104,6 +105,7 @@ const Introduction = () => {
                 index={0}
                 icon={faLinkedin}
                 link="http://www.linkedin.com/in/ahetrick12"
+                ariaLabel="LinkedIn Profile"
               />
             </div>
             <div className="column is-1-desktop is-2-tablet">
@@ -111,6 +113,7 @@ const Introduction = () => {
                 index={1}
                 icon={faGithub}
                 link="https://github.com/ahetrick12"
+                ariaLabel="GitHub Profile"
               />
             </div>
             <div className="column is-1-desktop is-2-tablet">
@@ -118,6 +121,7 @@ const Introduction = () => {
                 index={2}
                 icon={faFileLines}
                 link={Resume}
+                ariaLabel="Resume PDF"
               />
             </div>
           </div>
