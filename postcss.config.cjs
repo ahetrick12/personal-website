@@ -24,7 +24,6 @@ module.exports = {
         deep: [
           /^flickity-/,
           /^os-/,
-          /^overlayscrollbars/, // OverlayScrollbars
           /data-aos-delay/,
           /data-aos-duration/,
           /^aos-/, // AOS
