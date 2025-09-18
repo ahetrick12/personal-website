@@ -1,5 +1,4 @@
 import { useState, useRef, useLayoutEffect, useEffect } from 'react';
-import { Link } from 'react-scroll';
 import Logo from '../../media/intro/logo.webp';
 
 const Navbar = () => {
@@ -88,16 +87,13 @@ const Navbar = () => {
         ref={navbarRef}
       >
         <div className="navbar-brand">
-          <Link
-            to="introduction"
-            smooth={true}
-          >
+          <a href="#introduction">
             <img
               src={Logo}
               alt="logo"
               className="image is-64x64 m-2 is-icon"
             />
-          </Link>
+          </a>
           <button
             onClick={() => {
               setMobileMenuActive(!mobileMenuActive);
@@ -120,48 +116,42 @@ const Navbar = () => {
             className={`navbar-end ${mobileMenuActive ? 'is-expanded' : ''}`}
             style={{ flexGrow: 1 }}
           >
-            <Link
-              to="introduction"
-              smooth={true}
+            <a
+              href="#introduction"
               className="navbar-item"
             >
               Home
-            </Link>
-            <Link
-              to="about"
-              smooth={true}
+            </a>
+            <a
+              href="#about"
               className="navbar-item"
             >
               About
-            </Link>
-            <Link
-              to="skillsinterests"
-              smooth={true}
+            </a>
+            <a
+              href="#skillsinterests"
               className="navbar-item"
             >
               Skills/Interests
-            </Link>
-            <Link
-              to="projects"
-              smooth={true}
+            </a>
+            <a
+              href="#projects"
               className="navbar-item"
             >
               Projects
-            </Link>
-            <Link
-              to="artwork"
-              smooth={true}
+            </a>
+            <a
+              href="#artwork"
               className="navbar-item"
             >
               Artwork
-            </Link>
-            <Link
-              to="contact"
-              smooth={true}
+            </a>
+            <a
+              href="#contact"
               className="navbar-item"
             >
               Contact
-            </Link>
+            </a>
           </div>
         </div>
       </nav>

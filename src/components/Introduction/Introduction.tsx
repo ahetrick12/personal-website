@@ -1,5 +1,4 @@
 import { useLayoutEffect, useRef } from 'react';
-import { Link } from 'react-scroll';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -97,13 +96,12 @@ const Introduction = () => {
           >
             <p className="subtitle typewriter is-4">Software Engineer, Game Developer, and 3D Artist studying at RIT</p>
           </div>
-          <Link
-            to="about"
-            smooth={true}
+          <a
+            href="#about"
             className="view-more button"
           >
             View More<span>→</span>
-          </Link>
+          </a>
           <hr
             className="primary mx-auto my-5"
             data-aos="lengthen"

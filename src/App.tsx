@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Introduction from './components/Introduction/Introduction';
 import About from './components/About/About';
