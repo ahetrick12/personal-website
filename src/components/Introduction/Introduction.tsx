@@ -8,7 +8,7 @@ import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 import MouseScroller from '../../media/intro/mouse-scroller.svg';
 import Hero1080p from '../../media/intro/hero-video1080p.webm';
 import Hero1440p from '../../media/intro/hero-video1440p.webm';
-import HeroPoster from '../../media/intro/hero-poster.jpg';
+import HeroPoster from '../../media/intro/hero-poster.webp';
 import Resume from '../../media/about/resume.pdf';
 
 const Introduction = () => {
