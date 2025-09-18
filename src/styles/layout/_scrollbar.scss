@@ -1,20 +1,23 @@
-body::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 0;
-  height: 0;
-}
+// This file is a remnant from when I was using overlayscrollbars. Removed for performance reasons
+// I may want to use it again in the future, so I'm keeping it for now
 
-.os-theme-custom {
-  --os-size: 16px;
-  --os-padding-axis: 6px;
-  --os-padding-perpendicular: 4px;
+// body::-webkit-scrollbar {
+//   -webkit-appearance: none;
+//   width: 0;
+//   height: 0;
+// }
 
-  --os-handle-perpendicular-size-hover: 150%;
-  --os-handle-perpendicular-size-active: 150%;
+// .os-theme-custom {
+//   --os-size: 16px;
+//   --os-padding-axis: 6px;
+//   --os-padding-perpendicular: 4px;
 
-  --os-handle-border-radius: 100px;
+//   --os-handle-perpendicular-size-hover: 150%;
+//   --os-handle-perpendicular-size-active: 150%;
 
-  --os-handle-bg: rgba(236, 236, 236, 0.5);
-  --os-handle-bg-hover: rgba(236, 236, 236, 0.7);
-  --os-handle-bg-active: rgba(236, 236, 236, 0.7);
-}
+//   --os-handle-border-radius: 100px;
+
+//   --os-handle-bg: rgba(236, 236, 236, 0.5);
+//   --os-handle-bg-hover: rgba(236, 236, 236, 0.7);
+//   --os-handle-bg-active: rgba(236, 236, 236, 0.7);
+// }

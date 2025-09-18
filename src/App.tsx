@@ -9,8 +9,8 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 
-import { OverlayScrollbars } from 'overlayscrollbars';
-import 'overlayscrollbars/styles/overlayscrollbars.css';
+// import { OverlayScrollbars } from 'overlayscrollbars';
+// import 'overlayscrollbars/styles/overlayscrollbars.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { BrowserContext, Browser } from './BrowserContext';
@@ -37,26 +37,26 @@ function App() {
       }
     }
 
-    const initOverlayScrollbars = async () => {
-      OverlayScrollbars(document.body, {
-        scrollbars: {
-          theme: 'os-theme-custom',
-          autoHide: 'move',
-          autoHideDelay: 700,
-        },
-        update: {
-          debounce: 100,
-        },
-      });
-    };
+    // const initOverlayScrollbars = async () => {
+    //   OverlayScrollbars(document.body, {
+    //     scrollbars: {
+    //       theme: 'os-theme-custom',
+    //       autoHide: 'move',
+    //       autoHideDelay: 700,
+    //     },
+    //     update: {
+    //       debounce: 100,
+    //     },
+    //   });
+    // };
 
     // Use default scrollbars on safari
     const browser = detectBrowser();
     setBrowser(browser);
 
-    if (browser !== Browser.Safari) {
-      initOverlayScrollbars();
-    }
+    // if (browser !== Browser.Safari) {
+    //   initOverlayScrollbars();
+    // }
 
     // Init after overlay scrollbars, since overlay scrollbars causes a reflow
     AOS.init({
