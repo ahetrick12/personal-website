@@ -6,7 +6,9 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
 import MouseScroller from '../../media/intro/mouse-scroller.svg';
-import BackgroundVideo from '../../media/intro/intro-video.m4v';
+// import BackgroundVideo from '../../media/intro/intro-video.m4v';
+import Hero1080p from '../../media/intro/hero-video1080p.webm';
+import Hero1440p from '../../media/intro/hero-video1440p.webm';
 import Resume from '../../media/about/resume.pdf';
 
 const Introduction = () => {
@@ -14,21 +16,22 @@ const Introduction = () => {
 
   useLayoutEffect(() => {
     const onScroll = () => {
-      const scrollPos = window.scrollY + window.innerHeight;
-
-      if (scrollPos <= window.innerHeight) {
+      if (window.scrollY <= 5) {
         scrollRef.current?.classList.add('active');
       } else {
         scrollRef.current?.classList.remove('active');
       }
     };
 
-    window.addEventListener('scroll', onScroll);
-    window.addEventListener('DOMContentLoaded', onScroll);
+    // Initial check, wait a bit to tell the user to scroll down if they are at the top of the page
+    setTimeout(() => {
+      onScroll();
+    }, 2000);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('DOMContentLoaded', onScroll);
     };
   }, []);
 
@@ -63,10 +66,17 @@ const Introduction = () => {
           loop
           muted
           playsInline
+          preload="none"
         >
           <source
-            src={BackgroundVideo}
-            type="video/mp4"
+            src={Hero1080p}
+            type="video/webm"
+            media="(max-width: 1920px)"
+          />
+          <source
+            src={Hero1440p}
+            type="video/webm"
+            media="(min-width: 1921px)"
           />
         </video>
       </div>

@@ -110,15 +110,13 @@
     }
 
     &.skills {
-      @include desktop {
-        margin-right: 2.5rem;
-      }
+      max-width: 900px;
+      margin: auto;
     }
 
     &.interests {
-      @include desktop {
-        margin-left: 2.5rem;
-      }
+      max-width: 900px;
+      margin: auto;
     }
 
     .subtitle {

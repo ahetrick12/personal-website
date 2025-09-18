@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useLayoutEffect } from 'react';
+import { useRef } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpRightFromSquare, faLinkSlash } from '@fortawesome/free-solid-svg-icons';
@@ -17,31 +17,22 @@ interface ProjectTileProps {
 
 const ProjectTile = (props: ProjectTileProps) => {
   const { image, imagePos, inverted, href, title, description, tech, wip, index } = props;
-  const [isActive, setIsActive] = useState(true);
 
+  const isActive = href !== '';
   const tileRef = useRef<HTMLAnchorElement>(null);
 
   const onHover = () => {
     tileRef.current?.classList.add('not-fading-button');
   };
 
-  useLayoutEffect(() => {
-    setIsActive(href === '' ? false : true);
-  }, [href]);
-
-  // When setIsActive is asynchronously complete, add the class to the tileRef
-  useEffect(() => {
-    if (!isActive) {
-      tileRef.current?.classList.add('disabled');
-    }
-  }, [isActive]);
-
   return (
     <a
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="card column is-full-touch is-one-third-desktop is-one-quarter-widescreen"
+      className={`card column is-full-touch is-one-third-desktop is-one-quarter-widescreen ${
+        isActive ? '' : 'disabled'
+      }`}
       data-aos="fade-up"
       data-aos-duration="500"
       data-aos-delay={index * 150}

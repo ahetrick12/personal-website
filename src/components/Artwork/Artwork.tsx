@@ -1,7 +1,4 @@
-import { Suspense } from 'react';
 import Carousel from './Carousel';
-
-// const CarouselLazy: React.LazyExoticComponent<React.ComponentType<any>> = React.lazy(() => import('./Carousel'));
 
 const Artwork = () => {
   return (

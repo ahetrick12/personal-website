@@ -22,7 +22,7 @@
       height: 100vh;
       width: 100vw;
       object-fit: cover;
-      filter: saturate(1.15) contrast(1.05);
+      filter: brightness(1.05) saturate(1.1) contrast(1.1);
 
       &::after {
         content: '';

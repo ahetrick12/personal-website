@@ -14,22 +14,38 @@
       margin-left: -3rem;
 
       .carousel-cell {
-        display: inline-flex;
+        --art-image-size-padding: 0rem;
+
+        display: flex;
+        // align-items: center;
+        justify-content: center;
         position: relative;
         overflow: visible;
         pointer-events: none;
+        aspect-ratio: 16 / 9;
+        width: 100%;
 
         @include mobile {
+          --art-image-size-padding: 0.5rem;
+
           width: 82%;
           margin: 1rem 0rem;
         }
 
         @include tablet {
+          --art-image-size-padding: 2rem;
+
           width: 78%;
           margin: 1rem 0rem;
         }
 
+        @include desktop {
+          --art-image-size-padding: 3rem;
+        }
+
         @include widescreen {
+          --art-image-size-padding: 6rem;
+
           width: 70%;
           margin: 0;
         }
@@ -71,21 +87,21 @@
           }
         }
 
-        .art-container {
-          border: 2px solid yellow;
-          // width: 100%;
-          margin: auto;
-          height: 100%;
+        .art-wrapper {
+          position: relative;
+          display: flex;
+          justify-content: center;
         }
 
         .image-overlay {
           z-index: 10;
           position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
+          inset: 0;
+          left: calc(-1 * var(--art-image-border-offset) / 2);
           margin: auto;
+
+          max-height: calc(100% - var(--art-image-size-padding) + var(--art-image-border-offset));
+          width: calc(100% + var(--art-image-border-offset));
 
           pointer-events: none;
           transition: 0.3s ease-out;
@@ -183,26 +199,11 @@
           display: block;
           transition: 0.3s ease-out;
 
+          // max-width: calc(100% - var(--art-image-size-padding));
+          max-height: calc(100% - var(--art-image-size-padding));
+
           @include mobile {
-            max-width: calc(100% - 0.5rem);
-            max-height: calc(100% - 0.5rem);
-
             box-shadow: -0.5rem 0.3rem 0rem var(--background-primary);
-          }
-
-          @include tablet {
-            max-width: calc(100% - 2rem);
-            max-height: calc(100% - 2rem);
-          }
-
-          @include desktop {
-            max-width: calc(100% - 3rem);
-            max-height: calc(100% - 3rem);
-          }
-
-          @include widescreen {
-            max-width: calc(100% - 6rem);
-            max-height: calc(100% - 6rem);
           }
         }
       }
