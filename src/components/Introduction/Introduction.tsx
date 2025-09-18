@@ -6,9 +6,9 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
 import MouseScroller from '../../media/intro/mouse-scroller.svg';
-// import BackgroundVideo from '../../media/intro/intro-video.m4v';
 import Hero1080p from '../../media/intro/hero-video1080p.webm';
 import Hero1440p from '../../media/intro/hero-video1440p.webm';
+import HeroPoster from '../../media/intro/hero-poster.jpg';
 import Resume from '../../media/about/resume.pdf';
 
 const Introduction = () => {
@@ -67,6 +67,7 @@ const Introduction = () => {
           muted
           playsInline
           preload="none"
+          poster={HeroPoster}
         >
           <source
             src={Hero1080p}
