@@ -5,6 +5,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFileLines } from '@fortawesome/free-solid-svg-icons';
 
 import MouseScroller from '../../media/intro/mouse-scroller.svg';
+import Hero720p from '../../media/intro/hero-video720p.mp4';
 import Hero1080p from '../../media/intro/hero-video1080p.webm';
 import Hero1440p from '../../media/intro/hero-video1440p.webm';
 import HeroPoster from '../../media/intro/hero-poster.webp';
@@ -68,6 +69,11 @@ const Introduction = () => {
           preload="none"
           poster={HeroPoster}
         >
+          <source
+            src={Hero720p}
+            type="video/mp4"
+            media="(max-width: 1080px)"
+          />
           <source
             src={Hero1080p}
             type="video/webm"
