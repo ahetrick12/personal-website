@@ -73,16 +73,16 @@ const Introduction = () => {
             src={Hero720p}
             type="video/mp4"
           />
-          {/* <source
+          <source
             src={Hero1080p}
             type="video/webm"
-            media="(max-width: 1920px)"
+            media="(min-width: 1024px)"
           />
           <source
             src={Hero1440p}
             type="video/webm"
-            media="(min-width: 1921px)"
-          /> */}
+            media="(min-width: 1920px)"
+          />
         </video>
       </div>
       <div className="hero-body has-text-centered">
