@@ -70,10 +70,6 @@ const Introduction = () => {
           poster={HeroPoster}
         >
           <source
-            src={Hero720p}
-            type="video/mp4"
-          />
-          <source
             src={Hero1080p}
             type="video/webm"
             media="(min-width: 1024px)"
@@ -82,6 +78,10 @@ const Introduction = () => {
             src={Hero1440p}
             type="video/webm"
             media="(min-width: 1920px)"
+          />
+          <source
+            src={Hero720p}
+            type="video/mp4"
           />
         </video>
       </div>
