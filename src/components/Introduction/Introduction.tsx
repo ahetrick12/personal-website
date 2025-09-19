@@ -72,7 +72,6 @@ const Introduction = () => {
           <source
             src={Hero720p}
             type="video/mp4"
-            media="(max-width: 1080px)"
           />
           {/* <source
             src={Hero1080p}
