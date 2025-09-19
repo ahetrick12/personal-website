@@ -66,7 +66,7 @@ const Introduction = () => {
           loop
           muted
           playsInline
-          preload="none"
+          preload="auto"
           poster={HeroPoster}
         >
           <source
@@ -74,7 +74,7 @@ const Introduction = () => {
             type="video/mp4"
             media="(max-width: 1080px)"
           />
-          <source
+          {/* <source
             src={Hero1080p}
             type="video/webm"
             media="(max-width: 1920px)"
@@ -83,7 +83,7 @@ const Introduction = () => {
             src={Hero1440p}
             type="video/webm"
             media="(min-width: 1921px)"
-          />
+          /> */}
         </video>
       </div>
       <div className="hero-body has-text-centered">
