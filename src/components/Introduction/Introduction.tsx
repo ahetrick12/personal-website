@@ -70,15 +70,16 @@ const Introduction = () => {
           poster={HeroPoster}
         >
           <source
-            src={Hero1080p}
-            type="video/webm"
-            media="(min-width: 1024px)"
-          />
-          <source
             src={Hero1440p}
             type="video/webm"
             media="(min-width: 1920px)"
           />
+          <source
+            src={Hero1080p}
+            type="video/webm"
+            media="(min-width: 1024px)"
+          />
+
           <source
             src={Hero720p}
             type="video/mp4"
