@@ -65,7 +65,7 @@ const Carousel = () => {
           for (var i = 0; i < dots.length; i++) {
             //dots[i].style.transitionDelay = i * 20 + "ms";
             dots[i].classList.remove('hidden');
-            await sleep(50);
+            await sleep(30);
           }
         })();
       }
