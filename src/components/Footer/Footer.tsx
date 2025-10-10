@@ -12,31 +12,33 @@ const Footer = () => {
         <div className="columns is-desktop is-multiline">
           <div className="column" />
           <div className="column is-two-fifths is-full-touch">
-            Powered by{' '}
-            <a
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              React
-            </a>
-            ,{' '}
-            <a
-              href="https://vite.dev/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Vite
-            </a>{' '}
-            and{' '}
-            <a
-              href="https://bulma.io"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Bulma
-            </a>
-            .
+            <p>
+              Powered by{' '}
+              <a
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                React
+              </a>
+              ,{' '}
+              <a
+                href="https://vite.dev/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Vite
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://bulma.io"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Bulma
+              </a>
+              .
+            </p>
             <br />
             Designed and developed with <span className="heart">❤</span> by Alex Hetrick
             <br />
