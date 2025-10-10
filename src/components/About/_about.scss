@@ -31,22 +31,25 @@
         code {
           color: var(--accent);
           display: inline-block;
+          position: relative;
           width: fit-content;
-          transition: 0.3s ease-out;
+          transition: filter 0.3s ease, transform 0.3s ease;
+          cursor: default;
 
           span {
+            z-index: 1;
             display: inline-block;
-            vertical-align: text-bottom;
+            vertical-align: middle;
             line-height: 2rem;
             padding-right: 0.05rem;
           }
 
           &:hover {
+            transform: scale(1.1);
             filter: drop-shadow(0 0 1rem var(--accent));
-            scale: 1.05;
 
-            span {
-              padding: 0.1rem 0.25rem;
+            &::before {
+              opacity: 1;
             }
           }
         }
@@ -58,6 +61,7 @@
           font-size: 7rem;
           padding: 3.5rem 2rem;
           rotate: -5deg;
+          pointer-events: none;
 
           $border-thickness: 0.4rem;
           filter: drop-shadow(-$border-thickness $border-thickness 0rem #00224d);

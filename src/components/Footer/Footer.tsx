@@ -11,7 +11,7 @@ const Footer = () => {
         />
         <div className="columns is-desktop is-multiline">
           <div className="column" />
-          <p className="column is-two-fifths is-full-touch">
+          <div className="column is-two-fifths is-full-touch">
             Powered by{' '}
             <a
               href="https://reactjs.org"
@@ -41,7 +41,7 @@ const Footer = () => {
             Designed and developed with <span className="heart">❤</span> by Alex Hetrick
             <br />
             <div className="copyright">© 2025 | All Rights Reserved.</div>
-          </p>
+          </div>
           <div className="column links is-full-touch">
             <SocialLinks />
           </div>

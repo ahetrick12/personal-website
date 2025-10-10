@@ -13,7 +13,7 @@
 
     &:hover {
       .tile {
-        transition: 0.15s ease-out;
+        transition: transform 0.2s ease, box-shadow 0.3s ease; // transition in
         transform: scale(1.1);
         box-shadow: -0.3rem 0.2rem 0rem var(--background-secondary);
       }
@@ -26,7 +26,7 @@
     justify-content: center;
     margin: 0.05rem !important;
     padding: 0rem;
-    transition: 0.5s ease-out;
+    transition: transform 0.75s ease, box-shadow 0.75s ease; // transition out
 
     color: var(--foreground-primary);
     background-color: var(--background-primary);

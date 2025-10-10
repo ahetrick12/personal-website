@@ -1,7 +1,7 @@
 import lpup from '../../media/project-banners/lpup.webp';
 import personal_website from '../../media/project-banners/personal-website.webp';
 import powerup_hackathon from '../../media/project-banners/poweruptech.webp';
-import artist_corner from '../../media/project-banners/artist-corner.webp';
+// import artist_corner from '../../media/project-banners/artist-corner.webp';
 import gamejams from '../../media/project-banners/gamejams.webp';
 import mabel from '../../media/project-banners/mabel.webp';
 import bmwcf from '../../media/project-banners/bmw-cf.webp';
@@ -27,6 +27,7 @@ const projects: ProjectProps[] = [
       "During my Tesla internship I made significant contributions to the redesign of the Tesla Energy Configurator, the web application allowing customers to order Tesla's solar and energy products",
     technology: ['React', 'Next.js', 'TypeScript', 'visx', 'React Spring', 'Figma'],
     link: 'https://www.tesla.com/energy/design',
+    iconColInvert: true,
   },
   {
     image: bmwcf,
@@ -73,15 +74,15 @@ const projects: ProjectProps[] = [
     technology: ['React', 'Bulma', 'EmailJS', 'HTML', 'SCSS', 'JS'],
     link: 'https://github.com/ahetrick12/personal-website',
   },
-  {
-    image: artist_corner,
-    imagePos: '50% 12%',
-    title: 'Artist Corner E-store',
-    description:
-      'An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261',
-    technology: ['Angular', 'Java', 'Spring Boot', 'Typescript', 'HTML', 'CSS', 'JS'],
-    link: 'https://github.com/ahetrick12/artist-corner-estore',
-  },
+  // {
+  //   image: artist_corner,
+  //   imagePos: '50% 12%',
+  //   title: 'Artist Corner E-store',
+  //   description:
+  //     'An online artist e-store webpage with a JSON-server backend made using Angular as a team project for SWEN-261',
+  //   technology: ['Angular', 'Java', 'Spring Boot', 'Typescript', 'HTML', 'CSS', 'JS'],
+  //   link: 'https://github.com/ahetrick12/artist-corner-estore',
+  // },
   {
     image: gamejams,
     imagePos: '50% 45%',

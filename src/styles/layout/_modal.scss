@@ -4,23 +4,23 @@
 
   .modal-background {
     opacity: 0;
-    transition: 0.3s ease-out;
+    transition: opacity 0.5s ease;
   }
 
   .modal-card {
-    transition: 0.5s ease-out !important;
+    transition: transform 0.85s ease, opacity 0.5s ease, visibility 0.5s !important; // transition out
     text-align: center;
     border-radius: 1.5rem;
 
     opacity: 0 !important;
     filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0.6));
-    transform: translateY(0) !important;
+    transform: translateY(25%) !important; // start in "out" step slightly lower
 
     .image {
       margin: auto;
       z-index: 10;
       color: var(--foreground-primary);
-      transition: 0.9s cubic-bezier(0.46, 1.42, 0.61, 1.03);
+      transition: transform 0.7s cubic-bezier(0.46, 1.42, 0.61, 1.03), opacity 0.5s ease;
 
       transform: translateY(85%) scale(0.5);
       opacity: 0;
@@ -81,9 +81,10 @@
     }
 
     .modal-card {
+      transition: transform 0.85s cubic-bezier(0.05, 0.66, 0.35, 0.99), opacity 0.5s ease !important; // different transition in
       opacity: 1 !important;
       transform: translateY(-15%) !important;
-      filter: drop-shadow(-0.6rem 1.2rem 0rem rgba(0, 0, 0, 0.4));
+      filter: drop-shadow(-0.45rem 0.6rem 0rem rgba(0, 0, 0, 0.4));
 
       .image {
         transform: translateY(50%) scale(1);

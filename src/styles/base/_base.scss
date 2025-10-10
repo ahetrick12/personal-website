@@ -26,11 +26,6 @@
   color: var(--accent);
 }
 
-.not-fading-button {
-  transition: 0.25s ease-out !important;
-  transition-delay: 0 !important;
-}
-
 a.social {
   display: inline-block;
   padding: 0rem 0.4rem;
@@ -39,7 +34,6 @@ a.social {
   .icon {
     width: 1.8rem;
     height: auto;
-    transition: 0.15s ease-out;
   }
 }
 
@@ -47,7 +41,7 @@ a.social {
   color: var(--foreground-primary);
 
   .icon {
-    transition: 0.2s all ease-out;
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
   }
 
   &:hover {

@@ -3,16 +3,16 @@ import Alex from '../../media/about/alex.webp';
 import { SocialLinks } from '../';
 import Resume from '../../media/about/resume.pdf';
 import { Browser, BrowserContext } from '../../BrowserContext';
+import { useResetDelayAfterAOS } from '../../hooks/useResetDelayAfterAOS';
 
 const About = () => {
-  const buttonRef = useRef<HTMLAnchorElement>(null);
   const browser = useContext(BrowserContext);
+  const accentButtonRef = useRef<HTMLAnchorElement>(null);
 
-  const onHover = () => {
-    if (!buttonRef.current) return;
-
-    buttonRef.current.classList.add('not-fading-button');
-  };
+  useResetDelayAfterAOS(accentButtonRef.current, {
+    transitionProperty: 'transform, box-shadow',
+    transitionDuration: '0.3s',
+  });
 
   return (
     <section id="about">
@@ -191,7 +191,7 @@ const About = () => {
                   lives, and aim to lead a career that leaves the world in a better place than I found it!
                 </p>
                 <a
-                  ref={buttonRef}
+                  ref={accentButtonRef}
                   href={Resume}
                   className="button accent-button is-rounded"
                   rel="noreferrer"
@@ -201,7 +201,6 @@ const About = () => {
                   data-aos-delay="2800"
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
-                  onMouseEnter={onHover}
                 >
                   View Resume
                 </a>

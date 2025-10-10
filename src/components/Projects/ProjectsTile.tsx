@@ -2,6 +2,7 @@ import { useRef } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpRightFromSquare, faLinkSlash } from '@fortawesome/free-solid-svg-icons';
+import { useResetDelayAfterAOS } from '../../hooks/useResetDelayAfterAOS';
 
 interface ProjectTileProps {
   image: string;
@@ -21,12 +22,11 @@ const ProjectTile = (props: ProjectTileProps) => {
   const isActive = href !== '';
   const tileRef = useRef<HTMLAnchorElement>(null);
 
-  const onHover = () => {
-    tileRef.current?.classList.add('not-fading-button');
-  };
+  useResetDelayAfterAOS(tileRef.current);
 
   return (
     <a
+      ref={tileRef}
       href={href}
       target="_blank"
       rel="noreferrer"
@@ -38,8 +38,6 @@ const ProjectTile = (props: ProjectTileProps) => {
       data-aos-delay={index * 150}
       data-aos-anchor="#projects-trigger"
       data-aos-anchor-placement="top-center"
-      onMouseOver={onHover}
-      ref={tileRef}
     >
       <div className="card-content has-text-centered">
         <div className="shadow-wrapper">

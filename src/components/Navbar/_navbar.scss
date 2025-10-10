@@ -8,7 +8,7 @@
   position: fixed;
   background-color: transparent;
 
-  transition: ease-out 0.5s;
+  transition: all 0.5s ease; //eh screw it
 
   &.at-top {
     padding: 1rem 0.75rem;
@@ -48,18 +48,17 @@
       &::after {
         content: '';
         position: absolute;
-        width: 0%;
+        width: 100%;
         height: 3px;
-        left: 50%;
+        left: 0;
         bottom: 5%;
-
+        transform: scaleX(0);
         background-color: var(--accent);
-        transition: ease-out 0.3s;
+        transition: transform ease 0.3s;
       }
 
       &:hover::after {
-        width: 100%;
-        left: 0;
+        transform: scaleX(1);
       }
     }
 
@@ -106,7 +105,7 @@
 
   .navbar-brand {
     .is-icon {
-      transition: 0.3s ease-out;
+      transition: transform 0.5s ease, box-shadow 0.3s ease;
       border-radius: 50%;
 
       &:hover,
@@ -130,7 +129,6 @@
 
     .navbar-end {
       overflow: hidden;
-      transition: all 0.4s ease-out;
 
       @include touch {
         &:not(.is-expanded) {
@@ -141,7 +139,6 @@
 
     &.is-expanded {
       .navbar-end {
-        transition: all 0.75s ease-out;
         height: 260px !important;
       }
     }

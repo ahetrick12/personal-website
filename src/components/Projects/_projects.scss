@@ -24,7 +24,6 @@
   border-radius: 10px;
   margin: auto;
   backface-visibility: hidden;
-  transition: 0.4s ease-out;
   box-shadow: 0 0.5rem 0.5rem 0rem rgba(0, 0, 0, 0.15);
 
   @include touch {
@@ -47,7 +46,7 @@
     height: 100%;
     margin: 0;
     border-radius: 15px;
-    transition: 0.3s ease-out;
+    transition: outline 0.3s ease, transform 0.3s ease;
 
     outline: 3px solid transparent;
   }
@@ -58,15 +57,12 @@
       transform: scale(1.04) !important;
 
       &::after {
-        width: calc(100% + 16px);
-        height: calc(100% + 16px);
-        margin: -8px;
-
+        transform: scale(1.04);
         outline: 3px solid var(--background-secondary-alt);
       }
 
       .card-image {
-        transform: scale(1.03);
+        transform: scale(1.05);
       }
     }
   }
@@ -119,7 +115,7 @@
             0% 100%
           ); // Same cutoff as parent to prevent weird artifacts during hover transition
 
-          transition: 0.5s ease-out;
+          transition: transform 0.75s ease;
         }
       }
     }
@@ -134,13 +130,12 @@
         right: 1.5rem;
         z-index: 10;
 
-        transition: ease-out 0.2s;
+        transition: color ease 0.2s;
 
         color: lightgrey;
         filter: drop-shadow(0 0 0.15rem rgba(0, 0, 0, 0.5));
 
         &.inverted {
-          color: grey;
           filter: drop-shadow(0 0 0.15rem rgba(255, 255, 255, 0.5));
         }
 
@@ -148,7 +143,7 @@
           color: var(--foreground-secondary);
 
           &.inverted {
-            color: var(--background-secondary);
+            color: var(--background-primary-shadow);
             $shadow_col: rgb(0, 0, 0, 1.4);
           }
 
