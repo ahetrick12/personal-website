@@ -61,5 +61,8 @@
     "sass": "^1.77.8",
     "typescript-eslint": "^8.3.0",
     "vite-plugin-eslint": "^1.8.1"
+  },
+  "overrides": {
+    "glob": "11.1.0"
   }
 }
