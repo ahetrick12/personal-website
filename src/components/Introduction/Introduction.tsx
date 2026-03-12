@@ -100,7 +100,7 @@ const Introduction = () => {
             className="mx-auto my-1"
             style={{ width: 'fit-content' }}
           >
-            <p className="subtitle typewriter is-4">Software Engineer, Game Developer, and 3D Artist studying at RIT</p>
+            <p className="subtitle typewriter is-4">Software engineer building thoughtful, human-centered products.</p>
           </div>
           <a
             href="#about"

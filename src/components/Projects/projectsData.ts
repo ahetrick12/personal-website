@@ -6,6 +6,7 @@ import gamejams from '../../media/project-banners/gamejams.webp';
 import mabel from '../../media/project-banners/mabel.webp';
 import bmwcf from '../../media/project-banners/bmw-cf.webp';
 import tesla from '../../media/project-banners/energy-config.webp';
+import educe from '../../media/project-banners/educe.webp';
 
 interface ProjectProps {
   image: string;
@@ -37,6 +38,15 @@ const projects: ProjectProps[] = [
       "As a BMW intern, I spent my time there contributing to BMW ChargeForward, a project that aims to reduce the carbon footprint of BMW's electric vehicles by using machine learning to predict the best time to charge vehicles",
     technology: ['React', 'Angular', 'TypeScript', 'Nest.js', 'PostgreSQL', 'ChakraUI', 'Figma'],
     link: 'https://bmwchargeforward.com/',
+  },
+  {
+    image: educe,
+    imagePos: '50% 100%',
+    title: 'Educe',
+    description:
+      'For my senior project at RIT, I worked on the knowledge management app Educe, re-writing, re-designing, and modernizing the app to create a smoother experience for both users and developers',
+    technology: ['React', 'TypeScript', 'Zustand', 'MaterialUI', 'PostgreSQL', 'Drizzle', 'AWS', 'Figma'],
+    link: 'https://educe.club/',
   },
   {
     image: mabel,

@@ -46,7 +46,9 @@
     height: 100%;
     margin: 0;
     border-radius: 15px;
-    transition: outline 0.3s ease, transform 0.3s ease;
+    transition:
+      outline 0.3s ease,
+      transform 0.3s ease;
 
     outline: 3px solid transparent;
   }
@@ -87,12 +89,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    padding: 1rem;
 
     .shadow-wrapper {
       display: inline-block;
 
-      margin: -2.25rem -2.25rem 0.5rem -2.25rem;
-      width: calc(100% + 4.5rem);
+      margin: -1.75rem;
+      margin-bottom: 1rem;
+      width: calc(100% + 3.5rem);
 
       clip-path: polygon(0 0, 100% 0, 100% 200%, 0% 200%); // So the drop shadow doesn't bleed out the sides
       filter: drop-shadow(0 0.3rem 0.3rem rgba(0, 0, 0, 0.6));
@@ -161,12 +165,14 @@
 
       font-weight: bold;
       font-size: 1.75rem;
+      line-height: 2.25rem;
       margin-bottom: 0.75rem;
       margin-right: -0.5rem;
       margin-left: -0.5rem;
     }
 
     .proj-description {
+      text-align: left;
       color: var(--foreground-secondary);
       font-size: 1rem;
     }

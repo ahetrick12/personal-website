@@ -152,7 +152,7 @@ const About = () => {
                   >
                     RIT
                   </a>
-                  , I treat each problem I face as an opportunity to be an artist and create something beautiful.
+                  , I'm a product-focused software engineer who blends technical rigor with a designer's eye for detail.
                 </p>
                 <p
                   data-aos="fade-right"
@@ -161,8 +161,7 @@ const About = () => {
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
                 >
-                  As a fifth-year software engineering student, I've put this mentality into practice through
-                  front-end-focused internships at{' '}
+                  During internships at{' '}
                   <a
                     href="https://www.bmw.com/en/index.html"
                     target="_blank"
@@ -178,7 +177,8 @@ const About = () => {
                   >
                     Tesla
                   </a>
-                  , shipping high-visibility, production-grade products used by thousands every day.
+                  , I've built and shipped product experiences used by hundreds of thousands of people, working on the
+                  systems and interfaces that power how customers explore and configure complex products.
                 </p>
                 <p
                   data-aos="fade-right"
@@ -187,8 +187,9 @@ const About = () => {
                   data-aos-anchor="#about"
                   data-aos-anchor-placement="top-center"
                 >
-                  I'm passionate about building products that feel effortless to use and measurably improve people's
-                  lives, and aim to lead a career that leaves the world in a better place than I found it!
+                  I'm passionate about building software that feels effortless and intentionally designed, and I want to
+                  spend my career making technology feel a little more thoughtful, a little more human, and a lot easier
+                  to live with.
                 </p>
                 <a
                   ref={accentButtonRef}
