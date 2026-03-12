@@ -169,9 +169,11 @@ footer {
   padding: 0.75rem 1.75rem;
   border: none;
   box-shadow: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: scale(1.125) translate(0) !important;
     box-shadow: -0.5rem 0.4rem 0rem var(--background-primary);
   }
@@ -196,7 +198,9 @@ footer {
 
   .icon {
     transform: translateY(-0.15rem);
-    transition: color 0.3s ease-out, transform 0.2s ease-out;
+    transition:
+      color 0.3s ease-out,
+      transform 0.2s ease-out;
     margin: auto;
     // color: var(--text-input-placeholder) !important;
   }

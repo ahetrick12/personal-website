@@ -8,8 +8,12 @@ import { FieldValidationMessage, ContactModal } from './';
 type HTMLFormField = HTMLInputElement | HTMLTextAreaElement;
 
 const Contact = () => {
+  const MIN_FORM_FILL_TIME_MS = 2000;
+  const HONEYPOT_FIELD_NAME = 'company';
+
   const formRef = useRef<HTMLFormElement>(null);
   const submitButtonRef = useRef<HTMLButtonElement>(null);
+  const formLoadedAtRef = useRef<number>(Date.now());
 
   const firstNameRef = useRef<HTMLInputElement>(null);
   const lastNameRef = useRef<HTMLInputElement>(null);
@@ -22,6 +26,7 @@ const Contact = () => {
   const [messageValid, setMessageValid] = useState(false);
 
   const [modalActive, setModalActive] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(false);
 
   const validTextRegex = /(\S){1,30}/;
   const validEmailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -41,6 +46,11 @@ const Contact = () => {
       target.parentElement.classList.remove('focused');
     });
   }, []);
+
+  const blockSuspiciousSubmit = () => {
+    setIsBlocked(true);
+    submitButtonRef.current?.classList.remove('is-loading');
+  };
 
   const validateInput = (
     value: string,
@@ -62,6 +72,26 @@ const Contact = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    if (isBlocked) {
+      submitButtonRef.current?.blur();
+      return;
+    }
+
+    if (!formRef.current) return;
+
+    const formData = new FormData(formRef.current);
+    const honeypotValue = `${formData.get(HONEYPOT_FIELD_NAME) ?? ''}`.trim();
+    const fillDuration = Date.now() - formLoadedAtRef.current;
+
+    // Silently reject likely bot submissions.
+    if (honeypotValue || fillDuration < MIN_FORM_FILL_TIME_MS) {
+      blockSuspiciousSubmit();
+      formRef.current.reset();
+      formLoadedAtRef.current = Date.now();
+      submitButtonRef.current?.blur();
+      return;
+    }
+
     const refList: RefObject<HTMLFormField>[] = [firstNameRef, lastNameRef, emailRef, messageRef];
     const validFLagList: boolean[] = [firstNameValid, lastNameValid, emailValid, messageValid];
 
@@ -71,12 +101,12 @@ const Contact = () => {
     // Send email
     submitButtonRef.current?.classList.add('is-loading');
 
-    const emailData = {
+    const emailData: Record<string, string> = {
       to_name: 'Alex',
     };
 
-    const formData = Object.fromEntries(new FormData(formRef.current!));
-    Object.assign(emailData, formData);
+    Object.assign(emailData, Object.fromEntries(formData) as Record<string, string>);
+    delete emailData[HONEYPOT_FIELD_NAME];
 
     emailjs
       .send(
@@ -88,6 +118,7 @@ const Contact = () => {
       .then(
         () => {
           formRef.current?.reset();
+          formLoadedAtRef.current = Date.now();
           submitButtonRef.current?.blur();
           submitButtonRef.current?.classList.remove('is-loading');
 
@@ -99,6 +130,7 @@ const Contact = () => {
           toggleModal();
         },
         (error: EmailJSResponseStatus) => {
+          submitButtonRef.current?.classList.remove('is-loading');
           alert('An error occurred, Please try again\n' + error);
         }
       );
@@ -169,6 +201,27 @@ const Contact = () => {
         ref={formRef}
         onSubmit={(e) => handleSubmit(e)}
       >
+        <div
+          aria-hidden="true"
+          style={{
+            position: 'absolute',
+            left: '-10000px',
+            width: '1px',
+            height: '1px',
+            overflow: 'hidden',
+          }}
+        >
+          <label htmlFor={HONEYPOT_FIELD_NAME}>Company</label>
+          <input
+            id={HONEYPOT_FIELD_NAME}
+            type="text"
+            name={HONEYPOT_FIELD_NAME}
+            autoComplete="off"
+            tabIndex={-1}
+            defaultValue=""
+          />
+        </div>
+
         {/* Name */}
         <div className="field is-horizontal">
           <div className="field-body">
@@ -273,8 +326,9 @@ const Contact = () => {
               type="submit"
               className="button accent-button is-rounded"
               ref={submitButtonRef}
+              disabled={isBlocked}
             >
-              Submit
+              {isBlocked ? 'lol ur a bot' : 'Submit'}
             </button>
           </div>
         </div>
